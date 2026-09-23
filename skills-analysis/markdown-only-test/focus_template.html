@@ -1,0 +1,410 @@
+<title>The Markdown-Only Test</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+:root {
+  --bg: #f4f5f7; --surface: #ffffff; --ink: #15181d; --ink-2: #4f5663; --muted: #767d8a;
+  --hair: #e1e4e9; --grid: #eceef2; --code-bg: #eef1f5; --accent: #2a78d6;
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100;
+  --good: #0ca30c; --warn: #fab219; --crit: #d03b3b;
+  --good-ink: #0a7a0a; --warn-ink: #946300; --crit-ink: #b42f2f;
+  --r-md: #2a78d6; --r-script: #b4531f; --r-template: #7a4fc9; --r-data: #0f7f58; --r-asset: #a46f00; --r-other: #8a8f99;
+  --hover: rgba(42,120,214,.08);
+  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --cond: "IBM Plex Sans Condensed", "IBM Plex Sans", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #101216; --surface: #171a1f; --ink: #f0f2f5; --ink-2: #b4bac5; --muted: #8b929e;
+    --hair: #2a2f37; --grid: #22262d; --code-bg: #1d2128; --accent: #3987e5;
+    --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500;
+    --good-ink: #45c545; --warn-ink: #f2bd4a; --crit-ink: #ec6b6b;
+    --r-md: #6da7ec; --r-script: #f0915f; --r-template: #a98bec; --r-data: #45c595; --r-asset: #e0b04a; --r-other: #8b929e;
+    --hover: rgba(57,135,229,.14);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #101216; --surface: #171a1f; --ink: #f0f2f5; --ink-2: #b4bac5; --muted: #8b929e;
+  --hair: #2a2f37; --grid: #22262d; --code-bg: #1d2128; --accent: #3987e5;
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500;
+  --good-ink: #45c545; --warn-ink: #f2bd4a; --crit-ink: #ec6b6b;
+  --r-md: #6da7ec; --r-script: #f0915f; --r-template: #a98bec; --r-data: #45c595; --r-asset: #e0b04a; --r-other: #8b929e;
+  --hover: rgba(57,135,229,.14);
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 15px/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1040px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 72px; }
+h1, h2, h3 { font-family: var(--cond); font-weight: 600; letter-spacing: -.01em; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.08; }
+h2 { font-size: 24px; line-height: 1.2; }
+h3 { font-size: 16.5px; line-height: 1.3; }
+p { margin: 0; }
+a { color: var(--accent); text-underline-offset: 2px; }
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+.mono { font-family: var(--mono); }
+.eyebrow { font: 500 12px/1.4 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.lede { font-size: 18px; line-height: 1.55; color: var(--ink-2); max-width: 68ch; }
+.lede strong { color: var(--ink); font-weight: 600; }
+header { display: grid; gap: 14px; padding-bottom: 28px; border-bottom: 1px solid var(--hair); }
+section { padding-block: 40px 8px; display: grid; gap: 18px; }
+.sec-head { display: grid; gap: 6px; max-width: 72ch; }
+.sec-head p { color: var(--ink-2); }
+.panel { background: var(--surface); border: 1px solid var(--hair); border-radius: 10px; padding: 20px; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start; }
+@media (max-width: 860px) { .two { grid-template-columns: 1fr; } }
+.note { font-size: 13px; color: var(--muted); }
+
+.tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 6px; }
+@media (max-width: 820px) { .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.tile { background: var(--surface); border: 1px solid var(--hair); border-radius: 10px; padding: 16px; display: grid; gap: 4px; align-content: start; }
+.tile .k { display: inline-flex; align-items: center; gap: 7px; font: 600 11.5px var(--mono); letter-spacing: .05em; text-transform: uppercase; }
+.tile .v { font: 600 32px/1.1 var(--sans); font-variant-numeric: tabular-nums; }
+.tile .l { font-size: 13.5px; font-weight: 500; }
+.tile .s { font-size: 12.5px; color: var(--muted); }
+.dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+.k.good { color: var(--good-ink); } .k.warn { color: var(--warn-ink); } .k.crit { color: var(--crit-ink); } .k.info { color: var(--muted); }
+
+.chart { width: 100%; height: auto; display: block; overflow: visible; }
+.chart text { fill: var(--ink-2); font: 12px var(--sans); }
+.chart .val { fill: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+.chart .gridline { stroke: var(--grid); stroke-width: 1; }
+.chart .axis { stroke: var(--hair); stroke-width: 1; }
+.chart .hit { fill: transparent; }
+.chart g.row:hover .mk, .chart g.row:focus .mk { opacity: .8; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 13px; color: var(--ink-2); }
+.legend span { display: inline-flex; align-items: center; gap: 7px; }
+.legend i { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+
+.tscroll { overflow-x: auto; border: 1px solid var(--hair); border-radius: 10px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+th, td { padding: 9px 12px; text-align: left; border-bottom: 1px solid var(--grid); white-space: nowrap; vertical-align: top; }
+th { font: 600 12px var(--sans); color: var(--ink-2); background: var(--surface); position: sticky; top: 0; z-index: 1; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+tr:last-child td { border-bottom: 0; }
+tbody tr:hover td { background: var(--hover); }
+tr.total td { font-weight: 600; border-top: 1px solid var(--hair); }
+td .sub { color: var(--muted); font-size: 12px; font-family: var(--mono); }
+.zero { color: var(--muted); opacity: .55; }
+.over { color: var(--crit-ink); font-weight: 600; }
+.pill { display: inline-flex; align-items: center; gap: 6px; font: 600 11.5px var(--mono); padding: 2px 8px; border-radius: 999px; border: 1px solid currentColor; }
+.pill.works { color: var(--good-ink); } .pill.degraded { color: var(--warn-ink); } .pill.breaks { color: var(--crit-ink); }
+.sortable th { cursor: pointer; user-select: none; }
+.sortable th[aria-sort="ascending"]::after { content: " ↑"; }
+.sortable th[aria-sort="descending"]::after { content: " ↓"; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.filters button { font: 500 13px var(--sans); border: 1px solid var(--hair); background: var(--surface); color: var(--ink-2); border-radius: 999px; padding: 6px 12px; cursor: pointer; }
+.filters button[aria-pressed="true"] { border-color: var(--ink); color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+.tall { max-height: 640px; overflow: auto; }
+.reason { white-space: normal; min-width: 440px; font-size: 12.5px; color: var(--ink-2); }
+
+.split { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+.card { background: var(--surface); border: 1px solid var(--hair); border-radius: 10px; padding: 16px 18px; display: grid; gap: 10px; align-content: start; }
+.card ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; font-size: 14px; color: var(--ink-2); }
+.card .tag { font: 600 11.5px var(--mono); letter-spacing: .05em; text-transform: uppercase; }
+.method { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px 28px; }
+.method p, .method li { font-size: 14px; color: var(--ink-2); }
+.method ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; }
+.method h3 { margin-bottom: 6px; }
+
+.tip { position: fixed; z-index: 10; pointer-events: none; background: var(--surface); color: var(--ink); border: 1px solid var(--hair); border-radius: 8px; padding: 8px 10px; font-size: 12.5px; box-shadow: 0 6px 20px rgba(0,0,0,.12); max-width: 280px; }
+.tip b { font-size: 15px; font-variant-numeric: tabular-nums; display: block; }
+.tip .l { color: var(--ink-2); }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">50 real finance, legal, HR &amp; operations skills · Anthropic, OpenAI, vendors, community · Sep 2026</div>
+    <h1>Can real business skills fit in 20 markdown files?</h1>
+    <p class="lede" id="lede"></p>
+    <div class="tiles" id="tiles"></div>
+  </header>
+
+  <section aria-labelledby="h-verdict">
+    <div class="sec-head">
+      <h2 id="h-verdict">What happens when each skill is uploaded as markdown only</h2>
+      <p>Each skill was loaded as its markdown files alone: no scripts, templates or data, no other skills, no plugin-level files. An agent read every file and judged whether the skill still does its job. A second agent then tried to refute each verdict.</p>
+    </div>
+    <div class="panel" style="display:grid;gap:14px">
+      <div class="legend" id="v-legend"></div>
+      <svg class="chart" id="verdicts" role="img" aria-label="Works, degraded or breaks, by domain"></svg>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-why">
+    <div class="sec-head">
+      <h2 id="h-why">Why they fall short</h2>
+      <p id="why-sub"></p>
+    </div>
+    <div class="two">
+      <div class="panel" style="display:grid;gap:10px">
+        <h3 id="cause-h"></h3>
+        <svg class="chart" id="causes" role="img" aria-label="What the non-working skills depend on"></svg>
+        <p class="note">A skill can have several causes, so the bars add up to more than the total.</p>
+      </div>
+      <div class="panel" style="display:grid;gap:10px">
+        <h3>Folder vs. what it needs to run as published</h3>
+        <div class="legend" style="font-size:12.5px"><span><i style="background:var(--muted)"></i>files in the folder</span><span><i style="background:var(--s2)"></i>with what it reads and invokes</span></div>
+        <svg class="chart" id="dumbbell" role="img" aria-label="Files in folder vs files needed"></svg>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-contents">
+    <div class="sec-head">
+      <h2 id="h-contents">What real skills in these domains carry</h2>
+      <p id="contents-sub"></p>
+    </div>
+    <div class="tscroll"><table id="census"></table></div>
+    <p class="note" id="census-note"></p>
+  </section>
+
+  <section aria-labelledby="h-line">
+    <div class="sec-head">
+      <h2 id="h-line">Where markdown is enough, and where it isn’t</h2>
+    </div>
+    <div class="split">
+      <article class="card">
+        <span class="tag" style="color:var(--good-ink)">Works as markdown</span>
+        <h3>Skills that answer in text or call a connector</h3>
+        <p style="font-size:14px;color:var(--ink-2)" id="works-p"></p>
+        <ul id="works-list"></ul>
+      </article>
+      <article class="card">
+        <span class="tag" style="color:var(--crit-ink)">Needs more than markdown</span>
+        <h3>Skills that deliver a file, a number or an action</h3>
+        <ul id="needs-list"></ul>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-all">
+    <div class="sec-head">
+      <h2 id="h-all">All 50 skills</h2>
+      <p>Every file in the skill folder, by type. <strong>As published</strong> adds the files the skill reads or invokes outside its folder: plugin-level playbooks, sibling skills, and the document skill for any Excel, Word or PowerPoint it delivers. Click a column to sort.</p>
+    </div>
+    <div class="filters" id="filters" role="group" aria-label="Filter by domain"></div>
+    <div class="tscroll tall"><table class="sortable" id="rows"></table></div>
+  </section>
+
+  <section aria-labelledby="h-method">
+    <div class="sec-head"><h2 id="h-method">How this was measured</h2></div>
+    <div class="method">
+      <div>
+        <h3>The 50 skills</h3>
+        <p id="m-sample"></p>
+      </div>
+      <div>
+        <h3>The verdicts</h3>
+        <p id="m-verdict"></p>
+      </div>
+      <div>
+        <h3>Counting</h3>
+        <ul>
+          <li>Every file in the skill folder counts, including references/, scripts/, templates/ and assets/. Files in a nested skill count toward that skill.</li>
+          <li><strong>Templates</strong>: .docx/.xlsx/.pptx, Jinja and other template files, or anything named or filed as a template. Markdown templates are counted as markdown, since your UI accepts them.</li>
+          <li><strong>As published</strong>: Anthropic’s document skills are docx 61 files, xlsx 53, pptx 56 (mostly scripts and schemas). Connectors and installed libraries add no files.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>What this does not claim</h3>
+        <ul>
+          <li>Many business skills are fine as markdown: all 18 that work answer in text.</li>
+          <li>Some losses could be fixed within the rule by copying the missing markdown (playbooks, sibling skills) into the folder, space permitting.</li>
+          <li>Connectors are a separate requirement from file types.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+<div class="tip" id="tip" hidden></div>
+
+<script>
+const D = /*__DATA__*/null;
+const NS = "http://www.w3.org/2000/svg";
+const $ = (id) => document.getElementById(id);
+const fmt = (v, d = 0) => Number(v).toLocaleString(undefined, { minimumFractionDigits: d, maximumFractionDigits: d });
+const pct = (v) => `${Math.round(v)}%`;
+function el(tag, attrs = {}, parent, text) { const n = document.createElementNS(NS, tag); for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v); if (text != null) n.textContent = text; if (parent) parent.appendChild(n); return n; }
+function h(tag, attrs = {}, parent, text) { const n = document.createElement(tag); for (const [k, v] of Object.entries(attrs)) { if (k === "class") n.className = v; else n.setAttribute(k, v); } if (text != null) n.textContent = text; if (parent) parent.appendChild(n); return n; }
+const tip = $("tip");
+function showTip(e, v, l) { tip.replaceChildren(); h("b", {}, tip, v); h("span", { class: "l" }, tip, l); tip.hidden = false; let x, y; if (e.clientX != null && e.type !== "focus") { x = e.clientX; y = e.clientY; } else { const r = e.target.getBoundingClientRect(); x = r.left + r.width / 2; y = r.top; } tip.style.left = Math.min(innerWidth - tip.offsetWidth - 8, Math.max(8, x + 12)) + "px"; tip.style.top = Math.max(8, y - tip.offsetHeight - 12) + "px"; }
+function hideTip() { tip.hidden = true; }
+function hover(n, v, l) { n.setAttribute("tabindex", "0"); n.addEventListener("pointermove", (e) => showTip(e, v, l)); n.addEventListener("pointerleave", hideTip); n.addEventListener("focus", (e) => showTip(e, v, l)); n.addEventListener("blur", hideTip); }
+function hbar(x, y, w, hh, r = 4) { r = Math.min(r, w, hh / 2); return `M${x},${y}H${x + w - r}Q${x + w},${y} ${x + w},${y + r}V${y + hh - r}Q${x + w},${y + hh} ${x + w - r},${y + hh}H${x}Z`; }
+const V = D.verdicts, N = D.n;
+const STATUS = [
+  { k: "works", label: "Works the same", c: "var(--good)", ink: "var(--good-ink)", icon: "✓" },
+  { k: "degraded", label: "Degraded", c: "var(--warn)", ink: "var(--warn-ink)", icon: "!" },
+  { k: "breaks", label: "Breaks", c: "var(--crit)", ink: "var(--crit-ink)", icon: "✕" },
+];
+
+/* header */
+(function () {
+  const lede = $("lede");
+  const parts = [
+    ["Only when the job ends in text or a connector call. We loaded ", 0], [`${N} published finance, legal, HR and operations skills`, 1],
+    [` as markdown alone, the way your upload UI would. `, 0], [`${V.works || 0} worked the same`, 1], [`; ${V.degraded || 0} lost accuracy, validation or formatting; ${V.breaks || 0} could not produce their core output. `, 0],
+    [`None of the ${D.office_n} skills that deliver an Excel, Word or PowerPoint file survived intact`, 1],
+    [`, and only ${D.code_works} of the ${D.code_n} that run code did. Counting what each skill actually reads and invokes, ${N - D.eff_fits} of ${N} would need non-markdown files or more than 20 files.`, 0],
+  ];
+  for (const [t, b] of parts) { if (b) h("strong", {}, lede, t); else lede.appendChild(document.createTextNode(t)); }
+  const tiles = [
+    { k: "good", kt: "✓ Works", v: `${V.works || 0} / ${N}`, l: "work unchanged as markdown", s: "checklists and advice that answer in text, or spell out connector calls" },
+    { k: "crit", kt: "✕ Degraded or breaks", v: `${(V.degraded || 0) + (V.breaks || 0)} / ${N}`, l: "lose something real", s: `${V.degraded || 0} degraded · ${V.breaks || 0} break` },
+    { k: "crit", kt: "✕ File deliverables", v: `${D.office_works} / ${D.office_n}`, l: "Excel/Word/PowerPoint skills still work", s: "each needs a generator: scripts, schemas, templates" },
+    { k: "info", kt: "Folder vs. reality", v: `${D.folder_fits} → ${D.eff_fits}`, l: "fit ≤20 markdown files", s: `folder alone vs. with what each skill reads and invokes (${D.eff_over} need more than 20 files)` },
+  ];
+  const root = $("tiles");
+  for (const t of tiles) { const d = h("div", { class: "tile" }, root); h("span", { class: "k " + t.k }, d, t.kt); h("span", { class: "v" }, d, t.v); h("span", { class: "l" }, d, t.l); h("span", { class: "s" }, d, t.s); }
+})();
+
+/* verdicts by domain: 100% stacked */
+(function () {
+  const lg = $("v-legend");
+  for (const s of STATUS) { const sp = h("span", {}, lg); const i = h("i", {}, sp); i.style.background = s.c; sp.appendChild(document.createTextNode(`${s.icon} ${s.label}`)); }
+  const svg = $("verdicts");
+  const rows = [...D.by_group, { label: "All 50", n: N, works: V.works || 0, degraded: V.degraded || 0, breaks: V.breaks || 0 }];
+  const W = 980, rowH = 44, lw = 190, gap = 2, bh = 24;
+  svg.setAttribute("viewBox", `0 0 ${W} ${rows.length * rowH + 6}`);
+  const iw = W - lw - 8;
+  rows.forEach((r, i) => {
+    const y = 4 + i * rowH + (rowH - bh) / 2;
+    const t = el("text", { x: 0, y: y + bh / 2 + 4 }, svg, r.label); if (r.label === "All 50") t.setAttribute("font-weight", "600");
+    el("text", { x: lw - 12, y: y + bh / 2 + 4, "text-anchor": "end", fill: "var(--muted)" }, svg, `n=${r.n}`);
+    let x = lw;
+    const segs = STATUS.filter((s) => r[s.k] > 0);
+    segs.forEach((s, j) => {
+      const full = (r[s.k] / r.n) * iw, w = Math.max(1, full - (j < segs.length - 1 ? gap : 0));
+      const g = el("g", { class: "row" }, svg);
+      const last = j === segs.length - 1;
+      el("path", { class: "mk", d: last ? hbar(x, y, w, bh) : `M${x},${y}H${x + w}V${y + bh}H${x}Z`, fill: s.c, style: `fill:${s.c}` }, g);
+      el("rect", { x, y: y - 8, width: w, height: bh + 16, class: "hit" }, g);
+      if (w > 34) { const ink = s.k === "degraded" ? "#1a1400" : "#fff"; el("text", { x: x + 8, y: y + bh / 2 + 4, style: `fill:${ink};font-weight:600` }, g, r[s.k]); }
+      hover(g, `${r[s.k]} of ${r.n} · ${pct(100 * r[s.k] / r.n)}`, `${r.label}: ${s.label}`);
+      x += full;
+    });
+  });
+})();
+
+/* causes */
+(function () {
+  $("why-sub").textContent = `${D.not_works} of ${N} skills didn’t work unchanged. In ${D.nonmd_cause} of them the missing piece is a non-markdown file: a script, a template or data file, or the document generator behind an Excel, Word or PowerPoint deliverable. The other ${D.not_works - D.nonmd_cause} lose markdown context (playbooks, sibling skills) or need a connector.`;
+  $("cause-h").textContent = `What the ${D.not_works} skills that fall short depend on`;
+  const svg = $("causes"), items = D.causes, W = 540, rowH = 34, lw = 262, mr = 36;
+  svg.setAttribute("viewBox", `0 0 ${W} ${items.length * rowH + 8}`);
+  el("line", { x1: lw, x2: lw, y1: 2, y2: items.length * rowH + 6, class: "axis" }, svg);
+  const iw = W - lw - mr;
+  items.forEach((it, i) => {
+    const y = 4 + i * rowH, w = (it.v / D.not_works) * iw, bh = 18;
+    const g = el("g", { class: "row" }, svg);
+    el("rect", { x: 0, y, width: W, height: rowH, class: "hit" }, g);
+    const lab = el("text", { x: lw - 10, y: y + rowH / 2 + 4, "text-anchor": "end" }, g, it.short || it.k);
+    el("path", { class: "mk", d: hbar(lw, y + (rowH - bh) / 2, Math.max(w, 1), bh), fill: "var(--s1)", style: "fill:var(--s1)" }, g);
+    el("text", { x: lw + w + 6, y: y + rowH / 2 + 4, class: "val" }, g, it.v);
+    hover(g, `${it.v} of ${D.not_works}`, it.k);
+  });
+})();
+
+/* dumbbell: folder vs as-published */
+(function () {
+  const svg = $("dumbbell"), items = D.dumbbell, W = 520, rowH = 26, lw = 170, mr = 36;
+  const max = Math.max(...items.map((d) => Math.max(d.eff, d.folder)));
+  const top = Math.ceil(max / 20) * 20;
+  const H = items.length * rowH + 30;
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  const iw = W - lw - mr, X = (v) => lw + (v / top) * iw;
+  for (let v = 0; v <= top; v += 20) { el("line", { x1: X(v), x2: X(v), y1: 4, y2: H - 22, class: v === 0 ? "axis" : "gridline" }, svg); el("text", { x: X(v), y: H - 6, "text-anchor": "middle" }, svg, v); }
+  el("line", { x1: X(20), x2: X(20), y1: 0, y2: H - 22, stroke: "var(--ink)", "stroke-width": 1.5 }, svg);
+  el("text", { x: X(20) + 4, y: 10, class: "val", style: "font-size:11px" }, svg, "UI limit: 20");
+  items.forEach((d, i) => {
+    const y = 16 + i * rowH;
+    const g = el("g", { class: "row" }, svg);
+    el("rect", { x: 0, y: y - rowH / 2, width: W, height: rowH, class: "hit" }, g);
+    el("text", { x: lw - 10, y: y + 4, "text-anchor": "end" }, g, d.name.length > 24 ? d.name.slice(0, 23) + "…" : d.name);
+    el("line", { x1: X(d.folder), x2: X(d.eff), y1: y, y2: y, stroke: "var(--hair)", "stroke-width": 2 }, g);
+    el("circle", { cx: X(d.folder), cy: y, r: 4.5, fill: "var(--muted)", stroke: "var(--surface)", "stroke-width": 2 }, g);
+    el("circle", { class: "mk", cx: X(d.eff), cy: y, r: 5, fill: "var(--s2)", stroke: "var(--surface)", "stroke-width": 2 }, g);
+    el("text", { x: X(d.eff) + 9, y: y + 4, class: "val", style: "font-size:11px" }, g, d.eff);
+    hover(g, `${d.folder} → ${d.eff} files`, `${d.name} (${d.group})${d.docs.length ? " · needs the " + d.docs.join(", ") + " skill" : ""}`);
+  });
+})();
+
+/* census table */
+(function () {
+  const C = D.census, all = C[C.length - 1];
+  $("contents-sub").textContent = `All ${fmt(D.census_n)} real skills in these five domains across the repos surveyed. Share of skills containing each file type; “fits” means the folder alone is at most 20 files, all markdown.`;
+  const t = $("census");
+  const cols = [["Domain", "label"], ["Skills", "n", "n"], ["Fits UI (folder)", "fits", "%"], ["Scripts", "script", "%"], ["Templates (any format)", "template", "%"], ["Data files", "data", "%"], ["Binary assets", "asset", "%"], ["Delivers Office file", "office", "%"], ["Reads files outside folder", "outside", "%"], ["Largest folder", "files_max", "n"]];
+  const tr0 = h("tr", {}, h("thead", {}, t));
+  cols.forEach(([l], i) => h("th", { class: i ? "num" : "" }, tr0, l));
+  const tb = h("tbody", {}, t);
+  for (const r of C) {
+    const tr = h("tr", { class: r === all ? "total" : "" }, tb);
+    cols.forEach(([, k, ty], i) => h("td", { class: i ? "num" + (r[k] === 0 ? " zero" : "") : "" }, tr, i === 0 ? r[k] : ty === "%" ? pct(r[k]) : fmt(r[k])));
+  }
+  const f = all.files;
+  $("census-note").textContent = `Across the ${fmt(D.census_n)} skills: ${fmt(f.md)} markdown files, ${fmt(f.script)} scripts, ${fmt(f.template)} non-markdown templates, ${fmt(f.data)} data files, ${fmt(f.asset)} binary assets. Templates include markdown templates in ${D.census_md_template_skills} skills (${D.census_md_templates} files), which your UI accepts. Binary assets are absent in these domains: finance, legal and HR skills produce documents through generators, not stored images.`;
+})();
+
+/* works vs needs */
+(function () {
+  $("works-p").textContent = `All ${V.works || 0} are frameworks, checklists or templates whose output is text in the chat, or connector calls written out in the markdown. A markdown-only upload is enough for these.`;
+  const ul = $("works-list");
+  for (const w of D.works) { const li = h("li", {}, ul); li.appendChild(document.createTextNode(w.name + " ")); h("span", { class: "note" }, li, `· ${w.group}`); }
+  const needs = [
+    `Excel models, Word memos, PowerPoint decks: ${D.office_works} of ${D.office_n} survive. Each needs a generator (Anthropic’s docx/xlsx/pptx skills are 53–61 files of scripts and schemas).`,
+    `Exact numbers: repricing, ratio and valuation calculators, normalizers. The markdown keeps the method; the tested code that makes it repeatable is lost.`,
+    `Validation: formula and #REF! checks, schema checks, citation gates. Instructions can ask for a check; a script performs it.`,
+    `Structured inputs and lookups: alias tables, taxonomies, JSON schemas and state registers the skill reads and writes.`,
+    `Multi-skill workflows: orchestrators that call sibling skills, which count against the same 20-file limit.`,
+  ];
+  const ul2 = $("needs-list");
+  for (const n of needs) h("li", {}, ul2, n);
+})();
+
+/* rows table */
+(function () {
+  const t = $("rows");
+  const cols = [
+    { l: "Skill", k: "name" }, { l: "Markdown-only result", k: "verdict" }, { l: ".md", k: "md", n: 1 }, { l: "Scripts", k: "script", n: 1 },
+    { l: "Templates", k: "template", n: 1 }, { l: "Data", k: "data", n: 1 }, { l: "Assets", k: "asset", n: 1 }, { l: "Other", k: "other", n: 1 },
+    { l: "Folder", k: "files", n: 1 }, { l: "As published", k: "eff", n: 1 }, { l: "Why", k: "reason" },
+  ];
+  const hr = h("tr", {}, h("thead", {}, t));
+  let sortK = null, dir = 1, filt = "All";
+  cols.forEach((c) => { const th = h("th", { class: c.n ? "num" : "", tabindex: "0", scope: "col" }, hr, c.l); const go = () => { dir = sortK === c.k ? -dir : c.n ? -1 : 1; sortK = c.k; render(); }; th.addEventListener("click", go); th.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } }); c.th = th; });
+  const tb = h("tbody", {}, t);
+  const fl = $("filters");
+  for (const g of ["All", ...D.by_group.map((b) => b.label)]) {
+    const cnt = g === "All" ? D.rows.length : D.rows.filter((r) => r.group === g).length;
+    const b = h("button", { type: "button", "aria-pressed": String(g === filt) }, fl, `${g} · ${cnt}`);
+    b.addEventListener("click", () => { filt = g; [...fl.children].forEach((x) => x.setAttribute("aria-pressed", String(x === b))); render(); });
+  }
+  const ORDER = { works: 0, degraded: 1, breaks: 2 };
+  function render() {
+    cols.forEach((c) => c.th.removeAttribute("aria-sort"));
+    let rows = D.rows.filter((r) => filt === "All" || r.group === filt);
+    if (sortK) { const c = cols.find((c) => c.k === sortK); c.th.setAttribute("aria-sort", dir > 0 ? "ascending" : "descending"); rows = [...rows].sort((a, b) => (c.n ? a[sortK] - b[sortK] : sortK === "verdict" ? ORDER[a.verdict] - ORDER[b.verdict] : String(a[sortK]).localeCompare(String(b[sortK]))) * dir); }
+    tb.replaceChildren();
+    for (const r of rows) {
+      const tr = h("tr", {}, tb);
+      const td = h("td", {}, tr); h("a", { href: r.url, target: "_blank", rel: "noopener" }, td, r.name); h("div", { class: "sub" }, td, `${r.group} · ${r.pub}`);
+      const vd = h("td", {}, tr); const s = STATUS.find((s) => s.k === r.verdict); h("span", { class: "pill " + r.verdict }, vd, `${s.icon} ${s.label}`);
+      for (const k of ["md", "script", "template", "data", "asset", "other"]) h("td", { class: "num" + (r[k] === 0 ? " zero" : "") }, tr, fmt(r[k]));
+      h("td", { class: "num" + (r.files > 20 ? " over" : "") }, tr, fmt(r.files));
+      h("td", { class: "num" + (r.eff > 20 ? " over" : "") }, tr, fmt(r.eff));
+      h("td", { class: "reason" }, tr, r.reason);
+    }
+  }
+  render();
+})();
+
+/* method */
+$("m-sample").textContent = `Drawn from ${fmt(D.census_n)} real finance, legal, HR and operations skills (demos, routers and duplicates already removed): 10 finance & accounting, 12 investing & banking, 14 legal & compliance, 7 HR and 7 operations. Picks follow a hash of each SKILL.md, capped at 4 per repo per domain so no single publisher dominates. Publishers: Anthropic, OpenAI, Intuit, Box, Tres Finance and two community repos.`;
+$("m-verdict").textContent = `An agent read every file in each folder plus the files it points to, then judged the skill uploaded as markdown only: works (same result), degraded (runs but loses accuracy, validation, formatting or policy context) or breaks (can’t produce its core output). A second agent re-opened every skill to refute each verdict and changed ${D.verifier_changed} of ${N}.`;
+</script>

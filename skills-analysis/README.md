@@ -4,6 +4,8 @@ A survey of **100 audited, production knowledge-work Agent Skills** (folders con
 
 Interactive report: `report/skill-folder-anatomy.html`
 
+> **New: the markdown-only test.** 50 real finance, legal, HR and operations skills were each uploaded as markdown only, the way a 20-file, markdown-only UI would take them. See `markdown-only-test/README.md` and `report/markdown-only-test.html`.
+
 ## Checking a "max 20 files, all markdown" rule
 
 Every file inside the skill folder counts, including `references/` and any other subfolder. Tested on the census of 987 real knowledge-work skills; the audited 100-skill sample is shown as a check.

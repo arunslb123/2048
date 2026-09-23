@@ -1,0 +1,42 @@
+{
+ "docx": {
+  "files": 61,
+  "roles": {
+   "md": 1,
+   "license": 1,
+   "script": 15,
+   "template": 5,
+   "data": 39
+  },
+  "path": "skills/docx"
+ },
+ "pdf": {
+  "files": 12,
+  "roles": {
+   "md": 3,
+   "license": 1,
+   "script": 8
+  },
+  "path": "skills/pdf"
+ },
+ "pptx": {
+  "files": 56,
+  "roles": {
+   "md": 1,
+   "license": 1,
+   "script": 15,
+   "data": 39
+  },
+  "path": "skills/pptx"
+ },
+ "xlsx": {
+  "files": 53,
+  "roles": {
+   "md": 1,
+   "license": 1,
+   "script": 12,
+   "data": 39
+  },
+  "path": "skills/xlsx"
+ }
+}

@@ -1,0 +1,1892 @@
+[
+ {
+  "id": "S0275",
+  "group": "Finance & accounting",
+  "pub": "Anthropic",
+  "repo": "anthropics/knowledge-work-plugins",
+  "name": "sox-testing",
+  "path": "finance/skills/sox-testing",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "works",
+  "reason": "Single SKILL.md holds the whole method: control matrix, sample-size table, workpaper and deficiency templates. CONNECTORS.md link is boilerplate; this skill uses no connector placeholders.",
+  "outputs": [
+   "chat-text",
+   "markdown-or-text-doc"
+  ],
+  "code": false,
+  "code_evidence": "none; 'Generate random numbers to select specific items' can be done in-model, no script named",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "plugin-level-file": 1
+  },
+  "eff_files": 2,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": ""
+ },
+ {
+  "id": "S1419",
+  "group": "Finance & accounting",
+  "pub": "Other vendors",
+  "repo": "anthropics/claude-plugins-community",
+  "name": "tres-wallets-upload",
+  "path": "tres-finance-plugin/skills/tres-wallets-upload",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "works",
+  "reason": "Folder is just SKILL.md with all GraphQL, regex validation and gates inline. Needs the TRES connector attached. Only the Excel-upload path needs Python; manual paste works without it.",
+  "outputs": [
+   "chat-text",
+   "writes-to-external-system"
+  ],
+  "code": true,
+  "code_evidence": "\"Read the file with pandas / openpyxl from /mnt/user-data/uploads/\" (CSV/Excel path only)",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "mcp-connector-or-api": 2,
+   "cli-or-library": 1
+  },
+  "eff_files": 1,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": ""
+ },
+ {
+  "id": "S0376",
+  "group": "Finance & accounting",
+  "pub": "Anthropic",
+  "repo": "anthropics/knowledge-work-plugins",
+  "name": "ap-processor",
+  "path": "small-business/skills/ap-processor",
+  "roles": {
+   "md": 6
+  },
+  "files": 6,
+  "code_blocks": 0,
+  "verdict": "degraded",
+  "reason": "All 6 folder files are md, so the core extract/code/match/propose flow survives. It loses 5+ ../../shared policy files: untrusted-content, voice, PII, house artifact style, QuickBooks aging traps.",
+  "outputs": [
+   "chat-text",
+   "html",
+   "markdown-or-text-doc",
+   "docx",
+   "csv-json-data",
+   "writes-to-external-system"
+  ],
+  "code": false,
+  "code_evidence": "none; allowed-tools: Read, WebFetch. A DOCX output preference would need a generator",
+  "bundled": [],
+  "doc_skills": [
+   "docx"
+  ],
+  "deps": {
+   "plugin-level-file": 5,
+   "other-skill": 5,
+   "built-in-doc-skill": 1,
+   "mcp-connector-or-api": 3
+  },
+  "eff_files": 98,
+  "eff_nonmd": 60,
+  "folder_fits": true,
+  "office_out": true,
+  "verifier_note": ""
+ },
+ {
+  "id": "S1400",
+  "group": "Finance & accounting",
+  "pub": "Other vendors",
+  "repo": "anthropics/claude-plugins-community",
+  "name": "tres-cost-basis",
+  "path": "tres-finance-plugin/skills/tres-cost-basis",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "works",
+  "reason": "Single self-contained SKILL.md with every query and mutation inline. TRES generates XLSX exports server-side (download link), so no xlsx skill is needed. Only needs the TRES connector.",
+  "outputs": [
+   "chat-text",
+   "writes-to-external-system",
+   "html"
+  ],
+  "code": false,
+  "code_evidence": "none; all work is GraphQL via TRES MCP; optional HTML dashboard file",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "mcp-connector-or-api": 1
+  },
+  "eff_files": 1,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": ""
+ },
+ {
+  "id": "S1398",
+  "group": "Finance & accounting",
+  "pub": "Other vendors",
+  "repo": "anthropics/claude-plugins-community",
+  "name": "tres-asc845-swap-reprice-skill",
+  "path": "tres-finance-plugin/skills/tres-asc845-swap-reprice-skill",
+  "roles": {
+   "md": 1,
+   "script": 2
+  },
+  "files": 3,
+  "code_blocks": 1,
+  "verdict": "degraded",
+  "reason": "Drops both bundled Python scripts. SKILL.md still spells out all four repricing cases as pseudocode, so Claude can re-derive them, but without the tested rounding/remainder logic or the mutation-file generation.",
+  "outputs": [
+   "chat-text",
+   "csv-json-data",
+   "writes-to-external-system"
+  ],
+  "code": true,
+  "code_evidence": "\"python3 orchestrate_reprice.py --input ... --output reprice_plan.json --mutations-output reprice_mutations.json\"",
+  "bundled": [
+   {
+    "files": "scripts/orchestrate_reprice.py",
+    "role": "script",
+    "purpose": "Parses MCP JSON, filters clearing account, prints preview, writes plan and mutation JSON"
+   },
+   {
+    "files": "scripts/reprice_swaps.py",
+    "role": "script",
+    "purpose": "Core ASC 845 repricing engine with Decimal rounding and remainder absorption"
+   }
+  ],
+  "doc_skills": [],
+  "deps": {
+   "mcp-connector-or-api": 1,
+   "cli-or-library": 1
+  },
+  "eff_files": 3,
+  "eff_nonmd": 2,
+  "folder_fits": false,
+  "office_out": false,
+  "verifier_note": ""
+ },
+ {
+  "id": "S1408",
+  "group": "Finance & accounting",
+  "pub": "Other vendors",
+  "repo": "anthropics/claude-plugins-community",
+  "name": "tres-onboarding",
+  "path": "tres-finance-plugin/skills/tres-onboarding",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "breaks",
+  "reason": "Pure orchestrator: 'This skill does not contain its own low-level logic', and every step invokes one of 8 sibling skills (11 files). Uploaded alone it can only show a roadmap.",
+  "outputs": [
+   "chat-text",
+   "writes-to-external-system",
+   "xlsx",
+   "html",
+   "pdf"
+  ],
+  "code": true,
+  "code_evidence": "Sub-skills it invokes: 'Use Python with openpyxl==3.1.5'; DeBank curl via bash; PDF 'using reportlab'",
+  "bundled": [],
+  "doc_skills": [
+   "xlsx"
+  ],
+  "deps": {
+   "other-skill": 8,
+   "mcp-connector-or-api": 2,
+   "cli-or-library": 1
+  },
+  "eff_files": 65,
+  "eff_nonmd": 54,
+  "folder_fits": true,
+  "office_out": true,
+  "verifier_note": ""
+ },
+ {
+  "id": "S0272",
+  "group": "Finance & accounting",
+  "pub": "Anthropic",
+  "repo": "anthropics/knowledge-work-plugins",
+  "name": "journal-entry",
+  "path": "finance/skills/journal-entry",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "works",
+  "reason": "Self-contained JE method, format and review checklist. Connectors are optional, with an explicit 'paste trial balance data' fallback. CONNECTORS.md only decodes two ~~ placeholders.",
+  "outputs": [
+   "chat-text"
+  ],
+  "code": false,
+  "code_evidence": "none",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "plugin-level-file": 1,
+   "mcp-connector-or-api": 1
+  },
+  "eff_files": 2,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": ""
+ },
+ {
+  "id": "S0271",
+  "group": "Finance & accounting",
+  "pub": "Anthropic",
+  "repo": "anthropics/knowledge-work-plugins",
+  "name": "financial-statements",
+  "path": "finance/skills/financial-statements",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "works",
+  "reason": "All statement formats, GAAP presentation rules and variance thresholds are inline. Data can be pasted. Only the optional `/flux` follow-up (a dead command name) and placeholder decoding sit outside.",
+  "outputs": [
+   "chat-text"
+  ],
+  "code": false,
+  "code_evidence": "none",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "plugin-level-file": 1,
+   "mcp-connector-or-api": 1,
+   "other-skill": 1
+  },
+  "eff_files": 3,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": ""
+ },
+ {
+  "id": "S1096",
+  "group": "Finance & accounting",
+  "pub": "Community",
+  "repo": "alirezarezvani/claude-skills",
+  "name": "financial-analyst",
+  "path": "finance/skills/financial-analyst",
+  "roles": {
+   "md": 8,
+   "data": 2,
+   "script": 4
+  },
+  "files": 14,
+  "code_blocks": 4,
+  "verdict": "degraded",
+  "reason": "Keeps 8 md files (SKILL, 4 formula references, 3 report templates) but loses the 4 calculators and the input schema. Claude can calculate by hand, but less reliably and without the automated sensitivity/scenario tables.",
+  "outputs": [
+   "chat-text",
+   "markdown-or-text-doc",
+   "csv-json-data"
+  ],
+  "code": true,
+  "code_evidence": "\"python scripts/ratio_calculator.py assets/sample_financial_data.json\" plus 3 more calculator scripts",
+  "bundled": [
+   {
+    "files": "scripts/ratio_calculator.py",
+    "role": "script",
+    "purpose": "Computes profitability, liquidity, leverage, efficiency, valuation ratios with interpretations"
+   },
+   {
+    "files": "scripts/dcf_valuation.py",
+    "role": "script",
+    "purpose": "WACC/CAPM DCF with terminal value and two-way sensitivity table"
+   },
+   {
+    "files": "scripts/budget_variance_analyzer.py",
+    "role": "script",
+    "purpose": "Actual vs budget variance with materiality filter and favorable/unfavorable logic"
+   },
+   {
+    "files": "scripts/forecast_builder.py",
+    "role": "script",
+    "purpose": "Driver-based forecast, 13-week cash flow, base/bull/bear scenarios"
+   },
+   {
+    "files": "assets/sample_financial_data.json",
+    "role": "data-schema",
+    "purpose": "Input schema and sample data all four scripts run against"
+   }
+  ],
+  "doc_skills": [],
+  "deps": {
+   "cli-or-library": 1
+  },
+  "eff_files": 14,
+  "eff_nonmd": 6,
+  "folder_fits": false,
+  "office_out": false,
+  "verifier_note": ""
+ },
+ {
+  "id": "S0209",
+  "group": "Finance & accounting",
+  "pub": "Anthropic",
+  "repo": "anthropics/financial-services-plugins",
+  "name": "accrual-schedule",
+  "path": "plugins/vertical-plugins/fund-admin/skills/accrual-schedule",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "works",
+  "reason": "Short self-contained method: per-accrual formula table plus a JE draft template. The GL MCP and reader subagent only supply data, which the user can paste. Output is a chat table.",
+  "outputs": [
+   "chat-text"
+  ],
+  "code": false,
+  "code_evidence": "none",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "mcp-connector-or-api": 1,
+   "other-skill": 1
+  },
+  "eff_files": 1,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": ""
+ },
+ {
+  "id": "S1235",
+  "group": "Investing & banking",
+  "pub": "Anthropic",
+  "repo": "anthropics/claude-for-financial-advisors",
+  "name": "post-meeting",
+  "path": "skills/post-meeting",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "degraded",
+  "reason": "Core flow (note, tasks, opportunities, approval table) is inline, but three named conventions governing connector checks, book-of-record routing and saved preferences live only in onboarding/SKILL.md. CRM writes need connectors.",
+  "outputs": [
+   "writes-to-external-system",
+   "chat-text",
+   "markdown-or-text-doc"
+  ],
+  "code": false,
+  "code_evidence": "none",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "other-skill": 2,
+   "mcp-connector-or-api": 5
+  },
+  "eff_files": 1,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": ""
+ },
+ {
+  "id": "S0232",
+  "group": "Investing & banking",
+  "pub": "Anthropic",
+  "repo": "anthropics/financial-services-plugins",
+  "name": "portfolio-monitoring",
+  "path": "plugins/vertical-plugins/private-equity/skills/portfolio-monitoring",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "works",
+  "reason": "Single self-contained SKILL.md with KPI list, green/yellow/red thresholds and summary format; references nothing outside its folder. Only needs runtime ability to read Excel/PDF inputs.",
+  "outputs": [
+   "chat-text",
+   "image-media"
+  ],
+  "code": false,
+  "code_evidence": "none; 'Chart key metrics over time' implies optional plotting",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "cli-or-library": 1
+  },
+  "eff_files": 1,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": ""
+ },
+ {
+  "id": "S0199",
+  "group": "Investing & banking",
+  "pub": "Anthropic",
+  "repo": "anthropics/financial-services-plugins",
+  "name": "competitive-analysis",
+  "path": "plugins/vertical-plugins/financial-analysis/skills/competitive-analysis",
+  "roles": {
+   "md": 3
+  },
+  "files": 3,
+  "code_blocks": 0,
+  "verdict": "degraded",
+  "reason": "Analysis workflow, design standards and both reference md files upload fine; building the .pptx with real chart objects and visual slide QA needs an unbundled pptx skill or add-in.",
+  "outputs": [
+   "pptx",
+   "chat-text"
+  ],
+  "code": true,
+  "code_evidence": "\"Chat \u2014 generate a `.pptx` file\"; visual checks catch issues missed \"when you're reading back the XML\"",
+  "bundled": [],
+  "doc_skills": [
+   "pptx"
+  ],
+  "deps": {
+   "built-in-doc-skill": 1,
+   "mcp-connector-or-api": 2,
+   "cli-or-library": 1
+  },
+  "eff_files": 59,
+  "eff_nonmd": 55,
+  "folder_fits": true,
+  "office_out": true,
+  "verifier_note": ""
+ },
+ {
+  "id": "S0219",
+  "group": "Investing & banking",
+  "pub": "Anthropic",
+  "repo": "anthropics/financial-services-plugins",
+  "name": "merger-model",
+  "path": "plugins/vertical-plugins/investment-banking/skills/merger-model",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "degraded",
+  "reason": "Accretion/dilution logic and table layouts are fully in SKILL.md; the Excel workbook deliverable has no bundled generator, formatting or recalc guidance, so it relies on an absent xlsx skill.",
+  "outputs": [
+   "xlsx",
+   "chat-text"
+  ],
+  "code": true,
+  "code_evidence": "Implied: 'Excel workbook with: Assumptions tab, Sources & uses ... Sensitivity tables'; no generator or code given",
+  "bundled": [],
+  "doc_skills": [
+   "xlsx"
+  ],
+  "deps": {
+   "built-in-doc-skill": 1,
+   "cli-or-library": 1
+  },
+  "eff_files": 54,
+  "eff_nonmd": 52,
+  "folder_fits": true,
+  "office_out": true,
+  "verifier_note": ""
+ },
+ {
+  "id": "S0771",
+  "group": "Investing & banking",
+  "pub": "OpenAI",
+  "repo": "openai/plugins",
+  "name": "financials-normalizer",
+  "path": "plugins/public-equity-investing/skills/financials-normalizer",
+  "roles": {
+   "md": 6,
+   "data": 1,
+   "packaging": 2,
+   "script": 3
+  },
+  "files": 12,
+  "code_blocks": 1,
+  "verdict": "degraded",
+  "reason": "Six md files (schema, taxonomy, QA rules) upload and allow manual normalization, but lose the deterministic normalizer/validator scripts, alias CSV, and ~8 mandatory plugin-level contract files.",
+  "outputs": [
+   "csv-json-data",
+   "xlsx",
+   "chat-text"
+  ],
+  "code": true,
+  "code_evidence": "python scripts/normalize_extracted_financials.py path/to/input.csv --output-dir output",
+  "bundled": [
+   {
+    "files": "scripts/normalize_extracted_financials.py",
+    "role": "script",
+    "purpose": "Maps extracted rows to long-form schema; emits the three core CSV outputs"
+   },
+   {
+    "files": "scripts/validate_normalized_financials.py",
+    "role": "script",
+    "purpose": "Schema validator for normalized CSV outputs"
+   },
+   {
+    "files": "scripts/build_source_index.py",
+    "role": "script",
+    "purpose": "Builds starter Source_Index CSV from a folder of source files"
+   },
+   {
+    "files": "references/line_item_aliases.csv",
+    "role": "lookup-data",
+    "purpose": "Line-item alias map the normalizer script uses for label mapping"
+   },
+   {
+    "files": "assets/icon.svg",
+    "role": "asset",
+    "purpose": "UI icon"
+   }
+  ],
+  "doc_skills": [
+   "xlsx"
+  ],
+  "deps": {
+   "other-skill": 1,
+   "plugin-level-file": 4,
+   "mcp-connector-or-api": 1,
+   "built-in-doc-skill": 1,
+   "cli-or-library": 1
+  },
+  "eff_files": 70,
+  "eff_nonmd": 58,
+  "folder_fits": false,
+  "office_out": true,
+  "verifier_note": ""
+ },
+ {
+  "id": "S1072",
+  "group": "Investing & banking",
+  "pub": "Community",
+  "repo": "alirezarezvani/claude-skills",
+  "name": "ma-playbook",
+  "path": "c-level-advisor/skills/ma-playbook",
+  "roles": {
+   "md": 3
+  },
+  "files": 3,
+  "code_blocks": 0,
+  "verdict": "degraded",
+  "reason": "SKILL.md and two reference md files hold all frameworks, DD checklist and 100-day plan; outside links are an explicit pre-LOI handoff to sibling skills' scripts ('Hand off \u2014 don't duplicate').",
+  "outputs": [
+   "chat-text",
+   "markdown-or-text-doc"
+  ],
+  "code": true,
+  "code_evidence": "run the LOI/term sheet through `../general-counsel-advisor/scripts/term_sheet_analyzer.py` (sibling-skill handoff)",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "other-skill": 3
+  },
+  "eff_files": 3,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": "The pre-LOI Verification Loop requires running four sibling Python scripts. Under md-only they are unreachable, even if the sibling skills are uploaded. term_sheet_analyzer is a VC-round scorer anyway. Frameworks intact: degraded."
+ },
+ {
+  "id": "S0781",
+  "group": "Investing & banking",
+  "pub": "OpenAI",
+  "repo": "openai/plugins",
+  "name": "thesis-tracker",
+  "path": "plugins/public-equity-investing/skills/thesis-tracker",
+  "roles": {
+   "md": 9,
+   "packaging": 2,
+   "template": 1,
+   "data": 1,
+   "script": 1
+  },
+  "files": 14,
+  "code_blocks": 1,
+  "verdict": "degraded",
+  "reason": "Nine md files (schema, workflow, guardrails) upload; loses the tracker materializer, workbook render QA, five mandatory plugin-level contract files, and the 29-file renderer for HTML dashboard mode.",
+  "outputs": [
+   "xlsx",
+   "csv-json-data",
+   "html",
+   "chat-text"
+  ],
+  "code": true,
+  "code_evidence": "Run `python scripts/materialize_thesis_tracker.py [tracker_input.json] --output-dir output`",
+  "bundled": [
+   {
+    "files": "scripts/materialize_thesis_tracker.py",
+    "role": "script",
+    "purpose": "Scaffolds CSV bundle and optional Cover-first XLSX tracker from JSON input"
+   },
+   {
+    "files": "assets/blank-thesis-tracker-starter.csv",
+    "role": "template",
+    "purpose": "Blank thesis-tracker field starter for intake"
+   },
+   {
+    "files": "assets/icon.svg",
+    "role": "asset",
+    "purpose": "UI icon"
+   }
+  ],
+  "doc_skills": [
+   "xlsx"
+  ],
+  "deps": {
+   "other-skill": 1,
+   "plugin-level-file": 3,
+   "cli-or-library": 1,
+   "built-in-doc-skill": 1,
+   "mcp-connector-or-api": 1
+  },
+  "eff_files": 99,
+  "eff_nonmd": 57,
+  "folder_fits": false,
+  "office_out": true,
+  "verifier_note": ""
+ },
+ {
+  "id": "S0200",
+  "group": "Investing & banking",
+  "pub": "Anthropic",
+  "repo": "anthropics/financial-services-plugins",
+  "name": "comps-analysis",
+  "path": "plugins/vertical-plugins/financial-analysis/skills/comps-analysis",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 4,
+  "verdict": "degraded",
+  "reason": "Detailed inline openpyxl/Office JS and formatting rules make the workbook buildable; loses formula recalculation/error checking from an xlsx skill, and its example xlsx is missing even upstream.",
+  "outputs": [
+   "xlsx",
+   "chat-text"
+  ],
+  "code": true,
+  "code_evidence": "If generating a standalone .xlsx file: Use Python/openpyxl. Write cell.value = \"=E7/C7\"",
+  "bundled": [],
+  "doc_skills": [
+   "xlsx"
+  ],
+  "deps": {
+   "mcp-connector-or-api": 2,
+   "cli-or-library": 1,
+   "referenced-file-missing": 1,
+   "built-in-doc-skill": 1
+  },
+  "eff_files": 54,
+  "eff_nonmd": 52,
+  "folder_fits": true,
+  "office_out": true,
+  "verifier_note": ""
+ },
+ {
+  "id": "S0763",
+  "group": "Investing & banking",
+  "pub": "OpenAI",
+  "repo": "openai/plugins",
+  "name": "comps-valuation",
+  "path": "plugins/public-equity-investing/skills/comps-valuation",
+  "roles": {
+   "md": 15,
+   "packaging": 1,
+   "data": 1,
+   "script": 2,
+   "template": 1
+  },
+  "files": 20,
+  "code_blocks": 0,
+  "verdict": "degraded",
+  "reason": "15 md files (peer selection, workbook spec, QA) fit the limit; loses three workbook generator/audit scripts, the shared Python packager, nine mandatory shared policy files and HTML screenshot QA.",
+  "outputs": [
+   "html",
+   "xlsx",
+   "csv-json-data",
+   "chat-text"
+  ],
+  "code": true,
+  "code_evidence": "Use `scripts/create_comps_template.py`, `scripts/materialize_screening_comps.py`, and `scripts/audit_comps_workbook.py` as appropriate.",
+  "bundled": [
+   {
+    "files": "scripts/create_comps_template.py",
+    "role": "script",
+    "purpose": "Generates formula-driven comps workbook template via XlsxWriter"
+   },
+   {
+    "files": "scripts/materialize_screening_comps.py",
+    "role": "script",
+    "purpose": "Screen-grade fallback: peer framework CSVs and Cover-first XLSX"
+   },
+   {
+    "files": "scripts/audit_comps_workbook.py",
+    "role": "script",
+    "purpose": "Audits comps workbook structure and formulas; JSON/markdown report"
+   }
+  ],
+  "doc_skills": [],
+  "deps": {
+   "other-skill": 1,
+   "plugin-level-file": 5,
+   "cli-or-library": 2,
+   "mcp-connector-or-api": 1
+  },
+  "eff_files": 55,
+  "eff_nonmd": 5,
+  "folder_fits": false,
+  "office_out": true,
+  "verifier_note": ""
+ },
+ {
+  "id": "S0776",
+  "group": "Investing & banking",
+  "pub": "OpenAI",
+  "repo": "openai/plugins",
+  "name": "memo-builder",
+  "path": "plugins/public-equity-investing/skills/memo-builder",
+  "roles": {
+   "md": 7,
+   "packaging": 1,
+   "script": 1
+  },
+  "files": 9,
+  "code_blocks": 0,
+  "verdict": "degraded",
+  "reason": "Memo spine, modes and output contracts (6 md) upload; loses the DOCX/HTML builder (which imports plugin-level Python) and six mandatory shared policy files; DOCX then needs an absent docx skill.",
+  "outputs": [
+   "docx",
+   "html",
+   "chat-text"
+  ],
+  "code": true,
+  "code_evidence": "use `scripts/build_memo_package.py --primary-format docx` or `scripts/build_memo_package.py --primary-format html`",
+  "bundled": [
+   {
+    "files": "scripts/build_memo_package.py",
+    "role": "script",
+    "purpose": "Builds DOCX memo plus HTML companion and manifest from structured inputs"
+   }
+  ],
+  "doc_skills": [],
+  "deps": {
+   "other-skill": 1,
+   "plugin-level-file": 4,
+   "cli-or-library": 1,
+   "mcp-connector-or-api": 1
+  },
+  "eff_files": 41,
+  "eff_nonmd": 2,
+  "folder_fits": false,
+  "office_out": true,
+  "verifier_note": ""
+ },
+ {
+  "id": "S1236",
+  "group": "Investing & banking",
+  "pub": "Anthropic",
+  "repo": "anthropics/claude-for-financial-advisors",
+  "name": "pre-meeting",
+  "path": "skills/pre-meeting",
+  "roles": {
+   "md": 2
+  },
+  "files": 2,
+  "code_blocks": 0,
+  "verdict": "degraded",
+  "reason": "Bundled md template and markdown output survive, but all data comes from ~8 MCP connectors via an unbundled source-extract subagent; otherwise advisor must paste everything.",
+  "outputs": [
+   "markdown-or-text-doc",
+   "chat-text"
+  ],
+  "code": false,
+  "code_evidence": "none",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "plugin-level-file": 1,
+   "other-skill": 3,
+   "mcp-connector-or-api": 7
+  },
+  "eff_files": 3,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": ""
+ },
+ {
+  "id": "S1234",
+  "group": "Investing & banking",
+  "pub": "Anthropic",
+  "repo": "anthropics/claude-for-financial-advisors",
+  "name": "portfolio-rebalance-review",
+  "path": "skills/portfolio-rebalance-review",
+  "roles": {
+   "md": 2
+  },
+  "files": 2,
+  "code_blocks": 0,
+  "verdict": "degraded",
+  "reason": "Bundled md memo template and drift/tax logic work on pasted holdings; loses portfolio, BlackRock and Zocks connectors, the holdings-sanity subagent (manual fallback listed), and onboarding-defined conventions.",
+  "outputs": [
+   "markdown-or-text-doc",
+   "chat-text"
+  ],
+  "code": false,
+  "code_evidence": "none in SKILL.md; dispatched holdings-sanity subagent does arithmetic in python3",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "plugin-level-file": 1,
+   "other-skill": 2,
+   "mcp-connector-or-api": 6
+  },
+  "eff_files": 3,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": ""
+ },
+ {
+  "id": "S1294",
+  "group": "Legal & compliance",
+  "pub": "Anthropic",
+  "repo": "anthropics/claude-for-legal",
+  "name": "cease-desist",
+  "path": "ip-legal/skills/cease-desist",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "breaks",
+  "reason": "Hard gate stops the skill when the ip-legal practice-profile config is missing and points to an unbundled setup skill; send mode's primary deliverable is a .docx via the docx skill.",
+  "outputs": [
+   "docx",
+   "markdown-or-text-doc",
+   "chat-text"
+  ],
+  "code": false,
+  "code_evidence": "none directly; .docx creation delegated to the docx skill",
+  "bundled": [],
+  "doc_skills": [
+   "docx"
+  ],
+  "deps": {
+   "plugin-level-file": 1,
+   "other-skill": 2,
+   "built-in-doc-skill": 1,
+   "mcp-connector-or-api": 2
+  },
+  "eff_files": 63,
+  "eff_nonmd": 60,
+  "folder_fits": true,
+  "office_out": true,
+  "verifier_note": ""
+ },
+ {
+  "id": "S1313",
+  "group": "Legal & compliance",
+  "pub": "Anthropic",
+  "repo": "anthropics/claude-for-legal",
+  "name": "irac-practice",
+  "path": "law-student/skills/irac-practice",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "degraded",
+  "reason": "Grading framework and feedback template are fully in SKILL.md, so a grade works; loses class/exam config, the cross-session tracker file (pattern detection), and CLAUDE.md output conventions.",
+  "outputs": [
+   "chat-text",
+   "markdown-or-text-doc"
+  ],
+  "code": false,
+  "code_evidence": "none",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "plugin-level-file": 1,
+   "other-skill": 1
+  },
+  "eff_files": 2,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": ""
+ },
+ {
+  "id": "S1208",
+  "group": "Legal & compliance",
+  "pub": "Community",
+  "repo": "alirezarezvani/claude-skills",
+  "name": "quality-documentation-manager",
+  "path": "ra-qm-team/skills/quality-documentation-manager",
+  "roles": {
+   "md": 3,
+   "script": 2
+  },
+  "files": 5,
+  "code_blocks": 1,
+  "verdict": "degraded",
+  "reason": "SKILL.md plus both md references carry all procedures and Part 11 guidance; only the two stdlib Python tools (metadata validator, version registry) are lost, so checks become manual.",
+  "outputs": [
+   "chat-text",
+   "markdown-or-text-doc",
+   "csv-json-data"
+  ],
+  "code": true,
+  "code_evidence": "python scripts/document_validator.py --doc document.json",
+  "bundled": [
+   {
+    "files": "scripts/document_validator.py",
+    "role": "script",
+    "purpose": "Validates document metadata: numbering, approvals, change history, Part 11 controls"
+   },
+   {
+    "files": "scripts/document_version_control.py",
+    "role": "script",
+    "purpose": "Creates/revises docs, tracks versions, approvals, signatures in a JSON registry"
+   }
+  ],
+  "doc_skills": [],
+  "deps": {
+   "cli-or-library": 1
+  },
+  "eff_files": 5,
+  "eff_nonmd": 2,
+  "folder_fits": false,
+  "office_out": false,
+  "verifier_note": ""
+ },
+ {
+  "id": "S1301",
+  "group": "Legal & compliance",
+  "pub": "Anthropic",
+  "repo": "anthropics/claude-for-legal",
+  "name": "ip-clause-review",
+  "path": "ip-legal/skills/ip-clause-review",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "breaks",
+  "reason": "Review workflow and memo template are self-contained, but SKILL.md hard-stops without the practice-profile config (header, approvers, jurisdictions) and routes to an unbundled setup skill.",
+  "outputs": [
+   "markdown-or-text-doc",
+   "chat-text"
+  ],
+  "code": false,
+  "code_evidence": "none",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "plugin-level-file": 1,
+   "other-skill": 2,
+   "mcp-connector-or-api": 2
+  },
+  "eff_files": 2,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": ""
+ },
+ {
+  "id": "S1316",
+  "group": "Legal & compliance",
+  "pub": "Anthropic",
+  "repo": "anthropics/claude-for-legal",
+  "name": "session",
+  "path": "law-student/skills/session",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "degraded",
+  "reason": "A thin router: question generation, essay rubric and jurisdiction labeling live in unbundled bar-prep-questions/flashcards; the model can improvise and score questions but loses those rules and history schema.",
+  "outputs": [
+   "chat-text",
+   "csv-json-data"
+  ],
+  "code": false,
+  "code_evidence": "none",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "plugin-level-file": 1,
+   "other-skill": 3
+  },
+  "eff_files": 2,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": ""
+ },
+ {
+  "id": "S1199",
+  "group": "Legal & compliance",
+  "pub": "Community",
+  "repo": "alirezarezvani/claude-skills",
+  "name": "iso42001-specialist",
+  "path": "ra-qm-team/compliance-team-iso42001/skills/iso42001-specialist",
+  "roles": {
+   "md": 5,
+   "script": 3
+  },
+  "files": 8,
+  "code_blocks": 4,
+  "verdict": "degraded",
+  "reason": "Four md references cover the clauses and all 38 Annex A controls, so the model can score gaps by hand; loses the three scripts behind the gap matrix, risk register and audit schedule.",
+  "outputs": [
+   "chat-text",
+   "markdown-or-text-doc",
+   "csv-json-data"
+  ],
+  "code": true,
+  "code_evidence": "python scripts/aims_gap_analyzer.py path/to/aims_evidence.json",
+  "bundled": [
+   {
+    "files": "scripts/aims_gap_analyzer.py",
+    "role": "script",
+    "purpose": "Scores Clauses 4-10 full/partial/missing; prioritized remediation list"
+   },
+   {
+    "files": "scripts/ai_risk_register_builder.py",
+    "role": "script",
+    "purpose": "5x5 risk scoring, Annex A control mapping, residual-risk verdict"
+   },
+   {
+    "files": "scripts/aims_audit_scheduler.py",
+    "role": "script",
+    "purpose": "12-month Clause 9.2 audit plan with auditor independence checks"
+   }
+  ],
+  "doc_skills": [],
+  "deps": {
+   "cli-or-library": 1,
+   "other-skill": 3
+  },
+  "eff_files": 8,
+  "eff_nonmd": 3,
+  "folder_fits": false,
+  "office_out": false,
+  "verifier_note": ""
+ },
+ {
+  "id": "S1093",
+  "group": "Legal & compliance",
+  "pub": "Community",
+  "repo": "alirezarezvani/claude-skills",
+  "name": "soc2-audit-prep",
+  "path": "compliance-os/skills/soc2-audit-prep",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 1,
+  "verdict": "degraded",
+  "reason": "Six forcing questions and report template are self-contained; all workflow scripts and the ISO 27001 cross-walk mapper live in other skills, so cross-walk and mock-audit figures become estimates.",
+  "outputs": [
+   "markdown-or-text-doc",
+   "chat-text"
+  ],
+  "code": true,
+  "code_evidence": "python ra-qm-team/skills/soc2-compliance/scripts/gap_analyzer.py current_state.json",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "other-skill": 3,
+   "plugin-level-file": 1,
+   "cli-or-library": 1
+  },
+  "eff_files": 2,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": ""
+ },
+ {
+  "id": "S1057",
+  "group": "Legal & compliance",
+  "pub": "Community",
+  "repo": "alirezarezvani/claude-skills",
+  "name": "ciso-advisor",
+  "path": "c-level-advisor/skills/ciso-advisor",
+  "roles": {
+   "md": 4,
+   "script": 2
+  },
+  "files": 6,
+  "code_blocks": 1,
+  "verdict": "degraded",
+  "reason": "Advisory content (SKILL.md plus 3 references) survives and ALE is simple arithmetic; loses the two quantifier/tracker scripts, CSV exports, and the agent-protocol quality loop and cross-role invocations.",
+  "outputs": [
+   "chat-text",
+   "markdown-or-text-doc",
+   "csv-json-data"
+  ],
+  "code": true,
+  "code_evidence": "python scripts/risk_quantifier.py # Quantify security risks in $, prioritize by ALE",
+  "bundled": [
+   {
+    "files": "scripts/risk_quantifier.py",
+    "role": "script",
+    "purpose": "FAIR/ALE risk quantification, budget fit, CSV/JSON export"
+   },
+   {
+    "files": "scripts/compliance_tracker.py",
+    "role": "script",
+    "purpose": "SOC2/ISO27001/HIPAA/GDPR overlap, effort, cost, sequenced roadmap"
+   }
+  ],
+  "doc_skills": [],
+  "deps": {
+   "other-skill": 3,
+   "plugin-level-file": 1,
+   "cli-or-library": 1
+  },
+  "eff_files": 7,
+  "eff_nonmd": 2,
+  "folder_fits": false,
+  "office_out": false,
+  "verifier_note": ""
+ },
+ {
+  "id": "S1448",
+  "group": "Legal & compliance",
+  "pub": "Other vendors",
+  "repo": "box/skills",
+  "name": "box-legal-workflows-contract",
+  "path": "skills/box-legal-workflows-contract",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "degraded",
+  "reason": "1-file md uploads fine and workflow/tool table is inline, but needs Box MCP connected and offloads search syntax, AI limits, role matrix to box (15 md) + box-legal-workflows.",
+  "outputs": [
+   "writes-to-external-system",
+   "markdown-or-text-doc",
+   "chat-text"
+  ],
+  "code": false,
+  "code_evidence": "none",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "mcp-connector-or-api": 1,
+   "other-skill": 2,
+   "cli-or-library": 1
+  },
+  "eff_files": 1,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": ""
+ },
+ {
+  "id": "S1426",
+  "group": "Legal & compliance",
+  "pub": "Anthropic",
+  "repo": "anthropics/healthcare",
+  "name": "fraud-detection",
+  "path": "plugins/healthcare/skills/fraud-detection",
+  "roles": {
+   "md": 8,
+   "script": 43,
+   "other": 1,
+   "data": 52
+  },
+  "files": 104,
+  "code_blocks": 3,
+  "verdict": "breaks",
+  "reason": "104-file folder; only 8 md upload. Detection, citation gate and HTML/xlsx rendering live in 41 JS scripts + 51 JSON + SQL schema run via node, duckdb, Workflow tool.",
+  "outputs": [
+   "html",
+   "xlsx",
+   "csv-json-data",
+   "chat-text"
+  ],
+  "code": true,
+  "code_evidence": "node \"${CLAUDE_PLUGIN_ROOT}/skills/fraud-detection/scripts/fetch-reference.js\" 2026q3; render-packet.js, render-xlsx.js",
+  "bundled": [
+   {
+    "files": "scripts/*.js (39 files)",
+    "role": "script",
+    "purpose": "22 deterministic detectors, citation gate, pipeline, DuckDB wrapper, fetchers, HTML/xlsx renderers"
+   },
+   {
+    "files": "workflows/investigate.js, workflows/propose-detectors.js",
+    "role": "script",
+    "purpose": "Workflow-tool orchestration: detect, adjudicate, synthesize; detector-proposal loop"
+   },
+   {
+    "files": "state-policy/*.json (51 files)",
+    "role": "lookup-data",
+    "purpose": "Per-state Medicaid policy source specs feeding fetch-reference"
+   },
+   {
+    "files": "claims-schema.sql",
+    "role": "data-schema",
+    "purpose": "Canonical six-table claims schema every detector reads"
+   },
+   {
+    "files": "ARCHITECTURE.html",
+    "role": "other",
+    "purpose": "Human-facing architecture/detector grid doc"
+   }
+  ],
+  "doc_skills": [],
+  "deps": {
+   "cli-or-library": 5,
+   "mcp-connector-or-api": 3,
+   "other-skill": 1
+  },
+  "eff_files": 104,
+  "eff_nonmd": 96,
+  "folder_fits": false,
+  "office_out": true,
+  "verifier_note": ""
+ },
+ {
+  "id": "S1421",
+  "group": "Legal & compliance",
+  "pub": "Anthropic",
+  "repo": "anthropics/healthcare",
+  "name": "contracts",
+  "path": "plugins/healthcare/skills/contracts",
+  "roles": {
+   "md": 2,
+   "script": 1,
+   "other": 1
+  },
+  "files": 4,
+  "code_blocks": 8,
+  "verdict": "breaks",
+  "reason": "All reading, citation verification and state live in the plugin's local Node engine (16 files), sweep.mjs, and plugin reader agents; SKILL.md says stop when no engine exists.",
+  "outputs": [
+   "chat-text"
+  ],
+  "code": true,
+  "code_evidence": "`node <that file> <tool> '<json>'`; `node ${CLAUDE_SKILL_DIR}/sweep.mjs --run <RUN_ID> ...`",
+  "bundled": [
+   {
+    "files": "sweep.mjs",
+    "role": "script",
+    "purpose": "Parallel toolless claude -p extraction per document, writes verified findings"
+   }
+  ],
+  "doc_skills": [],
+  "deps": {
+   "plugin-level-file": 2,
+   "mcp-connector-or-api": 1,
+   "cli-or-library": 3
+  },
+  "eff_files": 22,
+  "eff_nonmd": 2,
+  "folder_fits": false,
+  "office_out": false,
+  "verifier_note": ""
+ },
+ {
+  "id": "S1450",
+  "group": "Legal & compliance",
+  "pub": "Other vendors",
+  "repo": "box/skills",
+  "name": "box-legal-workflows-ma",
+  "path": "skills/box-legal-workflows-ma",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "degraded",
+  "reason": "1-file md uploads; folder tree, access model and tool table inline. Needs Box MCP; external-sharing confirmation rules and role matrix live in box (15 md) and box-legal-workflows.",
+  "outputs": [
+   "writes-to-external-system",
+   "chat-text"
+  ],
+  "code": false,
+  "code_evidence": "none",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "mcp-connector-or-api": 1,
+   "other-skill": 2,
+   "cli-or-library": 1
+  },
+  "eff_files": 1,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": ""
+ },
+ {
+  "id": "S0305",
+  "group": "Legal & compliance",
+  "pub": "Anthropic",
+  "repo": "anthropics/knowledge-work-plugins",
+  "name": "compliance-tracking",
+  "path": "operations/skills/compliance-tracking",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "works",
+  "reason": "Single short md of generic framework guidance; outputs text dashboards, gap analyses, checklists; references no files, scripts, skills or connectors.",
+  "outputs": [
+   "markdown-or-text-doc",
+   "chat-text"
+  ],
+  "code": false,
+  "code_evidence": "none",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {},
+  "eff_files": 1,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": ""
+ },
+ {
+  "id": "S0288",
+  "group": "Legal & compliance",
+  "pub": "Anthropic",
+  "repo": "anthropics/knowledge-work-plugins",
+  "name": "legal-response",
+  "path": "legal/skills/legal-response",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "works",
+  "reason": "Self-contained md with inline template structures and escalation triggers; missing legal.local.md has explicit default fallback; CONNECTORS.md and email MCP are optional.",
+  "outputs": [
+   "markdown-or-text-doc",
+   "chat-text"
+  ],
+  "code": false,
+  "code_evidence": "none",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "plugin-level-file": 1,
+   "referenced-file-missing": 1,
+   "mcp-connector-or-api": 1
+  },
+  "eff_files": 2,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": ""
+ },
+ {
+  "id": "S1067",
+  "group": "HR & people",
+  "pub": "Community",
+  "repo": "alirezarezvani/claude-skills",
+  "name": "culture-architect",
+  "path": "c-level-advisor/skills/culture-architect",
+  "roles": {
+   "md": 3
+  },
+  "files": 3,
+  "code_blocks": 0,
+  "verdict": "works",
+  "reason": "All 3 files are md (SKILL, culture-playbook reference, culture-code template) and upload together; conversational frameworks with text output, no scripts or external references.",
+  "outputs": [
+   "markdown-or-text-doc",
+   "chat-text"
+  ],
+  "code": false,
+  "code_evidence": "none",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {},
+  "eff_files": 3,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": ""
+ },
+ {
+  "id": "S0395",
+  "group": "HR & people",
+  "pub": "Anthropic",
+  "repo": "anthropics/knowledge-work-plugins",
+  "name": "job-post-builder",
+  "path": "small-business/skills/job-post-builder",
+  "roles": {
+   "md": 9
+  },
+  "files": 9,
+  "code_blocks": 0,
+  "verdict": "degraded",
+  "reason": "All 9 files md and upload, but the three .docx deliverables need the docx skill (61 files); explicit fallback gives markdown in chat. Shared guardrails, artifact style, DocuSign-via-Chrome lost.",
+  "outputs": [
+   "docx",
+   "html",
+   "writes-to-external-system",
+   "chat-text"
+  ],
+  "code": true,
+  "code_evidence": "Save as `[Role]-Job-Post.docx` using the docx skill. Read `docx/SKILL.md` first.",
+  "bundled": [],
+  "doc_skills": [
+   "docx"
+  ],
+  "deps": {
+   "built-in-doc-skill": 1,
+   "plugin-level-file": 3,
+   "other-skill": 3,
+   "mcp-connector-or-api": 4
+  },
+  "eff_files": 74,
+  "eff_nonmd": 60,
+  "folder_fits": true,
+  "office_out": true,
+  "verifier_note": ""
+ },
+ {
+  "id": "S0281",
+  "group": "HR & people",
+  "pub": "Anthropic",
+  "repo": "anthropics/knowledge-work-plugins",
+  "name": "org-planning",
+  "path": "human-resources/skills/org-planning",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "works",
+  "reason": "Single short md with benchmarks table; output is text org charts and headcount plans; no files, scripts, skills or connectors referenced.",
+  "outputs": [
+   "chat-text",
+   "markdown-or-text-doc"
+  ],
+  "code": false,
+  "code_evidence": "none",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {},
+  "eff_files": 1,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": ""
+ },
+ {
+  "id": "S0283",
+  "group": "HR & people",
+  "pub": "Anthropic",
+  "repo": "anthropics/knowledge-work-plugins",
+  "name": "performance-review",
+  "path": "human-resources/skills/performance-review",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "works",
+  "reason": "All three review templates are inline markdown; connectors only pre-populate data and are conditional; CONNECTORS.md just explains ~~placeholders.",
+  "outputs": [
+   "markdown-or-text-doc",
+   "chat-text"
+  ],
+  "code": false,
+  "code_evidence": "none",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "plugin-level-file": 1,
+   "mcp-connector-or-api": 1
+  },
+  "eff_files": 2,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": ""
+ },
+ {
+  "id": "S0285",
+  "group": "HR & people",
+  "pub": "Anthropic",
+  "repo": "anthropics/knowledge-work-plugins",
+  "name": "recruiting-pipeline",
+  "path": "human-resources/skills/recruiting-pipeline",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "works",
+  "reason": "The folder is one short SKILL.md (a stage table plus metrics) that outputs chat text. The ATS connector only adds live data, so a markdown-only upload loses nothing. The skill is thin.",
+  "outputs": [
+   "chat-text",
+   "writes-to-external-system"
+  ],
+  "code": false,
+  "code_evidence": "none",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "mcp-connector-or-api": 1
+  },
+  "eff_files": 1,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": ""
+ },
+ {
+  "id": "S1056",
+  "group": "HR & people",
+  "pub": "Community",
+  "repo": "alirezarezvani/claude-skills",
+  "name": "chro-advisor",
+  "path": "c-level-advisor/skills/chro-advisor",
+  "roles": {
+   "md": 4,
+   "script": 2
+  },
+  "files": 6,
+  "code_blocks": 1,
+  "verdict": "degraded",
+  "reason": "SKILL.md and the 3 reference files (4 total) upload fine and still give the frameworks. The upload loses the hiring-cost and comp-benchmark calculators, the agent-protocol quality loop, company-context and the other advisors.",
+  "outputs": [
+   "chat-text",
+   "markdown-or-text-doc"
+  ],
+  "code": true,
+  "code_evidence": "Quick Start: \"python scripts/hiring_plan_modeler.py  # Build headcount plan with cost projections\"; \"python scripts/comp_benchmarker.py\"",
+  "bundled": [
+   {
+    "files": "scripts/hiring_plan_modeler.py",
+    "role": "script",
+    "purpose": "Quarterly headcount plan, fully loaded cost, ramp and risk model from JSON"
+   },
+   {
+    "files": "scripts/comp_benchmarker.py",
+    "role": "script",
+    "purpose": "Band compliance, compa-ratio, pay equity flags, total comp vs market; CSV export"
+   }
+  ],
+  "doc_skills": [],
+  "deps": {
+   "other-skill": 4,
+   "cli-or-library": 1
+  },
+  "eff_files": 6,
+  "eff_nonmd": 2,
+  "folder_fits": false,
+  "office_out": false,
+  "verifier_note": ""
+ },
+ {
+  "id": "S1467",
+  "group": "HR & people",
+  "pub": "Other vendors",
+  "repo": "intuit/quickbooks-claude-plugin",
+  "name": "payroll-employee-onboarding",
+  "path": "skills/payroll-employee-onboarding",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "works",
+  "reason": "The folder is only SKILL.md, so the upload is identical to the published skill. Every payroll write still needs the QuickBooks Payroll MCP tools; without that connector it can only draft.",
+  "outputs": [
+   "chat-text",
+   "writes-to-external-system"
+  ],
+  "code": false,
+  "code_evidence": "none",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "mcp-connector-or-api": 3
+  },
+  "eff_files": 1,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": ""
+ },
+ {
+  "id": "S1045",
+  "group": "Operations",
+  "pub": "Community",
+  "repo": "alirezarezvani/claude-skills",
+  "name": "postmortem",
+  "path": "c-level-advisor/executive-mentor/skills/postmortem",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "works",
+  "reason": "One SKILL.md holds the whole 5-Whys framework and a text output template with a change register. There are no scripts, references, other skills or connectors.",
+  "outputs": [
+   "chat-text",
+   "markdown-or-text-doc"
+  ],
+  "code": false,
+  "code_evidence": "none",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {},
+  "eff_files": 1,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": ""
+ },
+ {
+  "id": "S0310",
+  "group": "Operations",
+  "pub": "Anthropic",
+  "repo": "anthropics/knowledge-work-plugins",
+  "name": "status-report",
+  "path": "operations/skills/status-report",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "works",
+  "reason": "The full report template is inside SKILL.md. The missing CONNECTORS.md only explains placeholders, the risk-assessment pointer is optional, and the connectors only pull in data automatically.",
+  "outputs": [
+   "markdown-or-text-doc",
+   "chat-text",
+   "writes-to-external-system"
+  ],
+  "code": false,
+  "code_evidence": "none",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "plugin-level-file": 1,
+   "other-skill": 1,
+   "mcp-connector-or-api": 1
+  },
+  "eff_files": 2,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": ""
+ },
+ {
+  "id": "S0311",
+  "group": "Operations",
+  "pub": "Anthropic",
+  "repo": "anthropics/knowledge-work-plugins",
+  "name": "vendor-review",
+  "path": "operations/skills/vendor-review",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "works",
+  "reason": "The TCO, risk and performance framework and the full output template are in SKILL.md. The CONNECTORS.md pointer and the knowledge-base and procurement connectors are optional extras.",
+  "outputs": [
+   "markdown-or-text-doc",
+   "chat-text"
+  ],
+  "code": false,
+  "code_evidence": "none",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "plugin-level-file": 1,
+   "mcp-connector-or-api": 1
+  },
+  "eff_files": 2,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": ""
+ },
+ {
+  "id": "S0409",
+  "group": "Operations",
+  "pub": "Anthropic",
+  "repo": "anthropics/knowledge-work-plugins",
+  "name": "restock",
+  "path": "small-business/skills/restock",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "breaks",
+  "reason": "SKILL.md only chains two other skills: inventory-planner (the math and PO drafting) and ap-processor (the coding memo). Neither is present, and it forbids redoing their math. The house-style and output-preference files are also missing.",
+  "outputs": [
+   "html",
+   "docx",
+   "markdown-or-text-doc",
+   "csv-json-data",
+   "writes-to-external-system"
+  ],
+  "code": false,
+  "code_evidence": "none",
+  "bundled": [],
+  "doc_skills": [
+   "docx"
+  ],
+  "deps": {
+   "other-skill": 5,
+   "plugin-level-file": 1,
+   "built-in-doc-skill": 1,
+   "mcp-connector-or-api": 1
+  },
+  "eff_files": 65,
+  "eff_nonmd": 60,
+  "folder_fits": true,
+  "office_out": true,
+  "verifier_note": ""
+ },
+ {
+  "id": "S1059",
+  "group": "Operations",
+  "pub": "Community",
+  "repo": "alirezarezvani/claude-skills",
+  "name": "company-os",
+  "path": "c-level-advisor/skills/company-os",
+  "roles": {
+   "md": 3
+  },
+  "files": 3,
+  "code_blocks": 0,
+  "verdict": "works",
+  "reason": "SKILL.md plus 2 reference files (os-comparison, implementation-guide), all markdown. There are no scripts or cross-skill calls; C-suite roles are only named in a descriptive table. The output is advisory text.",
+  "outputs": [
+   "chat-text",
+   "markdown-or-text-doc"
+  ],
+  "code": false,
+  "code_evidence": "none",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {},
+  "eff_files": 3,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": ""
+ },
+ {
+  "id": "S1062",
+  "group": "Operations",
+  "pub": "Community",
+  "repo": "alirezarezvani/claude-skills",
+  "name": "coo-advisor",
+  "path": "c-level-advisor/skills/coo-advisor",
+  "roles": {
+   "md": 4,
+   "script": 2
+  },
+  "files": 6,
+  "code_blocks": 1,
+  "verdict": "degraded",
+  "reason": "SKILL.md and 3 large reference files (4 total) upload, and the frameworks and templates still work. The upload loses the OKR-scoring and ops-efficiency analyzers, the agent-protocol quality loop, company-context and the other advisors.",
+  "outputs": [
+   "chat-text",
+   "markdown-or-text-doc"
+  ],
+  "code": true,
+  "code_evidence": "Quick Start: \"python scripts/ops_efficiency_analyzer.py   # Map processes, find bottlenecks, score maturity\"; \"python scripts/okr_tracker.py\"",
+  "bundled": [
+   {
+    "files": "scripts/okr_tracker.py",
+    "role": "script",
+    "purpose": "OKR cascade scoring (0-1), at-risk key-result flags, alignment report from JSON"
+   },
+   {
+    "files": "scripts/ops_efficiency_analyzer.py",
+    "role": "script",
+    "purpose": "Theory-of-Constraints bottleneck detection and process maturity scoring from JSON"
+   }
+  ],
+  "doc_skills": [],
+  "deps": {
+   "other-skill": 4,
+   "cli-or-library": 1
+  },
+  "eff_files": 6,
+  "eff_nonmd": 2,
+  "folder_fits": false,
+  "office_out": false,
+  "verifier_note": ""
+ },
+ {
+  "id": "S1192",
+  "group": "Operations",
+  "pub": "Community",
+  "repo": "alirezarezvani/claude-skills",
+  "name": "jira-expert",
+  "path": "project-management/skills/jira-expert",
+  "roles": {
+   "md": 5,
+   "script": 2
+  },
+  "files": 7,
+  "code_blocks": 2,
+  "verdict": "degraded",
+  "reason": "SKILL.md and 4 reference files survive, and a manual-JQL fallback is documented. The upload loses the JQL builder, the workflow validator and the plugin's canonical MCP tool list. Live Jira actions still need the Atlassian MCP.",
+  "outputs": [
+   "chat-text",
+   "writes-to-external-system"
+  ],
+  "code": true,
+  "code_evidence": "\"**Start with the bundled builder** ... python3 scripts/jql_query_builder.py\"; \"python3 scripts/workflow_validator.py workflow.json --format json\"",
+  "bundled": [
+   {
+    "files": "scripts/jql_query_builder.py",
+    "role": "script",
+    "purpose": "Pattern-matches natural language to validated JQL; lists supported patterns"
+   },
+   {
+    "files": "scripts/workflow_validator.py",
+    "role": "script",
+    "purpose": "Lints workflow JSON for dead-end/orphan states, missing transitions; health score"
+   }
+  ],
+  "doc_skills": [],
+  "deps": {
+   "plugin-level-file": 2,
+   "mcp-connector-or-api": 1,
+   "other-skill": 2,
+   "cli-or-library": 1
+  },
+  "eff_files": 9,
+  "eff_nonmd": 2,
+  "folder_fits": false,
+  "office_out": false,
+  "verifier_note": ""
+ }
+]
