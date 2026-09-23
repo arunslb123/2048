@@ -1,0 +1,2690 @@
+[
+ {
+  "id": "S0275",
+  "group": "Finance & accounting",
+  "pub": "Anthropic",
+  "repo": "anthropics/knowledge-work-plugins",
+  "name": "sox-testing",
+  "path": "finance/skills/sox-testing",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "works",
+  "reason": "Single SKILL.md holds the whole method: control matrix, sample-size table, workpaper and deficiency templates. CONNECTORS.md link is boilerplate; this skill uses no connector placeholders.",
+  "outputs": [
+   "chat-text",
+   "markdown-or-text-doc"
+  ],
+  "code": false,
+  "code_evidence": "none; 'Generate random numbers to select specific items' can be done in-model, no script named",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "plugin-level-file": 1
+  },
+  "eff_files": 2,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": "",
+  "cx": {
+   "id": "S0275",
+   "deliverables": [
+    "structured-report-text"
+   ],
+   "steps": 7,
+   "calculations": true,
+   "quality_gate": false,
+   "multi_source": false,
+   "complexity": "complex",
+   "output": "SOX control matrix, sample selections, testing workpapers, deficiency assessment"
+  }
+ },
+ {
+  "id": "S0376",
+  "group": "Finance & accounting",
+  "pub": "Anthropic",
+  "repo": "anthropics/knowledge-work-plugins",
+  "name": "ap-processor",
+  "path": "small-business/skills/ap-processor",
+  "roles": {
+   "md": 6
+  },
+  "files": 6,
+  "code_blocks": 0,
+  "verdict": "degraded",
+  "reason": "All 6 folder files are md, so the core extract/code/match/propose flow survives. It loses 5+ ../../shared policy files: untrusted-content, voice, PII, house artifact style, QuickBooks aging traps.",
+  "outputs": [
+   "chat-text",
+   "html",
+   "markdown-or-text-doc",
+   "docx",
+   "csv-json-data",
+   "writes-to-external-system"
+  ],
+  "code": false,
+  "code_evidence": "none; allowed-tools: Read, WebFetch. A DOCX output preference would need a generator",
+  "bundled": [],
+  "doc_skills": [
+   "docx"
+  ],
+  "deps": {
+   "plugin-level-file": 5,
+   "other-skill": 5,
+   "built-in-doc-skill": 1,
+   "mcp-connector-or-api": 3
+  },
+  "eff_files": 98,
+  "eff_nonmd": 60,
+  "folder_fits": true,
+  "office_out": true,
+  "verifier_note": "",
+  "cx": {
+   "id": "S0376",
+   "deliverables": [
+    "html",
+    "external-system-changes",
+    "data-file"
+   ],
+   "steps": 8,
+   "calculations": true,
+   "quality_gate": true,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "Coded, matched bills staged in ledger plus payment-run proposal"
+  }
+ },
+ {
+  "id": "S1400",
+  "group": "Finance & accounting",
+  "pub": "Other vendors",
+  "repo": "anthropics/claude-plugins-community",
+  "name": "tres-cost-basis",
+  "path": "tres-finance-plugin/skills/tres-cost-basis",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "works",
+  "reason": "Single self-contained SKILL.md with every query and mutation inline. TRES generates XLSX exports server-side (download link), so no xlsx skill is needed. Only needs the TRES connector.",
+  "outputs": [
+   "chat-text",
+   "writes-to-external-system",
+   "html"
+  ],
+  "code": false,
+  "code_evidence": "none; all work is GraphQL via TRES MCP; optional HTML dashboard file",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "mcp-connector-or-api": 1
+  },
+  "eff_files": 1,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": "",
+  "cx": {
+   "id": "S1400",
+   "deliverables": [
+    "html",
+    "xlsx",
+    "external-system-changes",
+    "chat-answer"
+   ],
+   "steps": 7,
+   "calculations": true,
+   "quality_gate": true,
+   "multi_source": false,
+   "complexity": "complex",
+   "output": "Cost basis run, per-asset results dashboard, fixes, report exports"
+  }
+ },
+ {
+  "id": "S1398",
+  "group": "Finance & accounting",
+  "pub": "Other vendors",
+  "repo": "anthropics/claude-plugins-community",
+  "name": "tres-asc845-swap-reprice-skill",
+  "path": "tres-finance-plugin/skills/tres-asc845-swap-reprice-skill",
+  "roles": {
+   "md": 1,
+   "script": 2
+  },
+  "files": 3,
+  "code_blocks": 1,
+  "verdict": "degraded",
+  "reason": "Drops both bundled Python scripts. SKILL.md still spells out all four repricing cases as pseudocode, so Claude can re-derive them, but without the tested rounding/remainder logic or the mutation-file generation.",
+  "outputs": [
+   "chat-text",
+   "csv-json-data",
+   "writes-to-external-system"
+  ],
+  "code": true,
+  "code_evidence": "\"python3 orchestrate_reprice.py --input ... --output reprice_plan.json --mutations-output reprice_mutations.json\"",
+  "bundled": [
+   {
+    "files": "scripts/orchestrate_reprice.py",
+    "role": "script",
+    "purpose": "Parses MCP JSON, filters clearing account, prints preview, writes plan and mutation JSON"
+   },
+   {
+    "files": "scripts/reprice_swaps.py",
+    "role": "script",
+    "purpose": "Core ASC 845 repricing engine with Decimal rounding and remainder absorption"
+   }
+  ],
+  "doc_skills": [],
+  "deps": {
+   "mcp-connector-or-api": 1,
+   "cli-or-library": 1
+  },
+  "eff_files": 3,
+  "eff_nonmd": 2,
+  "folder_fits": false,
+  "office_out": false,
+  "verifier_note": "",
+  "cx": {
+   "id": "S1398",
+   "deliverables": [
+    "external-system-changes",
+    "data-file"
+   ],
+   "steps": 7,
+   "calculations": true,
+   "quality_gate": true,
+   "multi_source": false,
+   "complexity": "complex",
+   "output": "ASC 845 swap reprice plan and verified fiat-value mutations"
+  }
+ },
+ {
+  "id": "S1408",
+  "group": "Finance & accounting",
+  "pub": "Other vendors",
+  "repo": "anthropics/claude-plugins-community",
+  "name": "tres-onboarding",
+  "path": "tres-finance-plugin/skills/tres-onboarding",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "breaks",
+  "reason": "Pure orchestrator: 'This skill does not contain its own low-level logic', and every step invokes one of 8 sibling skills (11 files). Uploaded alone it can only show a roadmap.",
+  "outputs": [
+   "chat-text",
+   "writes-to-external-system",
+   "xlsx",
+   "html",
+   "pdf"
+  ],
+  "code": true,
+  "code_evidence": "Sub-skills it invokes: 'Use Python with openpyxl==3.1.5'; DeBank curl via bash; PDF 'using reportlab'",
+  "bundled": [],
+  "doc_skills": [
+   "xlsx"
+  ],
+  "deps": {
+   "other-skill": 8,
+   "mcp-connector-or-api": 2,
+   "cli-or-library": 1
+  },
+  "eff_files": 65,
+  "eff_nonmd": 54,
+  "folder_fits": true,
+  "office_out": true,
+  "verifier_note": "",
+  "cx": {
+   "id": "S1408",
+   "deliverables": [
+    "external-system-changes",
+    "html",
+    "xlsx",
+    "chat-answer"
+   ],
+   "steps": 8,
+   "calculations": true,
+   "quality_gate": true,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "End-to-end entity onboarding orchestrated across eight sub-skills"
+  }
+ },
+ {
+  "id": "S0272",
+  "group": "Finance & accounting",
+  "pub": "Anthropic",
+  "repo": "anthropics/knowledge-work-plugins",
+  "name": "journal-entry",
+  "path": "finance/skills/journal-entry",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "works",
+  "reason": "Self-contained JE method, format and review checklist. Connectors are optional, with an explicit 'paste trial balance data' fallback. CONNECTORS.md only decodes two ~~ placeholders.",
+  "outputs": [
+   "chat-text"
+  ],
+  "code": false,
+  "code_evidence": "none",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "plugin-level-file": 1,
+   "mcp-connector-or-api": 1
+  },
+  "eff_files": 2,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": "",
+  "cx": {
+   "id": "S0272",
+   "deliverables": [
+    "structured-report-text"
+   ],
+   "steps": 5,
+   "calculations": true,
+   "quality_gate": true,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "Balanced journal entry with supporting calculations and posting instructions"
+  }
+ },
+ {
+  "id": "S0271",
+  "group": "Finance & accounting",
+  "pub": "Anthropic",
+  "repo": "anthropics/knowledge-work-plugins",
+  "name": "financial-statements",
+  "path": "finance/skills/financial-statements",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "works",
+  "reason": "All statement formats, GAAP presentation rules and variance thresholds are inline. Data can be pasted. Only the optional `/flux` follow-up (a dead command name) and placeholder decoding sit outside.",
+  "outputs": [
+   "chat-text"
+  ],
+  "code": false,
+  "code_evidence": "none",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "plugin-level-file": 1,
+   "mcp-connector-or-api": 1,
+   "other-skill": 1
+  },
+  "eff_files": 3,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": "",
+  "cx": {
+   "id": "S0271",
+   "deliverables": [
+    "structured-report-text"
+   ],
+   "steps": 6,
+   "calculations": true,
+   "quality_gate": false,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "Comparative income statement with variance analysis and key metrics"
+  }
+ },
+ {
+  "id": "S1415",
+  "group": "Finance & accounting",
+  "pub": "Other vendors",
+  "repo": "anthropics/claude-plugins-community",
+  "name": "tres-rollup-rules",
+  "path": "tres-finance-plugin/skills/tres-rollup-rules",
+  "roles": {
+   "md": 1,
+   "template": 1
+  },
+  "files": 2,
+  "code_blocks": 0,
+  "verdict": "degraded",
+  "reason": "Loses the verbatim HTML report template and the mandatory tres-rollup-review validation gate (a separate skill). The TRES MCP connector must still be connected for any analysis.",
+  "outputs": [
+   "html",
+   "chat-text",
+   "writes-to-external-system"
+  ],
+  "code": false,
+  "code_evidence": "none; writes an HTML file and runs GraphQL through the MCP `execute` tool, no scripts",
+  "bundled": [
+   {
+    "files": "references/proposal-html-template.html",
+    "role": "template",
+    "purpose": "Verbatim CSS/HTML skeleton and row patterns for rollup proposal report"
+   }
+  ],
+  "doc_skills": [],
+  "deps": {
+   "mcp-connector-or-api": 1,
+   "other-skill": 1
+  },
+  "eff_files": 2,
+  "eff_nonmd": 1,
+  "folder_fits": false,
+  "office_out": false,
+  "verifier_note": "",
+  "cx": {
+   "id": "S1415",
+   "deliverables": [
+    "html",
+    "external-system-changes",
+    "chat-answer"
+   ],
+   "steps": 8,
+   "calculations": true,
+   "quality_gate": true,
+   "multi_source": false,
+   "complexity": "complex",
+   "output": "Data-driven rollup rule proposal report and created rules"
+  }
+ },
+ {
+  "id": "S1096",
+  "group": "Finance & accounting",
+  "pub": "Community",
+  "repo": "alirezarezvani/claude-skills",
+  "name": "financial-analyst",
+  "path": "finance/skills/financial-analyst",
+  "roles": {
+   "md": 8,
+   "data": 2,
+   "script": 4
+  },
+  "files": 14,
+  "code_blocks": 4,
+  "verdict": "degraded",
+  "reason": "Keeps 8 md files (SKILL, 4 formula references, 3 report templates) but loses the 4 calculators and the input schema. Claude can calculate by hand, but less reliably and without the automated sensitivity/scenario tables.",
+  "outputs": [
+   "chat-text",
+   "markdown-or-text-doc",
+   "csv-json-data"
+  ],
+  "code": true,
+  "code_evidence": "\"python scripts/ratio_calculator.py assets/sample_financial_data.json\" plus 3 more calculator scripts",
+  "bundled": [
+   {
+    "files": "scripts/ratio_calculator.py",
+    "role": "script",
+    "purpose": "Computes profitability, liquidity, leverage, efficiency, valuation ratios with interpretations"
+   },
+   {
+    "files": "scripts/dcf_valuation.py",
+    "role": "script",
+    "purpose": "WACC/CAPM DCF with terminal value and two-way sensitivity table"
+   },
+   {
+    "files": "scripts/budget_variance_analyzer.py",
+    "role": "script",
+    "purpose": "Actual vs budget variance with materiality filter and favorable/unfavorable logic"
+   },
+   {
+    "files": "scripts/forecast_builder.py",
+    "role": "script",
+    "purpose": "Driver-based forecast, 13-week cash flow, base/bull/bear scenarios"
+   },
+   {
+    "files": "assets/sample_financial_data.json",
+    "role": "data-schema",
+    "purpose": "Input schema and sample data all four scripts run against"
+   }
+  ],
+  "doc_skills": [],
+  "deps": {
+   "cli-or-library": 1
+  },
+  "eff_files": 14,
+  "eff_nonmd": 6,
+  "folder_fits": false,
+  "office_out": false,
+  "verifier_note": "",
+  "cx": {
+   "id": "S1096",
+   "deliverables": [
+    "structured-report-text",
+    "data-file"
+   ],
+   "steps": 5,
+   "calculations": true,
+   "quality_gate": true,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "Ratio, DCF, variance, and forecast reports with sensitivities"
+  }
+ },
+ {
+  "id": "S0199",
+  "group": "Investing & banking",
+  "pub": "Anthropic",
+  "repo": "anthropics/financial-services-plugins",
+  "name": "competitive-analysis",
+  "path": "plugins/vertical-plugins/financial-analysis/skills/competitive-analysis",
+  "roles": {
+   "md": 3
+  },
+  "files": 3,
+  "code_blocks": 0,
+  "verdict": "degraded",
+  "reason": "Analysis workflow, design standards and both reference md files upload fine; building the .pptx with real chart objects and visual slide QA needs an unbundled pptx skill or add-in.",
+  "outputs": [
+   "pptx",
+   "chat-text"
+  ],
+  "code": true,
+  "code_evidence": "\"Chat \u2014 generate a `.pptx` file\"; visual checks catch issues missed \"when you're reading back the XML\"",
+  "bundled": [],
+  "doc_skills": [
+   "pptx"
+  ],
+  "deps": {
+   "built-in-doc-skill": 1,
+   "mcp-connector-or-api": 2,
+   "cli-or-library": 1
+  },
+  "eff_files": 59,
+  "eff_nonmd": 55,
+  "folder_fits": true,
+  "office_out": true,
+  "verifier_note": "",
+  "cx": {
+   "id": "S0199",
+   "deliverables": [
+    "pptx"
+   ],
+   "steps": 12,
+   "calculations": true,
+   "quality_gate": true,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "10-20 slide competitive landscape deck with synthesis"
+  }
+ },
+ {
+  "id": "S0219",
+  "group": "Investing & banking",
+  "pub": "Anthropic",
+  "repo": "anthropics/financial-services-plugins",
+  "name": "merger-model",
+  "path": "plugins/vertical-plugins/investment-banking/skills/merger-model",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "degraded",
+  "reason": "Accretion/dilution logic and table layouts are fully in SKILL.md; the Excel workbook deliverable has no bundled generator, formatting or recalc guidance, so it relies on an absent xlsx skill.",
+  "outputs": [
+   "xlsx",
+   "chat-text"
+  ],
+  "code": true,
+  "code_evidence": "Implied: 'Excel workbook with: Assumptions tab, Sources & uses ... Sensitivity tables'; no generator or code given",
+  "bundled": [],
+  "doc_skills": [
+   "xlsx"
+  ],
+  "deps": {
+   "built-in-doc-skill": 1,
+   "cli-or-library": 1
+  },
+  "eff_files": 54,
+  "eff_nonmd": 52,
+  "folder_fits": true,
+  "office_out": true,
+  "verifier_note": "",
+  "cx": {
+   "id": "S0219",
+   "deliverables": [
+    "xlsx",
+    "structured-report-text"
+   ],
+   "steps": 7,
+   "calculations": true,
+   "quality_gate": false,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "Accretion/dilution merger model workbook with sensitivities"
+  }
+ },
+ {
+  "id": "S0771",
+  "group": "Investing & banking",
+  "pub": "OpenAI",
+  "repo": "openai/plugins",
+  "name": "financials-normalizer",
+  "path": "plugins/public-equity-investing/skills/financials-normalizer",
+  "roles": {
+   "md": 6,
+   "data": 1,
+   "packaging": 2,
+   "script": 3
+  },
+  "files": 12,
+  "code_blocks": 1,
+  "verdict": "degraded",
+  "reason": "Six md files (schema, taxonomy, QA rules) upload and allow manual normalization, but lose the deterministic normalizer/validator scripts, alias CSV, and ~8 mandatory plugin-level contract files.",
+  "outputs": [
+   "csv-json-data",
+   "xlsx",
+   "chat-text"
+  ],
+  "code": true,
+  "code_evidence": "python scripts/normalize_extracted_financials.py path/to/input.csv --output-dir output",
+  "bundled": [
+   {
+    "files": "scripts/normalize_extracted_financials.py",
+    "role": "script",
+    "purpose": "Maps extracted rows to long-form schema; emits the three core CSV outputs"
+   },
+   {
+    "files": "scripts/validate_normalized_financials.py",
+    "role": "script",
+    "purpose": "Schema validator for normalized CSV outputs"
+   },
+   {
+    "files": "scripts/build_source_index.py",
+    "role": "script",
+    "purpose": "Builds starter Source_Index CSV from a folder of source files"
+   },
+   {
+    "files": "references/line_item_aliases.csv",
+    "role": "lookup-data",
+    "purpose": "Line-item alias map the normalizer script uses for label mapping"
+   },
+   {
+    "files": "assets/icon.svg",
+    "role": "asset",
+    "purpose": "UI icon"
+   }
+  ],
+  "doc_skills": [
+   "xlsx"
+  ],
+  "deps": {
+   "other-skill": 1,
+   "plugin-level-file": 4,
+   "mcp-connector-or-api": 1,
+   "built-in-doc-skill": 1,
+   "cli-or-library": 1
+  },
+  "eff_files": 70,
+  "eff_nonmd": 58,
+  "folder_fits": false,
+  "office_out": true,
+  "verifier_note": "",
+  "cx": {
+   "id": "S0771",
+   "deliverables": [
+    "data-file",
+    "xlsx"
+   ],
+   "steps": 8,
+   "calculations": true,
+   "quality_gate": true,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "Model-ready normalized financial schedules with QA flags, validation checks"
+  }
+ },
+ {
+  "id": "S0781",
+  "group": "Investing & banking",
+  "pub": "OpenAI",
+  "repo": "openai/plugins",
+  "name": "thesis-tracker",
+  "path": "plugins/public-equity-investing/skills/thesis-tracker",
+  "roles": {
+   "md": 9,
+   "packaging": 2,
+   "template": 1,
+   "data": 1,
+   "script": 1
+  },
+  "files": 14,
+  "code_blocks": 1,
+  "verdict": "degraded",
+  "reason": "Nine md files (schema, workflow, guardrails) upload; loses the tracker materializer, workbook render QA, five mandatory plugin-level contract files, and the 29-file renderer for HTML dashboard mode.",
+  "outputs": [
+   "xlsx",
+   "csv-json-data",
+   "html",
+   "chat-text"
+  ],
+  "code": true,
+  "code_evidence": "Run `python scripts/materialize_thesis_tracker.py [tracker_input.json] --output-dir output`",
+  "bundled": [
+   {
+    "files": "scripts/materialize_thesis_tracker.py",
+    "role": "script",
+    "purpose": "Scaffolds CSV bundle and optional Cover-first XLSX tracker from JSON input"
+   },
+   {
+    "files": "assets/blank-thesis-tracker-starter.csv",
+    "role": "template",
+    "purpose": "Blank thesis-tracker field starter for intake"
+   },
+   {
+    "files": "assets/icon.svg",
+    "role": "asset",
+    "purpose": "UI icon"
+   }
+  ],
+  "doc_skills": [
+   "xlsx"
+  ],
+  "deps": {
+   "other-skill": 1,
+   "plugin-level-file": 3,
+   "cli-or-library": 1,
+   "built-in-doc-skill": 1,
+   "mcp-connector-or-api": 1
+  },
+  "eff_files": 99,
+  "eff_nonmd": 57,
+  "folder_fits": false,
+  "office_out": true,
+  "verifier_note": "",
+  "cx": {
+   "id": "S0781",
+   "deliverables": [
+    "xlsx",
+    "html",
+    "data-file"
+   ],
+   "steps": 11,
+   "calculations": true,
+   "quality_gate": true,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "Updated thesis tracker workbook with evidence ledger and actions"
+  }
+ },
+ {
+  "id": "S0200",
+  "group": "Investing & banking",
+  "pub": "Anthropic",
+  "repo": "anthropics/financial-services-plugins",
+  "name": "comps-analysis",
+  "path": "plugins/vertical-plugins/financial-analysis/skills/comps-analysis",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 4,
+  "verdict": "degraded",
+  "reason": "Detailed inline openpyxl/Office JS and formatting rules make the workbook buildable; loses formula recalculation/error checking from an xlsx skill, and its example xlsx is missing even upstream.",
+  "outputs": [
+   "xlsx",
+   "chat-text"
+  ],
+  "code": true,
+  "code_evidence": "If generating a standalone .xlsx file: Use Python/openpyxl. Write cell.value = \"=E7/C7\"",
+  "bundled": [],
+  "doc_skills": [
+   "xlsx"
+  ],
+  "deps": {
+   "mcp-connector-or-api": 2,
+   "cli-or-library": 1,
+   "referenced-file-missing": 1,
+   "built-in-doc-skill": 1
+  },
+  "eff_files": 54,
+  "eff_nonmd": 52,
+  "folder_fits": true,
+  "office_out": true,
+  "verifier_note": "",
+  "cx": {
+   "id": "S0200",
+   "deliverables": [
+    "xlsx"
+   ],
+   "steps": 5,
+   "calculations": true,
+   "quality_gate": true,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "Comparable company analysis workbook with multiples and statistics"
+  }
+ },
+ {
+  "id": "S0222",
+  "group": "Investing & banking",
+  "pub": "Anthropic",
+  "repo": "anthropics/financial-services-plugins",
+  "name": "fsi-strip-profile",
+  "path": "plugins/vertical-plugins/investment-banking/skills/strip-profile",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 8,
+  "verdict": "degraded",
+  "reason": "The folder is only SKILL.md with inline PptxGenJS code, but making the .pptx needs PptxGenJS, soffice and pdftoppm at runtime. Loses the PPTX skill; the Nike example was already missing.",
+  "outputs": [
+   "pptx",
+   "image-media",
+   "chat-text"
+  ],
+  "code": true,
+  "code_evidence": "Create ONLY this one slide with PptxGenJS; `soffice --headless --convert-to pdf`; `pdftoppm -jpeg -r 150`",
+  "bundled": [],
+  "doc_skills": [
+   "pptx"
+  ],
+  "deps": {
+   "built-in-doc-skill": 1,
+   "cli-or-library": 3,
+   "referenced-file-missing": 1,
+   "mcp-connector-or-api": 2
+  },
+  "eff_files": 57,
+  "eff_nonmd": 55,
+  "folder_fits": true,
+  "office_out": true,
+  "verifier_note": "",
+  "cx": {
+   "id": "S0222",
+   "deliverables": [
+    "pptx"
+   ],
+   "steps": 4,
+   "calculations": true,
+   "quality_gate": true,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "1-4 slide dense company strip profile with charts"
+  }
+ },
+ {
+  "id": "S0763",
+  "group": "Investing & banking",
+  "pub": "OpenAI",
+  "repo": "openai/plugins",
+  "name": "comps-valuation",
+  "path": "plugins/public-equity-investing/skills/comps-valuation",
+  "roles": {
+   "md": 15,
+   "packaging": 1,
+   "data": 1,
+   "script": 2,
+   "template": 1
+  },
+  "files": 20,
+  "code_blocks": 0,
+  "verdict": "degraded",
+  "reason": "15 md files (peer selection, workbook spec, QA) fit the limit; loses three workbook generator/audit scripts, the shared Python packager, nine mandatory shared policy files and HTML screenshot QA.",
+  "outputs": [
+   "html",
+   "xlsx",
+   "csv-json-data",
+   "chat-text"
+  ],
+  "code": true,
+  "code_evidence": "Use `scripts/create_comps_template.py`, `scripts/materialize_screening_comps.py`, and `scripts/audit_comps_workbook.py` as appropriate.",
+  "bundled": [
+   {
+    "files": "scripts/create_comps_template.py",
+    "role": "script",
+    "purpose": "Generates formula-driven comps workbook template via XlsxWriter"
+   },
+   {
+    "files": "scripts/materialize_screening_comps.py",
+    "role": "script",
+    "purpose": "Screen-grade fallback: peer framework CSVs and Cover-first XLSX"
+   },
+   {
+    "files": "scripts/audit_comps_workbook.py",
+    "role": "script",
+    "purpose": "Audits comps workbook structure and formulas; JSON/markdown report"
+   }
+  ],
+  "doc_skills": [],
+  "deps": {
+   "other-skill": 1,
+   "plugin-level-file": 5,
+   "cli-or-library": 2,
+   "mcp-connector-or-api": 1
+  },
+  "eff_files": 55,
+  "eff_nonmd": 5,
+  "folder_fits": false,
+  "office_out": true,
+  "verifier_note": "",
+  "cx": {
+   "id": "S0763",
+   "deliverables": [
+    "html",
+    "xlsx"
+   ],
+   "steps": 6,
+   "calculations": true,
+   "quality_gate": true,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "Comparable-company valuation report or refreshable comps workbook"
+  }
+ },
+ {
+  "id": "S0776",
+  "group": "Investing & banking",
+  "pub": "OpenAI",
+  "repo": "openai/plugins",
+  "name": "memo-builder",
+  "path": "plugins/public-equity-investing/skills/memo-builder",
+  "roles": {
+   "md": 7,
+   "packaging": 1,
+   "script": 1
+  },
+  "files": 9,
+  "code_blocks": 0,
+  "verdict": "degraded",
+  "reason": "Memo spine, modes and output contracts (6 md) upload; loses the DOCX/HTML builder (which imports plugin-level Python) and six mandatory shared policy files; DOCX then needs an absent docx skill.",
+  "outputs": [
+   "docx",
+   "html",
+   "chat-text"
+  ],
+  "code": true,
+  "code_evidence": "use `scripts/build_memo_package.py --primary-format docx` or `scripts/build_memo_package.py --primary-format html`",
+  "bundled": [
+   {
+    "files": "scripts/build_memo_package.py",
+    "role": "script",
+    "purpose": "Builds DOCX memo plus HTML companion and manifest from structured inputs"
+   }
+  ],
+  "doc_skills": [],
+  "deps": {
+   "other-skill": 1,
+   "plugin-level-file": 4,
+   "cli-or-library": 1,
+   "mcp-connector-or-api": 1
+  },
+  "eff_files": 41,
+  "eff_nonmd": 2,
+  "folder_fits": false,
+  "office_out": true,
+  "verifier_note": "",
+  "cx": {
+   "id": "S0776",
+   "deliverables": [
+    "docx",
+    "html"
+   ],
+   "steps": 5,
+   "calculations": true,
+   "quality_gate": true,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "Decision-grade investment memo as DOCX or HTML report"
+  }
+ },
+ {
+  "id": "S1236",
+  "group": "Investing & banking",
+  "pub": "Anthropic",
+  "repo": "anthropics/claude-for-financial-advisors",
+  "name": "pre-meeting",
+  "path": "skills/pre-meeting",
+  "roles": {
+   "md": 2
+  },
+  "files": 2,
+  "code_blocks": 0,
+  "verdict": "degraded",
+  "reason": "Bundled md template and markdown output survive, but all data comes from ~8 MCP connectors via an unbundled source-extract subagent; otherwise advisor must paste everything.",
+  "outputs": [
+   "markdown-or-text-doc",
+   "chat-text"
+  ],
+  "code": false,
+  "code_evidence": "none",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "plugin-level-file": 1,
+   "other-skill": 3,
+   "mcp-connector-or-api": 7
+  },
+  "eff_files": 3,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": "",
+  "cx": {
+   "id": "S1236",
+   "deliverables": [
+    "structured-report-text"
+   ],
+   "steps": 5,
+   "calculations": false,
+   "quality_gate": true,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "Eight-section client meeting prep document from six data sources"
+  }
+ },
+ {
+  "id": "S1234",
+  "group": "Investing & banking",
+  "pub": "Anthropic",
+  "repo": "anthropics/claude-for-financial-advisors",
+  "name": "portfolio-rebalance-review",
+  "path": "skills/portfolio-rebalance-review",
+  "roles": {
+   "md": 2
+  },
+  "files": 2,
+  "code_blocks": 0,
+  "verdict": "degraded",
+  "reason": "Bundled md memo template and drift/tax logic work on pasted holdings; loses portfolio, BlackRock and Zocks connectors, the holdings-sanity subagent (manual fallback listed), and onboarding-defined conventions.",
+  "outputs": [
+   "markdown-or-text-doc",
+   "chat-text"
+  ],
+  "code": false,
+  "code_evidence": "none in SKILL.md; dispatched holdings-sanity subagent does arithmetic in python3",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "plugin-level-file": 1,
+   "other-skill": 2,
+   "mcp-connector-or-api": 6
+  },
+  "eff_files": 3,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": "",
+  "cx": {
+   "id": "S1234",
+   "deliverables": [
+    "structured-report-text"
+   ],
+   "steps": 6,
+   "calculations": true,
+   "quality_gate": true,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "Drift analysis, tax-aware rebalance options, model mapping, rationale memo"
+  }
+ },
+ {
+  "id": "S1098",
+  "group": "Investing & banking",
+  "pub": "Community",
+  "repo": "alirezarezvani/claude-skills",
+  "name": "stock-analysis",
+  "path": "finance/skills/stock-analysis",
+  "roles": {
+   "md": 54,
+   "script": 5,
+   "data": 2
+  },
+  "files": 61,
+  "code_blocks": 3,
+  "verdict": "degraded",
+  "reason": "Its 54 md files exceed the 20-file cap, so most sector playbooks must be dropped. The mandatory verify/lint gates, scorer, valuation scripts and benchmarks.json are lost. A manual report is still possible.",
+  "outputs": [
+   "markdown-or-text-doc",
+   "chat-text"
+  ],
+  "code": true,
+  "code_evidence": "run `python scripts/verify_data.py <intake>.json`; `scripts/valuation.py`; `scripts/score.py`; `python scripts/lint_report.py <report>.md`",
+  "bundled": [
+   {
+    "files": "scripts/{ratios,score,valuation,verify_data,lint_report}.py",
+    "role": "script",
+    "purpose": "Ratios, sector scoring, valuation math, data-intake gate and report linter"
+   },
+   {
+    "files": "scripts/benchmarks.json",
+    "role": "lookup-data",
+    "purpose": "Editable sector benchmark bands and weights used by score.py"
+   }
+  ],
+  "doc_skills": [],
+  "deps": {
+   "cli-or-library": 1,
+   "mcp-connector-or-api": 1
+  },
+  "eff_files": 61,
+  "eff_nonmd": 7,
+  "folder_fits": false,
+  "office_out": false,
+  "verifier_note": "",
+  "cx": {
+   "id": "S1098",
+   "deliverables": [
+    "structured-report-text",
+    "chat-answer"
+   ],
+   "steps": 11,
+   "calculations": true,
+   "quality_gate": true,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "Primary-sourced stock analysis report with sector-relative scorecard"
+  }
+ },
+ {
+  "id": "S1294",
+  "group": "Legal & compliance",
+  "pub": "Anthropic",
+  "repo": "anthropics/claude-for-legal",
+  "name": "cease-desist",
+  "path": "ip-legal/skills/cease-desist",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "breaks",
+  "reason": "Hard gate stops the skill when the ip-legal practice-profile config is missing and points to an unbundled setup skill; send mode's primary deliverable is a .docx via the docx skill.",
+  "outputs": [
+   "docx",
+   "markdown-or-text-doc",
+   "chat-text"
+  ],
+  "code": false,
+  "code_evidence": "none directly; .docx creation delegated to the docx skill",
+  "bundled": [],
+  "doc_skills": [
+   "docx"
+  ],
+  "deps": {
+   "plugin-level-file": 1,
+   "other-skill": 2,
+   "built-in-doc-skill": 1,
+   "mcp-connector-or-api": 2
+  },
+  "eff_files": 63,
+  "eff_nonmd": 60,
+  "folder_fits": true,
+  "office_out": true,
+  "verifier_note": "",
+  "cx": {
+   "id": "S1294",
+   "deliverables": [
+    "docx",
+    "structured-report-text"
+   ],
+   "steps": 8,
+   "calculations": false,
+   "quality_gate": true,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "Calibrated cease-and-desist DOCX draft or inbound C&D triage memo"
+  }
+ },
+ {
+  "id": "S1301",
+  "group": "Legal & compliance",
+  "pub": "Anthropic",
+  "repo": "anthropics/claude-for-legal",
+  "name": "ip-clause-review",
+  "path": "ip-legal/skills/ip-clause-review",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "breaks",
+  "reason": "Review workflow and memo template are self-contained, but SKILL.md hard-stops without the practice-profile config (header, approvers, jurisdictions) and routes to an unbundled setup skill.",
+  "outputs": [
+   "markdown-or-text-doc",
+   "chat-text"
+  ],
+  "code": false,
+  "code_evidence": "none",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "plugin-level-file": 1,
+   "other-skill": 2,
+   "mcp-connector-or-api": 2
+  },
+  "eff_files": 2,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": "",
+  "cx": {
+   "id": "S1301",
+   "deliverables": [
+    "structured-report-text"
+   ],
+   "steps": 6,
+   "calculations": false,
+   "quality_gate": true,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "IP clause review memo with assignment gap check and redlines"
+  }
+ },
+ {
+  "id": "S1268",
+  "group": "Legal & compliance",
+  "pub": "Anthropic",
+  "repo": "anthropics/claude-for-legal",
+  "name": "integration-management",
+  "path": "corporate-legal/skills/integration-management",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "degraded",
+  "reason": "The tracker, report and CSV export work from deal documents the user supplies. Loses the plugin CLAUDE.md header and matter rules, cold-start deal-context inheritance, and persistent tracker file storage.",
+  "outputs": [
+   "markdown-or-text-doc",
+   "csv-json-data",
+   "chat-text"
+  ],
+  "code": false,
+  "code_evidence": "none",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "plugin-level-file": 1,
+   "other-skill": 3,
+   "mcp-connector-or-api": 1
+  },
+  "eff_files": 2,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": "",
+  "cx": {
+   "id": "S1268",
+   "deliverables": [
+    "data-file",
+    "structured-report-text"
+   ],
+   "steps": 5,
+   "calculations": true,
+   "quality_gate": true,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "Post-close integration tracker, contract tiers, status reports, CSV export"
+  }
+ },
+ {
+  "id": "S1199",
+  "group": "Legal & compliance",
+  "pub": "Community",
+  "repo": "alirezarezvani/claude-skills",
+  "name": "iso42001-specialist",
+  "path": "ra-qm-team/compliance-team-iso42001/skills/iso42001-specialist",
+  "roles": {
+   "md": 5,
+   "script": 3
+  },
+  "files": 8,
+  "code_blocks": 4,
+  "verdict": "degraded",
+  "reason": "Four md references cover the clauses and all 38 Annex A controls, so the model can score gaps by hand; loses the three scripts behind the gap matrix, risk register and audit schedule.",
+  "outputs": [
+   "chat-text",
+   "markdown-or-text-doc",
+   "csv-json-data"
+  ],
+  "code": true,
+  "code_evidence": "python scripts/aims_gap_analyzer.py path/to/aims_evidence.json",
+  "bundled": [
+   {
+    "files": "scripts/aims_gap_analyzer.py",
+    "role": "script",
+    "purpose": "Scores Clauses 4-10 full/partial/missing; prioritized remediation list"
+   },
+   {
+    "files": "scripts/ai_risk_register_builder.py",
+    "role": "script",
+    "purpose": "5x5 risk scoring, Annex A control mapping, residual-risk verdict"
+   },
+   {
+    "files": "scripts/aims_audit_scheduler.py",
+    "role": "script",
+    "purpose": "12-month Clause 9.2 audit plan with auditor independence checks"
+   }
+  ],
+  "doc_skills": [],
+  "deps": {
+   "cli-or-library": 1,
+   "other-skill": 3
+  },
+  "eff_files": 8,
+  "eff_nonmd": 3,
+  "folder_fits": false,
+  "office_out": false,
+  "verifier_note": "",
+  "cx": {
+   "id": "S1199",
+   "deliverables": [
+    "structured-report-text",
+    "data-file"
+   ],
+   "steps": 6,
+   "calculations": true,
+   "quality_gate": true,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "AIMS gap matrix, AI risk register, 12-month audit plan"
+  }
+ },
+ {
+  "id": "S1292",
+  "group": "Legal & compliance",
+  "pub": "Anthropic",
+  "repo": "anthropics/claude-for-legal",
+  "name": "worker-classification",
+  "path": "employment-legal/skills/worker-classification",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "degraded",
+  "reason": "The prospective classification analysis runs fully from SKILL.md. Lost from plugin CLAUDE.md: the jurisdiction footprint, escalation table, role-based work-product header and next-steps tree.",
+  "outputs": [
+   "chat-text",
+   "markdown-or-text-doc"
+  ],
+  "code": false,
+  "code_evidence": "none",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "plugin-level-file": 1,
+   "other-skill": 2,
+   "mcp-connector-or-api": 1
+  },
+  "eff_files": 2,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": "",
+  "cx": {
+   "id": "S1292",
+   "deliverables": [
+    "structured-report-text"
+   ],
+   "steps": 5,
+   "calculations": false,
+   "quality_gate": true,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "Worker classification analysis with scored tests and gap analysis"
+  }
+ },
+ {
+  "id": "S1093",
+  "group": "Legal & compliance",
+  "pub": "Community",
+  "repo": "alirezarezvani/claude-skills",
+  "name": "soc2-audit-prep",
+  "path": "compliance-os/skills/soc2-audit-prep",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 1,
+  "verdict": "degraded",
+  "reason": "Six forcing questions and report template are self-contained; all workflow scripts and the ISO 27001 cross-walk mapper live in other skills, so cross-walk and mock-audit figures become estimates.",
+  "outputs": [
+   "markdown-or-text-doc",
+   "chat-text"
+  ],
+  "code": true,
+  "code_evidence": "python ra-qm-team/skills/soc2-compliance/scripts/gap_analyzer.py current_state.json",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "other-skill": 3,
+   "plugin-level-file": 1,
+   "cli-or-library": 1
+  },
+  "eff_files": 2,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": "",
+  "cx": {
+   "id": "S1093",
+   "deliverables": [
+    "structured-report-text"
+   ],
+   "steps": 5,
+   "calculations": true,
+   "quality_gate": false,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "SOC 2 Type II observation-period readiness report with verdict"
+  }
+ },
+ {
+  "id": "S1448",
+  "group": "Legal & compliance",
+  "pub": "Other vendors",
+  "repo": "box/skills",
+  "name": "box-legal-workflows-contract",
+  "path": "skills/box-legal-workflows-contract",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "degraded",
+  "reason": "1-file md uploads fine and workflow/tool table is inline, but needs Box MCP connected and offloads search syntax, AI limits, role matrix to box (15 md) + box-legal-workflows.",
+  "outputs": [
+   "writes-to-external-system",
+   "markdown-or-text-doc",
+   "chat-text"
+  ],
+  "code": false,
+  "code_evidence": "none",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "mcp-connector-or-api": 1,
+   "other-skill": 2,
+   "cli-or-library": 1
+  },
+  "eff_files": 1,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": "",
+  "cx": {
+   "id": "S1448",
+   "deliverables": [
+    "structured-report-text",
+    "external-system-changes"
+   ],
+   "steps": 7,
+   "calculations": false,
+   "quality_gate": false,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "Contract-vs-template variance reports and Box metadata updates"
+  }
+ },
+ {
+  "id": "S1213",
+  "group": "Legal & compliance",
+  "pub": "Community",
+  "repo": "alirezarezvani/claude-skills",
+  "name": "risk-management-specialist",
+  "path": "ra-qm-team/skills/risk-management-specialist",
+  "roles": {
+   "md": 4,
+   "script": 2
+  },
+  "files": 6,
+  "code_blocks": 0,
+  "verdict": "works",
+  "reason": "All 4 md files fit. The risk matrix, P/S criteria, RPN thresholds and templates are in markdown. The scripts only do simple P\u00d7S and S\u00d7O\u00d7D arithmetic.",
+  "outputs": [
+   "markdown-or-text-doc",
+   "chat-text"
+  ],
+  "code": false,
+  "code_evidence": "An optional tools table lists `python risk_matrix_calculator.py --help`; no workflow step requires running it",
+  "bundled": [
+   {
+    "files": "scripts/risk_matrix_calculator.py",
+    "role": "script",
+    "purpose": "ISO 14971 5x5 risk level and FMEA RPN calculator"
+   },
+   {
+    "files": "scripts/fmea_analyzer.py",
+    "role": "script",
+    "purpose": "FMEA RPN analyzer; not referenced by SKILL.md"
+   }
+  ],
+  "doc_skills": [],
+  "deps": {
+   "cli-or-library": 1
+  },
+  "eff_files": 6,
+  "eff_nonmd": 2,
+  "folder_fits": false,
+  "office_out": false,
+  "verifier_note": "",
+  "cx": {
+   "id": "S1213",
+   "deliverables": [
+    "structured-report-text"
+   ],
+   "steps": 5,
+   "calculations": true,
+   "quality_gate": true,
+   "multi_source": false,
+   "complexity": "complex",
+   "output": "ISO 14971 risk management file: plan, hazard analysis, controls, report"
+  }
+ },
+ {
+  "id": "S1090",
+  "group": "Legal & compliance",
+  "pub": "Community",
+  "repo": "alirezarezvani/claude-skills",
+  "name": "gdpr-audit-prep",
+  "path": "compliance-os/skills/gdpr-audit-prep",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 1,
+  "verdict": "degraded",
+  "reason": "SKILL.md alone keeps the six Article-cited questions and the output format. Its workflow scripts live in the gdpr-dsgvo-expert and compliance-os skills, as do the referenced playbook and agent.",
+  "outputs": [
+   "markdown-or-text-doc",
+   "chat-text"
+  ],
+  "code": true,
+  "code_evidence": "python ra-qm-team/skills/gdpr-dsgvo-expert/scripts/gdpr_compliance_checker.py compliance_state.json",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "other-skill": 3,
+   "plugin-level-file": 2,
+   "cli-or-library": 1
+  },
+  "eff_files": 4,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": "",
+  "cx": {
+   "id": "S1090",
+   "deliverables": [
+    "structured-report-text"
+   ],
+   "steps": 5,
+   "calculations": true,
+   "quality_gate": false,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "Article-cited GDPR audit prep report with verdict, actions"
+  }
+ },
+ {
+  "id": "S1426",
+  "group": "Legal & compliance",
+  "pub": "Anthropic",
+  "repo": "anthropics/healthcare",
+  "name": "fraud-detection",
+  "path": "plugins/healthcare/skills/fraud-detection",
+  "roles": {
+   "md": 8,
+   "script": 43,
+   "other": 1,
+   "data": 52
+  },
+  "files": 104,
+  "code_blocks": 3,
+  "verdict": "breaks",
+  "reason": "104-file folder; only 8 md upload. Detection, citation gate and HTML/xlsx rendering live in 41 JS scripts + 51 JSON + SQL schema run via node, duckdb, Workflow tool.",
+  "outputs": [
+   "html",
+   "xlsx",
+   "csv-json-data",
+   "chat-text"
+  ],
+  "code": true,
+  "code_evidence": "node \"${CLAUDE_PLUGIN_ROOT}/skills/fraud-detection/scripts/fetch-reference.js\" 2026q3; render-packet.js, render-xlsx.js",
+  "bundled": [
+   {
+    "files": "scripts/*.js (39 files)",
+    "role": "script",
+    "purpose": "22 deterministic detectors, citation gate, pipeline, DuckDB wrapper, fetchers, HTML/xlsx renderers"
+   },
+   {
+    "files": "workflows/investigate.js, workflows/propose-detectors.js",
+    "role": "script",
+    "purpose": "Workflow-tool orchestration: detect, adjudicate, synthesize; detector-proposal loop"
+   },
+   {
+    "files": "state-policy/*.json (51 files)",
+    "role": "lookup-data",
+    "purpose": "Per-state Medicaid policy source specs feeding fetch-reference"
+   },
+   {
+    "files": "claims-schema.sql",
+    "role": "data-schema",
+    "purpose": "Canonical six-table claims schema every detector reads"
+   },
+   {
+    "files": "ARCHITECTURE.html",
+    "role": "other",
+    "purpose": "Human-facing architecture/detector grid doc"
+   }
+  ],
+  "doc_skills": [],
+  "deps": {
+   "cli-or-library": 5,
+   "mcp-connector-or-api": 3,
+   "other-skill": 1
+  },
+  "eff_files": 104,
+  "eff_nonmd": 96,
+  "folder_fits": false,
+  "office_out": true,
+  "verifier_note": "",
+  "cx": {
+   "id": "S1426",
+   "deliverables": [
+    "html",
+    "xlsx",
+    "data-file"
+   ],
+   "steps": 8,
+   "calculations": true,
+   "quality_gate": true,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "Ranked cited FWA referral packets, dashboard, and xlsx"
+  }
+ },
+ {
+  "id": "S1421",
+  "group": "Legal & compliance",
+  "pub": "Anthropic",
+  "repo": "anthropics/healthcare",
+  "name": "contracts",
+  "path": "plugins/healthcare/skills/contracts",
+  "roles": {
+   "md": 2,
+   "script": 1,
+   "other": 1
+  },
+  "files": 4,
+  "code_blocks": 8,
+  "verdict": "breaks",
+  "reason": "All reading, citation verification and state live in the plugin's local Node engine (16 files), sweep.mjs, and plugin reader agents; SKILL.md says stop when no engine exists.",
+  "outputs": [
+   "chat-text"
+  ],
+  "code": true,
+  "code_evidence": "`node <that file> <tool> '<json>'`; `node ${CLAUDE_SKILL_DIR}/sweep.mjs --run <RUN_ID> ...`",
+  "bundled": [
+   {
+    "files": "sweep.mjs",
+    "role": "script",
+    "purpose": "Parallel toolless claude -p extraction per document, writes verified findings"
+   }
+  ],
+  "doc_skills": [],
+  "deps": {
+   "plugin-level-file": 2,
+   "mcp-connector-or-api": 1,
+   "cli-or-library": 3
+  },
+  "eff_files": 22,
+  "eff_nonmd": 2,
+  "folder_fits": false,
+  "office_out": false,
+  "verifier_note": "",
+  "cx": {
+   "id": "S1421",
+   "deliverables": [
+    "structured-report-text"
+   ],
+   "steps": 7,
+   "calculations": false,
+   "quality_gate": true,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "Citation-verified cross-contract answer with tables and judgment calls"
+  }
+ },
+ {
+  "id": "S0395",
+  "group": "HR & people",
+  "pub": "Anthropic",
+  "repo": "anthropics/knowledge-work-plugins",
+  "name": "job-post-builder",
+  "path": "small-business/skills/job-post-builder",
+  "roles": {
+   "md": 9
+  },
+  "files": 9,
+  "code_blocks": 0,
+  "verdict": "degraded",
+  "reason": "All 9 files md and upload, but the three .docx deliverables need the docx skill (61 files); explicit fallback gives markdown in chat. Shared guardrails, artifact style, DocuSign-via-Chrome lost.",
+  "outputs": [
+   "docx",
+   "html",
+   "writes-to-external-system",
+   "chat-text"
+  ],
+  "code": true,
+  "code_evidence": "Save as `[Role]-Job-Post.docx` using the docx skill. Read `docx/SKILL.md` first.",
+  "bundled": [],
+  "doc_skills": [
+   "docx"
+  ],
+  "deps": {
+   "built-in-doc-skill": 1,
+   "plugin-level-file": 3,
+   "other-skill": 3,
+   "mcp-connector-or-api": 4
+  },
+  "eff_files": 74,
+  "eff_nonmd": 60,
+  "folder_fits": true,
+  "office_out": true,
+  "verifier_note": "",
+  "cx": {
+   "id": "S0395",
+   "deliverables": [
+    "docx",
+    "html",
+    "external-system-changes"
+   ],
+   "steps": 6,
+   "calculations": false,
+   "quality_gate": false,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "Hiring packet: job post, interview guide with rubrics, offer letter"
+  }
+ },
+ {
+  "id": "S0391",
+  "group": "HR & people",
+  "pub": "Anthropic",
+  "repo": "anthropics/knowledge-work-plugins",
+  "name": "hiring-screener",
+  "path": "small-business/skills/hiring-screener",
+  "roles": {
+   "md": 6
+  },
+  "files": 6,
+  "code_blocks": 0,
+  "verdict": "degraded",
+  "reason": "All 6 md files fit and the upload-only path is by design. Missing: 5 shared plugin files (artifact style, voice profile, PII and untrusted-content rules) and the job-post-builder rubric.",
+  "outputs": [
+   "chat-text",
+   "html",
+   "markdown-or-text-doc",
+   "writes-to-external-system",
+   "docx",
+   "pdf"
+  ],
+  "code": false,
+  "code_evidence": "none; allowed-tools: Read, WebFetch (the DOCX/PDF offer letter implies generation through a document skill)",
+  "bundled": [],
+  "doc_skills": [
+   "docx",
+   "pdf"
+  ],
+  "deps": {
+   "plugin-level-file": 1,
+   "other-skill": 4,
+   "mcp-connector-or-api": 1,
+   "built-in-doc-skill": 2
+  },
+  "eff_files": 84,
+  "eff_nonmd": 69,
+  "folder_fits": true,
+  "office_out": true,
+  "verifier_note": "",
+  "cx": {
+   "id": "S0391",
+   "deliverables": [
+    "html",
+    "structured-report-text",
+    "external-system-changes"
+   ],
+   "steps": 7,
+   "calculations": true,
+   "quality_gate": true,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "Rubric-scored candidate shortlist, drafted replies, interviews, onboarding checklist"
+  }
+ },
+ {
+  "id": "S0282",
+  "group": "HR & people",
+  "pub": "Anthropic",
+  "repo": "anthropics/knowledge-work-plugins",
+  "name": "people-report",
+  "path": "human-resources/skills/people-report",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "works",
+  "reason": "Single SKILL.md. The core path turns an uploaded CSV or pasted data into a markdown report. CONNECTORS.md only explains the optional ~~HRIS/~~chat placeholders.",
+  "outputs": [
+   "chat-text",
+   "markdown-or-text-doc"
+  ],
+  "code": false,
+  "code_evidence": "none; 'Analyze with appropriate statistical methods' on uploaded CSV, no scripts named",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "plugin-level-file": 1,
+   "mcp-connector-or-api": 2
+  },
+  "eff_files": 2,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": "",
+  "cx": {
+   "id": "S0282",
+   "deliverables": [
+    "structured-report-text"
+   ],
+   "steps": 5,
+   "calculations": true,
+   "quality_gate": false,
+   "multi_source": false,
+   "complexity": "complex",
+   "output": "People analytics report with metrics, analysis, and recommendations"
+  }
+ },
+ {
+  "id": "S0409",
+  "group": "Operations",
+  "pub": "Anthropic",
+  "repo": "anthropics/knowledge-work-plugins",
+  "name": "restock",
+  "path": "small-business/skills/restock",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "breaks",
+  "reason": "SKILL.md only chains two other skills: inventory-planner (the math and PO drafting) and ap-processor (the coding memo). Neither is present, and it forbids redoing their math. The house-style and output-preference files are also missing.",
+  "outputs": [
+   "html",
+   "docx",
+   "markdown-or-text-doc",
+   "csv-json-data",
+   "writes-to-external-system"
+  ],
+  "code": false,
+  "code_evidence": "none",
+  "bundled": [],
+  "doc_skills": [
+   "docx"
+  ],
+  "deps": {
+   "other-skill": 5,
+   "plugin-level-file": 1,
+   "built-in-doc-skill": 1,
+   "mcp-connector-or-api": 1
+  },
+  "eff_files": 65,
+  "eff_nonmd": 60,
+  "folder_fits": true,
+  "office_out": true,
+  "verifier_note": "",
+  "cx": {
+   "id": "S0409",
+   "deliverables": [
+    "html",
+    "external-system-changes",
+    "data-file"
+   ],
+   "steps": 4,
+   "calculations": true,
+   "quality_gate": true,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "Reorder plan, approved POs, vendor emails, coded ledger memo"
+  }
+ },
+ {
+  "id": "S1036",
+  "group": "Operations",
+  "pub": "Community",
+  "repo": "alirezarezvani/claude-skills",
+  "name": "vendor-management",
+  "path": "business-operations/skills/vendor-management",
+  "roles": {
+   "md": 5,
+   "script": 3
+  },
+  "files": 8,
+  "code_blocks": 2,
+  "verdict": "degraded",
+  "reason": "The md files (SKILL, references, catalog template) upload fine. The three scripts holding the deterministic scoring formulas, cert values and risk rules are lost. Only weights and thresholds remain.",
+  "outputs": [
+   "markdown-or-text-doc",
+   "chat-text"
+  ],
+  "code": true,
+  "code_evidence": "Run `scripts/vendor_scorer.py --input catalog.json --profile <industry> --output scorecard.md`.",
+  "bundled": [
+   {
+    "files": "scripts/{vendor_scorer,sla_compliance_tracker,vendor_risk_classifier}.py",
+    "role": "script",
+    "purpose": "Deterministic vendor scoring, SLA credit flags, 4-vector risk classification"
+   }
+  ],
+  "doc_skills": [],
+  "deps": {
+   "cli-or-library": 1,
+   "plugin-level-file": 1
+  },
+  "eff_files": 10,
+  "eff_nonmd": 3,
+  "folder_fits": false,
+  "office_out": false,
+  "verifier_note": "",
+  "cx": {
+   "id": "S1036",
+   "deliverables": [
+    "structured-report-text"
+   ],
+   "steps": 5,
+   "calculations": true,
+   "quality_gate": false,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "Vendor scorecard, SLA compliance report, risk matrix, VMO digest"
+  }
+ },
+ {
+  "id": "S1033",
+  "group": "Operations",
+  "pub": "Community",
+  "repo": "alirezarezvani/claude-skills",
+  "name": "knowledge-ops",
+  "path": "business-operations/skills/knowledge-ops",
+  "roles": {
+   "md": 6,
+   "script": 3
+  },
+  "files": 9,
+  "code_blocks": 1,
+  "verdict": "degraded",
+  "reason": "Forcing questions, templates and canon survive as md; the three scripts doing deterministic KB ingestion, runbook scoring and SOP generation are lost, so outputs become manual judgment.",
+  "outputs": [
+   "markdown-or-text-doc",
+   "chat-text"
+  ],
+  "code": true,
+  "code_evidence": "Run `kb_ingester.py --input <vault-dir>` ... run `runbook_validator.py` ... run `sop_generator.py --input <metadata.json>`",
+  "bundled": [
+   {
+    "files": "scripts/kb_ingester.py, scripts/runbook_validator.py, scripts/sop_generator.py",
+    "role": "script",
+    "purpose": "Deterministic KB health report, runbook 0-100 scoring, 5W2H SOP scaffold generation"
+   }
+  ],
+  "doc_skills": [],
+  "deps": {
+   "cli-or-library": 1,
+   "plugin-level-file": 1,
+   "other-skill": 1
+  },
+  "eff_files": 10,
+  "eff_nonmd": 3,
+  "folder_fits": false,
+  "office_out": false,
+  "verifier_note": "",
+  "cx": {
+   "id": "S1033",
+   "deliverables": [
+    "structured-report-text",
+    "data-file"
+   ],
+   "steps": 4,
+   "calculations": true,
+   "quality_gate": true,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "KB health report, runbook validity scores, 5W2H SOPs"
+  }
+ },
+ {
+  "id": "S1031",
+  "group": "Operations",
+  "pub": "Community",
+  "repo": "alirezarezvani/claude-skills",
+  "name": "capacity-planner",
+  "path": "business-operations/skills/capacity-planner",
+  "roles": {
+   "md": 5,
+   "script": 3
+  },
+  "files": 8,
+  "code_blocks": 4,
+  "verdict": "degraded",
+  "reason": "Erlang-C formula, profile defaults and hiring rules survive in md, but the three calculators are gone; breach probabilities and hiring plans must be re-derived ad hoc, risking arithmetic errors.",
+  "outputs": [
+   "markdown-or-text-doc",
+   "chat-text"
+  ],
+  "code": true,
+  "code_evidence": "Run `capacity_modeler.py` with your demand, AHT, SLA target, current FTE, and shrinkage.",
+  "bundled": [
+   {
+    "files": "scripts/capacity_modeler.py, scripts/utilization_analyzer.py, scripts/hiring_sequencer.py",
+    "role": "script",
+    "purpose": "Erlang-C FTE sizing, utilization traffic-lights, quarterly hiring plan with ramp/attrition"
+   }
+  ],
+  "doc_skills": [],
+  "deps": {
+   "cli-or-library": 1,
+   "other-skill": 1
+  },
+  "eff_files": 8,
+  "eff_nonmd": 3,
+  "folder_fits": false,
+  "office_out": false,
+  "verifier_note": "",
+  "cx": {
+   "id": "S1031",
+   "deliverables": [
+    "structured-report-text",
+    "data-file"
+   ],
+   "steps": 5,
+   "calculations": true,
+   "quality_gate": false,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "Erlang-C capacity sizing, utilization health, quarterly hiring plan"
+  }
+ },
+ {
+  "id": "S1034",
+  "group": "Operations",
+  "pub": "Community",
+  "repo": "alirezarezvani/claude-skills",
+  "name": "process-mapper",
+  "path": "business-operations/skills/process-mapper",
+  "roles": {
+   "md": 5,
+   "script": 3
+  },
+  "files": 8,
+  "code_blocks": 1,
+  "verdict": "degraded",
+  "reason": "R1-R3 rules and VA% bands are in SKILL.md, so manual computation is feasible; non-SaaS profile thresholds and the swim-lane renderer exist only in the lost scripts.",
+  "outputs": [
+   "markdown-or-text-doc",
+   "csv-json-data",
+   "chat-text"
+  ],
+  "code": true,
+  "code_evidence": "Run `process_documenter.py` ... Run `cycle_time_analyzer.py` ... Run `bottleneck_detector.py` with the appropriate `--profile`",
+  "bundled": [
+   {
+    "files": "scripts/process_documenter.py, scripts/cycle_time_analyzer.py, scripts/bottleneck_detector.py",
+    "role": "script",
+    "purpose": "Swim-lane rendering, VA%/cycle-time math, R1-R3 bottleneck rules with profile thresholds"
+   }
+  ],
+  "doc_skills": [],
+  "deps": {
+   "cli-or-library": 1,
+   "plugin-level-file": 1,
+   "other-skill": 1
+  },
+  "eff_files": 9,
+  "eff_nonmd": 3,
+  "folder_fits": false,
+  "office_out": false,
+  "verifier_note": "",
+  "cx": {
+   "id": "S1034",
+   "deliverables": [
+    "structured-report-text",
+    "data-file"
+   ],
+   "steps": 5,
+   "calculations": true,
+   "quality_gate": false,
+   "multi_source": false,
+   "complexity": "complex",
+   "output": "BPMN swim-lane map, cycle-time analysis, ranked bottleneck list"
+  }
+ },
+ {
+  "id": "S0428",
+  "group": "Reports & documents",
+  "pub": "Anthropic",
+  "repo": "anthropics/skills",
+  "name": "docx",
+  "path": "skills/docx",
+  "roles": {
+   "md": 1,
+   "license": 1,
+   "script": 15,
+   "template": 5,
+   "data": 39
+  },
+  "files": 61,
+  "code_blocks": 3,
+  "verdict": "degraded",
+  "reason": "Only SKILL.md survives: creation via preinstalled docx-js still works, but 15 scripts, 39 XSDs and 5 templates for editing, validation, comments and accepting changes are lost.",
+  "outputs": [
+   "docx",
+   "chat-text"
+  ],
+  "code": true,
+  "code_evidence": "Write a `docx` (npm) script; python scripts/merge_runs.py unpacked/; python scripts/office/validate.py out.docx",
+  "bundled": [
+   {
+    "files": "scripts/accept_changes.py, scripts/comment.py, scripts/merge_runs.py, scripts/__init__.py",
+    "role": "script",
+    "purpose": "Accept tracked changes, add cross-linked comments, merge fragmented runs for editing"
+   },
+   {
+    "files": "scripts/office/soffice.py, scripts/office/validate.py, scripts/office/validators/*.py, scripts/office/helpers/*.py",
+    "role": "script",
+    "purpose": "LibreOffice wrapper with shim, XSD/redlining validation and auto-repair, OOXML helpers"
+   },
+   {
+    "files": "scripts/office/schemas/**/*.xsd (39 files)",
+    "role": "data-schema",
+    "purpose": "ISO/ECMA/Microsoft OOXML schemas used by validate.py"
+   },
+   {
+    "files": "scripts/templates/*.xml (5 files)",
+    "role": "template",
+    "purpose": "Comment part templates: comments, extended, ids, extensible, people"
+   },
+   {
+    "files": "LICENSE.txt",
+    "role": "other",
+    "purpose": "Proprietary license terms"
+   }
+  ],
+  "doc_skills": [],
+  "deps": {
+   "cli-or-library": 7
+  },
+  "eff_files": 61,
+  "eff_nonmd": 60,
+  "folder_fits": false,
+  "office_out": true,
+  "verifier_note": "",
+  "cx": {
+   "id": "S0428",
+   "deliverables": [
+    "docx"
+   ],
+   "steps": 4,
+   "calculations": false,
+   "quality_gate": true,
+   "multi_source": false,
+   "complexity": "complex",
+   "output": "Created or edited Word document, validated and visually verified"
+  }
+ },
+ {
+  "id": "S0106",
+  "group": "Reports & documents",
+  "pub": "Community",
+  "repo": "K-Dense-AI/claude-scientific-skills",
+  "name": "pptx-posters",
+  "path": "skills/pptx-posters",
+  "roles": {
+   "md": 9,
+   "template": 1,
+   "data": 1,
+   "script": 10
+  },
+  "files": 21,
+  "code_blocks": 17,
+  "verdict": "breaks",
+  "reason": "The .pptx and every hard gate come from 10 bundled scripts and a JSON manifest template; md-only leaves specs but no generator/validators, and the skill fails closed.",
+  "outputs": [
+   "pptx",
+   "csv-json-data"
+  ],
+  "code": true,
+  "code_evidence": "python -B scripts/generate_poster.py poster.json --output poster.pptx --report poster.generation.json",
+  "bundled": [
+   {
+    "files": "scripts/generate_poster.py, scripts/_pptx.py, scripts/_manifest.py, scripts/_common.py",
+    "role": "script",
+    "purpose": "Exact-pinned one-slide PPTX generator and strict manifest parsing"
+   },
+   {
+    "files": "scripts/validate_manifest.py, inspect_pptx.py, check_layout.py, check_palette.py, inventory_images.py, plan_export.py",
+    "role": "script",
+    "purpose": "Approval-hash, package security, layout, WCAG contrast, DPI and export preflight gates"
+   },
+   {
+    "files": "assets/poster_manifest_template.json",
+    "role": "template",
+    "purpose": "Deliberately invalid manifest skeleton the author fills and approves"
+   }
+  ],
+  "doc_skills": [],
+  "deps": {
+   "cli-or-library": 3,
+   "mcp-connector-or-api": 1
+  },
+  "eff_files": 21,
+  "eff_nonmd": 12,
+  "folder_fits": false,
+  "office_out": true,
+  "verifier_note": "",
+  "cx": {
+   "id": "S0106",
+   "deliverables": [
+    "pptx",
+    "pdf"
+   ],
+   "steps": 7,
+   "calculations": false,
+   "quality_gate": true,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "Audited editable PowerPoint scientific poster with print/export plan"
+  }
+ },
+ {
+  "id": "S0644",
+  "group": "Reports & documents",
+  "pub": "OpenAI",
+  "repo": "openai/plugins",
+  "name": "metric-diagnostics",
+  "path": "plugins/data-analytics/skills/metric-diagnostics",
+  "roles": {
+   "md": 1,
+   "packaging": 1
+  },
+  "files": 2,
+  "code_blocks": 0,
+  "verdict": "degraded",
+  "reason": "The diagnostic method is fully in SKILL.md and can answer in chat, but seven sibling skills are absent, including the mandatory $build-report handoff with its plugin MCP/npm build.",
+  "outputs": [
+   "chat-text",
+   "html"
+  ],
+  "code": true,
+  "code_evidence": "Use $jupyter-notebooks when fresh SQL, Python ... confirm ... exact executed SQL or query references when queries were used",
+  "bundled": [
+   {
+    "files": "agents/openai.yaml",
+    "role": "other",
+    "purpose": "Codex UI display name and implicit-invocation policy"
+   }
+  ],
+  "doc_skills": [],
+  "deps": {
+   "other-skill": 7,
+   "plugin-level-file": 1,
+   "mcp-connector-or-api": 1
+  },
+  "eff_files": 96,
+  "eff_nonmd": 1,
+  "folder_fits": false,
+  "office_out": false,
+  "verifier_note": "",
+  "cx": {
+   "id": "S0644",
+   "deliverables": [
+    "html",
+    "structured-report-text"
+   ],
+   "steps": 6,
+   "calculations": true,
+   "quality_gate": true,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "Metric movement diagnosis with quantified drivers and report"
+  }
+ },
+ {
+  "id": "S0658",
+  "group": "Reports & documents",
+  "pub": "OpenAI",
+  "repo": "openai/plugins",
+  "name": "google-sheets",
+  "path": "plugins/google-drive/skills/google-sheets",
+  "roles": {
+   "md": 10,
+   "packaging": 1,
+   "asset": 2
+  },
+  "files": 13,
+  "code_blocks": 0,
+  "verdict": "works",
+  "reason": "All 10 md files survive; connector-based edits work unchanged, but new-sheet creation loses the mandated $Spreadsheets .xlsx route, falling back to direct MCP. Needs a Sheets connector.",
+  "outputs": [
+   "writes-to-external-system",
+   "chat-text"
+  ],
+  "code": false,
+  "code_evidence": "none; edits go through Google Sheets MCP calls and batch_update request bodies",
+  "bundled": [
+   {
+    "files": "agents/openai.yaml",
+    "role": "other",
+    "purpose": "Codex UI metadata: display name, icons, brand color, default prompt"
+   },
+   {
+    "files": "assets/google-sheets-small.svg, assets/google-sheets.png",
+    "role": "asset",
+    "purpose": "UI icons only, no functional role"
+   }
+  ],
+  "doc_skills": [],
+  "deps": {
+   "mcp-connector-or-api": 2
+  },
+  "eff_files": 13,
+  "eff_nonmd": 3,
+  "folder_fits": false,
+  "office_out": false,
+  "verifier_note": "Only the yaml and icons are lost. The skill says: if no Spreadsheets skill, create directly with Google Sheets MCP. CUA also has a stated API fallback. Its only real requirement is the Sheets connector.",
+  "cx": {
+   "id": "S0658",
+   "deliverables": [
+    "external-system-changes",
+    "xlsx"
+   ],
+   "steps": 6,
+   "calculations": false,
+   "quality_gate": true,
+   "multi_source": false,
+   "complexity": "complex",
+   "output": "Native Google Sheet created or edited, visually verified"
+  }
+ },
+ {
+  "id": "S0713",
+  "group": "Reports & documents",
+  "pub": "OpenAI",
+  "repo": "openai/plugins",
+  "name": "dashboard-expert",
+  "path": "plugins/mixpanel-headless/skills/dashboard-expert",
+  "roles": {
+   "md": 5
+  },
+  "files": 5,
+  "code_blocks": 86,
+  "verdict": "degraded",
+  "reason": "All 5 files are markdown, so nothing is lost; still requires Python with the mixpanel_headless SDK and Mixpanel credentials, normally set up by an unreferenced sibling skill.",
+  "outputs": [
+   "writes-to-external-system",
+   "chat-text"
+  ],
+  "code": true,
+  "code_evidence": "import mixpanel_headless as mp; ws = mp.Workspace(); dash = ws.get_dashboard(DASHBOARD_ID)",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "cli-or-library": 2,
+   "mcp-connector-or-api": 1,
+   "other-skill": 1
+  },
+  "eff_files": 5,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": "Every example needs mixpanel_headless plus auth (mp login / MP_OAUTH_TOKEN). The folder never says how to install or authenticate; that lives in absent sibling setup and auth skills.",
+  "cx": {
+   "id": "S0713",
+   "deliverables": [
+    "external-system-changes",
+    "structured-report-text"
+   ],
+   "steps": 5,
+   "calculations": true,
+   "quality_gate": true,
+   "multi_source": false,
+   "complexity": "complex",
+   "output": "Mixpanel dashboard built or modified plus data-driven analysis"
+  }
+ },
+ {
+  "id": "S0642",
+  "group": "Reports & documents",
+  "pub": "OpenAI",
+  "repo": "openai/plugins",
+  "name": "kpi-reporting",
+  "path": "plugins/data-analytics/skills/kpi-reporting",
+  "roles": {
+   "md": 2,
+   "packaging": 1
+  },
+  "files": 3,
+  "code_blocks": 0,
+  "verdict": "degraded",
+  "reason": "Readout workflow and templates survive as md and support an inline update, but eight delegated sibling skills, including the mandatory $build-report handoff, and the ~~lane mapping are absent.",
+  "outputs": [
+   "chat-text",
+   "html"
+  ],
+  "code": false,
+  "code_evidence": "none explicit; 'Query or inspect connected structured-data sources for core actuals first'",
+  "bundled": [
+   {
+    "files": "agents/openai.yaml",
+    "role": "other",
+    "purpose": "Codex UI display name and implicit-invocation policy"
+   }
+  ],
+  "doc_skills": [],
+  "deps": {
+   "other-skill": 8,
+   "plugin-level-file": 2,
+   "mcp-connector-or-api": 1
+  },
+  "eff_files": 99,
+  "eff_nonmd": 1,
+  "folder_fits": false,
+  "office_out": false,
+  "verifier_note": "",
+  "cx": {
+   "id": "S0642",
+   "deliverables": [
+    "html",
+    "structured-report-text"
+   ],
+   "steps": 9,
+   "calculations": true,
+   "quality_gate": true,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "Validated KPI readout with pacing, drivers, handed to report"
+  }
+ },
+ {
+  "id": "S0380",
+  "group": "Reports & documents",
+  "pub": "Anthropic",
+  "repo": "anthropics/knowledge-work-plugins",
+  "name": "business-pulse",
+  "path": "small-business/skills/business-pulse",
+  "roles": {
+   "md": 6
+  },
+  "files": 6,
+  "code_blocks": 0,
+  "verdict": "degraded",
+  "reason": "Workflow, thresholds, template and a no-connector path survive; five shared plugin files (house artifact style, QuickBooks traps, currency/locale rules) and six sibling skills are missing.",
+  "outputs": [
+   "chat-text",
+   "html",
+   "markdown-or-text-doc",
+   "docx",
+   "writes-to-external-system"
+  ],
+  "code": false,
+  "code_evidence": "none; allowed-tools: Read, WebFetch; data pulled through MCP connectors",
+  "bundled": [],
+  "doc_skills": [
+   "docx"
+  ],
+  "deps": {
+   "plugin-level-file": 5,
+   "other-skill": 5,
+   "built-in-doc-skill": 1,
+   "mcp-connector-or-api": 4
+  },
+  "eff_files": 73,
+  "eff_nonmd": 60,
+  "folder_fits": true,
+  "office_out": true,
+  "verifier_note": "",
+  "cx": {
+   "id": "S0380",
+   "deliverables": [
+    "html",
+    "structured-report-text"
+   ],
+   "steps": 6,
+   "calculations": true,
+   "quality_gate": false,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "One-page cross-connector business snapshot with risks and priority"
+  }
+ },
+ {
+  "id": "S0439",
+  "group": "Reports & documents",
+  "pub": "Anthropic",
+  "repo": "anthropics/skills",
+  "name": "xlsx",
+  "path": "skills/xlsx",
+  "roles": {
+   "md": 1,
+   "license": 1,
+   "script": 12,
+   "data": 39
+  },
+  "files": 53,
+  "code_blocks": 1,
+  "verdict": "degraded",
+  "reason": "Guidance survives, but mandatory recalc.py/soffice.py LibreOffice recalculation and formula-error check are dropped; workbooks ship uncached and unverified. Needs Python runtime with openpyxl; without code execution, breaks.",
+  "outputs": [
+   "xlsx",
+   "csv-json-data",
+   "chat-text"
+  ],
+  "code": true,
+  "code_evidence": "\"python scripts/recalc.py output.xlsx\"; create/edit with `openpyxl`; bulk data via `pandas` read_excel/to_excel",
+  "bundled": [
+   {
+    "files": "scripts/recalc.py",
+    "role": "script",
+    "purpose": "Mandatory LibreOffice formula recalculation; reports formula errors as JSON"
+   },
+   {
+    "files": "scripts/office/soffice.py",
+    "role": "script",
+    "purpose": "Runs headless soffice with sandbox LD_PRELOAD shim; imported by recalc.py"
+   },
+   {
+    "files": "scripts/office/validate.py, scripts/office/validators/*.py (5)",
+    "role": "script",
+    "purpose": "OOXML schema/redlining validator for docx/pptx; not referenced by xlsx SKILL.md"
+   },
+   {
+    "files": "scripts/office/helpers/*.py (4)",
+    "role": "script",
+    "purpose": "Zip and pptx chart/slide/theme helpers for validators; unused by xlsx"
+   },
+   {
+    "files": "scripts/office/schemas/**/*.xsd (39)",
+    "role": "data-schema",
+    "purpose": "ISO/ECMA/Microsoft OOXML XSDs for validate.py; unused by xlsx SKILL.md"
+   },
+   {
+    "files": "LICENSE.txt",
+    "role": "other",
+    "purpose": "Proprietary Anthropic license terms"
+   }
+  ],
+  "doc_skills": [],
+  "deps": {
+   "cli-or-library": 4
+  },
+  "eff_files": 53,
+  "eff_nonmd": 52,
+  "folder_fits": false,
+  "office_out": true,
+  "verifier_note": "",
+  "cx": {
+   "id": "S0439",
+   "deliverables": [
+    "xlsx"
+   ],
+   "steps": 4,
+   "calculations": true,
+   "quality_gate": true,
+   "multi_source": false,
+   "complexity": "complex",
+   "output": "Formula-driven workbook or financial model, recalculated error-free"
+  }
+ },
+ {
+  "id": "S0427",
+  "group": "Reports & documents",
+  "pub": "Anthropic",
+  "repo": "anthropics/skills",
+  "name": "doc-coauthoring",
+  "path": "skills/doc-coauthoring",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "works",
+  "reason": "Single self-contained SKILL.md; pure conversational workflow producing a markdown doc or artifact. Integrations and sub-agents are optional with explicit fallbacks (pasted content, manual reader testing).",
+  "outputs": [
+   "chat-text",
+   "markdown-or-text-doc"
+  ],
+  "code": false,
+  "code_evidence": "none",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "mcp-connector-or-api": 1
+  },
+  "eff_files": 1,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": "",
+  "cx": {
+   "id": "S0427",
+   "deliverables": [
+    "structured-report-text"
+   ],
+   "steps": 4,
+   "calculations": false,
+   "quality_gate": true,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "Co-authored document refined section-by-section and reader-tested"
+  }
+ },
+ {
+  "id": "S0399",
+  "group": "Reports & documents",
+  "pub": "Anthropic",
+  "repo": "anthropics/knowledge-work-plugins",
+  "name": "monday-brief",
+  "path": "small-business/skills/monday-brief",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "degraded",
+  "reason": "Orchestrates business-pulse and report-builder (12 files) plus shared artifact-style and untrusted-content rules, all absent; agent must improvise the snapshot, house style and injection policy from connectors or pasted data.",
+  "outputs": [
+   "html",
+   "chat-text",
+   "markdown-or-text-doc",
+   "docx",
+   "writes-to-external-system"
+  ],
+  "code": false,
+  "code_evidence": "none",
+  "bundled": [],
+  "doc_skills": [
+   "docx"
+  ],
+  "deps": {
+   "other-skill": 6,
+   "plugin-level-file": 4,
+   "built-in-doc-skill": 1,
+   "mcp-connector-or-api": 5
+  },
+  "eff_files": 68,
+  "eff_nonmd": 60,
+  "folder_fits": true,
+  "office_out": true,
+  "verifier_note": "",
+  "cx": {
+   "id": "S0399",
+   "deliverables": [
+    "html",
+    "structured-report-text"
+   ],
+   "steps": 5,
+   "calculations": true,
+   "quality_gate": true,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "Merged one-page Monday brief: pulse, KPI pack, week ahead"
+  }
+ },
+ {
+  "id": "S1261",
+  "group": "Legal & compliance",
+  "pub": "Anthropic",
+  "repo": "anthropics/claude-for-legal",
+  "name": "board-minutes",
+  "path": "corporate-legal/skills/board-minutes",
+  "roles": {
+   "md": 1
+  },
+  "files": 1,
+  "code_blocks": 0,
+  "verdict": "degraded",
+  "reason": "Minutes structure, resolution language and review checklist are inline, but house format, role-based header and non-lawyer gate live in absent config CLAUDE.md; literal 'run cold-start first' gate stalls.",
+  "outputs": [
+   "chat-text",
+   "markdown-or-text-doc"
+  ],
+  "code": false,
+  "code_evidence": "none",
+  "bundled": [],
+  "doc_skills": [],
+  "deps": {
+   "plugin-level-file": 2,
+   "other-skill": 3,
+   "mcp-connector-or-api": 1
+  },
+  "eff_files": 3,
+  "eff_nonmd": 0,
+  "folder_fits": true,
+  "office_out": false,
+  "verifier_note": "",
+  "cx": {
+   "id": "S1261",
+   "deliverables": [
+    "structured-report-text"
+   ],
+   "steps": 5,
+   "calculations": false,
+   "quality_gate": true,
+   "multi_source": true,
+   "complexity": "complex",
+   "output": "Board minutes draft in house format with review checklist"
+  }
+ }
+]

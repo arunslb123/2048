@@ -1,10 +1,38 @@
-# The markdown-only test: 50 finance, legal, HR and operations skills
+# The markdown-only test: finance, legal, HR, operations and reporting skills
 
 Question: could real, published business skills work in an upload UI that accepts **at most 20 files, all markdown**?
 
 Interactive page: `../report/markdown-only-test.html`
 
-## Result
+## Complex, multi-step output skills (the main result)
+
+Your use case is complex, multi-step output generation, so the second test only uses skills that build a real deliverable. Agents read the SKILL.md of all 392 finance, legal, HR, operations and reporting skills and rated each one simple, moderate or complex. **Complex** means a substantial deliverable (a file, model or multi-section report) built through 4+ steps. 215 skills qualified. 50 of them were drawn by domain and tested as markdown-only uploads, each verdict re-checked by a skeptic agent.
+
+| Result for 50 complex skills | |
+|---|---|
+| Work the same as markdown only | **8 / 50** |
+| Degraded | 35 |
+| Break | 7 |
+| Excel/Word/PowerPoint/PDF deliverables that still work | **0 / 20** |
+| Skills that run code and still work | **0 / 27** |
+| Fit ≤20 markdown files: folder alone → with what they read and run | 28 → **16** (24 need more than 20 files) |
+
+Files in the 50 folders: 224 markdown, 116 scripts, 138 data files, 9 non-markdown templates, 2 binary assets. Of the 42 that fall short, 32 are missing a non-markdown file (script, template/data, or the document generator behind an Office/PDF deliverable). The 8 that survive write their deliverable as markdown text or drive a connector.
+
+**The complexity gradient** (all 392 business skills):
+
+| Output complexity | Skills | Has non-markdown files | Scripts | Templates (any format) | Avg files | Over 20 files | Fits UI (folder) |
+|---|---|---|---|---|---|---|---|
+| Simple | 39 | 15% | 10% | 3% | 2.1 | 0 | 85% |
+| Moderate | 136 | 23% | 16% | 4% | 2.4 | 2 | 76% |
+| Complex: text report | 99 | 16% | 14% | 12% | 2.5 | 1 | 84% |
+| Complex: file deliverable | 116 | 50% | 39% | 34% | 9.4 | 12 | 50% |
+
+Per-skill table: `complex_50.csv`. Agent analyses with quoted evidence: `focus_audit.json` + `complex_audit.json`. Complexity labels: `complex_labels.json`.
+
+## Earlier mixed test (simple and complex skills)
+
+### Result
 
 | | Skills |
 |---|---|

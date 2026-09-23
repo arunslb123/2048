@@ -1,0 +1,4911 @@
+[
+ {
+  "id": "S0059",
+  "deliverables": [
+   "data-file",
+   "structured-report-text"
+  ],
+  "steps": 8,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Validated ISO readiness evidence manifest, gap report, draft evidence review"
+ },
+ {
+  "id": "S0065",
+  "deliverables": [
+   "data-file"
+  ],
+  "steps": 2,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "Parsed document text or JSON with bounding boxes"
+ },
+ {
+  "id": "S0067",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Markdown document from template with embedded Mermaid diagrams"
+ },
+ {
+  "id": "S0069",
+  "deliverables": [
+   "data-file"
+  ],
+  "steps": 2,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "Markdown conversion of documents for LLM ingestion"
+ },
+ {
+  "id": "S0106",
+  "deliverables": [
+   "pptx",
+   "pdf"
+  ],
+  "steps": 7,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Audited editable PowerPoint scientific poster with print/export plan"
+ },
+ {
+  "id": "S0134",
+  "deliverables": [
+   "pdf",
+   "pptx"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Research-backed slide deck as PDF or PowerPoint"
+ },
+ {
+  "id": "S0152",
+  "deliverables": [
+   "data-file"
+  ],
+  "steps": 4,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Time series point forecasts with quantile prediction intervals"
+ },
+ {
+  "id": "S0173",
+  "deliverables": [
+   "pdf",
+   "docx",
+   "xlsx"
+  ],
+  "steps": 8,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "8-12 page branded client performance report with data appendix"
+ },
+ {
+  "id": "S0174",
+  "deliverables": [
+   "docx",
+   "pdf"
+  ],
+  "steps": 6,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "One-page client review summary with performance, allocation, agenda"
+ },
+ {
+  "id": "S0175",
+  "deliverables": [
+   "pptx",
+   "pdf"
+  ],
+  "steps": 4,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "12-15 slide investment proposal deck with projections and fees"
+ },
+ {
+  "id": "S0176",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 6,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Bond futures basis analysis with CTD, implied repo, assessment"
+ },
+ {
+  "id": "S0177",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 6,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Bond rich/cheap report with spread decomposition and scenario P&L"
+ },
+ {
+  "id": "S0178",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 6,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Equity research snapshot with consensus, financials, valuation, thesis"
+ },
+ {
+  "id": "S0179",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 7,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Fixed income portfolio review with metrics, cashflows, scenario P&L"
+ },
+ {
+  "id": "S0180",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 6,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "FX carry profile with carry-to-vol and trade recommendations"
+ },
+ {
+  "id": "S0181",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 6,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Macro and rates dashboard with curve, real rates, swap spreads"
+ },
+ {
+  "id": "S0182",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 6,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Option vol assessment: surface, Greeks, implied vs realized vol"
+ },
+ {
+  "id": "S0183",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 6,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Swap curve analysis with spreads, real rates, DV01-neutral trades"
+ },
+ {
+  "id": "S0184",
+  "deliverables": [
+   "html"
+  ],
+  "steps": 8,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "4-5 page sourced HTML earnings preview with peer valuation"
+ },
+ {
+  "id": "S0185",
+  "deliverables": [
+   "pptx"
+  ],
+  "steps": 9,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "One-slide QA'd PowerPoint funding digest with deal links"
+ },
+ {
+  "id": "S0186",
+  "deliverables": [
+   "docx"
+  ],
+  "steps": 6,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Audience-specific company tear sheet Word document from Capital IQ"
+ },
+ {
+  "id": "S0187",
+  "deliverables": [
+   "xlsx",
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "Catalyst calendar workbook plus weekly preview note"
+ },
+ {
+  "id": "S0188",
+  "deliverables": [
+   "docx",
+   "xlsx"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "8-12 page earnings update report with charts and estimates"
+ },
+ {
+  "id": "S0189",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "One-page earnings preview with scenarios and catalyst checklist"
+ },
+ {
+  "id": "S0190",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Screened shortlist of 5-10 stock ideas with one-page summaries"
+ },
+ {
+  "id": "S0191",
+  "deliverables": [
+   "structured-report-text",
+   "xlsx",
+   "docx",
+   "data-file"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Initiation research doc, Excel model, valuation, charts, 30-50 page report"
+ },
+ {
+  "id": "S0192",
+  "deliverables": [
+   "xlsx",
+   "structured-report-text"
+  ],
+  "steps": 6,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Updated financial model, estimate changes, revised price target"
+ },
+ {
+  "id": "S0193",
+  "deliverables": [
+   "structured-report-text",
+   "docx"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "One-page morning meeting note with top call and trade ideas"
+ },
+ {
+  "id": "S0194",
+  "deliverables": [
+   "docx",
+   "pptx",
+   "xlsx"
+  ],
+  "steps": 6,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Sector landscape report with comps, valuation, Excel appendix"
+ },
+ {
+  "id": "S0195",
+  "deliverables": [
+   "structured-report-text",
+   "docx"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Thesis summary with pillar scorecard, update log, catalysts"
+ },
+ {
+  "id": "S0196",
+  "deliverables": [
+   "xlsx"
+  ],
+  "steps": 6,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Linked, balanced 3-statement financial model in Excel template"
+ },
+ {
+  "id": "S0197",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 4,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Spreadsheet audit findings table with severity and fixes"
+ },
+ {
+  "id": "S0198",
+  "deliverables": [
+   "xlsx"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Cleaned spreadsheet data with before/after change summary"
+ },
+ {
+  "id": "S0199",
+  "deliverables": [
+   "pptx"
+  ],
+  "steps": 12,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "10-20 slide competitive landscape deck with synthesis"
+ },
+ {
+  "id": "S0200",
+  "deliverables": [
+   "xlsx"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Comparable company analysis workbook with multiples and statistics"
+ },
+ {
+  "id": "S0201",
+  "deliverables": [
+   "xlsx"
+  ],
+  "steps": 10,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Formula-driven DCF Excel model with WACC and sensitivity tables"
+ },
+ {
+  "id": "S0202",
+  "deliverables": [
+   "pptx"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "Existing deck with numbers updated and change report"
+ },
+ {
+  "id": "S0203",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Severity-ranked deck QC report on numbers, narrative, formatting"
+ },
+ {
+  "id": "S0204",
+  "deliverables": [
+   "xlsx"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "complex",
+  "output": "Completed LBO Excel model with returns and sensitivities"
+ },
+ {
+  "id": "S0206",
+  "deliverables": [
+   "pptx"
+  ],
+  "steps": 2,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "Headless .pptx file written via python-pptx"
+ },
+ {
+  "id": "S0208",
+  "deliverables": [
+   "xlsx"
+  ],
+  "steps": 2,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "Headless .xlsx workbook written via openpyxl with checks tab"
+ },
+ {
+  "id": "S0209",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 3,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "Period-end accrual schedule with draft journal entries"
+ },
+ {
+  "id": "S0210",
+  "deliverables": [
+   "data-file"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "JSON root-cause statements for reconciliation breaks"
+ },
+ {
+  "id": "S0211",
+  "deliverables": [
+   "data-file",
+   "structured-report-text"
+  ],
+  "steps": 4,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "GL-to-subledger matched set, classified break report, summary"
+ },
+ {
+  "id": "S0212",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 4,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "LP capital account tie-out with pass/fail per line"
+ },
+ {
+  "id": "S0213",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 3,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "Account roll-forward schedule tied to GL with foot check"
+ },
+ {
+  "id": "S0214",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 4,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "Flux commentary table with drivers and summary narrative"
+ },
+ {
+  "id": "S0215",
+  "deliverables": [
+   "xlsx",
+   "structured-report-text"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Tiered buyer universe workbook plus one-page summary"
+ },
+ {
+  "id": "S0216",
+  "deliverables": [
+   "docx",
+   "xlsx"
+  ],
+  "steps": 4,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "40-60 page CIM Word document with financial appendix"
+ },
+ {
+  "id": "S0217",
+  "deliverables": [
+   "xlsx"
+  ],
+  "steps": 6,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "IC-ready standardized financial data pack Excel workbook"
+ },
+ {
+  "id": "S0218",
+  "deliverables": [
+   "xlsx",
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Deal pipeline tracker workbook and weekly review summary"
+ },
+ {
+  "id": "S0219",
+  "deliverables": [
+   "xlsx",
+   "structured-report-text"
+  ],
+  "steps": 7,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Accretion/dilution merger model workbook with sensitivities"
+ },
+ {
+  "id": "S0220",
+  "deliverables": [
+   "pptx"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Populated and validated IB pitch deck from template"
+ },
+ {
+  "id": "S0221",
+  "deliverables": [
+   "docx"
+  ],
+  "steps": 3,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "M&A process or bid instruction letter in Word"
+ },
+ {
+  "id": "S0222",
+  "deliverables": [
+   "pptx"
+  ],
+  "steps": 4,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "1-4 slide dense company strip profile with charts"
+ },
+ {
+  "id": "S0223",
+  "deliverables": [
+   "docx",
+   "pdf"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Anonymized one-page sell-side company teaser"
+ },
+ {
+  "id": "S0224",
+  "deliverables": [
+   "data-file"
+  ],
+  "steps": 3,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "Structured KYC JSON record with document inventory and gaps"
+ },
+ {
+  "id": "S0225",
+  "deliverables": [
+   "data-file",
+   "structured-report-text"
+  ],
+  "steps": 4,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "KYC risk rating, rule outcomes, and disposition JSON"
+ },
+ {
+  "id": "S0226",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Ranked portfolio-wide AI opportunity list with EBITDA impact"
+ },
+ {
+  "id": "S0227",
+  "deliverables": [
+   "xlsx"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Due diligence checklist workbook with status and red flags"
+ },
+ {
+  "id": "S0228",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "One-page diligence meeting prep with questions and red flags"
+ },
+ {
+  "id": "S0229",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "One-page deal screening memo with pass/fail verdict"
+ },
+ {
+  "id": "S0230",
+  "deliverables": [
+   "structured-report-text",
+   "external-system-changes"
+  ],
+  "steps": 3,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "Target shortlist, CRM check, drafted founder outreach emails"
+ },
+ {
+  "id": "S0231",
+  "deliverables": [
+   "docx"
+  ],
+  "steps": 4,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Multi-section IC memo with financials, returns, risks, recommendation"
+ },
+ {
+  "id": "S0232",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 4,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "Portfolio company KPI variance summary with flags and covenants"
+ },
+ {
+  "id": "S0233",
+  "deliverables": [
+   "xlsx",
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "complex",
+  "output": "IRR/MOIC returns workbook with sensitivity and scenario tables"
+ },
+ {
+  "id": "S0234",
+  "deliverables": [
+   "xlsx",
+   "pptx"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Unit economics workbook with cohorts, LTV/CAC, quality score"
+ },
+ {
+  "id": "S0235",
+  "deliverables": [
+   "docx",
+   "pptx",
+   "xlsx"
+  ],
+  "steps": 6,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Value creation plan with EBITDA bridge, 100-day plan, KPIs"
+ },
+ {
+  "id": "S0247",
+  "deliverables": [
+   "chat-answer",
+   "structured-report-text"
+  ],
+  "steps": 6,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Validated data answer, analysis, or formal report"
+ },
+ {
+  "id": "S0248",
+  "deliverables": [
+   "html"
+  ],
+  "steps": 7,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "complex",
+  "output": "Self-contained interactive HTML dashboard with KPIs, charts, filters"
+ },
+ {
+  "id": "S0249",
+  "deliverables": [
+   "data-file"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Publication-quality Python chart PNG with code"
+ },
+ {
+  "id": "S0251",
+  "deliverables": [
+   "data-file"
+  ],
+  "steps": 1,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "Chart selection guidance and Python plotting patterns"
+ },
+ {
+  "id": "S0252",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 7,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Dataset profile with quality issues and recommended analyses"
+ },
+ {
+  "id": "S0253",
+  "deliverables": [
+   "chat-answer"
+  ],
+  "steps": 1,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "Dialect-specific SQL patterns and query guidance"
+ },
+ {
+  "id": "S0254",
+  "deliverables": [
+   "chat-answer"
+  ],
+  "steps": 1,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "Statistical methods guidance and interpretation cautions"
+ },
+ {
+  "id": "S0255",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 8,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Analysis validation report with confidence assessment and caveats"
+ },
+ {
+  "id": "S0256",
+  "deliverables": [
+   "chat-answer"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "Optimized SQL query for the user's dialect"
+ },
+ {
+  "id": "S0269",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "SOX control testing workpapers, samples, deficiency classification"
+ },
+ {
+  "id": "S0270",
+  "deliverables": [
+   "chat-answer"
+  ],
+  "steps": 1,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "Month-end close checklist, sequencing, and status tracker guidance"
+ },
+ {
+  "id": "S0271",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 6,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Comparative income statement with variance analysis and key metrics"
+ },
+ {
+  "id": "S0272",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Balanced journal entry with supporting calculations and posting instructions"
+ },
+ {
+  "id": "S0273",
+  "deliverables": [
+   "chat-answer"
+  ],
+  "steps": 1,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "Reference guidance on accrual entry types and JE review"
+ },
+ {
+  "id": "S0274",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Account reconciliation with categorized reconciling items and aging report"
+ },
+ {
+  "id": "S0275",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 7,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "complex",
+  "output": "SOX control matrix, sample selections, testing workpapers, deficiency assessment"
+ },
+ {
+  "id": "S0276",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 4,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Variance decomposition with narratives, waterfall and bridge reconciliation"
+ },
+ {
+  "id": "S0277",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 2,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "Compensation benchmark percentiles, band placement, and recommendations"
+ },
+ {
+  "id": "S0278",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 2,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Offer letter draft with comp package and manager notes"
+ },
+ {
+  "id": "S0279",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 1,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Interview kit: competencies, question bank, scorecard, debrief template"
+ },
+ {
+  "id": "S0280",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 2,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Onboarding checklist, Day 1 schedule, and 30/60/90 goals"
+ },
+ {
+  "id": "S0281",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 1,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Text org chart, headcount cost plan, and hiring sequence"
+ },
+ {
+  "id": "S0282",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "complex",
+  "output": "People analytics report with metrics, analysis, and recommendations"
+ },
+ {
+  "id": "S0283",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 2,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Self-assessment, manager review, or calibration prep template"
+ },
+ {
+  "id": "S0284",
+  "deliverables": [
+   "chat-answer"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "Plain-language policy answer with quoted source and contacts"
+ },
+ {
+  "id": "S0285",
+  "deliverables": [
+   "chat-answer"
+  ],
+  "steps": 1,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "Recruiting pipeline stage guidance and metrics to track"
+ },
+ {
+  "id": "S0286",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 3,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "Daily, topic, or incident legal brief from connected sources"
+ },
+ {
+  "id": "S0287",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 2,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Compliance check: applicable regulations, requirements, risks, approvals"
+ },
+ {
+  "id": "S0288",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "Templated legal response draft with escalation check and follow-ups"
+ },
+ {
+  "id": "S0289",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 3,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Severity-by-likelihood risk assessment memo and register entry"
+ },
+ {
+  "id": "S0290",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Multi-source meeting briefing with talking points and action tracker"
+ },
+ {
+  "id": "S0291",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 8,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Clause-by-clause contract review with redlines and negotiation strategy"
+ },
+ {
+  "id": "S0292",
+  "deliverables": [
+   "external-system-changes",
+   "chat-answer"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Pre-signature check and routed e-signature envelope summary"
+ },
+ {
+  "id": "S0293",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "NDA triage report with GREEN/YELLOW/RED classification and routing"
+ },
+ {
+  "id": "S0294",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Consolidated vendor agreement status report with gap analysis"
+ },
+ {
+  "id": "S0303",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 2,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "Capacity plan with utilization, demand gaps, and scenarios"
+ },
+ {
+  "id": "S0304",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Change request with impact, risk, communication, and rollback plans"
+ },
+ {
+  "id": "S0305",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 1,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Compliance status, gap analysis, and audit prep checklists"
+ },
+ {
+  "id": "S0306",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 2,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "SOP document with RACI, process flow, steps, exceptions"
+ },
+ {
+  "id": "S0307",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Before/after process comparison with improvements and implementation plan"
+ },
+ {
+  "id": "S0308",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 1,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Prioritized operational risk register with mitigations"
+ },
+ {
+  "id": "S0309",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 1,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Operational runbook with procedure, troubleshooting, rollback, escalation"
+ },
+ {
+  "id": "S0310",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 2,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "Status report with KPIs, risks, decisions, next priorities"
+ },
+ {
+  "id": "S0311",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 2,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "Vendor review with TCO, risks, recommendation, negotiation points"
+ },
+ {
+  "id": "S0326",
+  "deliverables": [
+   "pdf"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Annotated, form-filled, or visually signed PDF in live viewer"
+ },
+ {
+  "id": "S0376",
+  "deliverables": [
+   "html",
+   "external-system-changes",
+   "data-file"
+  ],
+  "steps": 8,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Coded, matched bills staged in ledger plus payment-run proposal"
+ },
+ {
+  "id": "S0380",
+  "deliverables": [
+   "html",
+   "structured-report-text"
+  ],
+  "steps": 6,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "One-page cross-connector business snapshot with risks and priority"
+ },
+ {
+  "id": "S0383",
+  "deliverables": [
+   "xlsx",
+   "html",
+   "structured-report-text"
+  ],
+  "steps": 6,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "30/60/90-day cash forecast workbook with confidence bands and risks"
+ },
+ {
+  "id": "S0384",
+  "deliverables": [
+   "xlsx",
+   "pdf",
+   "html",
+   "external-system-changes"
+  ],
+  "steps": 3,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Month-end close packet: reconciliation, P&L narrative, refreshed forecast"
+ },
+ {
+  "id": "S0386",
+  "deliverables": [
+   "structured-report-text",
+   "html",
+   "docx"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "complex",
+  "output": "Severity-tiered contract risk summary, negotiation playbook, redlined DOCX"
+ },
+ {
+  "id": "S0388",
+  "deliverables": [
+   "html",
+   "docx",
+   "external-system-changes"
+  ],
+  "steps": 8,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Opportunity screen, go/no-go, compliance matrix, drafted grant/RFP response"
+ },
+ {
+  "id": "S0391",
+  "deliverables": [
+   "html",
+   "structured-report-text",
+   "external-system-changes"
+  ],
+  "steps": 7,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Rubric-scored candidate shortlist, drafted replies, interviews, onboarding checklist"
+ },
+ {
+  "id": "S0393",
+  "deliverables": [
+   "html",
+   "structured-report-text",
+   "external-system-changes"
+  ],
+  "steps": 8,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Velocity-based reorder buy list, slow movers, drafted POs"
+ },
+ {
+  "id": "S0394",
+  "deliverables": [
+   "html",
+   "external-system-changes"
+  ],
+  "steps": 7,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Tone-matched overdue invoice reminders with AR summary table"
+ },
+ {
+  "id": "S0395",
+  "deliverables": [
+   "docx",
+   "html",
+   "external-system-changes"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Hiring packet: job post, interview guide with rubrics, offer letter"
+ },
+ {
+  "id": "S0399",
+  "deliverables": [
+   "html",
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Merged one-page Monday brief: pulse, KPI pack, week ahead"
+ },
+ {
+  "id": "S0400",
+  "deliverables": [
+   "xlsx",
+   "pdf",
+   "html"
+  ],
+  "steps": 9,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Ledger-processor reconciliation, flags, P&L narrative, close packet files"
+ },
+ {
+  "id": "S0402",
+  "deliverables": [
+   "html",
+   "external-system-changes",
+   "data-file"
+  ],
+  "steps": 4,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Coded bills, cash check, and staged payment run"
+ },
+ {
+  "id": "S0403",
+  "deliverables": [
+   "html",
+   "external-system-changes"
+  ],
+  "steps": 8,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Validated payroll run sheet with anomaly flags and journal sync"
+ },
+ {
+  "id": "S0404",
+  "deliverables": [
+   "html",
+   "xlsx",
+   "external-system-changes"
+  ],
+  "steps": 4,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Payroll cash verdict, collection reminders, and staged payroll run"
+ },
+ {
+  "id": "S0407",
+  "deliverables": [
+   "xlsx",
+   "html",
+   "structured-report-text"
+  ],
+  "steps": 7,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Recurring KPI report: spec, summary, XLSX workbook, saved definition"
+ },
+ {
+  "id": "S0408",
+  "deliverables": [
+   "xlsx",
+   "html",
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Scheduled report pack with business-pulse context and workbook"
+ },
+ {
+  "id": "S0409",
+  "deliverables": [
+   "html",
+   "external-system-changes",
+   "data-file"
+  ],
+  "steps": 4,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Reorder plan, approved POs, vendor emails, coded ledger memo"
+ },
+ {
+  "id": "S0416",
+  "deliverables": [
+   "html",
+   "structured-report-text"
+  ],
+  "steps": 3,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Accountant tax packet built on verified closed books"
+ },
+ {
+  "id": "S0417",
+  "deliverables": [
+   "html",
+   "structured-report-text"
+  ],
+  "steps": 6,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Quarterly estimated tax calculation or 1099-NEC prep package"
+ },
+ {
+  "id": "S0427",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Co-authored document refined section-by-section and reader-tested"
+ },
+ {
+  "id": "S0428",
+  "deliverables": [
+   "docx"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "complex",
+  "output": "Created or edited Word document, validated and visually verified"
+ },
+ {
+  "id": "S0432",
+  "deliverables": [
+   "pdf",
+   "data-file"
+  ],
+  "steps": 1,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "PDF manipulation via code recipes: merge, split, extract, create"
+ },
+ {
+  "id": "S0433",
+  "deliverables": [
+   "pptx"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "complex",
+  "output": "Designed slide deck with validation, content and visual QA"
+ },
+ {
+  "id": "S0439",
+  "deliverables": [
+   "xlsx"
+  ],
+  "steps": 4,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "complex",
+  "output": "Formula-driven workbook or financial model, recalculated error-free"
+ },
+ {
+  "id": "S0615",
+  "deliverables": [
+   "chat-answer"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "Advice on honest uncertainty and distribution chart encodings"
+ },
+ {
+  "id": "S0620",
+  "deliverables": [
+   "chat-answer",
+   "structured-report-text"
+  ],
+  "steps": 20,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Visualization strategy, critique, concept images, and design handoff"
+ },
+ {
+  "id": "S0631",
+  "deliverables": [
+   "html",
+   "data-file",
+   "structured-report-text"
+  ],
+  "steps": 8,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Data-quality assessment report with evidence, severity, and tests"
+ },
+ {
+  "id": "S0632",
+  "deliverables": [
+   "html",
+   "external-system-changes"
+  ],
+  "steps": 8,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Source-backed validated dashboard on BI, Sites, or HTML"
+ },
+ {
+  "id": "S0633",
+  "deliverables": [
+   "html",
+   "external-system-changes"
+  ],
+  "steps": 10,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Answer-first analytical report with visuals, sources, and validation"
+ },
+ {
+  "id": "S0634",
+  "deliverables": [
+   "docx",
+   "external-system-changes"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "HTML report converted to DOCX and uploaded to Drive"
+ },
+ {
+  "id": "S0635",
+  "deliverables": [
+   "pptx",
+   "external-system-changes"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "HTML report converted into verified native Google Slides deck"
+ },
+ {
+  "id": "S0636",
+  "deliverables": [
+   "pdf"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Verified PDF printed from static HTML report"
+ },
+ {
+  "id": "S0637",
+  "deliverables": [
+   "data-file",
+   "external-system-changes"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Installed semantic-layer skill package with source inventory"
+ },
+ {
+  "id": "S0638",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 6,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "KPI framework with definitions, guardrails, targets, and rationale"
+ },
+ {
+  "id": "S0639",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 8,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "Compact attributed business-context note for downstream analysis"
+ },
+ {
+  "id": "S0641",
+  "deliverables": [
+   "data-file"
+  ],
+  "steps": 8,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "complex",
+  "output": "Executed, reproducible SQL/Python Jupyter notebook"
+ },
+ {
+  "id": "S0642",
+  "deliverables": [
+   "html",
+   "structured-report-text"
+  ],
+  "steps": 9,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Validated KPI readout with pacing, drivers, handed to report"
+ },
+ {
+  "id": "S0643",
+  "deliverables": [
+   "html",
+   "data-file"
+  ],
+  "steps": 7,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "TAM/SAM/SOM sizing model with sensitivity and report"
+ },
+ {
+  "id": "S0644",
+  "deliverables": [
+   "html",
+   "structured-report-text"
+  ],
+  "steps": 6,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Metric movement diagnosis with quantified drivers and report"
+ },
+ {
+  "id": "S0645",
+  "deliverables": [
+   "html",
+   "structured-report-text"
+  ],
+  "steps": 6,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Data-backed decision recommendation with sized opportunities and report"
+ },
+ {
+  "id": "S0646",
+  "deliverables": [
+   "external-system-changes"
+  ],
+  "steps": 7,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Validated artifact published as Sites snapshot URL"
+ },
+ {
+  "id": "S0647",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 8,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Validation report with confidence rating, spot-checks, required fixes"
+ },
+ {
+  "id": "S0648",
+  "deliverables": [
+   "html",
+   "data-file"
+  ],
+  "steps": 8,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Chart contract and QA-checked quantitative visual"
+ },
+ {
+  "id": "S0655",
+  "deliverables": [
+   "external-system-changes",
+   "docx"
+  ],
+  "steps": 11,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Template-faithful native Google Doc created or edited, verified"
+ },
+ {
+  "id": "S0657",
+  "deliverables": [
+   "external-system-changes"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Evidence-anchored Drive comments, replies, and resolutions posted"
+ },
+ {
+  "id": "S0658",
+  "deliverables": [
+   "external-system-changes",
+   "xlsx"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "complex",
+  "output": "Native Google Sheet created or edited, visually verified"
+ },
+ {
+  "id": "S0659",
+  "deliverables": [
+   "external-system-changes"
+  ],
+  "steps": 7,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Template-faithful native Google Slides deck, rendered and QA'd"
+ },
+ {
+  "id": "S0713",
+  "deliverables": [
+   "external-system-changes",
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "complex",
+  "output": "Mixpanel dashboard built or modified plus data-driven analysis"
+ },
+ {
+  "id": "S0715",
+  "deliverables": [
+   "chat-answer",
+   "data-file"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Mixpanel query results and exploratory analytics insights with charts"
+ },
+ {
+  "id": "S0761",
+  "deliverables": [
+   "html",
+   "xlsx",
+   "data-file",
+   "chat-answer"
+  ],
+  "steps": 8,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Source-backed catalyst calendar HTML/workbook with ranked events"
+ },
+ {
+  "id": "S0762",
+  "deliverables": [
+   "html",
+   "chat-answer"
+  ],
+  "steps": 7,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Source-backed public issuer tearsheet with metrics and evidence gaps"
+ },
+ {
+  "id": "S0763",
+  "deliverables": [
+   "html",
+   "xlsx"
+  ],
+  "steps": 6,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Comparable-company valuation report or refreshable comps workbook"
+ },
+ {
+  "id": "S0764",
+  "deliverables": [
+   "xlsx",
+   "data-file"
+  ],
+  "steps": 7,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Formula-driven DCF valuation workbook with run logs and citations"
+ },
+ {
+  "id": "S0765",
+  "deliverables": [
+   "html",
+   "data-file"
+  ],
+  "steps": 7,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Senior-review QC report with issue log and number tie-outs"
+ },
+ {
+  "id": "S0766",
+  "deliverables": [
+   "html",
+   "structured-report-text",
+   "xlsx"
+  ],
+  "steps": 6,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Post-earnings deep-dive report with EPS bridge, charts, debate map"
+ },
+ {
+  "id": "S0767",
+  "deliverables": [
+   "html",
+   "xlsx",
+   "data-file"
+  ],
+  "steps": 7,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Pre-earnings preview report with expectation bar, scenarios, questions"
+ },
+ {
+  "id": "S0768",
+  "deliverables": [
+   "html",
+   "structured-report-text"
+  ],
+  "steps": 10,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Event-to-equity economic impact report with transmission map, scenarios"
+ },
+ {
+  "id": "S0769",
+  "deliverables": [
+   "xlsx",
+   "data-file",
+   "html"
+  ],
+  "steps": 11,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Updated equity model workbook copy with change log, tie-out"
+ },
+ {
+  "id": "S0770",
+  "deliverables": [
+   "html",
+   "structured-report-text",
+   "data-file"
+  ],
+  "steps": 9,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Event-driven underwriting report with probability tree, expected return"
+ },
+ {
+  "id": "S0771",
+  "deliverables": [
+   "data-file",
+   "xlsx"
+  ],
+  "steps": 8,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Model-ready normalized financial schedules with QA flags, validation checks"
+ },
+ {
+  "id": "S0772",
+  "deliverables": [
+   "html",
+   "chat-answer",
+   "data-file"
+  ],
+  "steps": 7,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Ranked idea-triage report with candidate funnel and workflow routing"
+ },
+ {
+  "id": "S0773",
+  "deliverables": [
+   "html",
+   "structured-report-text",
+   "data-file"
+  ],
+  "steps": 9,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Initiating-coverage research report with thesis, model, valuation"
+ },
+ {
+  "id": "S0774",
+  "deliverables": [
+   "html",
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "PM-facing long/short trade pitch with scenarios and action rules"
+ },
+ {
+  "id": "S0775",
+  "deliverables": [
+   "html",
+   "chat-answer"
+  ],
+  "steps": 7,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Live-meeting prep brief with ranked questions and follow-up tracker"
+ },
+ {
+  "id": "S0776",
+  "deliverables": [
+   "docx",
+   "html"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Decision-grade investment memo as DOCX or HTML report"
+ },
+ {
+  "id": "S0777",
+  "deliverables": [
+   "html",
+   "xlsx",
+   "data-file"
+  ],
+  "steps": 9,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Model audit report with issue log, tie-out ledger, verdict"
+ },
+ {
+  "id": "S0778",
+  "deliverables": [
+   "html",
+   "data-file"
+  ],
+  "steps": 8,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Position sizing and hedge risk decision report with scenarios"
+ },
+ {
+  "id": "S0780",
+  "deliverables": [
+   "html",
+   "data-file"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Scenario and sensitivity report with breakpoints and action thresholds"
+ },
+ {
+  "id": "S0781",
+  "deliverables": [
+   "xlsx",
+   "html",
+   "data-file"
+  ],
+  "steps": 11,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Updated thesis tracker workbook with evidence ledger and actions"
+ },
+ {
+  "id": "S0782",
+  "deliverables": [
+   "xlsx",
+   "data-file"
+  ],
+  "steps": 8,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Integrated three-statement formula workbook with checks and run logs"
+ },
+ {
+  "id": "S0787",
+  "deliverables": [
+   "chat-answer",
+   "external-system-changes"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "Grouped vendor shortlist with optional machine-payment purchase"
+ },
+ {
+  "id": "S0817",
+  "deliverables": [
+   "pdf"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Generated or reviewed PDF verified via page renders"
+ },
+ {
+  "id": "S1026",
+  "deliverables": [
+   "structured-report-text",
+   "docx"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Jurisdiction-aware contract, proposal, SOW, or NDA draft"
+ },
+ {
+  "id": "S1031",
+  "deliverables": [
+   "structured-report-text",
+   "data-file"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Erlang-C capacity sizing, utilization health, quarterly hiring plan"
+ },
+ {
+  "id": "S1033",
+  "deliverables": [
+   "structured-report-text",
+   "data-file"
+  ],
+  "steps": 4,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "KB health report, runbook validity scores, 5W2H SOPs"
+ },
+ {
+  "id": "S1034",
+  "deliverables": [
+   "structured-report-text",
+   "data-file"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "complex",
+  "output": "BPMN swim-lane map, cycle-time analysis, ranked bottleneck list"
+ },
+ {
+  "id": "S1035",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Spend Pareto, cycle scorecard, risk-flagged supplier consolidation digest"
+ },
+ {
+  "id": "S1036",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Vendor scorecard, SLA compliance report, risk matrix, VMO digest"
+ },
+ {
+  "id": "S1040",
+  "deliverables": [
+   "chat-answer"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Strategic data decision brief with script-backed evidence"
+ },
+ {
+  "id": "S1045",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 7,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Blameless postmortem with 5 Whys and owned change register"
+ },
+ {
+  "id": "S1047",
+  "deliverables": [
+   "chat-answer"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Contract or term-sheet risk review with counter-proposals"
+ },
+ {
+  "id": "S1053",
+  "deliverables": [
+   "chat-answer",
+   "structured-report-text"
+  ],
+  "steps": 3,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Runway, unit economics, or fundraising models with recommendations"
+ },
+ {
+  "id": "S1054",
+  "deliverables": [
+   "chat-answer"
+  ],
+  "steps": 1,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "ADKAR-based change rollout guidance and communication sequence"
+ },
+ {
+  "id": "S1056",
+  "deliverables": [
+   "chat-answer",
+   "structured-report-text"
+  ],
+  "steps": 3,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Hiring plan, comp bands, or org design recommendations"
+ },
+ {
+  "id": "S1057",
+  "deliverables": [
+   "chat-answer",
+   "structured-report-text"
+  ],
+  "steps": 3,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "ALE-quantified security risk register and compliance roadmap advice"
+ },
+ {
+  "id": "S1059",
+  "deliverables": [
+   "chat-answer"
+  ],
+  "steps": 3,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "Company operating-system advice: accountability chart, scorecard, rhythms"
+ },
+ {
+  "id": "S1062",
+  "deliverables": [
+   "chat-answer",
+   "structured-report-text"
+  ],
+  "steps": 3,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "OKR cascade, bottleneck, or ops cadence recommendations"
+ },
+ {
+  "id": "S1067",
+  "deliverables": [
+   "chat-answer"
+  ],
+  "steps": 2,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "Culture values-to-behaviors and culture-code guidance"
+ },
+ {
+  "id": "S1072",
+  "deliverables": [
+   "chat-answer"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "M&A diligence checklist, valuation framing, negotiation guidance"
+ },
+ {
+  "id": "S1073",
+  "deliverables": [
+   "structured-report-text",
+   "data-file"
+  ],
+  "steps": 3,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "Eight-dimension traffic-light org health dashboard with priorities"
+ },
+ {
+  "id": "S1075",
+  "deliverables": [
+   "chat-answer",
+   "structured-report-text"
+  ],
+  "steps": 6,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "OKR alignment analysis with orphans, conflicts, realignment plan"
+ },
+ {
+  "id": "S1085",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Article-cited EU AI Act readiness report with verdict"
+ },
+ {
+  "id": "S1086",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "ISO 42001 AIMS audit readiness report with gaps, audit plan"
+ },
+ {
+  "id": "S1087",
+  "deliverables": [
+   "structured-report-text",
+   "data-file"
+  ],
+  "steps": 6,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Framework applicability, control overlap map, mock audit, evidence pool"
+ },
+ {
+  "id": "S1088",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Multi-framework compliance readiness report with mock audit results"
+ },
+ {
+  "id": "S1089",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "FDA QSR inspection-readiness report on complaints, DHRs, CAPAs"
+ },
+ {
+  "id": "S1090",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Article-cited GDPR audit prep report with verdict, actions"
+ },
+ {
+  "id": "S1091",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "ISO 13485 audit prep report on DHFs, CAPAs, PMS"
+ },
+ {
+  "id": "S1092",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "ISO 27001 ISMS audit readiness report with verdict"
+ },
+ {
+  "id": "S1093",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "SOC 2 Type II observation-period readiness report with verdict"
+ },
+ {
+  "id": "S1094",
+  "deliverables": [
+   "structured-report-text",
+   "chat-answer"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Investment recommendation with ROI, NPV, IRR, upside/downside cases"
+ },
+ {
+  "id": "S1096",
+  "deliverables": [
+   "structured-report-text",
+   "data-file"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Ratio, DCF, variance, and forecast reports with sensitivities"
+ },
+ {
+  "id": "S1097",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "SaaS health report with benchmarked metrics and priority fixes"
+ },
+ {
+  "id": "S1098",
+  "deliverables": [
+   "structured-report-text",
+   "chat-answer"
+  ],
+  "steps": 11,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Primary-sourced stock analysis report with sector-relative scorecard"
+ },
+ {
+  "id": "S1101",
+  "deliverables": [
+   "html"
+  ],
+  "steps": 3,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Single-file interactive HTML document converted from markdown"
+ },
+ {
+  "id": "S1103",
+  "deliverables": [
+   "html"
+  ],
+  "steps": 3,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Single-file HTML slide deck with presenter mode"
+ },
+ {
+  "id": "S1189",
+  "deliverables": [
+   "external-system-changes"
+  ],
+  "steps": 7,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Executed Atlassian admin changes with verification checks"
+ },
+ {
+  "id": "S1192",
+  "deliverables": [
+   "external-system-changes",
+   "chat-answer"
+  ],
+  "steps": 7,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Jira configuration, JQL queries, dashboards, automation rules"
+ },
+ {
+  "id": "S1195",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Sprint velocity forecasts, health scores, retrospective insights"
+ },
+ {
+  "id": "S1196",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 4,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Portfolio health, EMV risk, capacity executive report"
+ },
+ {
+  "id": "S1198",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 7,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "AI Act classification memo, conformity plan, Annex IV pack"
+ },
+ {
+  "id": "S1199",
+  "deliverables": [
+   "structured-report-text",
+   "data-file"
+  ],
+  "steps": 6,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "AIMS gap matrix, AI risk register, 12-month audit plan"
+ },
+ {
+  "id": "S1201",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 8,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "CAPA investigation, action plan, effectiveness verification, metrics report"
+ },
+ {
+  "id": "S1202",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 13,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "FDA pathway strategy and 510(k) submission package"
+ },
+ {
+  "id": "S1203",
+  "deliverables": [
+   "structured-report-text",
+   "data-file"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "GDPR compliance scan, DPIA report, DSAR tracking"
+ },
+ {
+  "id": "S1204",
+  "deliverables": [
+   "structured-report-text",
+   "data-file"
+  ],
+  "steps": 4,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "ISMS risk register, Statement of Applicability, gap analysis"
+ },
+ {
+  "id": "S1205",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 7,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "ISO 27001 audit plan, findings, certification prep documentation"
+ },
+ {
+  "id": "S1206",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 8,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "MDR classification, technical file, CER, PMS plan"
+ },
+ {
+  "id": "S1207",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 8,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "ISO 13485 audit schedule, audit reports, classified nonconformities"
+ },
+ {
+  "id": "S1208",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 8,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Controlled documents, change records, Part 11 compliance checks"
+ },
+ {
+  "id": "S1209",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 8,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Management review input package, KPI framework, quality objectives"
+ },
+ {
+  "id": "S1210",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 8,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "QMS gap analysis, quality manual, audit and validation reports"
+ },
+ {
+  "id": "S1212",
+  "deliverables": [
+   "structured-report-text",
+   "pdf"
+  ],
+  "steps": 8,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Regulatory strategy, 510(k)/PMA packages, MDR technical documentation"
+ },
+ {
+  "id": "S1213",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "complex",
+  "output": "ISO 14971 risk management file: plan, hazard analysis, controls, report"
+ },
+ {
+  "id": "S1214",
+  "deliverables": [
+   "data-file",
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "SOC 2 control matrix, gap analysis, remediation plan, readiness score"
+ },
+ {
+  "id": "S1218",
+  "deliverables": [
+   "structured-report-text",
+   "data-file"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "R&D program-finance packet: F&A budget, runway, capex routing"
+ },
+ {
+  "id": "S1226",
+  "deliverables": [
+   "docx"
+  ],
+  "steps": 7,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Eight-section patent prior-art/FTO DOCX report with audit log"
+ },
+ {
+  "id": "S1230",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 6,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Meeting-ready alternative-investments brief with position table and flags"
+ },
+ {
+  "id": "S1231",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "SEC marketing compliance verdict table, disclosures, clean redraft, records entry"
+ },
+ {
+  "id": "S1232",
+  "deliverables": [
+   "structured-report-text",
+   "external-system-changes"
+  ],
+  "steps": 8,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Estate and tax brief with titling comparison, prioritized flags, CRM tasks"
+ },
+ {
+  "id": "S1234",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 6,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Drift analysis, tax-aware rebalance options, model mapping, rationale memo"
+ },
+ {
+  "id": "S1235",
+  "deliverables": [
+   "external-system-changes",
+   "chat-answer"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "Approved CRM meeting note, tasks and opportunities written back"
+ },
+ {
+  "id": "S1236",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Eight-section client meeting prep document from six data sources"
+ },
+ {
+  "id": "S1237",
+  "deliverables": [
+   "structured-report-text",
+   "external-system-changes"
+  ],
+  "steps": 6,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Consolidated prospect summary, analyst handoff, what-to-expect memo, CRM attach"
+ },
+ {
+  "id": "S1238",
+  "deliverables": [
+   "data-file",
+   "chat-answer"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "EU AI Act system inventory YAML record with role/tier classification"
+ },
+ {
+  "id": "S1239",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 7,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Full AI impact assessment with regulatory classification and conditions"
+ },
+ {
+  "id": "S1243",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 7,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "AI policy drift sweep report with gaps and suggested language"
+ },
+ {
+  "id": "S1244",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 7,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Sourced draft AI usage policy with review flags and adoption checklist"
+ },
+ {
+  "id": "S1245",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Regulation gap analysis with prioritized remediation plan tracker"
+ },
+ {
+  "id": "S1246",
+  "deliverables": [
+   "chat-answer"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "AI use case classification with conditions table and handoffs"
+ },
+ {
+  "id": "S1247",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 7,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Vendor AI terms review memo with term-by-term gaps and redlines"
+ },
+ {
+  "id": "S1248",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Contract amendment history summary or provision trace with net state"
+ },
+ {
+  "id": "S1251",
+  "deliverables": [
+   "chat-answer"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "Named approver and drafted escalation message for a contract issue"
+ },
+ {
+  "id": "S1253",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "GREEN/YELLOW/RED NDA triage with flagged items and checks table"
+ },
+ {
+  "id": "S1254",
+  "deliverables": [
+   "data-file",
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "Renewal register updates and urgency-banded cancel-by deadline report"
+ },
+ {
+  "id": "S1256",
+  "deliverables": [
+   "chat-answer",
+   "data-file"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "Approved playbook proposal diffs applied to practice profile"
+ },
+ {
+  "id": "S1257",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "SaaS agreement review memo with SaaS overlay findings and renewal handoff"
+ },
+ {
+  "id": "S1258",
+  "deliverables": [
+   "chat-answer"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "Under-200-word business stakeholder contract summary with escalation reconciliation"
+ },
+ {
+  "id": "S1259",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Vendor agreement review memo with severity issues, redlines, approval routing"
+ },
+ {
+  "id": "S1260",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 4,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "Bulk-review tool load request and QA summary with error rate"
+ },
+ {
+  "id": "S1261",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Board minutes draft in house format with review checklist"
+ },
+ {
+  "id": "S1262",
+  "deliverables": [
+   "data-file",
+   "structured-report-text"
+  ],
+  "steps": 4,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Closing checklist YAML and blocking-items critical-path status report"
+ },
+ {
+  "id": "S1265",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 3,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "Audience-tiered diligence briefing with deltas and decisions needed"
+ },
+ {
+  "id": "S1266",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "VDR diligence issues memo by category with severity and handoffs"
+ },
+ {
+  "id": "S1267",
+  "deliverables": [
+   "data-file",
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Entity compliance tracker YAML, deadline reports, health audit, CSV export"
+ },
+ {
+  "id": "S1268",
+  "deliverables": [
+   "data-file",
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Post-close integration tracker, contract tiers, status reports, CSV export"
+ },
+ {
+  "id": "S1269",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Material contracts disclosure schedule plus internal consent overlay"
+ },
+ {
+  "id": "S1271",
+  "deliverables": [
+   "xlsx",
+   "data-file",
+   "structured-report-text"
+  ],
+  "steps": 8,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Cited document-by-field review grid in xlsx/Sheets plus CSVs"
+ },
+ {
+  "id": "S1272",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Unanimous written consent draft with signatory checklist and review prompts"
+ },
+ {
+  "id": "S1275",
+  "deliverables": [
+   "data-file",
+   "structured-report-text"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Country expansion kickoff framing and persistent tracker file"
+ },
+ {
+  "id": "S1276",
+  "deliverables": [
+   "data-file",
+   "chat-answer"
+  ],
+  "steps": 7,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "Updated expansion tracker with overdue flags and next priorities"
+ },
+ {
+  "id": "S1277",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "Handbook change diff with cross-reference and state supplement impact"
+ },
+ {
+  "id": "S1278",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Researched offer-letter and restrictive covenant hiring review memo"
+ },
+ {
+  "id": "S1281",
+  "deliverables": [
+   "data-file",
+   "chat-answer"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "Investigation log entries with surfaced items and coverage record"
+ },
+ {
+  "id": "S1282",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Privileged internal investigation memo drafted from investigation log"
+ },
+ {
+  "id": "S1283",
+  "deliverables": [
+   "data-file",
+   "structured-report-text"
+  ],
+  "steps": 3,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "New investigation matter log with intake and sources checklist"
+ },
+ {
+  "id": "S1284",
+  "deliverables": [
+   "chat-answer"
+  ],
+  "steps": 3,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "Cited answer to a question against the investigation log"
+ },
+ {
+  "id": "S1285",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 3,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Audience-specific stripped summary of privileged investigation memo"
+ },
+ {
+  "id": "S1286",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 3,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Action-only alerts for leaves with upcoming legal deadlines"
+ },
+ {
+  "id": "S1287",
+  "deliverables": [
+   "data-file",
+   "chat-answer"
+  ],
+  "steps": 6,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "New leave register entry with first computed deadline"
+ },
+ {
+  "id": "S1289",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Core employment policy with state supplements and drafting notes"
+ },
+ {
+  "id": "S1290",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Termination review memo with risk flags, jurisdiction rules, term-day checklist"
+ },
+ {
+  "id": "S1291",
+  "deliverables": [
+   "chat-answer"
+  ],
+  "steps": 4,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "Cited jurisdiction-specific wage/hour answer, optional back-pay computation"
+ },
+ {
+  "id": "S1292",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Worker classification analysis with scored tests and gap analysis"
+ },
+ {
+  "id": "S1293",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Westlaw Deep Research report presented verbatim"
+ },
+ {
+  "id": "S1294",
+  "deliverables": [
+   "docx",
+   "structured-report-text"
+  ],
+  "steps": 8,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Calibrated cease-and-desist DOCX draft or inbound C&D triage memo"
+ },
+ {
+  "id": "S1295",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 8,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Trademark clearance first-pass memo with knockout and confusion flags"
+ },
+ {
+  "id": "S1298",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 8,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "FTO triage memo with patent search and claim-chart first pass"
+ },
+ {
+  "id": "S1299",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 8,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Multi-mode IP infringement triage memo with factor flags"
+ },
+ {
+  "id": "S1300",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Invention screen memo with six screens and pursue/investigate/decline verdict"
+ },
+ {
+  "id": "S1301",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "IP clause review memo with assignment gap check and redlines"
+ },
+ {
+  "id": "S1303",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 7,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "OSS license compliance memo classifying dependencies and obligations"
+ },
+ {
+  "id": "S1304",
+  "deliverables": [
+   "data-file",
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "IP portfolio register with computed deadlines, reports and audit"
+ },
+ {
+  "id": "S1305",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 8,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "complex",
+  "output": "DMCA takedown notice, counter-notice, or received-takedown triage memo"
+ },
+ {
+  "id": "S1306",
+  "deliverables": [
+   "chat-answer",
+   "data-file"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Targeted bar exam questions with explanations and session history"
+ },
+ {
+  "id": "S1307",
+  "deliverables": [
+   "chat-answer"
+  ],
+  "steps": 3,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "Case brief scaffold the student fills in"
+ },
+ {
+  "id": "S1308",
+  "deliverables": [
+   "chat-answer"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Predicted cold-call questions, Socratic drill, post-drill summary"
+ },
+ {
+  "id": "S1311",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Exam forecast from past exams with subject weighting and emphasis"
+ },
+ {
+  "id": "S1312",
+  "deliverables": [
+   "data-file",
+   "chat-answer"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Flashcard deck markdown and Leitner-style drill sessions"
+ },
+ {
+  "id": "S1313",
+  "deliverables": [
+   "structured-report-text",
+   "data-file"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Structured IRAC essay feedback with pattern tracker entry"
+ },
+ {
+  "id": "S1314",
+  "deliverables": [
+   "structured-report-text",
+   "data-file"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Structural legal writing feedback without rewriting, tracker entry"
+ },
+ {
+  "id": "S1315",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "Scaffolded course outline with gap markers from student sources"
+ },
+ {
+  "id": "S1316",
+  "deliverables": [
+   "chat-answer",
+   "data-file"
+  ],
+  "steps": 7,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "N-question study session with score report and plan update"
+ },
+ {
+  "id": "S1317",
+  "deliverables": [
+   "chat-answer"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "Interactive Socratic questioning drill without giving answers"
+ },
+ {
+  "id": "S1318",
+  "deliverables": [
+   "data-file",
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Phased, weighted day-by-day study plan YAML with prose summary"
+ },
+ {
+  "id": "S1330",
+  "deliverables": [
+   "data-file",
+   "chat-answer"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "Append-only client communications log entry or summary"
+ },
+ {
+  "id": "S1331",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 7,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Clinic intake summary with issues, conflicts, triage, deadline blocks"
+ },
+ {
+  "id": "S1332",
+  "deliverables": [
+   "chat-answer"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "Routine templated client letter draft for supervisor review"
+ },
+ {
+  "id": "S1335",
+  "deliverables": [
+   "data-file",
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "Clinic deadline ledger entries and cross-case deadline report"
+ },
+ {
+  "id": "S1336",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Jurisdiction-aware first draft of clinic filing with review checklist"
+ },
+ {
+  "id": "S1338",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "IRAC case memo scaffold with research gaps flagged"
+ },
+ {
+  "id": "S1340",
+  "deliverables": [
+   "chat-answer"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Interactive clinic onboarding walkthrough and one-page reference card"
+ },
+ {
+  "id": "S1341",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "Research roadmap of statutes, case-law areas, and search terms"
+ },
+ {
+  "id": "S1342",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Per-case semester handoff memos plus cohort summary files"
+ },
+ {
+  "id": "S1343",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Audience-specific case status letter, internal update, or court report"
+ },
+ {
+  "id": "S1344",
+  "deliverables": [
+   "chat-answer",
+   "external-system-changes"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "Review queue view with logged approve/edit/return actions"
+ },
+ {
+  "id": "S1345",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Record-cited brief section draft with drafting notes and cite check"
+ },
+ {
+  "id": "S1346",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 7,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "De-duplicated, significance-tagged matter chronology file with gaps section"
+ },
+ {
+  "id": "S1347",
+  "deliverables": [
+   "structured-report-text",
+   "xlsx",
+   "data-file"
+  ],
+  "steps": 11,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Pin-cited patent/civil element chart in markdown, CSV, and Excel"
+ },
+ {
+  "id": "S1350",
+  "deliverables": [
+   "docx",
+   "structured-report-text"
+  ],
+  "steps": 9,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Gated demand letter .docx plus post-send checklist"
+ },
+ {
+  "id": "S1351",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Structured demand-letter intake.md for downstream drafting"
+ },
+ {
+  "id": "S1352",
+  "deliverables": [
+   "structured-report-text",
+   "external-system-changes"
+  ],
+  "steps": 7,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Inbound demand triage memo with portfolio check and response options"
+ },
+ {
+  "id": "S1353",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Theory-driven deposition outline with impeachment material and exhibit list"
+ },
+ {
+  "id": "S1354",
+  "deliverables": [
+   "docx",
+   "external-system-changes",
+   "structured-report-text"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Legal hold notice .docx, log updates, portfolio hold status"
+ },
+ {
+  "id": "S1355",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "Single-matter briefing with risk re-assessment prompts"
+ },
+ {
+  "id": "S1356",
+  "deliverables": [
+   "external-system-changes",
+   "structured-report-text"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Matter close record written to log, history, and matter file"
+ },
+ {
+  "id": "S1357",
+  "deliverables": [
+   "structured-report-text",
+   "external-system-changes"
+  ],
+  "steps": 8,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "New matter.md, history.md, and structured portfolio log row"
+ },
+ {
+  "id": "S1358",
+  "deliverables": [
+   "external-system-changes"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "Dated matter history entry and updated log fields"
+ },
+ {
+  "id": "S1360",
+  "deliverables": [
+   "structured-report-text",
+   "external-system-changes"
+  ],
+  "steps": 7,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "Per-matter outside counsel status email drafts plus run summary"
+ },
+ {
+  "id": "S1361",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Portfolio rollup of risk, deadlines, exposure, and anomaly flags"
+ },
+ {
+  "id": "S1362",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Entry-by-entry privilege log review with attorney flags"
+ },
+ {
+  "id": "S1363",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 10,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Subpoena triage with objections framework, compliance plan, deadline calendar"
+ },
+ {
+  "id": "S1366",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "DPA review memo with term-by-term analysis and redlines"
+ },
+ {
+  "id": "S1367",
+  "deliverables": [
+   "structured-report-text",
+   "external-system-changes"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "DSAR acknowledgment and response letters with exemption analysis log"
+ },
+ {
+  "id": "S1369",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "House-format privacy impact assessment with conditions and owners"
+ },
+ {
+  "id": "S1370",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Privacy policy drift sweep report with suggested policy language"
+ },
+ {
+  "id": "S1371",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Regulation gap list and prioritized remediation plan"
+ },
+ {
+  "id": "S1372",
+  "deliverables": [
+   "chat-answer"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "PROCEED/PIA/DPIA/STOP classification with conditions table"
+ },
+ {
+  "id": "S1375",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "complex",
+  "output": "Standalone 2-4 page feature risk decision document"
+ },
+ {
+  "id": "S1376",
+  "deliverables": [
+   "chat-answer"
+  ],
+  "steps": 3,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "One-line fine / needs-a-look / hold triage reply"
+ },
+ {
+  "id": "S1377",
+  "deliverables": [
+   "structured-report-text",
+   "external-system-changes"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Category-by-category launch review memo plus redacted tracker comment"
+ },
+ {
+  "id": "S1378",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Claim-by-claim marketing review with revised copy and substantiation needs"
+ },
+ {
+  "id": "S1381",
+  "deliverables": [
+   "chat-answer",
+   "external-system-changes"
+  ],
+  "steps": 3,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "NPRM comment deadline tracker view and logged filing decisions"
+ },
+ {
+  "id": "S1384",
+  "deliverables": [
+   "chat-answer",
+   "external-system-changes"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "Open gap tracker report with close/risk-accept updates"
+ },
+ {
+  "id": "S1386",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Per-requirement regulation-to-policy gap diff with owners"
+ },
+ {
+  "id": "S1387",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Marked-up proposed policy redraft memo with change summary"
+ },
+ {
+  "id": "S1388",
+  "deliverables": [
+   "structured-report-text",
+   "external-system-changes"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Materiality-tiered regulatory feed digest file and comment-tracker entries"
+ },
+ {
+  "id": "S1398",
+  "deliverables": [
+   "external-system-changes",
+   "data-file"
+  ],
+  "steps": 7,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "complex",
+  "output": "ASC 845 swap reprice plan and verified fiat-value mutations"
+ },
+ {
+  "id": "S1399",
+  "deliverables": [
+   "html",
+   "pdf"
+  ],
+  "steps": 8,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "TRES vs DeBank balance discrepancy report in HTML and PDF"
+ },
+ {
+  "id": "S1400",
+  "deliverables": [
+   "html",
+   "xlsx",
+   "external-system-changes",
+   "chat-answer"
+  ],
+  "steps": 7,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "complex",
+  "output": "Cost basis run, per-asset results dashboard, fixes, report exports"
+ },
+ {
+  "id": "S1401",
+  "deliverables": [
+   "external-system-changes"
+  ],
+  "steps": 7,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "Triggered TRES data-collection commit with commit ID"
+ },
+ {
+  "id": "S1402",
+  "deliverables": [
+   "data-file",
+   "external-system-changes",
+   "structured-report-text"
+  ],
+  "steps": 10,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Validated ERP accounting rule set designed and applied via MCP"
+ },
+ {
+  "id": "S1403",
+  "deliverables": [
+   "external-system-changes"
+  ],
+  "steps": 7,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "Manual ledger transaction created from explorer transaction data"
+ },
+ {
+  "id": "S1404",
+  "deliverables": [
+   "xlsx"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Two-tab XLSX of deduplicated unidentified counterparty addresses"
+ },
+ {
+  "id": "S1405",
+  "deliverables": [
+   "external-system-changes"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "Validated bulk contact import into TRES address book"
+ },
+ {
+  "id": "S1406",
+  "deliverables": [
+   "external-system-changes"
+  ],
+  "steps": 7,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "Ledger transaction matched to ERP invoice/bill, optionally synced"
+ },
+ {
+  "id": "S1407",
+  "deliverables": [
+   "chat-answer"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "Validated filtered TRES ledger dashboard URL"
+ },
+ {
+  "id": "S1408",
+  "deliverables": [
+   "external-system-changes",
+   "html",
+   "xlsx",
+   "chat-answer"
+  ],
+  "steps": 8,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "End-to-end entity onboarding orchestrated across eight sub-skills"
+ },
+ {
+  "id": "S1409",
+  "deliverables": [
+   "html",
+   "external-system-changes"
+  ],
+  "steps": 6,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "complex",
+  "output": "Reconciliation gap HTML dashboard with plug and gap-fill actions"
+ },
+ {
+  "id": "S1411",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 3,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Findings summary of red flags and metrics from TRES XLSX"
+ },
+ {
+  "id": "S1412",
+  "deliverables": [
+   "data-file"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Generated TRES report with verified creation and download link"
+ },
+ {
+  "id": "S1414",
+  "deliverables": [
+   "chat-answer"
+  ],
+  "steps": 3,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "PASS/DROP/FIX verdicts with exact rollup rule impact counts"
+ },
+ {
+  "id": "S1415",
+  "deliverables": [
+   "html",
+   "external-system-changes",
+   "chat-answer"
+  ],
+  "steps": 8,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "complex",
+  "output": "Data-driven rollup rule proposal report and created rules"
+ },
+ {
+  "id": "S1416",
+  "deliverables": [
+   "chat-answer",
+   "external-system-changes"
+  ],
+  "steps": 6,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "Viewed or approved updates to TRES org/platform settings"
+ },
+ {
+  "id": "S1417",
+  "deliverables": [
+   "html",
+   "chat-answer"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Transaction flow SVG diagram with plain-language explanation"
+ },
+ {
+  "id": "S1419",
+  "deliverables": [
+   "external-system-changes"
+  ],
+  "steps": 8,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "Validated batch upload of wallets or exchange accounts"
+ },
+ {
+  "id": "S1421",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 7,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Citation-verified cross-contract answer with tables and judgment calls"
+ },
+ {
+  "id": "S1423",
+  "deliverables": [
+   "data-file"
+  ],
+  "steps": 2,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "Page-anchored plain text JSON extracted from a document"
+ },
+ {
+  "id": "S1426",
+  "deliverables": [
+   "html",
+   "xlsx",
+   "data-file"
+  ],
+  "steps": 8,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Ranked cited FWA referral packets, dashboard, and xlsx"
+ },
+ {
+  "id": "S1448",
+  "deliverables": [
+   "structured-report-text",
+   "external-system-changes"
+  ],
+  "steps": 7,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Contract-vs-template variance reports and Box metadata updates"
+ },
+ {
+  "id": "S1449",
+  "deliverables": [
+   "external-system-changes",
+   "docx"
+  ],
+  "steps": 7,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Intake completeness review, Box metadata, routing, engagement letter"
+ },
+ {
+  "id": "S1450",
+  "deliverables": [
+   "external-system-changes",
+   "chat-answer"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Box M&A data room with scoped access and cited DD answers"
+ },
+ {
+  "id": "S1461",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Payroll cost change analysis with drivers and review ideas"
+ },
+ {
+  "id": "S1462",
+  "deliverables": [
+   "structured-report-text",
+   "chat-answer"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "CFO-style business health briefing synthesized from multiple QBO reports"
+ },
+ {
+  "id": "S1463",
+  "deliverables": [
+   "chat-answer",
+   "external-system-changes"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Prioritized overdue invoice list and confirmed tone-matched reminders"
+ },
+ {
+  "id": "S1464",
+  "deliverables": [
+   "external-system-changes",
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "QuickBooks estimate or invoice drafted from email thread"
+ },
+ {
+  "id": "S1465",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Peer benchmark briefing widget for connected QBO company"
+ },
+ {
+  "id": "S1467",
+  "deliverables": [
+   "external-system-changes",
+   "structured-report-text"
+  ],
+  "steps": 9,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "New hire created in QBO Payroll with setup status report"
+ },
+ {
+  "id": "S1468",
+  "deliverables": [
+   "chat-answer"
+  ],
+  "steps": 2,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "Read-only payroll lookup answer with QuickBooks links"
+ },
+ {
+  "id": "S1469",
+  "deliverables": [
+   "external-system-changes"
+  ],
+  "steps": 8,
+  "calculations": false,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Validated, confirmed, read-back-verified employee base pay changes"
+ },
+ {
+  "id": "S1482",
+  "deliverables": [
+   "html"
+  ],
+  "steps": 10,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Answer-first analytical report with sourced visuals, HTML or MCP app"
+ },
+ {
+  "id": "S1518",
+  "deliverables": [
+   "structured-report-text",
+   "data-file"
+  ],
+  "steps": 6,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "A/B test significance summary with ship/extend/stop recommendation"
+ },
+ {
+  "id": "S1519",
+  "deliverables": [
+   "structured-report-text",
+   "data-file"
+  ],
+  "steps": 5,
+  "calculations": true,
+  "quality_gate": true,
+  "multi_source": false,
+  "complexity": "complex",
+  "output": "Cohort retention analysis with charts, insights, research recommendations"
+ },
+ {
+  "id": "S1520",
+  "deliverables": [
+   "chat-answer"
+  ],
+  "steps": 4,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "simple",
+  "output": "Commented SQL query with explanation and performance notes"
+ },
+ {
+  "id": "S1580",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 5,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": false,
+  "complexity": "moderate",
+  "output": "Full NDA draft with summary and legal-review notes"
+ },
+ {
+  "id": "S1582",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 7,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "complex",
+  "output": "Full privacy policy with summary and compliance notes"
+ },
+ {
+  "id": "S1583",
+  "deliverables": [
+   "structured-report-text"
+  ],
+  "steps": 3,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "PM resume feedback across ten best practices"
+ },
+ {
+  "id": "S1594",
+  "deliverables": [
+   "structured-report-text",
+   "external-system-changes"
+  ],
+  "steps": 7,
+  "calculations": false,
+  "quality_gate": false,
+  "multi_source": true,
+  "complexity": "moderate",
+  "output": "Prioritized urgent-caller callback list for human review"
+ }
+]

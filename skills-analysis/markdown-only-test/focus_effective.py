@@ -9,16 +9,22 @@ import json, os
 from collections import Counter
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-r = json.load(open(os.path.join(HERE, "focus_audit.json")))
-s = {x["id"]: x for x in json.load(open(os.path.join(HERE, "focus_sample.json")))}
+import sys
+SAMPLE = sys.argv[1] if len(sys.argv) > 1 else "focus_sample.json"
+AUDITS = sys.argv[2].split(",") if len(sys.argv) > 2 else ["focus_audit.json"]
+OUT = sys.argv[3] if len(sys.argv) > 3 else "focus_rows.json"
+s = {x["id"]: x for x in json.load(open(os.path.join(HERE, SAMPLE)))}
 inv = {(x["repo"], x["path"]): x for x in json.load(open(os.path.join(HERE, "inventory.json")))}
 doc = json.load(open(os.path.join(HERE, "docskills.json")))
 A, V = {}, {}
-for b in r["batches"]:
-    for a in b["analysis"]:
-        A[a["id"]] = a
-    for v in b["verify"]:
-        V[v["id"]] = v
+for fn in AUDITS:
+    for b in json.load(open(os.path.join(HERE, fn)))["batches"]:
+        for a in b["analysis"]:
+            A[a["id"]] = a
+        for v in (b["verify"] or []):
+            V[v["id"]] = v
+missing = [i for i in s if i not in A or i not in V]
+assert not missing, f"not audited: {missing}"
 
 
 def lookup(rp):
@@ -33,6 +39,7 @@ rows = []
 for i, x in s.items():
     a, v = A[i], V[i]
     roles = x["focus"]["roles"]
+    x.setdefault("group", x.get("group"))
     own, own_md = x["focus"]["files"], roles.get("md", 0)
     add_md = add_nonmd = 0
     seen, doc_used, deps_used = set(), [], Counter()
@@ -78,5 +85,7 @@ for i, x in s.items():
         folder_fits=own <= 20 and own_md == own,
         office_out=bool(outs & {"xlsx", "docx", "pptx", "pdf"}),
         verifier_note=v["note"] if not v["verdict_agrees"] else "",
+        cx=x.get("cx"),
     ))
-json.dump(rows, open(os.path.join(HERE, "focus_rows.json"), "w"), indent=1)
+json.dump(rows, open(os.path.join(HERE, OUT), "w"), indent=1)
+print(f"{len(rows)} rows -> {OUT}")

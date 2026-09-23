@@ -1,0 +1,443 @@
+{
+ "by_tier": {
+  "simple": {
+   "n": 39,
+   "files_mean": 2.13,
+   "files_median": 1,
+   "md_mean": 1.59,
+   "fits_ui_pct": 84.6,
+   "over20_pct": 0.0,
+   "has_nonmd_pct": 15.4,
+   "has_pct": {
+    "md": 100.0,
+    "script": 10.3,
+    "template": 0.0,
+    "data": 5.1,
+    "asset": 0.0,
+    "packaging": 2.6
+   },
+   "totals": {
+    "md": 62,
+    "script": 14,
+    "template": 0,
+    "data": 3,
+    "asset": 0,
+    "packaging": 1,
+    "license": 1,
+    "other": 2
+   },
+   "office_file_pct": 7.7,
+   "steps_median": 3,
+   "calc_pct": 10.3,
+   "gate_pct": 10.3,
+   "outside_pct": 43.6,
+   "code_blocks_pct": 23.1
+  },
+  "moderate": {
+   "n": 136,
+   "files_mean": 2.43,
+   "files_median": 1.0,
+   "md_mean": 1.74,
+   "fits_ui_pct": 76.5,
+   "over20_pct": 1.5,
+   "has_nonmd_pct": 22.8,
+   "has_pct": {
+    "md": 100.0,
+    "script": 16.2,
+    "template": 2.2,
+    "data": 4.4,
+    "asset": 1.5,
+    "packaging": 5.9
+   },
+   "totals": {
+    "md": 237,
+    "script": 63,
+    "template": 3,
+    "data": 14,
+    "asset": 5,
+    "packaging": 8,
+    "license": 1,
+    "other": 0
+   },
+   "office_file_pct": 13.2,
+   "steps_median": 5.0,
+   "calc_pct": 28.7,
+   "gate_pct": 34.6,
+   "outside_pct": 41.9,
+   "code_blocks_pct": 18.4
+  },
+  "complex-output": {
+   "n": 215,
+   "files_mean": 6.2,
+   "files_median": 1,
+   "md_mean": 3.52,
+   "fits_ui_pct": 65.6,
+   "over20_pct": 6.0,
+   "has_nonmd_pct": 34.4,
+   "has_pct": {
+    "md": 100.0,
+    "script": 27.4,
+    "template": 7.0,
+    "data": 8.4,
+    "asset": 0.9,
+    "packaging": 16.3
+   },
+   "totals": {
+    "md": 757,
+    "script": 285,
+    "template": 47,
+    "data": 188,
+    "asset": 4,
+    "packaging": 40,
+    "license": 7,
+    "other": 4
+   },
+   "office_file_pct": 28.4,
+   "steps_median": 6,
+   "calc_pct": 62.3,
+   "gate_pct": 69.8,
+   "outside_pct": 55.3,
+   "code_blocks_pct": 33.5
+  },
+  "complex-no-deliverable": {
+   "n": 2,
+   "files_mean": 8.5,
+   "files_median": 8.5,
+   "md_mean": 1.0,
+   "fits_ui_pct": 50.0,
+   "over20_pct": 0.0,
+   "has_nonmd_pct": 50.0,
+   "has_pct": {
+    "md": 100.0,
+    "script": 50.0,
+    "template": 50.0,
+    "data": 0.0,
+    "asset": 50.0,
+    "packaging": 50.0
+   },
+   "totals": {
+    "md": 2,
+    "script": 10,
+    "template": 2,
+    "data": 0,
+    "asset": 2,
+    "packaging": 1,
+    "license": 0,
+    "other": 0
+   },
+   "office_file_pct": 0.0,
+   "steps_median": 5.5,
+   "calc_pct": 0.0,
+   "gate_pct": 100.0,
+   "outside_pct": 0.0,
+   "code_blocks_pct": 50.0
+  }
+ },
+ "complex_by_group": {
+  "Finance & accounting": {
+   "n": 27,
+   "files_mean": 3.3,
+   "files_median": 1,
+   "md_mean": 2.74,
+   "fits_ui_pct": 85.2,
+   "over20_pct": 0.0,
+   "has_nonmd_pct": 14.8,
+   "has_pct": {
+    "md": 100.0,
+    "script": 11.1,
+    "template": 3.7,
+    "data": 3.7,
+    "asset": 0.0,
+    "packaging": 0.0
+   },
+   "totals": {
+    "md": 74,
+    "script": 12,
+    "template": 1,
+    "data": 2,
+    "asset": 0,
+    "packaging": 0,
+    "license": 0,
+    "other": 0
+   },
+   "office_file_pct": 29.6,
+   "steps_median": 6,
+   "calc_pct": 100.0,
+   "gate_pct": 77.8,
+   "outside_pct": 48.1,
+   "code_blocks_pct": 22.2
+  },
+  "Investing & banking": {
+   "n": 60,
+   "files_mean": 8.1,
+   "files_median": 3.0,
+   "md_mean": 5.62,
+   "fits_ui_pct": 56.7,
+   "over20_pct": 8.3,
+   "has_nonmd_pct": 43.3,
+   "has_pct": {
+    "md": 100.0,
+    "script": 36.7,
+    "template": 15.0,
+    "data": 15.0,
+    "asset": 0.0,
+    "packaging": 35.0
+   },
+   "totals": {
+    "md": 337,
+    "script": 79,
+    "template": 26,
+    "data": 12,
+    "asset": 0,
+    "packaging": 26,
+    "license": 4,
+    "other": 2
+   },
+   "office_file_pct": 55.0,
+   "steps_median": 6.0,
+   "calc_pct": 91.7,
+   "gate_pct": 66.7,
+   "outside_pct": 35.0,
+   "code_blocks_pct": 46.7
+  },
+  "Legal & compliance": {
+   "n": 89,
+   "files_mean": 3.75,
+   "files_median": 1,
+   "md_mean": 2.0,
+   "fits_ui_pct": 78.7,
+   "over20_pct": 2.2,
+   "has_nonmd_pct": 21.3,
+   "has_pct": {
+    "md": 100.0,
+    "script": 21.3,
+    "template": 2.2,
+    "data": 2.2,
+    "asset": 0.0,
+    "packaging": 0.0
+   },
+   "totals": {
+    "md": 178,
+    "script": 90,
+    "template": 11,
+    "data": 53,
+    "asset": 0,
+    "packaging": 0,
+    "license": 0,
+    "other": 2
+   },
+   "office_file_pct": 10.1,
+   "steps_median": 6,
+   "calc_pct": 25.8,
+   "gate_pct": 67.4,
+   "outside_pct": 77.5,
+   "code_blocks_pct": 27.0
+  },
+  "HR & people": {
+   "n": 3,
+   "files_mean": 5.33,
+   "files_median": 6,
+   "md_mean": 5.33,
+   "fits_ui_pct": 100.0,
+   "over20_pct": 0.0,
+   "has_nonmd_pct": 0.0,
+   "has_pct": {
+    "md": 100.0,
+    "script": 0.0,
+    "template": 0.0,
+    "data": 0.0,
+    "asset": 0.0,
+    "packaging": 0.0
+   },
+   "totals": {
+    "md": 16,
+    "script": 0,
+    "template": 0,
+    "data": 0,
+    "asset": 0,
+    "packaging": 0,
+    "license": 0,
+    "other": 0
+   },
+   "office_file_pct": 33.3,
+   "steps_median": 6,
+   "calc_pct": 66.7,
+   "gate_pct": 33.3,
+   "outside_pct": 100.0,
+   "code_blocks_pct": 0.0
+  },
+  "Operations": {
+   "n": 9,
+   "files_mean": 7.33,
+   "files_median": 8,
+   "md_mean": 5.11,
+   "fits_ui_pct": 33.3,
+   "over20_pct": 0.0,
+   "has_nonmd_pct": 66.7,
+   "has_pct": {
+    "md": 100.0,
+    "script": 66.7,
+    "template": 0.0,
+    "data": 11.1,
+    "asset": 0.0,
+    "packaging": 0.0
+   },
+   "totals": {
+    "md": 46,
+    "script": 18,
+    "template": 0,
+    "data": 2,
+    "asset": 0,
+    "packaging": 0,
+    "license": 0,
+    "other": 0
+   },
+   "office_file_pct": 11.1,
+   "steps_median": 5,
+   "calc_pct": 88.9,
+   "gate_pct": 55.6,
+   "outside_pct": 33.3,
+   "code_blocks_pct": 66.7
+  },
+  "Reports & documents": {
+   "n": 27,
+   "files_mean": 12.63,
+   "files_median": 5,
+   "md_mean": 3.93,
+   "fits_ui_pct": 29.6,
+   "over20_pct": 22.2,
+   "has_nonmd_pct": 70.4,
+   "has_pct": {
+    "md": 100.0,
+    "script": 33.3,
+    "template": 11.1,
+    "data": 18.5,
+    "asset": 7.4,
+    "packaging": 51.9
+   },
+   "totals": {
+    "md": 106,
+    "script": 86,
+    "template": 9,
+    "data": 119,
+    "asset": 4,
+    "packaging": 14,
+    "license": 3,
+    "other": 0
+   },
+   "office_file_pct": 33.3,
+   "steps_median": 6,
+   "calc_pct": 70.4,
+   "gate_pct": 85.2,
+   "outside_pct": 37.0,
+   "code_blocks_pct": 29.6
+  }
+ },
+ "tier_by_group": {
+  "Finance & accounting": {
+   "complex-output": 27,
+   "moderate": 23,
+   "simple": 5
+  },
+  "Investing & banking": {
+   "complex-output": 60,
+   "moderate": 16
+  },
+  "Legal & compliance": {
+   "complex-output": 89,
+   "moderate": 49,
+   "simple": 15,
+   "complex-no-deliverable": 1
+  },
+  "HR & people": {
+   "moderate": 10,
+   "complex-output": 3,
+   "simple": 5
+  },
+  "Operations": {
+   "moderate": 15,
+   "complex-output": 9,
+   "simple": 2
+  },
+  "Reports & documents": {
+   "simple": 12,
+   "moderate": 23,
+   "complex-output": 27,
+   "complex-no-deliverable": 1
+  }
+ },
+ "all": {
+  "n": 392,
+  "files_mean": 4.5,
+  "files_median": 1.0,
+  "md_mean": 2.7,
+  "fits_ui_pct": 71.2,
+  "over20_pct": 3.8,
+  "has_nonmd_pct": 28.6,
+  "has_pct": {
+   "md": 100.0,
+   "script": 21.9,
+   "template": 4.8,
+   "data": 6.6,
+   "asset": 1.3,
+   "packaging": 11.5
+  },
+  "totals": {
+   "md": 1058,
+   "script": 372,
+   "template": 52,
+   "data": 205,
+   "asset": 11,
+   "packaging": 50,
+   "license": 9,
+   "other": 6
+  },
+  "office_file_pct": 20.9,
+  "steps_median": 5.0,
+  "calc_pct": 45.2,
+  "gate_pct": 51.8,
+  "outside_pct": 49.2,
+  "code_blocks_pct": 27.3
+ },
+ "sample_stats": {
+  "n": 50,
+  "files_mean": 10.04,
+  "files_median": 3.0,
+  "md_mean": 4.48,
+  "fits_ui_pct": 56.0,
+  "over20_pct": 10.0,
+  "has_nonmd_pct": 44.0,
+  "has_pct": {
+   "md": 100.0,
+   "script": 36.0,
+   "template": 10.0,
+   "data": 18.0,
+   "asset": 2.0,
+   "packaging": 14.0
+  },
+  "totals": {
+   "md": 224,
+   "script": 116,
+   "template": 9,
+   "data": 138,
+   "asset": 2,
+   "packaging": 9,
+   "license": 2,
+   "other": 2
+  },
+  "office_file_pct": 34.0,
+  "steps_median": 6.0,
+  "calc_pct": 76.0,
+  "gate_pct": 76.0,
+  "outside_pct": 46.0,
+  "code_blocks_pct": 40.0
+ },
+ "sample_by_group": {
+  "Finance & accounting": 9,
+  "Investing & banking": 11,
+  "Legal & compliance": 12,
+  "HR & people": 3,
+  "Operations": 5,
+  "Reports & documents": 10
+ }
+}

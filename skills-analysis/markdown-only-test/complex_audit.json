@@ -1,0 +1,1675 @@
+{
+ "batches": [
+  {
+   "analysis": [
+    {
+     "id": "S1415",
+     "outputs": [
+      "html",
+      "chat-text",
+      "writes-to-external-system"
+     ],
+     "needs_code_execution": false,
+     "code_evidence": "none; writes an HTML file and runs GraphQL through the MCP `execute` tool, no scripts",
+     "bundled_non_md": [
+      {
+       "files": "references/proposal-html-template.html",
+       "role": "template",
+       "purpose": "Verbatim CSS/HTML skeleton and row patterns for rollup proposal report"
+      }
+     ],
+     "external_deps": [
+      {
+       "kind": "mcp-connector-or-api",
+       "name": "TRES Finance MCP connector (execute, validate_query, get_viewer)",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__claude-plugins-community/tres-finance-plugin/.mcp.json",
+       "file_count": 1,
+       "evidence": "All GraphQL runs through the **TRES Finance MCP connector** (`execute` tool; validate with `validate_query` first when unsure)"
+      },
+      {
+       "kind": "other-skill",
+       "name": "tres-rollup-review",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__claude-plugins-community/tres-finance-plugin/skills/tres-rollup-review/SKILL.md",
+       "file_count": 1,
+       "evidence": "**Invoke the `tres-rollup-review` skill** (via the Skill tool) **once** \u2014 this loads the review checks"
+      }
+     ],
+     "md_only_ui_verdict": "degraded",
+     "verdict_reason": "Loses the verbatim HTML report template and the mandatory tres-rollup-review validation gate (a separate skill). The TRES MCP connector must still be connected for any analysis."
+    },
+    {
+     "id": "S0222",
+     "outputs": [
+      "pptx",
+      "image-media",
+      "chat-text"
+     ],
+     "needs_code_execution": true,
+     "code_evidence": "Create ONLY this one slide with PptxGenJS; `soffice --headless --convert-to pdf`; `pdftoppm -jpeg -r 150`",
+     "bundled_non_md": [],
+     "external_deps": [
+      {
+       "kind": "built-in-doc-skill",
+       "name": "pptx",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__skills/skills/pptx",
+       "file_count": 56,
+       "evidence": "**Note:** Reference the **PPTX skill** for PowerPoint file creation."
+      },
+      {
+       "kind": "cli-or-library",
+       "name": "PptxGenJS (npm)",
+       "resolved_path": "not found",
+       "file_count": 0,
+       "evidence": "Create ONLY this one slide with PptxGenJS"
+      },
+      {
+       "kind": "cli-or-library",
+       "name": "python-pptx (helper snippet uses add_textbox, Pt, RGBColor)",
+       "resolved_path": "not found",
+       "file_count": 0,
+       "evidence": "tb = slide.shapes.add_textbox(x, y, w, Inches(len(bullets) * 0.18 + 0.3))"
+      },
+      {
+       "kind": "cli-or-library",
+       "name": "LibreOffice soffice + poppler pdftoppm",
+       "resolved_path": "not found",
+       "file_count": 0,
+       "evidence": "soffice --headless --convert-to pdf presentation.pptx / pdftoppm -jpeg -r 150 -f 1 -l 1 presentation.pdf slide"
+      },
+      {
+       "kind": "referenced-file-missing",
+       "name": "examples/Nike_Strip_Profile_Example.pptx",
+       "resolved_path": "not found",
+       "file_count": 1,
+       "evidence": "See `examples/Nike_Strip_Profile_Example.pptx` for layout inspiration."
+      },
+      {
+       "kind": "mcp-connector-or-api",
+       "name": "Market/filings data (Bloomberg, FactSet, CapIQ, BamSEC, SEC EDGAR)",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__financial-services-plugins/plugins/vertical-plugins/financial-analysis/.mcp.json",
+       "file_count": 1,
+       "evidence": "**Market data**: Bloomberg, FactSet, CapIQ (price, shares, market cap, net debt, EV, ownership)"
+      },
+      {
+       "kind": "mcp-connector-or-api",
+       "name": "Web search (brand colors, news)",
+       "resolved_path": "not found",
+       "file_count": 0,
+       "evidence": "YOU MUST research actual brand colors via web search before creating slides."
+      }
+     ],
+     "md_only_ui_verdict": "degraded",
+     "verdict_reason": "The folder is only SKILL.md with inline PptxGenJS code, but making the .pptx needs PptxGenJS, soffice and pdftoppm at runtime. Loses the PPTX skill; the Nike example was already missing."
+    },
+    {
+     "id": "S1098",
+     "outputs": [
+      "markdown-or-text-doc",
+      "chat-text"
+     ],
+     "needs_code_execution": true,
+     "code_evidence": "run `python scripts/verify_data.py <intake>.json`; `scripts/valuation.py`; `scripts/score.py`; `python scripts/lint_report.py <report>.md`",
+     "bundled_non_md": [
+      {
+       "files": "scripts/{ratios,score,valuation,verify_data,lint_report}.py",
+       "role": "script",
+       "purpose": "Ratios, sector scoring, valuation math, data-intake gate and report linter"
+      },
+      {
+       "files": "scripts/benchmarks.json",
+       "role": "lookup-data",
+       "purpose": "Editable sector benchmark bands and weights used by score.py"
+      },
+      {
+       "files": "evals/evals.json",
+       "role": "test-eval",
+       "purpose": "Eval prompts and assertions for testing the skill"
+      }
+     ],
+     "external_deps": [
+      {
+       "kind": "cli-or-library",
+       "name": "Python 3 runtime (stdlib only)",
+       "resolved_path": "not found",
+       "file_count": 0,
+       "evidence": "Both are plain Python with no third-party dependencies."
+      },
+      {
+       "kind": "mcp-connector-or-api",
+       "name": "Web access to primary filings (SEC EDGAR, NSE/BSE, company IR, rating rationales)",
+       "resolved_path": "not found",
+       "file_count": 0,
+       "evidence": "Source these from the company's investor-relations page, NSE/BSE corporate filings, SEC EDGAR, or equivalent primary repositories."
+      }
+     ],
+     "md_only_ui_verdict": "degraded",
+     "verdict_reason": "Its 54 md files exceed the 20-file cap, so most sector playbooks must be dropped. The mandatory verify/lint gates, scorer, valuation scripts and benchmarks.json are lost. A manual report is still possible."
+    },
+    {
+     "id": "S1268",
+     "outputs": [
+      "markdown-or-text-doc",
+      "csv-json-data",
+      "chat-text"
+     ],
+     "needs_code_execution": false,
+     "code_evidence": "none",
+     "bundled_non_md": [],
+     "external_deps": [
+      {
+       "kind": "plugin-level-file",
+       "name": "Practice-level CLAUDE.md (config copy of corporate-legal/CLAUDE.md: Outputs header, Matter workspaces)",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__claude-for-legal/corporate-legal/CLAUDE.md",
+       "file_count": 1,
+       "evidence": "Check `## Matter workspaces` in the practice-level CLAUDE.md. ... [WORK-PRODUCT HEADER \u2014 per plugin config ## Outputs"
+      },
+      {
+       "kind": "other-skill",
+       "name": "cold-start-interview (M&A cold-start writes deal-context.md)",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__claude-for-legal/corporate-legal/skills/cold-start-interview/SKILL.md",
+       "file_count": 1,
+       "evidence": "connects to deal-context.md and closing-checklist.yaml from the M&A cold-start."
+      },
+      {
+       "kind": "other-skill",
+       "name": "closing-checklist (writes closing-checklist.yaml)",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__claude-for-legal/corporate-legal/skills/closing-checklist/SKILL.md",
+       "file_count": 1,
+       "evidence": "Inherit any post-close items from `closing-checklist.yaml` if it exists."
+      },
+      {
+       "kind": "other-skill",
+       "name": "matter-workspace",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__claude-for-legal/corporate-legal/skills/matter-workspace/SKILL.md",
+       "file_count": 1,
+       "evidence": "Run `/corporate-legal:matter-workspace switch <slug>` or say `practice-level`."
+      },
+      {
+       "kind": "mcp-connector-or-api",
+       "name": "Contract repository (Google Drive, Box, SharePoint, VDR)",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__claude-for-legal/corporate-legal/.mcp.json",
+       "file_count": 1,
+       "evidence": "Is your contract repository connected? (Google Drive, Box, SharePoint, or a VDR that's still accessible post-close?)"
+      }
+     ],
+     "md_only_ui_verdict": "degraded",
+     "verdict_reason": "The tracker, report and CSV export work from deal documents the user supplies. Loses the plugin CLAUDE.md header and matter rules, cold-start deal-context inheritance, and persistent tracker file storage."
+    },
+    {
+     "id": "S1292",
+     "outputs": [
+      "chat-text",
+      "markdown-or-text-doc"
+     ],
+     "needs_code_execution": false,
+     "code_evidence": "none",
+     "bundled_non_md": [],
+     "external_deps": [
+      {
+       "kind": "plugin-level-file",
+       "name": "employment-legal practice CLAUDE.md (config copy: jurisdiction footprint, escalation table, Outputs header)",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__claude-for-legal/employment-legal/CLAUDE.md",
+       "file_count": 1,
+       "evidence": "Load `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` \u2192 jurisdictional footprint, escalation table."
+      },
+      {
+       "kind": "other-skill",
+       "name": "matter-workspace",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__claude-for-legal/employment-legal/skills/matter-workspace/SKILL.md",
+       "file_count": 1,
+       "evidence": "Run `/employment-legal:matter-workspace switch <slug>` or say `practice-level`."
+      },
+      {
+       "kind": "other-skill",
+       "name": "hiring-review (next-step handoff)",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__claude-for-legal/employment-legal/skills/hiring-review/SKILL.md",
+       "file_count": 1,
+       "evidence": "run `/employment-legal:hiring-review` to review the offer letter, restrictive covenants"
+      },
+      {
+       "kind": "mcp-connector-or-api",
+       "name": "Legal research connector (Westlaw, CourtListener)",
+       "resolved_path": "not found in employment-legal/.mcp.json; CourtListener only in litigation-legal/.mcp.json",
+       "file_count": 0,
+       "evidence": "check whether a legal research connector is reachable for this session \u2014 Westlaw, CourtListener, or any firm-configured research MCP"
+      }
+     ],
+     "md_only_ui_verdict": "degraded",
+     "verdict_reason": "The prospective classification analysis runs fully from SKILL.md. Lost from plugin CLAUDE.md: the jurisdiction footprint, escalation table, role-based work-product header and next-steps tree."
+    },
+    {
+     "id": "S1213",
+     "outputs": [
+      "markdown-or-text-doc",
+      "chat-text"
+     ],
+     "needs_code_execution": false,
+     "code_evidence": "An optional tools table lists `python risk_matrix_calculator.py --help`; no workflow step requires running it",
+     "bundled_non_md": [
+      {
+       "files": "scripts/risk_matrix_calculator.py",
+       "role": "script",
+       "purpose": "ISO 14971 5x5 risk level and FMEA RPN calculator"
+      },
+      {
+       "files": "scripts/fmea_analyzer.py",
+       "role": "script",
+       "purpose": "FMEA RPN analyzer; not referenced by SKILL.md"
+      }
+     ],
+     "external_deps": [
+      {
+       "kind": "cli-or-library",
+       "name": "Python 3 runtime (stdlib) for optional calculator",
+       "resolved_path": "not found",
+       "file_count": 0,
+       "evidence": "[risk_matrix_calculator.py](scripts/risk_matrix_calculator.py) | Calculate risk levels and FMEA RPN | `python risk_matrix_calculator.py --help`"
+      }
+     ],
+     "md_only_ui_verdict": "works",
+     "verdict_reason": "All 4 md files fit. The risk matrix, P/S criteria, RPN thresholds and templates are in markdown. The scripts only do simple P\u00d7S and S\u00d7O\u00d7D arithmetic."
+    },
+    {
+     "id": "S1090",
+     "outputs": [
+      "markdown-or-text-doc",
+      "chat-text"
+     ],
+     "needs_code_execution": true,
+     "code_evidence": "python ra-qm-team/skills/gdpr-dsgvo-expert/scripts/gdpr_compliance_checker.py compliance_state.json",
+     "bundled_non_md": [],
+     "external_deps": [
+      {
+       "kind": "other-skill",
+       "name": "gdpr-dsgvo-expert (gdpr_compliance_checker.py, dpia_generator.py, data_subject_rights_tracker.py, audit playbook)",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/alirezarezvani__claude-skills/ra-qm-team/skills/gdpr-dsgvo-expert",
+       "file_count": 8,
+       "evidence": "python ra-qm-team/skills/gdpr-dsgvo-expert/scripts/dpia_generator.py processing_activity.json"
+      },
+      {
+       "kind": "other-skill",
+       "name": "compliance-os skill: cross_framework_mapper.py",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/alirezarezvani__claude-skills/compliance-os/skills/compliance-os/scripts/cross_framework_mapper.py",
+       "file_count": 1,
+       "evidence": "python ../../skills/compliance-os/scripts/cross_framework_mapper.py program.json"
+      },
+      {
+       "kind": "plugin-level-file",
+       "name": "agents/cs-dpo-gdpr.md",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/alirezarezvani__claude-skills/compliance-os/agents/cs-dpo-gdpr.md",
+       "file_count": 1,
+       "evidence": "Agent: [`cs-dpo-gdpr`](../../agents/cs-dpo-gdpr.md)"
+      },
+      {
+       "kind": "plugin-level-file",
+       "name": "agents cs-ai-act-compliance.md and cs-ciso-iso27001.md (cross-checks)",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/alirezarezvani__claude-skills/compliance-os/agents",
+       "file_count": 2,
+       "evidence": "cross-check with cs-ai-act-compliance ... Cross-check with cs-ciso-iso27001 for A.5.24-27 incident management alignment"
+      },
+      {
+       "kind": "other-skill",
+       "name": "Routed siblings: compliance-readiness, iso27001-audit-prep, ai-act-readiness, soc2-audit-prep, gc-review",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/alirezarezvani__claude-skills/compliance-os/skills",
+       "file_count": 4,
+       "evidence": "`/cs:compliance-readiness` \u2014 for multi-framework view; `/cs:iso27001-audit-prep` \u2014 for Article 32 organizational measures"
+      },
+      {
+       "kind": "cli-or-library",
+       "name": "Python 3 runtime",
+       "resolved_path": "not found",
+       "file_count": 0,
+       "evidence": "python ra-qm-team/skills/gdpr-dsgvo-expert/scripts/data_subject_rights_tracker.py dsar_log.json"
+      }
+     ],
+     "md_only_ui_verdict": "degraded",
+     "verdict_reason": "SKILL.md alone keeps the six Article-cited questions and the output format. Its workflow scripts live in the gdpr-dsgvo-expert and compliance-os skills, as do the referenced playbook and agent."
+    },
+    {
+     "id": "S0391",
+     "outputs": [
+      "chat-text",
+      "html",
+      "markdown-or-text-doc",
+      "writes-to-external-system",
+      "docx",
+      "pdf"
+     ],
+     "needs_code_execution": false,
+     "code_evidence": "none; allowed-tools: Read, WebFetch (the DOCX/PDF offer letter implies generation through a document skill)",
+     "bundled_non_md": [],
+     "external_deps": [
+      {
+       "kind": "plugin-level-file",
+       "name": "shared/{artifact-style,voice-profile,tenant-scope,untrusted-content,personal-data}.md",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__knowledge-work-plugins/small-business/shared",
+       "file_count": 5,
+       "evidence": "render the result as an HTML artifact using the house artifact style (`../../shared/artifact-style.md`)"
+      },
+      {
+       "kind": "other-skill",
+       "name": "job-post-builder (rubric and interview guide)",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__knowledge-work-plugins/small-business/skills/job-post-builder",
+       "file_count": 9,
+       "evidence": "The rubric from `job-post-builder`, if that ran"
+      },
+      {
+       "kind": "other-skill",
+       "name": "payroll-prep",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__knowledge-work-plugins/small-business/skills/payroll-prep",
+       "file_count": 6,
+       "evidence": "**Payroll setup** \u2192 hand to `payroll-prep` and Gusto with the start date, rate, and classification"
+      },
+      {
+       "kind": "other-skill",
+       "name": "smb-onboard (Business context block: Country)",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__knowledge-work-plugins/small-business/skills/smb-onboard",
+       "file_count": 5,
+       "evidence": "substitute the local equivalents elsewhere, per `Country` in the `## Business context` block"
+      },
+      {
+       "kind": "other-skill",
+       "name": "build-connector",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__knowledge-work-plugins/small-business/skills/build-connector",
+       "file_count": 5,
+       "evidence": "offer `build-connector` \u2014 it checks the connector directory first and connects through Zapier otherwise"
+      },
+      {
+       "kind": "mcp-connector-or-api",
+       "name": "Gmail, Google Calendar, Gusto, DocuSign, Google Drive/M365, Trello",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__knowledge-work-plugins/small-business/.mcp.json",
+       "file_count": 1,
+       "evidence": "Runs on Gmail and Google Calendar, deepens with Gusto, DocuSign, and Drive or M365"
+      },
+      {
+       "kind": "built-in-doc-skill",
+       "name": "docx",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__skills/skills/docx",
+       "file_count": 61,
+       "evidence": "**Without it**, produce the DOCX and PDF and the owner sends them."
+      },
+      {
+       "kind": "built-in-doc-skill",
+       "name": "pdf",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__skills/skills/pdf",
+       "file_count": 12,
+       "evidence": "**Without it**, produce the DOCX and PDF and the owner sends them."
+      }
+     ],
+     "md_only_ui_verdict": "degraded",
+     "verdict_reason": "All 6 md files fit and the upload-only path is by design. Missing: 5 shared plugin files (artifact style, voice profile, PII and untrusted-content rules) and the job-post-builder rubric."
+    },
+    {
+     "id": "S0282",
+     "outputs": [
+      "chat-text",
+      "markdown-or-text-doc"
+     ],
+     "needs_code_execution": false,
+     "code_evidence": "none; 'Analyze with appropriate statistical methods' on uploaded CSV, no scripts named",
+     "bundled_non_md": [],
+     "external_deps": [
+      {
+       "kind": "plugin-level-file",
+       "name": "CONNECTORS.md",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__knowledge-work-plugins/human-resources/CONNECTORS.md",
+       "file_count": 1,
+       "evidence": "If you see unfamiliar placeholders or need to check which tools are connected, see [CONNECTORS.md](../../CONNECTORS.md)."
+      },
+      {
+       "kind": "mcp-connector-or-api",
+       "name": "~~HRIS (Workday, BambooHR, Rippling, Gusto) - optional",
+       "resolved_path": "not found",
+       "file_count": 0,
+       "evidence": "If **~~HRIS** is connected: - Pull live employee data \u2014 headcount, tenure, department, level"
+      },
+      {
+       "kind": "mcp-connector-or-api",
+       "name": "~~chat (Slack) - optional",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__knowledge-work-plugins/human-resources/.mcp.json",
+       "file_count": 1,
+       "evidence": "If **~~chat** is connected: - Offer to share the report summary in a relevant channel"
+      }
+     ],
+     "md_only_ui_verdict": "works",
+     "verdict_reason": "Single SKILL.md. The core path turns an uploaded CSV or pasted data into a markdown report. CONNECTORS.md only explains the optional ~~HRIS/~~chat placeholders."
+    },
+    {
+     "id": "S1036",
+     "outputs": [
+      "markdown-or-text-doc",
+      "chat-text"
+     ],
+     "needs_code_execution": true,
+     "code_evidence": "Run `scripts/vendor_scorer.py --input catalog.json --profile <industry> --output scorecard.md`.",
+     "bundled_non_md": [
+      {
+       "files": "scripts/{vendor_scorer,sla_compliance_tracker,vendor_risk_classifier}.py",
+       "role": "script",
+       "purpose": "Deterministic vendor scoring, SLA credit flags, 4-vector risk classification"
+      }
+     ],
+     "external_deps": [
+      {
+       "kind": "cli-or-library",
+       "name": "Python 3 runtime (stdlib only)",
+       "resolved_path": "not found",
+       "file_count": 0,
+       "evidence": "cd business-operations/skills/vendor-management && python3 scripts/vendor_scorer.py --sample"
+      },
+      {
+       "kind": "plugin-level-file",
+       "name": "commands/cs-grill-bizops.md and agents/cs-bizops-orchestrator.md",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/alirezarezvani__claude-skills/business-operations/commands/cs-grill-bizops.md",
+       "file_count": 2,
+       "evidence": "Walked one at a time by `/cs:grill-bizops` or the BizOps orchestrator."
+      }
+     ],
+     "md_only_ui_verdict": "degraded",
+     "verdict_reason": "The md files (SKILL, references, catalog template) upload fine. The three scripts holding the deterministic scoring formulas, cert values and risk rules are lost. Only weights and thresholds remain."
+    }
+   ],
+   "verify": [
+    {
+     "id": "S1415",
+     "verdict_agrees": true,
+     "corrected_verdict": "degraded",
+     "deps_wrong": [],
+     "deps_missed": [],
+     "code_execution_correct": true,
+     "note": "Agree. The 8.8KB HTML template (CSS, preview-link rules) is lost, and the MANDATORY gate's preview query is documented only in tres-rollup-review. Discovery, create and delete still run through the MCP."
+    },
+    {
+     "id": "S0222",
+     "verdict_agrees": true,
+     "corrected_verdict": "degraded",
+     "deps_wrong": [
+      "python-pptx (helper snippet uses add_textbox, Pt, RGBColor)"
+     ],
+     "deps_missed": [],
+     "code_execution_correct": true,
+     "note": "Agree. The skill folder is one SKILL.md and survives intact. The python-pptx snippet contradicts the PptxGenJS-only instruction, so it isn't required. The plugin's own .mcp.json is empty, so the data-source path points at a sibling plugin."
+    },
+    {
+     "id": "S1098",
+     "verdict_agrees": true,
+     "corrected_verdict": "degraded",
+     "deps_wrong": [],
+     "deps_missed": [],
+     "code_execution_correct": true,
+     "note": "Confirmed 54 md files, over the cap. verify_data/lint_report are blocking gates and benchmarks.json holds the sector bands and gates. The methodology still allows a manual report."
+    },
+    {
+     "id": "S1268",
+     "verdict_agrees": true,
+     "corrected_verdict": "degraded",
+     "deps_wrong": [],
+     "deps_missed": [
+      "Persistent filesystem write for ~/.claude/plugins/config/.../integration-tracker.yaml across sessions"
+     ],
+     "code_execution_correct": true,
+     "note": "Agree. The tracker, report and CSV are all text. It loses the config-copy CLAUDE.md header rules and cold-start deal-context. matter-workspace only matters if enabled (off by default), and the repository connector is optional."
+    },
+    {
+     "id": "S1292",
+     "verdict_agrees": true,
+     "corrected_verdict": "degraded",
+     "deps_wrong": [],
+     "deps_missed": [],
+     "code_execution_correct": true,
+     "note": "Agree. Without the config CLAUDE.md, the Role-based header, the non-lawyer gate, the escalation table and the footprint are gone. CourtListener also appears in the ip-legal, law-student and legal-clinic .mcp.json files. The research connector is optional."
+    },
+    {
+     "id": "S1213",
+     "verdict_agrees": true,
+     "corrected_verdict": "works",
+     "deps_wrong": [],
+     "deps_missed": [],
+     "code_execution_correct": true,
+     "note": "Verified: the markdown 5x5 matrix in the implementation guide matches RISK_MATRIX in the script. RPN thresholds are in the templates, so the scripts are optional arithmetic. Related skills are optional."
+    },
+    {
+     "id": "S1090",
+     "verdict_agrees": true,
+     "corrected_verdict": "degraded",
+     "deps_wrong": [],
+     "deps_missed": [],
+     "code_execution_correct": true,
+     "note": "Agree. The Workflow is only four Python calls into other skills. The six questions and the output template are self-contained. gdpr-dsgvo-expert has 8 files, as stated."
+    },
+    {
+     "id": "S0391",
+     "verdict_agrees": true,
+     "corrected_verdict": "degraded",
+     "deps_wrong": [],
+     "deps_missed": [
+      "smb-router (router table for closing next-step offers)"
+     ],
+     "code_execution_correct": false,
+     "note": "Agree on degraded. But the no-DocuSign DOCX/PDF offer-letter path (reference/onboarding.md:41) needs code execution or a doc skill. It isn't core; the core path (resumes in, shortlist and drafts out) is markdown."
+    },
+    {
+     "id": "S0282",
+     "verdict_agrees": true,
+     "corrected_verdict": "works",
+     "deps_wrong": [],
+     "deps_missed": [],
+     "code_execution_correct": true,
+     "note": "Agree. Upstream is one SKILL.md, and CONNECTORS.md only explains the ~~ placeholders. Big CSVs benefit from code, but the skill never requires it."
+    },
+    {
+     "id": "S1036",
+     "verdict_agrees": true,
+     "corrected_verdict": "degraded",
+     "deps_wrong": [],
+     "deps_missed": [],
+     "code_execution_correct": true,
+     "note": "Agree. The skill is built on deterministic scripts (cert values, sub-score formulas). Weights, verdict thresholds, the SLA credit rule and the risk vectors survive in SKILL.md. The grill command and agent are optional."
+    }
+   ]
+  },
+  {
+   "analysis": [
+    {
+     "id": "S1033",
+     "outputs": [
+      "markdown-or-text-doc",
+      "chat-text"
+     ],
+     "needs_code_execution": true,
+     "code_evidence": "Run `kb_ingester.py --input <vault-dir>` ... run `runbook_validator.py` ... run `sop_generator.py --input <metadata.json>`",
+     "bundled_non_md": [
+      {
+       "files": "scripts/kb_ingester.py, scripts/runbook_validator.py, scripts/sop_generator.py",
+       "role": "script",
+       "purpose": "Deterministic KB health report, runbook 0-100 scoring, 5W2H SOP scaffold generation"
+      }
+     ],
+     "external_deps": [
+      {
+       "kind": "cli-or-library",
+       "name": "python3 (stdlib only)",
+       "resolved_path": "not found",
+       "file_count": 0,
+       "evidence": "python3 scripts/kb_ingester.py --sample ... Stdlib only."
+      },
+      {
+       "kind": "plugin-level-file",
+       "name": "/cs:grill-bizops command",
+       "resolved_path": "alirezarezvani/claude-skills: business-operations/commands/cs-grill-bizops.md",
+       "file_count": 1,
+       "evidence": "the orchestrator (or `/cs:grill-bizops`) walks the user through these questions one at a time"
+      },
+      {
+       "kind": "other-skill",
+       "name": "business-operations-skills orchestrator / cs-bizops-orchestrator agent (optional)",
+       "resolved_path": "alirezarezvani/claude-skills: business-operations/skills/business-operations-skills/SKILL.md; business-operations/agents/cs-bizops-orchestrator.md",
+       "file_count": 2,
+       "evidence": "Before invoking the tools, the orchestrator (or `/cs:grill-bizops`) walks the user through these questions"
+      }
+     ],
+     "md_only_ui_verdict": "degraded",
+     "verdict_reason": "Forcing questions, templates and canon survive as md; the three scripts doing deterministic KB ingestion, runbook scoring and SOP generation are lost, so outputs become manual judgment."
+    },
+    {
+     "id": "S1031",
+     "outputs": [
+      "markdown-or-text-doc",
+      "chat-text"
+     ],
+     "needs_code_execution": true,
+     "code_evidence": "Run `capacity_modeler.py` with your demand, AHT, SLA target, current FTE, and shrinkage.",
+     "bundled_non_md": [
+      {
+       "files": "scripts/capacity_modeler.py, scripts/utilization_analyzer.py, scripts/hiring_sequencer.py",
+       "role": "script",
+       "purpose": "Erlang-C FTE sizing, utilization traffic-lights, quarterly hiring plan with ramp/attrition"
+      }
+     ],
+     "external_deps": [
+      {
+       "kind": "cli-or-library",
+       "name": "python3 (stdlib only)",
+       "resolved_path": "not found",
+       "file_count": 0,
+       "evidence": "python3 scripts/capacity_modeler.py --sample ... All three accept `--input <path>` (JSON) ... Stdlib only."
+      },
+      {
+       "kind": "other-skill",
+       "name": "process-mapper (sibling, prerequisite for bottleneck)",
+       "resolved_path": "alirezarezvani/claude-skills: business-operations/skills/process-mapper",
+       "file_count": 8,
+       "evidence": "If you do not know your bottleneck, run `process-mapper` BEFORE this skill."
+      }
+     ],
+     "md_only_ui_verdict": "degraded",
+     "verdict_reason": "Erlang-C formula, profile defaults and hiring rules survive in md, but the three calculators are gone; breach probabilities and hiring plans must be re-derived ad hoc, risking arithmetic errors."
+    },
+    {
+     "id": "S1034",
+     "outputs": [
+      "markdown-or-text-doc",
+      "csv-json-data",
+      "chat-text"
+     ],
+     "needs_code_execution": true,
+     "code_evidence": "Run `process_documenter.py` ... Run `cycle_time_analyzer.py` ... Run `bottleneck_detector.py` with the appropriate `--profile`",
+     "bundled_non_md": [
+      {
+       "files": "scripts/process_documenter.py, scripts/cycle_time_analyzer.py, scripts/bottleneck_detector.py",
+       "role": "script",
+       "purpose": "Swim-lane rendering, VA%/cycle-time math, R1-R3 bottleneck rules with profile thresholds"
+      }
+     ],
+     "external_deps": [
+      {
+       "kind": "cli-or-library",
+       "name": "python3 (stdlib only)",
+       "resolved_path": "not found",
+       "file_count": 0,
+       "evidence": "python3 scripts/process_documenter.py --sample ... Stdlib only."
+      },
+      {
+       "kind": "plugin-level-file",
+       "name": "/cs:grill-bizops command",
+       "resolved_path": "alirezarezvani/claude-skills: business-operations/commands/cs-grill-bizops.md",
+       "file_count": 1,
+       "evidence": "the orchestrator (or `/cs:grill-bizops`) walks the user through these questions one at a time"
+      },
+      {
+       "kind": "other-skill",
+       "name": "business-operations-skills orchestrator / cs-bizops-orchestrator agent (optional)",
+       "resolved_path": "alirezarezvani/claude-skills: business-operations/skills/business-operations-skills/SKILL.md; business-operations/agents/cs-bizops-orchestrator.md",
+       "file_count": 2,
+       "evidence": "Before invoking the tools, the orchestrator (or `/cs:grill-bizops`) walks the user through these questions"
+      }
+     ],
+     "md_only_ui_verdict": "degraded",
+     "verdict_reason": "R1-R3 rules and VA% bands are in SKILL.md, so manual computation is feasible; non-SaaS profile thresholds and the swim-lane renderer exist only in the lost scripts."
+    },
+    {
+     "id": "S0428",
+     "outputs": [
+      "docx",
+      "chat-text"
+     ],
+     "needs_code_execution": true,
+     "code_evidence": "Write a `docx` (npm) script; python scripts/merge_runs.py unpacked/; python scripts/office/validate.py out.docx",
+     "bundled_non_md": [
+      {
+       "files": "scripts/accept_changes.py, scripts/comment.py, scripts/merge_runs.py, scripts/__init__.py",
+       "role": "script",
+       "purpose": "Accept tracked changes, add cross-linked comments, merge fragmented runs for editing"
+      },
+      {
+       "files": "scripts/office/soffice.py, scripts/office/validate.py, scripts/office/validators/*.py, scripts/office/helpers/*.py",
+       "role": "script",
+       "purpose": "LibreOffice wrapper with shim, XSD/redlining validation and auto-repair, OOXML helpers"
+      },
+      {
+       "files": "scripts/office/schemas/**/*.xsd (39 files)",
+       "role": "data-schema",
+       "purpose": "ISO/ECMA/Microsoft OOXML schemas used by validate.py"
+      },
+      {
+       "files": "scripts/templates/*.xml (5 files)",
+       "role": "template",
+       "purpose": "Comment part templates: comments, extended, ids, extensible, people"
+      },
+      {
+       "files": "LICENSE.txt",
+       "role": "other",
+       "purpose": "Proprietary license terms"
+      }
+     ],
+     "external_deps": [
+      {
+       "kind": "cli-or-library",
+       "name": "docx (npm) on Node.js",
+       "resolved_path": "not found",
+       "file_count": 0,
+       "evidence": "`docx` is preinstalled \u2014 do not run `npm install` first; write the script and `require('docx')` directly."
+      },
+      {
+       "kind": "cli-or-library",
+       "name": "pandoc",
+       "resolved_path": "not found",
+       "file_count": 0,
+       "evidence": "**Read** content | `pandoc -t markdown file.docx`"
+      },
+      {
+       "kind": "cli-or-library",
+       "name": "LibreOffice (soffice)",
+       "resolved_path": "not found",
+       "file_count": 0,
+       "evidence": "python scripts/office/soffice.py --headless --convert-to pdf output.docx"
+      },
+      {
+       "kind": "cli-or-library",
+       "name": "pdftoppm (Poppler)",
+       "resolved_path": "not found",
+       "file_count": 0,
+       "evidence": "pdftoppm -jpeg -r 100 output.pdf page"
+      },
+      {
+       "kind": "cli-or-library",
+       "name": "unzip / zip",
+       "resolved_path": "not found",
+       "file_count": 0,
+       "evidence": "unzip -q doc.docx -d unpacked/ ... (cd unpacked && rm -f ../out.docx && zip -Xr ../out.docx .)"
+      },
+      {
+       "kind": "cli-or-library",
+       "name": "Python lxml + defusedxml (used by bundled scripts)",
+       "resolved_path": "not found",
+       "file_count": 0,
+       "evidence": "import lxml.etree; import defusedxml.minidom (scripts/office/validators, scripts/comment.py)"
+      },
+      {
+       "kind": "cli-or-library",
+       "name": "gcc (builds LD_PRELOAD shim for soffice)",
+       "resolved_path": "not found",
+       "file_count": 0,
+       "evidence": "soffice.py: applies an LD_PRELOAD shim if needed; subprocess.run([\"gcc\", \"-shared\", \"-fPIC\", ...])"
+      }
+     ],
+     "md_only_ui_verdict": "degraded",
+     "verdict_reason": "Only SKILL.md survives: creation via preinstalled docx-js still works, but 15 scripts, 39 XSDs and 5 templates for editing, validation, comments and accepting changes are lost."
+    },
+    {
+     "id": "S0106",
+     "outputs": [
+      "pptx",
+      "csv-json-data"
+     ],
+     "needs_code_execution": true,
+     "code_evidence": "python -B scripts/generate_poster.py poster.json --output poster.pptx --report poster.generation.json",
+     "bundled_non_md": [
+      {
+       "files": "scripts/generate_poster.py, scripts/_pptx.py, scripts/_manifest.py, scripts/_common.py",
+       "role": "script",
+       "purpose": "Exact-pinned one-slide PPTX generator and strict manifest parsing"
+      },
+      {
+       "files": "scripts/validate_manifest.py, inspect_pptx.py, check_layout.py, check_palette.py, inventory_images.py, plan_export.py",
+       "role": "script",
+       "purpose": "Approval-hash, package security, layout, WCAG contrast, DPI and export preflight gates"
+      },
+      {
+       "files": "assets/poster_manifest_template.json",
+       "role": "template",
+       "purpose": "Deliberately invalid manifest skeleton the author fills and approves"
+      },
+      {
+       "files": "assets/generation_dependencies.json",
+       "role": "packaging",
+       "purpose": "Exact dependency pins for python-pptx, Pillow, lxml"
+      }
+     ],
+     "external_deps": [
+      {
+       "kind": "cli-or-library",
+       "name": "python-pptx 1.0.2, Pillow 12.3.0, lxml 6.1.1",
+       "resolved_path": "not found",
+       "file_count": 0,
+       "evidence": "uv pip install \"python-pptx==1.0.2\" \"Pillow==12.3.0\" \"lxml==6.1.1\""
+      },
+      {
+       "kind": "cli-or-library",
+       "name": "Python 3.10+ and uv",
+       "resolved_path": "not found",
+       "file_count": 0,
+       "evidence": "compatibility: Requires Python 3.10+, uv, and exact generation pins"
+      },
+      {
+       "kind": "cli-or-library",
+       "name": "Microsoft PowerPoint (manual accessibility/export gate)",
+       "resolved_path": "not found",
+       "file_count": 0,
+       "evidence": "In a fully patched PowerPoint: Open only the generated and technically clean file. Run Review > Check Accessibility."
+      },
+      {
+       "kind": "mcp-connector-or-api",
+       "name": "arXiv (optional citation lookup)",
+       "resolved_path": "not found",
+       "file_count": 0,
+       "evidence": "When network access is available, fetch https://arxiv.org/abs/2609.00065 ... before writing the reference"
+      }
+     ],
+     "md_only_ui_verdict": "breaks",
+     "verdict_reason": "The .pptx and every hard gate come from 10 bundled scripts and a JSON manifest template; md-only leaves specs but no generator/validators, and the skill fails closed."
+    },
+    {
+     "id": "S0644",
+     "outputs": [
+      "chat-text",
+      "html"
+     ],
+     "needs_code_execution": true,
+     "code_evidence": "Use $jupyter-notebooks when fresh SQL, Python ... confirm ... exact executed SQL or query references when queries were used",
+     "bundled_non_md": [
+      {
+       "files": "agents/openai.yaml",
+       "role": "other",
+       "purpose": "Codex UI display name and implicit-invocation policy"
+      }
+     ],
+     "external_deps": [
+      {
+       "kind": "other-skill",
+       "name": "build-report (mandatory handoff)",
+       "resolved_path": "openai/plugins: plugins/data-analytics/skills/build-report",
+       "file_count": 31,
+       "evidence": "Pass the diagnostic substance and supporting evidence to $build-report ... This handoff is mandatory when no explicit human waiver"
+      },
+      {
+       "kind": "other-skill",
+       "name": "gather-business-context",
+       "resolved_path": "openai/plugins: plugins/data-analytics/skills/gather-business-context",
+       "file_count": 2,
+       "evidence": "Use $gather-business-context when business context is needed to understand the metric, analysis period, ownership"
+      },
+      {
+       "kind": "other-skill",
+       "name": "analyze-data-quality",
+       "resolved_path": "openai/plugins: plugins/data-analytics/skills/analyze-data-quality",
+       "file_count": 2,
+       "evidence": "Use $analyze-data-quality when dashboard trust, grain, freshness, or source disagreement could affect the metric."
+      },
+      {
+       "kind": "other-skill",
+       "name": "jupyter-notebooks",
+       "resolved_path": "openai/plugins: plugins/data-analytics/skills/jupyter-notebooks",
+       "file_count": 2,
+       "evidence": "Use $jupyter-notebooks when fresh SQL, Python, statistical modeling, reusable calculations ... need an inspectable analytical record."
+      },
+      {
+       "kind": "other-skill",
+       "name": "visualize-data",
+       "resolved_path": "openai/plugins: plugins/data-analytics/skills/visualize-data",
+       "file_count": 3,
+       "evidence": "Use $visualize-data when a chart would make the diagnostic claim easier to understand or verify."
+      },
+      {
+       "kind": "other-skill",
+       "name": "validate-data",
+       "resolved_path": "openai/plugins: plugins/data-analytics/skills/validate-data",
+       "file_count": 2,
+       "evidence": "Use $validate-data when methodology, calculations, caveats ... need review before sharing."
+      },
+      {
+       "kind": "other-skill",
+       "name": "product-business-analysis",
+       "resolved_path": "openai/plugins: plugins/data-analytics/skills/product-business-analysis",
+       "file_count": 2,
+       "evidence": "Use $product-business-analysis when the task asks for a recommendation or tradeoff decision after diagnosing the movement."
+      },
+      {
+       "kind": "plugin-level-file",
+       "name": "data-analytics MCP app + portable report builder (transitive via build-report)",
+       "resolved_path": "openai/plugins: plugins/data-analytics/{mcp/server.cjs, assets/, src/, scripts/, package.json, .mcp.json, .app.json}",
+       "file_count": 94,
+       "evidence": "build-report: package and verify it once with `npm run report:deliver -- --input artifact.json --output report.html` from the plugin root"
+      },
+      {
+       "kind": "mcp-connector-or-api",
+       "name": "Connected data sources (warehouses, BI, semantic layers, docs)",
+       "resolved_path": "openai/plugins: plugins/data-analytics/.app.json",
+       "file_count": 0,
+       "evidence": "Search every connected or provided source that could contain task-relevant data ... verify selected data through live reads"
+      }
+     ],
+     "md_only_ui_verdict": "degraded",
+     "verdict_reason": "The diagnostic method is fully in SKILL.md and can answer in chat, but seven sibling skills are absent, including the mandatory $build-report handoff with its plugin MCP/npm build."
+    },
+    {
+     "id": "S0658",
+     "outputs": [
+      "writes-to-external-system",
+      "chat-text"
+     ],
+     "needs_code_execution": false,
+     "code_evidence": "none; edits go through Google Sheets MCP calls and batch_update request bodies",
+     "bundled_non_md": [
+      {
+       "files": "agents/openai.yaml",
+       "role": "other",
+       "purpose": "Codex UI metadata: display name, icons, brand color, default prompt"
+      },
+      {
+       "files": "assets/google-sheets-small.svg, assets/google-sheets.png",
+       "role": "asset",
+       "purpose": "UI icons only, no functional role"
+      }
+     ],
+     "external_deps": [
+      {
+       "kind": "mcp-connector-or-api",
+       "name": "Google Drive / Google Sheets MCP (drivemcp.googleapis.com; get_cells, search_spreadsheet_rows, batch_update, import_spreadsheet)",
+       "resolved_path": "openai/plugins: plugins/google-drive/.mcp.json",
+       "file_count": 0,
+       "evidence": "Existing Google Sheets edits: use Google Sheets MCP directly."
+      },
+      {
+       "kind": "built-in-doc-skill",
+       "name": "$Spreadsheets / @spreadsheets (plugin://spreadsheets@openai-primary-runtime) or $Excel xlsx creator (Anthropic xlsx equivalent = 53 files)",
+       "resolved_path": "not found",
+       "file_count": 53,
+       "evidence": "If a system spreadsheet plugin or skill is installed, YOU MUST use it to create a local `.xlsx`."
+      },
+      {
+       "kind": "mcp-connector-or-api",
+       "name": "CUA or artifact_tool_v2 for visual verification",
+       "resolved_path": "not found",
+       "file_count": 0,
+       "evidence": "If CUA is authenticated and enabled, use it ... export the Google Sheet to `.xlsx` and ... inspect via artifact_tool_v2."
+      }
+     ],
+     "md_only_ui_verdict": "degraded",
+     "verdict_reason": "All 10 md files survive; connector-based edits work unchanged, but new-sheet creation loses the mandated $Spreadsheets .xlsx route, falling back to direct MCP. Needs a Sheets connector."
+    },
+    {
+     "id": "S0713",
+     "outputs": [
+      "writes-to-external-system",
+      "chat-text"
+     ],
+     "needs_code_execution": true,
+     "code_evidence": "import mixpanel_headless as mp; ws = mp.Workspace(); dash = ws.get_dashboard(DASHBOARD_ID)",
+     "bundled_non_md": [],
+     "external_deps": [
+      {
+       "kind": "cli-or-library",
+       "name": "mixpanel_headless Python SDK",
+       "resolved_path": "not found",
+       "file_count": 0,
+       "evidence": "All code examples use the `mixpanel_headless` Python library. import mixpanel_headless as mp"
+      },
+      {
+       "kind": "cli-or-library",
+       "name": "pandas (result DataFrames)",
+       "resolved_path": "not found",
+       "file_count": 0,
+       "evidence": "df = result.df ... Cross-dashboard: join DataFrames on date index, compute correlations"
+      },
+      {
+       "kind": "mcp-connector-or-api",
+       "name": "Mixpanel API with project credentials",
+       "resolved_path": "not found",
+       "file_count": 0,
+       "evidence": "Full CRUD and analysis for Mixpanel dashboards."
+      },
+      {
+       "kind": "other-skill",
+       "name": "mixpanel-headless-setup + mixpanel-auth (sibling install/auth skills; not referenced by SKILL.md)",
+       "resolved_path": "openai/plugins: plugins/mixpanel-headless/skills/setup, plugins/mixpanel-headless/skills/mixpanel-auth",
+       "file_count": 3,
+       "evidence": "Plugin README: Use `mixpanel-headless-setup` to install dependencies and verify auth."
+      }
+     ],
+     "md_only_ui_verdict": "works",
+     "verdict_reason": "All 5 files are markdown, so nothing is lost; still requires Python with the mixpanel_headless SDK and Mixpanel credentials, normally set up by an unreferenced sibling skill."
+    },
+    {
+     "id": "S0642",
+     "outputs": [
+      "chat-text",
+      "html"
+     ],
+     "needs_code_execution": false,
+     "code_evidence": "none explicit; 'Query or inspect connected structured-data sources for core actuals first'",
+     "bundled_non_md": [
+      {
+       "files": "agents/openai.yaml",
+       "role": "other",
+       "purpose": "Codex UI display name and implicit-invocation policy"
+      }
+     ],
+     "external_deps": [
+      {
+       "kind": "other-skill",
+       "name": "build-report (mandatory handoff)",
+       "resolved_path": "openai/plugins: plugins/data-analytics/skills/build-report",
+       "file_count": 31,
+       "evidence": "End by handing the validated KPI readout to $build-report ... the report handoff is mandatory"
+      },
+      {
+       "kind": "other-skill",
+       "name": "metric-diagnostics",
+       "resolved_path": "openai/plugins: plugins/data-analytics/skills/metric-diagnostics",
+       "file_count": 2,
+       "evidence": "When the readout needs to explain drivers, use $metric-diagnostics to identify and validate them."
+      },
+      {
+       "kind": "other-skill",
+       "name": "validate-data",
+       "resolved_path": "openai/plugins: plugins/data-analytics/skills/validate-data",
+       "file_count": 2,
+       "evidence": "use $validate-data to review whether the numbers, methodology, caveats, and evidence support the claimed status"
+      },
+      {
+       "kind": "other-skill",
+       "name": "gather-business-context",
+       "resolved_path": "openai/plugins: plugins/data-analytics/skills/gather-business-context",
+       "file_count": 2,
+       "evidence": "use $gather-business-context to look for business context that helps explain what happened"
+      },
+      {
+       "kind": "other-skill",
+       "name": "design-kpis",
+       "resolved_path": "openai/plugins: plugins/data-analytics/skills/design-kpis",
+       "file_count": 2,
+       "evidence": "If it is missing or weak, use $design-kpis before reporting."
+      },
+      {
+       "kind": "other-skill",
+       "name": "analyze-data-quality",
+       "resolved_path": "openai/plugins: plugins/data-analytics/skills/analyze-data-quality",
+       "file_count": 2,
+       "evidence": "Use $analyze-data-quality when source quality issues could change the reported metrics."
+      },
+      {
+       "kind": "other-skill",
+       "name": "visualize-data",
+       "resolved_path": "openai/plugins: plugins/data-analytics/skills/visualize-data",
+       "file_count": 3,
+       "evidence": "pass visual intent and supporting evidence to $build-report so $visualize-data owns chart selection and QA."
+      },
+      {
+       "kind": "other-skill",
+       "name": "report-to-google-slides (nested in build-report)",
+       "resolved_path": "openai/plugins: plugins/data-analytics/skills/build-report/report-to-google-slides",
+       "file_count": 3,
+       "evidence": "Then invoke `$report-to-google-slides` on that HTML report."
+      },
+      {
+       "kind": "plugin-level-file",
+       "name": "~~lane placeholder mapping (.app.json + index skill)",
+       "resolved_path": "openai/plugins: plugins/data-analytics/.app.json; plugins/data-analytics/skills/index/SKILL.md",
+       "file_count": 2,
+       "evidence": "make a focused source pass across `~~structured_data`, `~~company_docs`, `~~team_communication`, and `~~dashboards_or_bi`"
+      },
+      {
+       "kind": "plugin-level-file",
+       "name": "data-analytics MCP app + portable report builder (transitive via build-report)",
+       "resolved_path": "openai/plugins: plugins/data-analytics/{mcp/server.cjs, assets/, src/, scripts/, package.json, .mcp.json}",
+       "file_count": 94,
+       "evidence": "build-report: package and verify it once with `npm run report:deliver ...` from the plugin root"
+      },
+      {
+       "kind": "mcp-connector-or-api",
+       "name": "Warehouse/BI/docs/team-chat connectors (Databricks, BigQuery, Snowflake, Slack, Notion...)",
+       "resolved_path": "openai/plugins: plugins/data-analytics/.app.json",
+       "file_count": 0,
+       "evidence": "Do not draft or render a WBR, MBR, scorecard, or KPI update from placeholders. Query or inspect connected structured-data sources"
+      }
+     ],
+     "md_only_ui_verdict": "degraded",
+     "verdict_reason": "Readout workflow and templates survive as md and support an inline update, but eight delegated sibling skills, including the mandatory $build-report handoff, and the ~~lane mapping are absent."
+    },
+    {
+     "id": "S0380",
+     "outputs": [
+      "chat-text",
+      "html",
+      "markdown-or-text-doc",
+      "docx",
+      "writes-to-external-system"
+     ],
+     "needs_code_execution": false,
+     "code_evidence": "none; allowed-tools: Read, WebFetch; data pulled through MCP connectors",
+     "bundled_non_md": [],
+     "external_deps": [
+      {
+       "kind": "plugin-level-file",
+       "name": "shared/artifact-style.md (+ shared/reference/artifact-example.html)",
+       "resolved_path": "anthropics/knowledge-work-plugins: small-business/shared/artifact-style.md; small-business/shared/reference/artifact-example.html",
+       "file_count": 2,
+       "evidence": "Check the `## Business context` block's `Output preference` (shared style guide rule, `../../shared/artifact-style.md`)"
+      },
+      {
+       "kind": "plugin-level-file",
+       "name": "shared/quickbooks-report-traps.md",
+       "resolved_path": "anthropics/knowledge-work-plugins: small-business/shared/quickbooks-report-traps.md",
+       "file_count": 1,
+       "evidence": "Expenses, margin, and AP aging buckets come from the rows or the detail call (`../../shared/quickbooks-report-traps.md`)."
+      },
+      {
+       "kind": "plugin-level-file",
+       "name": "shared/connector-neutrality.md",
+       "resolved_path": "anthropics/knowledge-work-plugins: small-business/shared/connector-neutrality.md",
+       "file_count": 1,
+       "evidence": "MYOB, NetSuite, QuickBooks, Xero, or Zoho Books feed the Cash & Finance section; they are peers (`../../shared/connector-neutrality.md`)"
+      },
+      {
+       "kind": "plugin-level-file",
+       "name": "shared/currency-and-locale.md",
+       "resolved_path": "anthropics/knowledge-work-plugins: small-business/shared/currency-and-locale.md",
+       "file_count": 1,
+       "evidence": "`{{CCY}}` is the business's ISO currency code from the `## Business context` block (`../../../shared/currency-and-locale.md`)"
+      },
+      {
+       "kind": "plugin-level-file",
+       "name": "shared/connector-call-shapes.md",
+       "resolved_path": "anthropics/knowledge-work-plugins: small-business/shared/connector-call-shapes.md",
+       "file_count": 1,
+       "evidence": "`get_crm_objects` needs explicit IDs; see `../../../shared/connector-call-shapes.md`"
+      },
+      {
+       "kind": "other-skill",
+       "name": "smb-onboard (writes the ## Business context memory block)",
+       "resolved_path": "anthropics/knowledge-work-plugins: small-business/skills/smb-onboard",
+       "file_count": 5,
+       "evidence": "artifact-style.md: Check the `## Business context` block for an `Output preference` line (captured during `smb-onboard`)."
+      },
+      {
+       "kind": "other-skill",
+       "name": "monday-brief",
+       "resolved_path": "anthropics/knowledge-work-plugins: small-business/skills/monday-brief",
+       "file_count": 1,
+       "evidence": "A start-of-week briefing routes to /monday-brief, which runs this skill as its first link."
+      },
+      {
+       "kind": "other-skill",
+       "name": "cash-flow-snapshot + report-builder (no-connector fallback)",
+       "resolved_path": "anthropics/knowledge-work-plugins: small-business/skills/cash-flow-snapshot; small-business/skills/report-builder",
+       "file_count": 10,
+       "evidence": "point them at the siblings that run off a file export instead \u2014 `cash-flow-snapshot` and `report-builder` both take a CSV"
+      },
+      {
+       "kind": "other-skill",
+       "name": "invoice-chase + growth-pulse (follow-up offers)",
+       "resolved_path": "anthropics/knowledge-work-plugins: small-business/skills/invoice-chase; small-business/skills/growth-pulse",
+       "file_count": 11,
+       "evidence": "If cash or AR flagged red: \"who owes me money\" runs `invoice-chase`. ... runs `growth-pulse`."
+      },
+      {
+       "kind": "other-skill",
+       "name": "build-connector",
+       "resolved_path": "anthropics/knowledge-work-plugins: small-business/skills/build-connector",
+       "file_count": 5,
+       "evidence": "offer `build-connector` \u2014 it checks the connector directory first and connects through Zapier otherwise"
+      },
+      {
+       "kind": "built-in-doc-skill",
+       "name": "docx (for DOCX output preference)",
+       "resolved_path": "anthropics/skills: skills/docx",
+       "file_count": 61,
+       "evidence": "docx / md / notion / canva preference: deliver the same content in that form \u2014 a DOCX or markdown file"
+      },
+      {
+       "kind": "mcp-connector-or-api",
+       "name": "Ledger connectors: QuickBooks, Xero, Zoho Books, MYOB, NetSuite",
+       "resolved_path": "anthropics/knowledge-work-plugins: small-business/.mcp.json",
+       "file_count": 0,
+       "evidence": "QuickBooks \u2014 cash balance, MTD revenue, outstanding receivables, overdue invoices"
+      },
+      {
+       "kind": "mcp-connector-or-api",
+       "name": "Payments/commerce/spend: PayPal, Square, Stripe, Shopify, Ramp, Gusto, Expensify, TikTok Ads",
+       "resolved_path": "anthropics/knowledge-work-plugins: small-business/.mcp.json",
+       "file_count": 0,
+       "evidence": "PayPal / Square \u2014 7-day settlements, sales trend, failed/pending transactions"
+      },
+      {
+       "kind": "mcp-connector-or-api",
+       "name": "CRM/comms: HubSpot, Google Calendar, Gmail/M365, Slack/Teams, RingEx, DocuSign, Zoho Desk",
+       "resolved_path": "anthropics/knowledge-work-plugins: small-business/.mcp.json",
+       "file_count": 0,
+       "evidence": "HubSpot \u2014 pipeline by stage, deals moved/closed, deals gone cold, new leads"
+      },
+      {
+       "kind": "mcp-connector-or-api",
+       "name": "Delivery: Notion, Canva, Files connector, Slack write",
+       "resolved_path": "anthropics/knowledge-work-plugins: small-business/.mcp.json",
+       "file_count": 0,
+       "evidence": "a Notion page created via the connector ... or a Canva Doc created via the Canva connector"
+      }
+     ],
+     "md_only_ui_verdict": "degraded",
+     "verdict_reason": "Workflow, thresholds, template and a no-connector path survive; five shared plugin files (house artifact style, QuickBooks traps, currency/locale rules) and six sibling skills are missing."
+    }
+   ],
+   "verify": [
+    {
+     "id": "S1033",
+     "verdict_agrees": true,
+     "corrected_verdict": "degraded",
+     "deps_wrong": [
+      "/cs:grill-bizops command",
+      "business-operations-skills orchestrator / cs-bizops-orchestrator agent (optional)"
+     ],
+     "deps_missed": [],
+     "code_execution_correct": true,
+     "note": "Agree. The 6 md files survive, including the SOP and runbook templates. Vault-wide ingestion and scoring are lost with the scripts. The forcing questions are inline, so the grill command and orchestrator are optional."
+    },
+    {
+     "id": "S1031",
+     "verdict_agrees": true,
+     "corrected_verdict": "degraded",
+     "deps_wrong": [],
+     "deps_missed": [],
+     "code_execution_correct": true,
+     "note": "Agree. Erlang-C formula, profile shrinkage defaults and hiring weights are in the md files. Without the calculators, the Erlang-C factorial math must be done by hand and errors are likely. process-mapper is only a conditional prerequisite."
+    },
+    {
+     "id": "S1034",
+     "verdict_agrees": true,
+     "corrected_verdict": "degraded",
+     "deps_wrong": [
+      "/cs:grill-bizops command",
+      "business-operations-skills orchestrator / cs-bizops-orchestrator agent (optional)"
+     ],
+     "deps_missed": [],
+     "code_execution_correct": true,
+     "note": "Agree. The math is simple sums and percentages that can be done by hand. Non-SaaS thresholds exist only in bottleneck_detector.py PROFILES. The grill/orchestrator are optional routers because the questions are inline."
+    },
+    {
+     "id": "S0428",
+     "verdict_agrees": true,
+     "corrected_verdict": "degraded",
+     "deps_wrong": [],
+     "deps_missed": [],
+     "code_execution_correct": true,
+     "note": "Agree. docx-js creation guidance survives in the 91-line SKILL.md. merge_runs, the comment helper, accept_changes, XSD validation and the soffice shim are lost. I confirmed gcc, lxml and defusedxml in the scripts."
+    },
+    {
+     "id": "S0106",
+     "verdict_agrees": true,
+     "corrected_verdict": "breaks",
+     "deps_wrong": [
+      "arXiv (optional citation lookup)"
+     ],
+     "deps_missed": [],
+     "code_execution_correct": true,
+     "note": "Agree. The approval content hash and every gate come from the lost scripts, and the skill says to fail closed. The arXiv lookup is only for the citation, 'when network access is available'."
+    },
+    {
+     "id": "S0644",
+     "verdict_agrees": true,
+     "corrected_verdict": "degraded",
+     "deps_wrong": [],
+     "deps_missed": [],
+     "code_execution_correct": true,
+     "note": "Agree. Only openai.yaml is lost. The mandatory $build-report handoff (npm report:deliver) and the sibling skills are absent, so output falls back to chat. Plugin-level non-skill files number about 98, not 94."
+    },
+    {
+     "id": "S0658",
+     "verdict_agrees": false,
+     "corrected_verdict": "works",
+     "deps_wrong": [
+      "$Spreadsheets / @spreadsheets (plugin://spreadsheets@openai-primary-runtime) or $Excel xlsx creator (Anthropic xlsx equivalent = 53 files)",
+      "CUA or artifact_tool_v2 for visual verification"
+     ],
+     "deps_missed": [],
+     "code_execution_correct": true,
+     "note": "Only the yaml and icons are lost. The skill says: if no Spreadsheets skill, create directly with Google Sheets MCP. CUA also has a stated API fallback. Its only real requirement is the Sheets connector."
+    },
+    {
+     "id": "S0713",
+     "verdict_agrees": false,
+     "corrected_verdict": "degraded",
+     "deps_wrong": [],
+     "deps_missed": [
+      "Python 3.10+ runtime with pip/uv and network to install mixpanel-headless (done by sibling setup.sh)"
+     ],
+     "code_execution_correct": true,
+     "note": "Every example needs mixpanel_headless plus auth (mp login / MP_OAUTH_TOKEN). The folder never says how to install or authenticate; that lives in absent sibling setup and auth skills."
+    },
+    {
+     "id": "S0642",
+     "verdict_agrees": true,
+     "corrected_verdict": "degraded",
+     "deps_wrong": [],
+     "deps_missed": [],
+     "code_execution_correct": true,
+     "note": "Agree. SKILL.md and report-templates.md survive and support an inline readout. The mandatory $build-report handoff and the delegated siblings are absent. The ~~lane names are self-describing, so losing that mapping matters little."
+    },
+    {
+     "id": "S0380",
+     "verdict_agrees": true,
+     "corrected_verdict": "degraded",
+     "deps_wrong": [
+      "monday-brief",
+      "invoice-chase + growth-pulse (follow-up offers)"
+     ],
+     "deps_missed": [],
+     "code_execution_correct": true,
+     "note": "Agree. I confirmed the 5 shared md references are missing (house HTML style, QuickBooks traps, currency). monday-brief calls this skill, not the reverse. invoice-chase and growth-pulse are only follow-up offers."
+    }
+   ]
+  },
+  {
+   "analysis": [
+    {
+     "id": "S0439",
+     "outputs": [
+      "xlsx",
+      "csv-json-data",
+      "chat-text"
+     ],
+     "needs_code_execution": true,
+     "code_evidence": "\"python scripts/recalc.py output.xlsx\"; create/edit with `openpyxl`; bulk data via `pandas` read_excel/to_excel",
+     "bundled_non_md": [
+      {
+       "files": "scripts/recalc.py",
+       "role": "script",
+       "purpose": "Mandatory LibreOffice formula recalculation; reports formula errors as JSON"
+      },
+      {
+       "files": "scripts/office/soffice.py",
+       "role": "script",
+       "purpose": "Runs headless soffice with sandbox LD_PRELOAD shim; imported by recalc.py"
+      },
+      {
+       "files": "scripts/office/validate.py, scripts/office/validators/*.py (5)",
+       "role": "script",
+       "purpose": "OOXML schema/redlining validator for docx/pptx; not referenced by xlsx SKILL.md"
+      },
+      {
+       "files": "scripts/office/helpers/*.py (4)",
+       "role": "script",
+       "purpose": "Zip and pptx chart/slide/theme helpers for validators; unused by xlsx"
+      },
+      {
+       "files": "scripts/office/schemas/**/*.xsd (39)",
+       "role": "data-schema",
+       "purpose": "ISO/ECMA/Microsoft OOXML XSDs for validate.py; unused by xlsx SKILL.md"
+      },
+      {
+       "files": "LICENSE.txt",
+       "role": "other",
+       "purpose": "Proprietary Anthropic license terms"
+      }
+     ],
+     "external_deps": [
+      {
+       "kind": "cli-or-library",
+       "name": "openpyxl (Python)",
+       "resolved_path": "not found (runtime-preinstalled library)",
+       "file_count": 0,
+       "evidence": "`openpyxl`, `pandas`, and `markitdown` are preinstalled \u2014 do not run `pip install` first"
+      },
+      {
+       "kind": "cli-or-library",
+       "name": "pandas (Python)",
+       "resolved_path": "not found (runtime-preinstalled library)",
+       "file_count": 0,
+       "evidence": "**Bulk data** in or out | `pandas` (`read_excel`, `to_excel`)"
+      },
+      {
+       "kind": "cli-or-library",
+       "name": "markitdown CLI",
+       "resolved_path": "not found (runtime-preinstalled CLI)",
+       "file_count": 0,
+       "evidence": "**Quick look** at a sheet | `markitdown file.xlsx`"
+      },
+      {
+       "kind": "cli-or-library",
+       "name": "LibreOffice (soffice)",
+       "resolved_path": "not found (system binary; wrapper at scripts/office/soffice.py)",
+       "file_count": 0,
+       "evidence": "LibreOffice (`soffice`, auto-configured for sandboxed environments via `scripts/office/soffice.py`)"
+      }
+     ],
+     "md_only_ui_verdict": "degraded",
+     "verdict_reason": "Guidance survives, but mandatory recalc.py/soffice.py LibreOffice recalculation and formula-error check are dropped; workbooks ship uncached and unverified. Needs Python runtime with openpyxl; without code execution, breaks."
+    },
+    {
+     "id": "S0427",
+     "outputs": [
+      "chat-text",
+      "markdown-or-text-doc"
+     ],
+     "needs_code_execution": false,
+     "code_evidence": "none",
+     "bundled_non_md": [],
+     "external_deps": [
+      {
+       "kind": "mcp-connector-or-api",
+       "name": "Slack / Teams / Google Drive / SharePoint integrations (optional)",
+       "resolved_path": "not found (optional host connectors; fallback is pasting content)",
+       "file_count": 0,
+       "evidence": "If integrations are available (e.g., Slack, Teams, Google Drive, SharePoint, or other MCP servers)"
+      }
+     ],
+     "md_only_ui_verdict": "works",
+     "verdict_reason": "Single self-contained SKILL.md; pure conversational workflow producing a markdown doc or artifact. Integrations and sub-agents are optional with explicit fallbacks (pasted content, manual reader testing)."
+    },
+    {
+     "id": "S0399",
+     "outputs": [
+      "html",
+      "chat-text",
+      "markdown-or-text-doc",
+      "docx",
+      "writes-to-external-system"
+     ],
+     "needs_code_execution": false,
+     "code_evidence": "none",
+     "bundled_non_md": [],
+     "external_deps": [
+      {
+       "kind": "other-skill",
+       "name": "business-pulse",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__knowledge-work-plugins/small-business/skills/business-pulse",
+       "file_count": 6,
+       "evidence": "Run `business-pulse` with the **Monday preset** \u2014 full pulse, forward-looking."
+      },
+      {
+       "kind": "other-skill",
+       "name": "report-builder",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__knowledge-work-plugins/small-business/skills/report-builder",
+       "file_count": 6,
+       "evidence": "Run `report-builder` in saved-report mode only."
+      },
+      {
+       "kind": "plugin-level-file",
+       "name": "../report-builder/reference/saved_reports.md",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__knowledge-work-plugins/small-business/skills/report-builder/reference/saved_reports.md",
+       "file_count": 1,
+       "evidence": "per report-builder's saved-reports file (`../report-builder/reference/saved_reports.md`)"
+      },
+      {
+       "kind": "plugin-level-file",
+       "name": "../../shared/artifact-style.md (+ shared/currency-and-locale.md, shared/reference/artifact-example.html)",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__knowledge-work-plugins/small-business/shared/artifact-style.md",
+       "file_count": 3,
+       "evidence": "Check the `## Business context` block's `Output preference` (shared style guide rule, `../../shared/artifact-style.md`)"
+      },
+      {
+       "kind": "plugin-level-file",
+       "name": "../../shared/untrusted-content.md",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__knowledge-work-plugins/small-business/shared/untrusted-content.md",
+       "file_count": 1,
+       "evidence": "with the verification step named (`../../shared/untrusted-content.md`)"
+      },
+      {
+       "kind": "plugin-level-file",
+       "name": "## Business context block (Output preference) in session memory",
+       "resolved_path": "not found (Cowork session memory written by skills/smb-onboard, 5 files)",
+       "file_count": 0,
+       "evidence": "Deliver per the owner's stored output preference \u2014 never default to a markdown file."
+      },
+      {
+       "kind": "other-skill",
+       "name": "invoice-chase (next-step handoff)",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__knowledge-work-plugins/small-business/skills/invoice-chase",
+       "file_count": 6,
+       "evidence": "\"who owes me money\" runs `invoice-chase`."
+      },
+      {
+       "kind": "other-skill",
+       "name": "cash-flow-snapshot (next-step handoff)",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__knowledge-work-plugins/small-business/skills/cash-flow-snapshot",
+       "file_count": 4,
+       "evidence": "\"cash forecast\" runs `cash-flow-snapshot`."
+      },
+      {
+       "kind": "other-skill",
+       "name": "marketing-monday (next-step handoff)",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__knowledge-work-plugins/small-business/skills/marketing-monday",
+       "file_count": 1,
+       "evidence": "\"weekly growth brief\" runs `/marketing-monday`."
+      },
+      {
+       "kind": "other-skill",
+       "name": "build-connector",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__knowledge-work-plugins/small-business/skills/build-connector",
+       "file_count": 5,
+       "evidence": "offer `build-connector` \u2014 it checks the connector directory first and connects through Zapier otherwise"
+      },
+      {
+       "kind": "built-in-doc-skill",
+       "name": "docx (for docx output preference)",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__skills/skills/docx",
+       "file_count": 61,
+       "evidence": "docx / md / notion / canva preference: deliver the same content in that form \u2014 a DOCX or markdown file"
+      },
+      {
+       "kind": "mcp-connector-or-api",
+       "name": "Google Calendar + Gmail or Microsoft 365",
+       "resolved_path": "small-business/.mcp.json (gmail, google-calendar listed; M365 not listed)",
+       "file_count": 0,
+       "evidence": "Read Google Calendar for the week's commitments and the connected mailbox (Gmail or Microsoft 365)"
+      },
+      {
+       "kind": "mcp-connector-or-api",
+       "name": "Ledger and ops connectors (MYOB, NetSuite, QuickBooks, Xero, Zoho Books, DocuSign, Expensify, HubSpot, PayPal, Ramp, RingEx Chat, Shopify, Stripe, TikTok Ads)",
+       "resolved_path": "small-business/.mcp.json (all listed except NetSuite)",
+       "file_count": 0,
+       "evidence": "building from whatever of the ledger (MYOB, NetSuite, QuickBooks, Xero, or Zoho Books), Calendar, DocuSign, Expensify"
+      },
+      {
+       "kind": "mcp-connector-or-api",
+       "name": "Slack / Teams posting",
+       "resolved_path": "small-business/.mcp.json (slack listed; Teams not listed)",
+       "file_count": 0,
+       "evidence": "`--post` (default `none`) \u2014 post the summary to `slack`, `teams`, or `none`"
+      },
+      {
+       "kind": "mcp-connector-or-api",
+       "name": "Google Drive / OneDrive save",
+       "resolved_path": "small-business/.mcp.json (google-drive listed; OneDrive not listed)",
+       "file_count": 0,
+       "evidence": "`--save-to` (default `files`) \u2014 `files` (Drive / OneDrive), `desktop`, or `both`"
+      },
+      {
+       "kind": "mcp-connector-or-api",
+       "name": "Notion and Canva connectors",
+       "resolved_path": "small-business/.mcp.json (notion, canva listed)",
+       "file_count": 0,
+       "evidence": "a Notion page created via the connector ... or a Canva Doc created via the Canva connector"
+      }
+     ],
+     "md_only_ui_verdict": "degraded",
+     "verdict_reason": "Orchestrates business-pulse and report-builder (12 files) plus shared artifact-style and untrusted-content rules, all absent; agent must improvise the snapshot, house style and injection policy from connectors or pasted data."
+    },
+    {
+     "id": "S1261",
+     "outputs": [
+      "chat-text",
+      "markdown-or-text-doc"
+     ],
+     "needs_code_execution": false,
+     "code_evidence": "none",
+     "bundled_non_md": [],
+     "external_deps": [
+      {
+       "kind": "plugin-level-file",
+       "name": "~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md (## Board & Secretary, ## Who's using this, ## Outputs, ## Matter workspaces)",
+       "resolved_path": "template at /tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__claude-for-legal/corporate-legal/CLAUDE.md (478 lines); user config not in repo",
+       "file_count": 1,
+       "evidence": "If `~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md` has no minutes format: run cold-start first."
+      },
+      {
+       "kind": "other-skill",
+       "name": "cold-start-interview",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__claude-for-legal/corporate-legal/skills/cold-start-interview",
+       "file_count": 1,
+       "evidence": "run cold-start first. Do not proceed with a generic format."
+      },
+      {
+       "kind": "other-skill",
+       "name": "matter-workspace",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__claude-for-legal/corporate-legal/skills/matter-workspace",
+       "file_count": 1,
+       "evidence": "Run `/corporate-legal:matter-workspace switch <slug>` or say `practice-level`."
+      },
+      {
+       "kind": "plugin-level-file",
+       "name": "matter.md (active matter, only if workspaces enabled)",
+       "resolved_path": "not found (runtime file under ~/.claude/plugins/config/claude-for-legal/corporate-legal/matters/<slug>/)",
+       "file_count": 0,
+       "evidence": "Load the active matter's `matter.md` for matter-specific context and overrides."
+      },
+      {
+       "kind": "other-skill",
+       "name": "written-consent",
+       "resolved_path": "/tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/repos/anthropics__claude-for-legal/corporate-legal/skills/written-consent",
+       "file_count": 1,
+       "evidence": "For drafting written consents in lieu of a meeting, use `/corporate-legal:written-consent`."
+      },
+      {
+       "kind": "mcp-connector-or-api",
+       "name": "Calendar connector (optional)",
+       "resolved_path": "not found (no calendar server in corporate-legal/.mcp.json)",
+       "file_count": 0,
+       "evidence": "If the calendar connector is authorized, search for upcoming events matching board and committee keywords"
+      }
+     ],
+     "md_only_ui_verdict": "degraded",
+     "verdict_reason": "Minutes structure, resolution language and review checklist are inline, but house format, role-based header and non-lawyer gate live in absent config CLAUDE.md; literal 'run cold-start first' gate stalls."
+    }
+   ],
+   "verify": [
+    {
+     "id": "S0439",
+     "verdict_agrees": true,
+     "corrected_verdict": "degraded",
+     "deps_wrong": [],
+     "deps_missed": [],
+     "code_execution_correct": true,
+     "note": "xlsx is a binary ZIP, so openpyxl code execution is essential. Only recalc.py and soffice.py of the 52 dropped files are used. Without a runtime this breaks."
+    },
+    {
+     "id": "S0427",
+     "verdict_agrees": true,
+     "corrected_verdict": "works",
+     "deps_wrong": [],
+     "deps_missed": [],
+     "code_execution_correct": true,
+     "note": "Single self-contained SKILL.md. Integrations, artifacts and sub-agents all have explicit fallbacks (pasted content, markdown file, manual reader testing). Text output only."
+    },
+    {
+     "id": "S0399",
+     "verdict_agrees": true,
+     "corrected_verdict": "degraded",
+     "deps_wrong": [
+      "invoice-chase (next-step handoff)",
+      "cash-flow-snapshot (next-step handoff)",
+      "marketing-monday (next-step handoff)",
+      "build-connector"
+     ],
+     "deps_missed": [
+      "shared/quickbooks-report-traps.md and shared/connector-neutrality.md (transitive via business-pulse)",
+      "host HTML artifact publishing for default delivery (markdown-in-chat fallback)"
+     ],
+     "code_execution_correct": true,
+     "note": "Missing business-pulse and house style degrade it. Step 2 skips silently, and the default HTML output is plain text. The handoffs are optional after-run offers, not requirements."
+    },
+    {
+     "id": "S1261",
+     "verdict_agrees": true,
+     "corrected_verdict": "degraded",
+     "deps_wrong": [],
+     "deps_missed": [
+      "~/.claude/plugins/config/claude-for-legal/company-profile.md (shared profile the config template says to read first)"
+     ],
+     "code_execution_correct": true,
+     "note": "Config is an unfilled template, and cold-start is absent. The model can ask for seed minutes inline. The inline structure, resolutions and checklist still produce usable text minutes."
+    }
+   ]
+  }
+ ]
+}
