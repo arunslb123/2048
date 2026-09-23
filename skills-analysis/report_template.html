@@ -132,6 +132,40 @@ td .sub { color: var(--muted); font-size: 12px; }
 .method p, .method li { font-size: 14px; color: var(--ink-2); }
 .method ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; }
 
+/* rule check */
+.rule { border-top: 1px solid var(--hair); }
+.rule-tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 860px) { .rule-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 460px) { .rule-tiles { grid-template-columns: 1fr; } }
+.rt { background: var(--surface); border: 1px solid var(--hair); border-radius: 10px; padding: 16px; display: grid; gap: 6px; align-content: start; }
+.rt .verdict { font: 600 11.5px var(--mono); letter-spacing: .05em; text-transform: uppercase; }
+.rt .verdict.ok { color: var(--t-data); } .rt .verdict.no { color: var(--t-script); } .rt .verdict.info { color: var(--muted); }
+.rt .value { font: 600 30px/1.1 var(--sans); font-variant-numeric: tabular-nums; }
+.rt .label { font-size: 13.5px; color: var(--ink); font-weight: 500; }
+.rt .sub { font-size: 12.5px; color: var(--muted); }
+.legend.small { font-size: 12.5px; }
+.why { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+.why article { background: var(--surface); border: 1px solid var(--hair); border-radius: 10px; padding: 14px 16px; display: grid; gap: 6px; align-content: start; }
+.why .who { font: 500 11.5px var(--mono); color: var(--muted); }
+.why h3 { font-size: 15.5px; }
+.why p { font-size: 13.5px; color: var(--ink-2); }
+.why .tag { font: 500 11px var(--mono); padding: 1px 6px; border-radius: 999px; border: 1px solid currentColor; justify-self: start; }
+.tag.no { color: var(--t-script); } .tag.partly { color: var(--t-asset); } .tag.yes { color: var(--t-data); }
+.quotes { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; }
+.q { background: var(--surface); border: 1px solid var(--hair); border-radius: 10px; padding: 16px; display: grid; gap: 10px; align-content: start; }
+.q .who { font: 600 11.5px var(--mono); letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+.q blockquote { margin: 0; font-size: 14px; line-height: 1.55; color: var(--ink); border-left: 2px solid var(--hair); padding-left: 12px; }
+.q .so { font-size: 13px; color: var(--ink-2); }
+.q a { font: 12px var(--mono); overflow-wrap: anywhere; }
+.reco { display: grid; gap: 10px; counter-reset: r; padding: 0; margin: 0; list-style: none; }
+.reco li { background: var(--surface); border: 1px solid var(--hair); border-radius: 10px; padding: 14px 16px 14px 52px; position: relative; font-size: 14.5px; color: var(--ink-2); }
+.reco li::before { counter-increment: r; content: counter(r); position: absolute; left: 16px; top: 13px; width: 24px; height: 24px; border-radius: 50%; background: var(--ink); color: var(--surface); font: 600 13px/24px var(--sans); text-align: center; }
+.reco li strong { color: var(--ink); }
+.mini-stats { display: flex; flex-wrap: wrap; gap: 10px 26px; }
+.mini-stats div { display: grid; gap: 2px; }
+.mini-stats b { font: 600 22px var(--sans); font-variant-numeric: tabular-nums; }
+.mini-stats span { font-size: 12.5px; color: var(--ink-2); }
+
 /* tooltip */
 .tip { position: fixed; z-index: 10; pointer-events: none; background: var(--surface); color: var(--ink); border: 1px solid var(--hair); border-radius: 8px; padding: 8px 10px; font-size: 12.5px; box-shadow: 0 6px 20px rgba(0,0,0,.12); max-width: 260px; }
 .tip b { font-size: 15px; font-variant-numeric: tabular-nums; display: block; }
@@ -146,6 +180,72 @@ td .sub { color: var(--muted); font-size: 12px; }
     <p class="lede" id="lede"></p>
     <div class="tiles" id="tiles" aria-label="Headline numbers"></div>
   </header>
+
+  <section class="rule" aria-labelledby="h-rule">
+    <div class="sec-head">
+      <div class="eyebrow">Checking a proposed internal rule</div>
+      <h2 id="h-rule">“At most 20 files, all markdown”: how does it compare?</h2>
+      <p id="rule-sub"></p>
+    </div>
+    <div class="rule-tiles" id="rule-tiles"></div>
+  </section>
+
+  <section aria-labelledby="h-cap">
+    <div class="sec-head">
+      <h2 id="h-cap">The 20-file cap: fits almost everyone</h2>
+      <p id="cap-sub"></p>
+    </div>
+    <div class="two">
+      <div class="panel" style="display:grid;gap:10px">
+        <div class="legend small"><span><i style="background:var(--s1)"></i>20 files or fewer</span><span><i style="background:var(--t-pack)"></i>Over 20 files</span></div>
+        <svg class="chart" id="cap-hist" role="img" aria-label="Files per skill, all eligible skills"></svg>
+      </div>
+      <div class="panel" style="display:grid;gap:10px">
+        <h3>Share of each publisher’s skills that pass</h3>
+        <div class="legend small"><span><i style="background:var(--s1)"></i>20 files or fewer</span><span><i style="background:var(--s2)"></i>Markdown only</span></div>
+        <svg class="chart" id="rule-pub" role="img" aria-label="Share of skills passing each rule by publisher"></svg>
+      </div>
+    </div>
+    <details class="panel">
+      <summary style="cursor:pointer;font-weight:600" id="over-summary"></summary>
+      <div class="tscroll" style="margin-top:12px;max-height:420px;overflow:auto"><table id="over"></table></div>
+    </details>
+  </section>
+
+  <section aria-labelledby="h-mdonly">
+    <div class="sec-head">
+      <h2 id="h-mdonly">The markdown-only rule: where teams diverge from the field</h2>
+      <p id="mdonly-sub"></p>
+    </div>
+    <div class="two">
+      <div class="panel" style="display:grid;gap:12px">
+        <h3 id="purpose-h"></h3>
+        <svg class="chart" id="purposes" role="img" aria-label="Why skills include non-markdown files"></svg>
+      </div>
+      <div class="panel" style="display:grid;gap:14px">
+        <h3>Could markdown alone do the same job?</h3>
+        <div class="mini-stats" id="couldmd"></div>
+        <p class="note" style="font-size:13.5px;color:var(--ink-2)">An agent opened every non-markdown file and the parts of SKILL.md that use it. “No” means the file executes, validates or transforms something that instructions can’t make exact: recalculating a model, checking Word XML against its schema, measuring audio length. The “yes” cases are evaluation rubrics and catalog metadata that nothing reads at run time. The 36 skills were chosen across all four publisher groups and include the largest ones, so the counts show the range of reasons rather than population shares.</p>
+      </div>
+    </div>
+    <div class="why" id="why"></div>
+  </section>
+
+  <section aria-labelledby="h-docs">
+    <div class="sec-head">
+      <h2 id="h-docs">What Anthropic and OpenAI actually say</h2>
+      <p>Every quote below was checked word for word against its live source by a separate agent. Neither lab caps file count at anything near 20, and neither requires markdown-only folders. OpenAI does make instruction-only the <em>default</em>.</p>
+    </div>
+    <div class="quotes" id="quotes"></div>
+  </section>
+
+  <section aria-labelledby="h-reco">
+    <div class="sec-head">
+      <h2 id="h-reco">A rule that matches what the field does</h2>
+      <p>Keep what the team’s instinct gets right (small, markdown-first folders) and allow the exceptions both labs recommend.</p>
+    </div>
+    <ol class="reco" id="reco"></ol>
+  </section>
 
   <section aria-labelledby="h-md">
     <div class="sec-head">
@@ -346,6 +446,129 @@ function hbar(x, y, w, hgt, r = 4) {
     h("span", { class: "value" }, d, t.value);
     h("span", { class: "sub" }, d, t.sub);
   }
+})();
+
+/* ---------- rule check ---------- */
+(function ruleCheck() {
+  const R = D.rule, C = R.census, S = R.sample;
+  $("rule-sub").textContent = `Tested against all ${fmt(C.n)} real knowledge-work skills in the census (every file in the skill folder counts, including references/ and other subfolders), with the ${S.n}-skill audited sample as a check.`;
+  const tiles = [
+    { v: pct(C.le_cap_pct), l: "have 20 files or fewer", s: `${C.over_cap} of ${fmt(C.n)} exceed it · sample ${pct(S.le_cap_pct)}`, verdict: "Matches the field", cls: "ok" },
+    { v: pct(C.md_only_pct), l: "are markdown only", s: `${pct(C.md_only_strict_pct)} if OpenAI UI files and licenses count · sample ${pct(S.md_only_pct)}`, verdict: "Stricter than the field", cls: "no" },
+    { v: pct(C.multi_md_only_pct), l: "of multi-file skills are markdown only", s: `once a skill grows past SKILL.md, most add code or data (${fmt(C.multi_n)} skills)`, verdict: "Stricter than the field", cls: "no" },
+    { v: "None", l: "of the Anthropic or OpenAI platforms caps a skill near 20 files", s: "Anthropic: no count limit, 30 MB total. OpenAI: 500 files (API), 100 (MCP import)", verdict: "No platform requires it", cls: "info" },
+  ];
+  const root = $("rule-tiles");
+  for (const t of tiles) {
+    const d = h("div", { class: "rt" }, root);
+    h("span", { class: "verdict " + t.cls }, d, t.verdict);
+    h("span", { class: "value" }, d, t.v);
+    h("span", { class: "label" }, d, t.l);
+    h("span", { class: "sub" }, d, t.s);
+  }
+  $("cap-sub").textContent = `The median skill has 2 files; 95% have ${R.p95_files} or fewer, so a 20-file cap sits right at the edge of normal practice. The ${C.over_cap} skills above it are mostly document and modelling skills that ship schemas, fonts or validation scripts, like Anthropic’s own docx, pptx and xlsx. Markdown count alone almost never hits 20: only ${C.md_over_cap} of ${fmt(C.n)} skills have more than 20 .md files.`;
+
+  // files histogram with cap
+  const svg = $("cap-hist");
+  const W = 520, H = 280, m = { t: 26, r: 8, b: 44, l: 40 };
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  const iw = W - m.l - m.r, ih = H - m.t - m.b;
+  const max = Math.max(...R.hist.map((b) => b.v)), top = Math.ceil(max / 100) * 100;
+  for (let v = 0; v <= top; v += 100) {
+    const y = m.t + ih - (v / top) * ih;
+    el("line", { x1: m.l, x2: W - m.r, y1: y, y2: y, class: v === 0 ? "axis" : "gridline" }, svg);
+    el("text", { x: m.l - 8, y: y + 4, "text-anchor": "end" }, svg, v);
+  }
+  const band = iw / R.hist.length, bw = Math.min(56, band * 0.62);
+  R.hist.forEach((b, i) => {
+    const x = m.l + band * i + (band - bw) / 2, bh = (b.v / top) * ih, y = m.t + ih - bh;
+    const g = el("g", { class: "row" }, svg);
+    el("rect", { x: m.l + band * i, y: m.t, width: band, height: ih, class: "hit" }, g);
+    if (b.v > 0) el("path", { d: vbar(x, y, bw, Math.max(bh, 2)), fill: b.over ? "var(--t-pack)" : "var(--s1)", class: "bar", style: `fill:${b.over ? "var(--t-pack)" : "var(--s1)"}` }, g);
+    el("text", { x: x + bw / 2, y: y - 7, "text-anchor": "middle", class: "val" }, g, b.v);
+    el("text", { x: x + bw / 2, y: m.t + ih + 18, "text-anchor": "middle" }, g, b.k);
+    hover(g, `${b.v} skills (${pct(100 * b.v / C.n)})`, `${b.k} files in the folder`);
+  });
+  const capX = m.l + band * 4;
+  el("line", { x1: capX, x2: capX, y1: m.t - 14, y2: m.t + ih, stroke: "var(--ink)", "stroke-width": 1.5 }, svg);
+  el("text", { x: capX - 6, y: m.t - 4, "text-anchor": "end", class: "val" }, svg, "20-file cap");
+  el("text", { x: m.l + iw / 2, y: H - 6, "text-anchor": "middle" }, svg, `files in the skill folder · all ${fmt(C.n)} eligible skills`);
+
+  // grouped bars by publisher
+  const g2 = $("rule-pub");
+  const rows = R.by_pub, W2 = 520, rowH = 58, lw = 110, bh = 16, mr = 44;
+  const H2 = rows.length * rowH + 8;
+  g2.setAttribute("viewBox", `0 0 ${W2} ${H2}`);
+  const iw2 = W2 - lw - mr;
+  el("line", { x1: lw, x2: lw, y1: 4, y2: H2 - 4, class: "axis" }, g2);
+  rows.forEach((r, i) => {
+    const y0 = 6 + i * rowH;
+    el("text", { x: 0, y: y0 + 20 }, g2, r.label);
+    el("text", { x: 0, y: y0 + 36, fill: "var(--muted)" }, g2, `n=${r.n}`);
+    [["le_cap_pct", "var(--s1)", "20 files or fewer"], ["md_only_pct", "var(--s2)", "markdown only"]].forEach(([k, c, lab], j) => {
+      const y = y0 + j * (bh + 4) + 6, w = (r[k] / 100) * iw2;
+      const g = el("g", { class: "row" }, g2);
+      el("rect", { x: lw, y: y - 2, width: iw2 + mr, height: bh + 4, class: "hit" }, g);
+      el("path", { d: hbar(lw, y, Math.max(w, 1), bh), fill: c, style: `fill:${c}` }, g);
+      el("text", { x: lw + w + 6, y: y + bh / 2 + 4, class: "val" }, g, pct(r[k]));
+      hover(g, pct(r[k]), `${r.label}: ${lab}`);
+    });
+  });
+
+  // over-cap table
+  $("over-summary").textContent = `The ${R.over.length} skills over 20 files: what they carry`;
+  const t = $("over");
+  const hr = h("tr", {}, h("thead", {}, t));
+  ["Skill", "Publisher", "Files", ".md", "Scripts", "Data", "Assets"].forEach((l, i) => h("th", { class: i > 1 ? "num" : "" }, hr, l));
+  const tb = h("tbody", {}, t);
+  for (const o of R.over) {
+    const tr = h("tr", {}, tb);
+    const td = h("td", {}, tr); h("a", { href: o.url, target: "_blank", rel: "noopener" }, td, o.name); h("div", { class: "sub mono" }, td, o.repo);
+    h("td", {}, tr, o.pub);
+    for (const k of ["files", "md", "script", "data", "asset"]) h("td", { class: "num" + (o[k] === 0 ? " zero" : "") }, tr, fmt(o[k]));
+  }
+
+  // markdown-only
+  const N = R.nonmd;
+  $("mdonly-sub").textContent = `${pct(100 * N.n / C.n)} of real skills (${N.n} of ${fmt(C.n)}) ship something besides markdown. Of those, ${pct(100 * N.scripts / N.n)} include scripts or code and ${pct(100 * N.data_only / N.n)} add only data (JSON/YAML/CSV schemas, lookup tables, templates). Binary assets are rare (${N.assets} skills). By publisher, Anthropic’s plugin skills are ${pct(R.by_pub[0].md_only_pct)} markdown-only, while OpenAI’s and the community repos’ are mostly not.`;
+  $("purpose-h").textContent = `Why the non-markdown files are there (${R.purpose_n} skills examined)`;
+  hbars("purposes", R.purposes.map((p) => ({ k: p.k, v: p.v, tip: `of ${R.purpose_n} skills use non-md files for: ${p.k}` })), { max: R.purpose_n, labelW: 210, rowH: 28 });
+  // values are counts, not %: relabel
+  [...$("purposes").querySelectorAll("text.val")].forEach((n, i) => { n.textContent = R.purposes[i].v; });
+  const cm = $("couldmd");
+  for (const [k, lab] of [["no", "no: needs code or binary files"], ["partly", "partly"], ["yes", "yes: could be markdown"]]) {
+    const d = h("div", {}, cm); h("b", {}, d, `${R.could_md[k] || 0} of ${R.purpose_n}`); h("span", {}, d, lab);
+  }
+  const why = $("why");
+  for (const e of R.purpose_examples) {
+    const a = h("article", {}, why);
+    h("span", { class: "who" }, a, `${e.publisher} · ${e.nonmd_files} non-md file${e.nonmd_files === 1 ? "" : "s"}`);
+    h("h3", {}, a, e.skill);
+    h("p", {}, a, e.why);
+    h("span", { class: "tag " + e.could_be_markdown }, a, e.could_be_markdown === "no" ? "needs non-markdown" : e.could_be_markdown === "yes" ? "could be markdown" : "partly");
+  }
+
+  // quotes
+  const qs = $("quotes");
+  for (const q of R.quotes) {
+    const c = h("article", { class: "q" }, qs);
+    h("span", { class: "who" }, c, q.who);
+    h("blockquote", {}, c, `“${q.quote}”`);
+    h("p", { class: "so" }, c, q.takeaway);
+    h("a", { href: q.url, target: "_blank", rel: "noopener" }, c, q.source);
+  }
+
+  // recommendations
+  const reco = [
+    ["Default to markdown.", ` SKILL.md plus references/*.md is how ${pct(C.md_only_pct)} of real skills are built, and OpenAI makes “instruction-only” the default. Keep this as the starting point.`],
+    ["Allow scripts/ when a step must be exact:", " calculations, validation, editing Office/PDF files, or calling an API. Both labs recommend this, and 23 of the 36 skills examined could not do their job without it. Require every script to be called from SKILL.md (the audit found two that nothing referenced)."],
+    ["Allow small data and templates", " (schemas, lookup tables, output templates) in assets/ or references/, as the open spec and OpenAI’s docs describe."],
+    ["Put the size rule on SKILL.md, not the folder:", " under 500 lines, references one level deep, and a table of contents for any reference file over 100 lines. This is the guidance both labs publish."],
+    ["Keep a file cap only as a review trigger.", ` 20 covers ${pct(C.le_cap_pct)} of skills. Above that, ask for a justification instead of refusing: Anthropic’s own docx, pptx and xlsx skills are 53–61 files.`],
+    ["Ban clutter, not file types:", " no README, CHANGELOG or install guides inside the skill folder (OpenAI’s skill-creator rule), and no evaluation files shipped at run time."],
+  ];
+  const ol = $("reco");
+  for (const [b, rest] of reco) { const li = h("li", {}, ol); h("strong", {}, li, b); li.appendChild(document.createTextNode(rest)); }
 })();
 
 /* ---------- md histogram ---------- */

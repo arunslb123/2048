@@ -163,6 +163,99 @@ for repo, name, title, blurb in ARCH:
                            "url": f"https://github.com/{repo}/tree/HEAD/{x['path']}"})
 data["archetypes"] = archetypes
 
+# ---- "max 20 files, markdown only" rule check ----------------------------------------
+content_files = ns["content_files"]
+CAP = 20
+
+
+def rule(xs):
+    n = len(xs)
+    multi = [x for x in xs if content_files(x) > 1]
+    return {
+        "n": n,
+        "le_cap_pct": round(100 * sum(x["files_total"] <= CAP for x in xs) / n, 1),
+        "over_cap": sum(x["files_total"] > CAP for x in xs),
+        "md_only_pct": round(100 * sum(content_files(x) == x["md_total"] for x in xs) / n, 1),
+        "md_only_strict_pct": round(100 * sum(x["files_total"] == x["md_total"] for x in xs) / n, 1),
+        "both_pct": round(100 * sum(content_files(x) <= CAP and content_files(x) == x["md_total"] for x in xs) / n, 1),
+        "multi_n": len(multi),
+        "multi_md_only_pct": round(100 * sum(content_files(x) == x["md_total"] for x in multi) / max(1, len(multi)), 1),
+        "md_over_cap": sum(x["md_total"] > CAP for x in xs),
+    }
+
+
+def pctl(v, q):
+    v = sorted(v)
+    return v[min(len(v) - 1, max(0, -(-int(q * len(v) * 1000) // 1000) - 1))]
+
+
+fbins = [(1, 1, "1"), (2, 5, "2–5"), (6, 10, "6–10"), (11, 20, "11–20"), (21, 50, "21–50"), (51, 10**9, "51+")]
+nonmd = [x for x in eligible if content_files(x) > x["md_total"]]
+breaks = {"scripts": sum(cat_counts(x)["script"] > 0 for x in nonmd),
+          "data_only": sum(cat_counts(x)["script"] == 0 and cat_counts(x)["asset"] == 0 and cat_counts(x)["data_config"] > 0 for x in nonmd),
+          "assets": sum(cat_counts(x)["asset"] > 0 for x in nonmd), "n": len(nonmd)}
+over = []
+for x in sorted([x for x in eligible if x["files_total"] > CAP], key=lambda x: -x["files_total"]):
+    c = cat_counts(x)
+    over.append({"name": x["name"], "repo": x["repo"], "pub": x["publisher"], "files": x["files_total"],
+                 "md": x["md_total"], "script": c["script"], "data": c["data_config"], "asset": c["asset"],
+                 "url": f"https://github.com/{x['repo']}/tree/HEAD/{x['path']}"})
+g = json.load(open(os.path.join(HERE, "guidance.json")))
+purposes = g["purposes"]["skills"]
+from collections import Counter as _C
+pc = _C(p for sk in purposes for p in sk["purposes"] if p not in ("other",))
+PLABEL = {"validation-qa": "Validate or QA the output", "deterministic-calculation": "Exact calculations",
+          "output-template": "Output templates", "schema-or-spec": "Schemas and specs",
+          "api-or-data-client": "Call an API or fetch data", "file-format-manipulation": "Edit Office/PDF/XML files",
+          "tests": "Tests and eval sets", "lookup-data-or-taxonomy": "Lookup tables and taxonomies",
+          "fonts-images-media": "Fonts, images, media", "ui-packaging-metadata": "UI / catalog metadata"}
+# Quotes: text re-verified word for word against the live sources by an independent agent
+# (guidance.json -> verify_*); ellipses mark omitted text, order follows the source page.
+QUOTES = [
+    ("Anthropic", "A Skill can include dozens of reference files, but if your task only needs the sales schema, that's the one file Claude loads. … No practical limit on bundled content: Files don't consume context until accessed, so Skills can include comprehensive API documentation, large datasets, or extensive examples.",
+     "Claude docs · Agent Skills overview", "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview",
+     "Anthropic expects many files in a skill and sets no count limit."),
+    ("Anthropic", "A skill directory may contain any files and directories beyond the required SKILL.md.",
+     "Agent Skills specification (agentskills.io)", "https://agentskills.io/specification",
+     "The open standard both labs follow allows any file type."),
+    ("Anthropic", "Even if Claude could write a script, pre-made scripts offer advantages: … More reliable than generated code … Ensure consistency across uses … Prefer scripts for deterministic operations: Write validate_form.py rather than asking Claude to generate validation code",
+     "Claude docs · Skill authoring best practices", "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices",
+     "Scripts are the recommended pattern for anything that must be exact."),
+    ("Anthropic", "Keep SKILL.md body under 500 lines for optimal performance. If your content exceeds this, split it into separate files using the progressive disclosure patterns described earlier.",
+     "Claude docs · Skill authoring best practices", "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices",
+     "The limit that matters is SKILL.md length. Overflow goes into more files, not fewer."),
+    ("Anthropic", "Maximum Skill upload size: 30 MB (all files combined, uncompressed)",
+     "Claude docs · Skills API guide, limits", "https://platform.claude.com/docs/en/build-with-claude/skills-guide",
+     "The only hard limit is on total size, not file count."),
+    ("OpenAI", "Instruction-only is the default. … Prefer instructions over scripts unless you need deterministic behavior or external tooling.",
+     "ChatGPT docs · Build skills", "https://learn.chatgpt.com/docs/build-skills",
+     "Markdown-first is endorsed, with an explicit exception for exact or tool-driven work."),
+    ("OpenAI", "Use references/ for policies, schemas, examples, and background material. Use assets/ for templates or files the workflow should copy or transform. Use scripts/ when the workflow needs deterministic computation or file processing. … Do not add a script when instructions and existing tools can complete the task reliably.",
+     "OpenAI Plugins docs · Build skills", "https://developers.openai.com/plugins/build/skills",
+     "Scripts and assets have defined roles. Add them when needed, not by default."),
+    ("OpenAI", "Maximum file count per skill version is 500.",
+     "OpenAI API docs · Skills guide, limits", "https://developers.openai.com/api/docs/guides/tools-skills",
+     "Hard caps exist, but at 500 files (100 for MCP-imported skills), far above 20."),
+    ("OpenAI", "A skill should only contain essential files that directly support its functionality. Do NOT create extraneous documentation or auxiliary files, including: README.md, INSTALLATION_GUIDE.md, QUICK_REFERENCE.md, CHANGELOG.md",
+     "openai/skills · skill-creator SKILL.md", "https://github.com/openai/skills/blob/main/skills/.system/skill-creator/SKILL.md",
+     "The useful restriction is on clutter, not on file type."),
+]
+quotes = [{"who": w, "quote": q, "source": src, "url": u, "takeaway": t} for w, q, src, u, t in QUOTES]
+data["rule"] = {
+    "cap": CAP,
+    "census": rule(eligible), "sample": rule(final),
+    "by_pub": [{"label": p, **rule([x for x in eligible if x["publisher"] == p])} for p in PUBS],
+    "hist": [{"k": lab, "v": sum(lo <= x["files_total"] <= hi for x in eligible), "over": lo > CAP} for lo, hi, lab in fbins],
+    "p95_files": pctl([x["files_total"] for x in eligible], 0.95),
+    "p99_files": pctl([x["files_total"] for x in eligible], 0.99),
+    "nonmd": breaks, "over": over,
+    "purposes": [{"k": PLABEL.get(k, k), "v": v} for k, v in pc.most_common()],
+    "purpose_n": len(purposes),
+    "could_md": dict(_C(sk["could_be_markdown"] for sk in purposes)),
+    "purpose_examples": [sk for sk in purposes if sk["skill"] in ("docx", "financials-normalizer", "narrator", "tres-asc845-swap-reprice-skill", "clinical-reports", "fraud-detection", "notion-meeting-intelligence", "build-competitive-brief")],
+    "quotes": quotes,
+}
+
 tpl = open(os.path.join(HERE, "report_template.html")).read()
 html = tpl.replace("/*__DATA__*/null", json.dumps(data, separators=(",", ":")))
 os.makedirs(os.path.join(HERE, "out"), exist_ok=True)

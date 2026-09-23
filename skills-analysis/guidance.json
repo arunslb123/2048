@@ -1,0 +1,738 @@
+{
+ "anthropic": {
+  "findings": [
+   {
+    "topic": "folder-structure",
+    "quote": "A skill directory may contain any files and directories beyond the required `SKILL.md`. The conventions below are recommendations for organizing common types of content.",
+    "source_title": "Agent Skills Specification (agentskills.io) - Optional directories",
+    "url": "https://agentskills.io/specification",
+    "takeaway": "The open standard allows any file types and counts. Only SKILL.md is required, and scripts/, references/ and assets/ are recommended."
+   },
+   {
+    "topic": "folder-structure",
+    "quote": "Skills can include multiple files in their directory. This keeps `SKILL.md` focused on the essentials while letting Claude access detailed reference material only when needed. Large reference docs, API specifications, or example collections don't need to load into context every time the skill runs. ... \u2514\u2500\u2500 scripts/ \u2514\u2500\u2500 helper.py (utility script - executed, not loaded)",
+    "source_title": "Claude Code docs - Skills: Add supporting files",
+    "url": "https://code.claude.com/docs/en/skills",
+    "takeaway": "Claude Code's own example skill includes a Python script. Non-markdown supporting files are expected, and no file cap is given."
+   },
+   {
+    "topic": "file-count-or-size-limit",
+    "quote": "Maximum Skills per request: 20 ... Maximum Skill upload size: 30 MB (all files combined, uncompressed)",
+    "source_title": "Claude Platform docs - Using Agent Skills with the API: Limits and constraints",
+    "url": "https://platform.claude.com/docs/en/build-with-claude/skills-guide",
+    "takeaway": "The only hard cap is 30 MB total size. The '20' limits Skills per API request, not files per skill."
+   },
+   {
+    "topic": "file-count-or-size-limit",
+    "quote": "No practical limit on bundled content: Files don't consume context until accessed, so Skills can include comprehensive API documentation, large datasets, or extensive examples. ... A Skill can include dozens of reference files, but if your task only needs the sales schema, that's the one file Claude loads.",
+    "source_title": "Claude Platform docs - Agent Skills overview: The Skills architecture",
+    "url": "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview",
+    "takeaway": "Official docs expect 'dozens of reference files' plus datasets. A 20-file cap contradicts this."
+   },
+   {
+    "topic": "other",
+    "quote": "Agents with a filesystem and code execution tools don\u2019t need to read the entirety of a skill into their context window when working on a particular task. This means that the amount of context that can be bundled into a skill is effectively unbounded.",
+    "source_title": "Anthropic Engineering - Equipping agents for the real world with Agent Skills",
+    "url": "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills",
+    "takeaway": "Anthropic presents bundled content as effectively unbounded. The design goal is progressive disclosure, not a small file count."
+   },
+   {
+    "topic": "file-count-or-size-limit",
+    "quote": "PARAPHRASE (file listing of local clone, commit 34040c9, 2026-09-10): canvas-design has 83 files (54 .ttf fonts, 28 .txt, 1 .md); docx has 61 (39 .xsd, 15 .py, 5 .xml, 1 .txt, 1 .md); pptx has 56; xlsx has 53; skill-creator has 18 (10 .py, 5 .md, 2 .html, 1 .txt).",
+    "source_title": "anthropics/skills repository - skills/ directory",
+    "url": "https://github.com/anthropics/skills/tree/main/skills",
+    "takeaway": "Anthropic's own production skills far exceed 20 files and are mostly non-markdown files."
+   },
+   {
+    "topic": "skill-md-length",
+    "quote": "Keep SKILL.md body under 500 lines for optimal performance. If your content exceeds this, split it into separate files using the progressive disclosure patterns described earlier.",
+    "source_title": "Claude Platform docs - Skill authoring best practices: Token budgets",
+    "url": "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices",
+    "takeaway": "The only length guidance applies to SKILL.md (500 lines, <5k tokens per spec). Growth goes into more files, which argues against capping file count."
+   },
+   {
+    "topic": "reference-files",
+    "quote": "Keep references one level deep from SKILL.md. All reference files should link directly from SKILL.md to ensure Claude reads complete files when needed. ... For reference files longer than 100 lines, include a table of contents at the top.",
+    "source_title": "Claude Platform docs - Skill authoring best practices: Avoid deeply nested references",
+    "url": "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices",
+    "takeaway": "The guidance is about link depth and navigability of reference .md files, not about how many files there are."
+   },
+   {
+    "topic": "scripts",
+    "quote": "Even if Claude could write a script, pre-made scripts offer advantages: ... * More reliable than generated code * Save tokens (no need to include code in context) * Save time (no code generation required) * Ensure consistency across uses ... Prefer scripts for deterministic operations: Write `validate_form.py` rather than asking Claude to generate validation code",
+    "source_title": "Claude Platform docs - Skill authoring best practices: Provide utility scripts / Runtime environment",
+    "url": "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices",
+    "takeaway": "Anthropic actively recommends bundling .py scripts. A markdown-only rule blocks the recommended pattern."
+   },
+   {
+    "topic": "scripts",
+    "quote": "Large language models excel at many tasks, but certain operations are better suited for traditional code execution. ... Beyond efficiency concerns, many applications require the deterministic reliability that only code can provide.",
+    "source_title": "Anthropic Engineering - Equipping agents for the real world with Agent Skills",
+    "url": "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills",
+    "takeaway": "Code files give deterministic, repeatable results that markdown instructions cannot. Excluding them lowers reliability."
+   },
+   {
+    "topic": "assets-templates",
+    "quote": "Contains static resources: * Templates (document templates, configuration templates) * Images (diagrams, examples) * Data files (lookup tables, schemas)",
+    "source_title": "Agent Skills Specification (agentskills.io) - assets/",
+    "url": "https://agentskills.io/specification",
+    "takeaway": "The spec expects templates, images and data files (non-markdown) in assets/."
+   },
+   {
+    "topic": "folder-structure",
+    "quote": "Bundled Resources (optional) \u251c\u2500\u2500 scripts/ - Executable code for deterministic/repetitive tasks \u251c\u2500\u2500 references/ - Docs loaded into context as needed \u2514\u2500\u2500 assets/ - Files used in output (templates, icons, fonts) ... 3. **Bundled resources** - As needed (unlimited, scripts can execute without loading)",
+    "source_title": "anthropics/skills - skill-creator SKILL.md: Anatomy of a Skill / Progressive Disclosure",
+    "url": "https://github.com/anthropics/skills/blob/main/skills/skill-creator/SKILL.md",
+    "takeaway": "Anthropic's skill-building skill calls bundled resources 'unlimited' and lists scripts, icons and fonts as normal contents."
+   }
+  ],
+  "no_limit_found": "None of the official sources I checked sets a hard limit on the NUMBER of files in a skill folder. Sources checked: the platform.claude.com Agent Skills overview, Skill authoring best practices, the Skills API guide and the Create Skill API reference, the Claude Code skills docs, the agentskills.io specification, the claude.ai support article on creating custom skills, the Anthropic engineering blog, and the skill-creator SKILL.md. None of them requires markdown-only files either. The spec says a skill 'may contain any files and directories beyond the required SKILL.md'. The overview says 'No practical limit on bundled content'. skill-creator calls bundled resources 'unlimited'. Hard limits found: (1) Skills API / Claude Platform: 'Maximum Skill upload size: 30 MB (all files combined, uncompressed)'. (2) Frontmatter: name is at most 64 characters and description at most 1024 characters. The API display_name is at most 255 characters. In Claude Code, the combined description and when_to_use text is cut to 1,536 characters in the skill listing. (3) 'Maximum Skills per request: 20' in the API. This caps skills per API request, not files per skill, and may be where the '20' idea came from. Soft guidance (not enforced): keep the SKILL.md body under 500 lines (best practices, Claude Code docs, spec), and the spec recommends under 5,000 tokens. The Level 2 instructions are 'Under 5k tokens'. Add a table of contents to reference files over 100 lines (best practices) or over 300 lines (skill-creator). Runtime limits that matter for bundled scripts: API skills run with no network access and no runtime package installation. I could not find a claude.ai zip upload size limit in the support article."
+ },
+ "openai": {
+  "findings": [
+   {
+    "topic": "file-count-or-size-limit",
+    "quote": "Maximum zip upload size is `50 MB`. Maximum file count per skill version is `500`. Maximum uncompressed file size is `25 MB`.",
+    "source_title": "OpenAI API docs - Skills guide, 'Limits and validation' section (Responses API hosted/uploaded skills)",
+    "url": "https://developers.openai.com/api/docs/guides/tools-skills",
+    "takeaway": "OpenAI's only general file-count cap is 500 per skill, 25 times the proposed limit of 20."
+   },
+   {
+    "topic": "file-count-or-size-limit",
+    "quote": "The importer accepts up to five uniquely named skills across 10 catalog pages. Each skill can contain up to 100 files, with these size limits: | `SKILL.md` | 256 KiB | | Each supporting file | 1 MiB | | All resources for one skill | 5 MiB | | Generated skill archives for one scan | 8 MiB |",
+    "source_title": "OpenAI Plugins docs - Build your MCP server, 'Import skills from the MCP server'",
+    "url": "https://developers.openai.com/plugins/build/mcp-server#import-skills-from-the-mcp-server",
+    "takeaway": "The strictest official cap (MCP import during plugin submission) is 100 files, 5x the proposed 20."
+   },
+   {
+    "topic": "folder-structure",
+    "quote": "A skill is a directory with a `SKILL.md` file plus optional scripts and references. The `SKILL.md` file must include `name` and `description`. [FileTree labels on same page: scripts/ \"Optional: executable code\"; references/ \"Optional: documentation\"; assets/ \"Optional: templates, resources\"; agents/openai.yaml \"Optional: appearance and dependencies\"]",
+    "source_title": "Build skills - ChatGPT Learn (developers.openai.com/codex/skills now 308-redirects here)",
+    "url": "https://learn.chatgpt.com/docs/build-skills",
+    "takeaway": "The official layout includes scripts/, assets/ and a YAML file, so a markdown-only rule conflicts with it."
+   },
+   {
+    "topic": "folder-structure",
+    "quote": "Keep `SKILL.md` concise and place detailed material next to it: - Use `references/` for policies, schemas, examples, and background material. - Use `assets/` for templates or files the workflow should copy or transform. - Use `scripts/` when the workflow needs deterministic computation or file processing. Reference supporting files from `SKILL.md` and explain when to load or run them.",
+    "source_title": "OpenAI Plugins docs - Build skills, 'Add supporting resources'",
+    "url": "https://developers.openai.com/plugins/build/skills",
+    "takeaway": "Current guidance splits content into references, assets and scripts. It does not restrict file count or type."
+   },
+   {
+    "topic": "skill-md-length",
+    "quote": "2. **SKILL.md body** - When skill triggers (<5k words) 3. **Bundled resources** - As needed by Codex (Unlimited because scripts can be executed without reading into context window) ... Keep SKILL.md body to the essentials and under 500 lines to minimize context bloat. Split content into separate files when approaching this limit.",
+    "source_title": "openai/skills - .system/skill-creator/SKILL.md, 'Progressive Disclosure Design Principle' (repo now marked deprecated in favor of openai/plugins)",
+    "url": "https://github.com/openai/skills/blob/main/skills/.system/skill-creator/SKILL.md",
+    "takeaway": "The official soft limit is on SKILL.md length (under 500 lines). Bundled resources are described as 'Unlimited'."
+   },
+   {
+    "topic": "reference-files",
+    "quote": "Documentation and reference material intended to be loaded as needed into context to inform Codex's process and thinking. ... **Benefits**: Keeps SKILL.md lean, loaded only when Codex determines it's needed - **Best practice**: If files are large (>10k words), include grep search patterns in SKILL.md",
+    "source_title": "openai/skills - .system/skill-creator/SKILL.md, 'References (references/)'",
+    "url": "https://github.com/openai/skills/blob/main/skills/.system/skill-creator/SKILL.md",
+    "takeaway": "Reference .md files are encouraged and load only on demand, so more of them does not bloat context."
+   },
+   {
+    "topic": "reference-files",
+    "quote": "**Avoid deeply nested references** - Keep references one level deep from SKILL.md. All reference files should link directly from SKILL.md. **Structure longer reference files** - For files longer than 100 lines, include a table of contents at the top so Codex can see the full scope when previewing.",
+    "source_title": "openai/skills - .system/skill-creator/SKILL.md, 'Important guidelines'",
+    "url": "https://github.com/openai/skills/blob/main/skills/.system/skill-creator/SKILL.md",
+    "takeaway": "OpenAI governs references by structure (flat, linked, with a table of contents), not by capping how many there are."
+   },
+   {
+    "topic": "scripts",
+    "quote": "Executable code (Python/Bash/etc.) for tasks that require deterministic reliability or are repeatedly rewritten. - **When to include**: When the same code is being rewritten repeatedly or deterministic reliability is needed - **Example**: `scripts/rotate_pdf.py` for PDF rotation tasks - **Benefits**: Token efficient, deterministic, may be executed without loading into context",
+    "source_title": "openai/skills - .system/skill-creator/SKILL.md, 'Scripts (scripts/)'",
+    "url": "https://github.com/openai/skills/blob/main/skills/.system/skill-creator/SKILL.md",
+    "takeaway": "Non-markdown scripts (.py/.sh) are officially endorsed for deterministic, repeated tasks. A markdown-only rule would ban them."
+   },
+   {
+    "topic": "scripts",
+    "quote": "The creator asks what the skill does, when it should trigger, and whether it should stay instruction-only or include scripts. Instruction-only is the default. ... Prefer instructions over scripts unless you need deterministic behavior or external tooling.",
+    "source_title": "Build skills - ChatGPT Learn ('Create a skill' and 'Best practices')",
+    "url": "https://learn.chatgpt.com/docs/build-skills",
+    "takeaway": "Partly supports the team: instruction-only is the default, but scripts are allowed when determinism is needed."
+   },
+   {
+    "topic": "assets-templates",
+    "quote": "Files not intended to be loaded into context, but rather used within the output Codex produces. - **When to include**: When the skill needs files that will be used in the final output - **Examples**: `assets/logo.png` for brand assets, `assets/slides.pptx` for PowerPoint templates, `assets/frontend-template/` for HTML/React boilerplate, `assets/font.ttf` for typography",
+    "source_title": "openai/skills - .system/skill-creator/SKILL.md, 'Assets (assets/)'",
+    "url": "https://github.com/openai/skills/blob/main/skills/.system/skill-creator/SKILL.md",
+    "takeaway": "The official asset examples (png, pptx, ttf, HTML/React) are not markdown, so a markdown-only rule excludes them."
+   },
+   {
+    "topic": "assets-templates",
+    "quote": "Put templates and examples inside the skill (they're basically free when unused) If you've been cramming templates into the system prompt, stop. Templates and worked examples inside skills have two advantages: - They're available exactly when needed (when the skill is invoked). - They don't inflate tokens for unrelated queries.",
+    "source_title": "OpenAI Developers blog - Shell + Skills + Compaction: Tips for long-running agents that do real work",
+    "url": "https://developers.openai.com/blog/skills-shell-tips",
+    "takeaway": "OpenAI recommends bundling templates and examples. Unused files cost nothing, which undercuts the reason for a low file cap."
+   },
+   {
+    "topic": "other",
+    "quote": "A skill should only contain essential files that directly support its functionality. Do NOT create extraneous documentation or auxiliary files, including: - README.md - INSTALLATION_GUIDE.md - QUICK_REFERENCE.md - CHANGELOG.md",
+    "source_title": "openai/skills - .system/skill-creator/SKILL.md, 'What to Not Include in a Skill'",
+    "url": "https://github.com/openai/skills/blob/main/skills/.system/skill-creator/SKILL.md",
+    "takeaway": "OpenAI's leanness rule targets extraneous files, including markdown ones. It sets no numeric count or file-type restriction."
+   }
+  ],
+  "no_limit_found": "No official OpenAI source sets a 20-file cap or requires skill files to be markdown. Only SKILL.md is required. Hard limits on file count do exist, but only on specific platforms, and they are far higher than 20:\n(1) OpenAI API skills (Responses API): up to 500 files per skill version, a 50 MB zip upload and 25 MB uncompressed (developers.openai.com/api/docs/guides/tools-skills).\n(2) Skills imported from an MCP server during plugin submission: up to 100 files per skill; SKILL.md up to 256 KiB; each supporting file up to 1 MiB; all resources for one skill up to 5 MiB; archives per scan up to 8 MiB; up to 5 skills per scan (developers.openai.com/plugins/build/mcp-server).\n(3) Local Codex/ChatGPT skills (learn.chatgpt.com/docs/build-skills; developers.openai.com/codex/skills now 308-redirects there): no file-count or size limit is documented. The only budget is on the initial skills list, capped at 2% of the context window or 8,000 characters, and it does not limit what a skill folder holds.\nThe official validator (skill-creator/scripts/quick_validate.py) checks only the frontmatter: name up to 64 characters, description up to 1024 characters with no angle brackets, and allowed keys. It does not check file count or file type.\nSoft guidance: SKILL.md body under 500 lines or under 5k words; bundled resources are described as 'Unlimited'; references stay one level deep; add a table of contents to reference files over 100 lines; add grep patterns for files over 10k words.\nCaveat: the openai/skills repo README now says it is deprecated in favor of openai/plugins and the Build plugins guide. The skill-creator guidance quoted above comes from that deprecated repo, though the current docs repeat the same structure.\nMy own count, not a quote: in the local clone of openai/plugins (commit 1dc1958, 2026-09-11), 41 of 535 skill folders have more than 20 files (the largest is plugins/cloudflare/skills/cloudflare with 316). 167 contain non-markdown files other than agents/openai.yaml, such as .py, .json, .mjs, .png, .svg, .sh and .csv. Many of these plugins come from partners but are published in OpenAI's curated repo.\nSource files saved to the scratchpad: build-skills.md, plugins-skills.md, plugins-mcp-server.md, api-tools-skills.md, blog-skills-shell.md and openai_plugins_skill_counts.txt, all under /tmp/claude-0/-home-user-2048/52a1ea60-b7a7-54b2-835a-a72ec8f4e1e5/scratchpad/."
+ },
+ "verify_anthropic": {
+  "checks": [
+   {
+    "index": 0,
+    "verdict": "verbatim",
+    "note": "Found word for word in the 'Optional directories' section of the agentskills.io spec (read from https://agentskills.io/specification.md)."
+   },
+   {
+    "index": 1,
+    "verdict": "verbatim",
+    "note": "Found word for word in the 'Add supporting files' section. The '...' leaves out the rest of the tree (my-skill/, SKILL.md, reference.md, examples.md). The helper.py line matches exactly."
+   },
+   {
+    "index": 2,
+    "verdict": "verbatim",
+    "note": "Found under 'Limits and constraints' > 'Request limits'. The Create Skill requirements on the same page also say 'Total upload size must be under 30 MB (uncompressed)'."
+   },
+   {
+    "index": 3,
+    "verdict": "verbatim",
+    "note": "Both parts are word for word, but they are in the opposite order on the page. 'A Skill can include dozens of reference files... sales schema...' is in the 'On-demand file access' bullet, which comes two bullets BEFORE 'No practical limit on bundled content'. The '...' makes it look like the second part follows the first. The meaning does not change."
+   },
+   {
+    "index": 4,
+    "verdict": "verbatim",
+    "note": "Found word for word in the progressive disclosure section of the engineering blog."
+   },
+   {
+    "index": 5,
+    "verdict": "paraphrase-accurate",
+    "note": "This is a file count, not a quote. I checked it against the local clone at 34040c9c (committed 2026-09-10), which is still the remote HEAD. Every number matches: canvas-design 83 (54 ttf, 28 txt, 1 md); docx 61 (39 xsd, 15 py, 5 xml, 1 txt, 1 md); pptx 56 (39 xsd, 15 py, 1 txt, 1 md); xlsx 53 (39 xsd, 12 py, 1 txt, 1 md); skill-creator 18 (10 py, 5 md, 2 html, 1 txt). The tree URL is the right place, but the page itself does not show these counts."
+   },
+   {
+    "index": 6,
+    "verdict": "verbatim",
+    "note": "Found word for word in the 'Token budgets' section. The same idea is also a bullet near the top: 'Keep SKILL.md body under 500 lines for optimal performance'."
+   },
+   {
+    "index": 7,
+    "verdict": "verbatim",
+    "note": "Both sentences are word for word: 'Keep references one level deep from SKILL.md...' and 'For reference files longer than 100 lines, include a table of contents at the top.' The '...' skips several sections in between."
+   },
+   {
+    "index": 8,
+    "verdict": "verbatim",
+    "note": "Word for word under 'Provide utility scripts'. The '...' leaves out the bold heading 'Benefits of utility scripts:'. The 'Prefer scripts for deterministic operations' bullet is word for word too, but it sits much further down the page in a later list."
+   },
+   {
+    "index": 9,
+    "verdict": "verbatim",
+    "note": "Found word for word in the 'Skills and code execution' section of the blog. The '...' leaves out the sentence about sorting a list."
+   },
+   {
+    "index": 10,
+    "verdict": "verbatim",
+    "note": "Found word for word in the spec's 'assets/' section."
+   },
+   {
+    "index": 11,
+    "verdict": "verbatim",
+    "note": "Found word for word in skills/skill-creator/SKILL.md under 'Anatomy of a Skill' and 'Progressive Disclosure'. Checked in the local clone at 34040c9. The only difference is spacing: the source pads the columns ('scripts/    - ', 'references/ - ', 'assets/     - ')."
+   }
+  ],
+  "limit_claim_verdict": "MOSTLY ACCURATE, with one clear omission and a few small points to add. The core claim holds: none of the listed sources sets a limit on how many files a skill folder can hold, and none requires files to be markdown only. I checked each source. The overview, best practices and skills-guide have no file-count limit. The Create Skill API reference (/docs/en/api/skills/create) says only that files is an array, that all files must be in one top-level directory with SKILL.md at its root, and that display_name is at most 255 characters. The Claude Code skills doc, the agentskills.io spec, the blog and skill-creator SKILL.md also have no file-count limit. The three quotes the claim relies on are word for word: 'may contain any files and directories beyond the required SKILL.md', 'No practical limit on bundled content' and 'unlimited'. These are also word for word: 'Maximum Skill upload size: 30 MB (all files combined, uncompressed)', 'Maximum Skills per request: 20' (it counts skills per API request, not files), the 64-character name and 1024-character description limits (spec, skills-guide, best practices), the 255-character display_name limit, the 1,536-character listing cap in Claude Code, SKILL.md under 500 lines (best practices, Claude Code docs, spec), the spec's '< 5000 tokens recommended', the overview's Level 2 'Under 5k tokens', a table of contents above 100 lines (best practices) or above 300 lines (skill-creator), and 'No network access' / 'No runtime package installation' for API skills. CORRECTIONS AND CAVEATS: (1) OMISSION: the claude.ai support article 'How to create custom skills' (support.claude.com/en/articles/12512198), which the claim says it checked, gives a stricter description limit: 'description: ... (200 characters maximum)' (and 'name: ... (64 characters maximum)'). The claim gives only the 1024-character limit and should also mention the 200-character limit claude.ai states. (2) On the claude.ai zip size: 'could not find' is accurate. That article gives no size limit, and neither does 'Use skills in Claude' (12512180). But 12512180 lists 'ZIP file exceeds size limits' among common upload failures, so a claude.ai limit exists without a published number. A web-search summary said '50 MB', but that figure is not in the current page text, so do not cite it. (3) The 1,536-character cap is a default that the skillListingMaxDescChars setting can change, so it is not fixed. (4) The Claude Code docs have one more runtime limit on skill content, though not on file count: after auto-compaction, each skill keeps its first 5,000 tokens, with 25,000 tokens combined across skills. None of these points changes the conclusion. No official source limits a skill to 20 files or to markdown files only."
+ },
+ "verify_openai": {
+  "checks": [
+   {
+    "index": 0,
+    "verdict": "verbatim",
+    "note": "Fetched live .md today (HTTP 200); it matches the scratchpad copy byte for byte. The three bullets are under 'Limits and validation' (lines 520-522). The same section also says exactly one SKILL.md is allowed per bundle. 'Maximum uncompressed file size is 25 MB' could mean per file or per bundle; the doc doesn't say which."
+   },
+   {
+    "index": 1,
+    "verdict": "verbatim",
+    "note": "Live page, 'Import skills from the MCP server' section, lines 247-255. The quote's text and table values match exactly; only the markdown table padding was collapsed. The next line says 'The combined archive limit includes ZIP packaging overhead.'"
+   },
+   {
+    "index": 2,
+    "verdict": "verbatim",
+    "note": "Live learn.chatgpt.com/docs/build-skills (.md and rendered HTML both checked). The sentence and all four FileTree comment labels appear exactly. SKILL.md's label is 'Required: instructions + metadata'. developers.openai.com/codex/skills returns 308 to this URL (confirmed)."
+   },
+   {
+    "index": 3,
+    "verdict": "verbatim",
+    "note": "Live plugins/build/skills.md, 'Add supporting resources' section. Only line wrapping differs. The paragraph continues: 'Do not add a script when instructions and existing tools can complete the task reliably.'"
+   },
+   {
+    "index": 4,
+    "verdict": "verbatim",
+    "note": "Live raw.githubusercontent file is identical to the local clone. Items 2 and 3 are at lines 132-133 under 'Progressive Disclosure Design Principle', and the 500-line sentence is at line 137. The ellipsis joins non-adjacent lines correctly."
+   },
+   {
+    "index": 5,
+    "verdict": "verbatim",
+    "note": "Lines 97, 102 and 103 (References section). The ellipsis skips the 'When to include', 'Examples' and 'Use cases' bullets."
+   },
+   {
+    "index": 6,
+    "verdict": "verbatim",
+    "note": "Lines 212-213, under 'Important guidelines:'."
+   },
+   {
+    "index": 7,
+    "verdict": "verbatim",
+    "note": "Lines 88-92 (Scripts section). The quote leaves out the following bullet: 'Note: Scripts may still need to be read by Codex for patching or environment-specific adjustments'."
+   },
+   {
+    "index": 8,
+    "verdict": "verbatim",
+    "note": "Both sentences are on the live page, the first in 'Create a skill' and the second in 'Best practices'. The ellipsis joins sections that are far apart."
+   },
+   {
+    "index": 9,
+    "verdict": "verbatim",
+    "note": "Lines 108-111 (Assets section)."
+   },
+   {
+    "index": 10,
+    "verdict": "verbatim",
+    "note": "Live blog .md, heading '### 3) Put templates and examples inside the skill (they're basically free when unused)'. The quote drops the '3)' number; everything else is exact."
+   },
+   {
+    "index": 11,
+    "verdict": "verbatim",
+    "note": "Lines 117-122 under 'What to Not Include in a Skill'. The list continues with '- etc.', which the quote leaves out."
+   }
+  ],
+  "limit_claim_verdict": "MOSTLY ACCURATE. There are a few minor imprecisions in the self-computed counts, and one surface could not be checked. VERIFIED: (1) API limits of 500 files per version, a 50 MB zip and 25 MB uncompressed. They appear exactly as quoted on the live page. The doc doesn't say whether 25 MB is per file or per bundle. (2) The MCP import limits are exact: 100 files per skill; 256 KiB for SKILL.md; 1 MiB per supporting file; 5 MiB per skill; 8 MiB of archives per scan. The doc says 'up to five uniquely named skills across 10 catalog pages', so 'up to 5 skills per scan' is a fair paraphrase. (3) I read the whole live learn.chatgpt.com/docs/build-skills page. It has no file-count or size limit. developers.openai.com/codex/skills does return a 308 to it. Small wording fix: the budget is 'at most 2% of the model's context window, or 8,000 characters when the context window is unknown'. So 8,000 is a fallback, not a second cap. The page also says this budget applies only to the initial list. (4) I read quick_validate.py and it is identical to the live raw GitHub file. It checks the frontmatter keys (name, description, license, allowed-tools, metadata), name \u226464 characters, description \u22641024 with no < or >, and nothing about file count or type. It also checks that SKILL.md exists, that the name is hyphen-case, and that name and description are present, so 'only the frontmatter' is slightly simplified. (5) The skill-creator soft guidance is confirmed verbatim: <500 lines, <5k words, 'Unlimited', one level deep, a table of contents for files over 100 lines, grep patterns for files over 10k words. (6) The openai/skills README deprecation notice is confirmed. It points to openai/plugins and to developers.openai.com/codex/plugins/build. The current docs (build-skills, plugins/build/skills) do repeat the scripts/references/assets structure. (7) The openai/plugins clone at 1dc1958 is the live HEAD (git ls-remote matches; commit date 2026-09-11). Its largest skill is plugins/cloudflare/skills/cloudflare with 316 files (confirmed). NUMERIC CAVEATS: '535' leaves out the repo's own .agents/skills/plugin-creator; there are 536 SKILL.md folders in total. '41 with more than 20 files' reproduces only when each parent folder's count includes the nested sub-skill folders inside it. 29 of the 535 folders are nested, for example the zoom meeting-sdk/windows sub-skill. Counting each skill's own files gives 35. '167 with non-markdown files' reproduces only if every openai.yaml, including nested sub-skills' copies, is excluded, or if nested folders aren't counted inside their parents. A strict recursive count that excludes only the top-level agents/openai.yaml gives 172. So the 41 and the 167 use different rules for nested folders. None of this weakens the conclusion that many skills exceed 20 files and hold non-markdown files. The listed file types (.py, .json, .mjs, .png, .svg, .sh, .csv) are all present. UNVERIFIED GAP: the ChatGPT workspace Skills help article (help.openai.com/en/articles/20001066-skills-in-chatgpt), which is linked from learn.chatgpt.com/docs/enterprise/skills, returned 403 to both WebFetch and curl. Search snippets show no skill-specific file-count limit there, only a general 512 MB per-file upload limit for ChatGPT. I could not rule out an upload limit for workspace Skills, so 'No official OpenAI source sets a 20-file cap' is well supported but not fully checked for that surface. I found no source that sets a 20-file cap or requires markdown-only files. Both OpenAI pages say SKILL.md is the only required file."
+ },
+ "purposes": {
+  "skills": [
+   {
+    "skill": "fraud-detection",
+    "publisher": "Anthropic",
+    "nonmd_files": 96,
+    "purposes": [
+     "deterministic-calculation",
+     "validation-qa",
+     "api-or-data-client",
+     "schema-or-spec",
+     "lookup-data-or-taxonomy",
+     "file-format-manipulation",
+     "output-template"
+    ],
+    "could_be_markdown": "no",
+    "why": "19 detector scripts plus gate.js recompute every cited dollar from DuckDB claims; fetch-reference.js downloads CMS/OIG rule tables; 51 state-policy JSONs; HTML/xlsx renderers."
+   },
+   {
+    "skill": "canvas-design",
+    "publisher": "Anthropic",
+    "nonmd_files": 82,
+    "purposes": [
+     "fonts-images-media",
+     "other"
+    ],
+    "could_be_markdown": "no",
+    "why": "54 bundled .ttf fonts with OFL license files give offline canvas rendering distinctive typography; binary font files cannot be expressed in markdown."
+   },
+   {
+    "skill": "docx",
+    "publisher": "Anthropic",
+    "nonmd_files": 60,
+    "purposes": [
+     "validation-qa",
+     "file-format-manipulation",
+     "schema-or-spec",
+     "output-template"
+    ],
+    "could_be_markdown": "no",
+    "why": "validate.py checks OOXML against 39 ISO/ECMA XSD schemas and tracked-change authorship; merge_runs/comment/accept_changes edit Word XML; soffice.py shims LibreOffice in sandboxes."
+   },
+   {
+    "skill": "slack-gif-creator",
+    "publisher": "Anthropic",
+    "nonmd_files": 6,
+    "purposes": [
+     "file-format-manipulation",
+     "validation-qa",
+     "deterministic-calculation"
+    ],
+    "could_be_markdown": "no",
+    "why": "GIFBuilder assembles and color-quantizes frames with PIL; validators.py measures real file size, dimensions, frame count against Slack limits; easing.py computes motion curves."
+   },
+   {
+    "skill": "renewal-tracker",
+    "publisher": "Anthropic",
+    "nonmd_files": 1,
+    "purposes": [
+     "schema-or-spec",
+     "other"
+    ],
+    "could_be_markdown": "partly",
+    "why": "renewal-register.yaml is an empty seed register other skills append to; SKILL.md already documents its fields, so only machine-editable state needs YAML."
+   },
+   {
+    "skill": "project-artifact",
+    "publisher": "Anthropic",
+    "nonmd_files": 1,
+    "purposes": [
+     "output-template"
+    ],
+    "could_be_markdown": "partly",
+    "why": "template.html is a 20KB HTML/CSS/JS status-page skeleton with FILL slots copied verbatim; could live in a markdown code block, but costs regeneration tokens."
+   },
+   {
+    "skill": "supervisor-review-queue",
+    "publisher": "Anthropic",
+    "nonmd_files": 1,
+    "purposes": [
+     "other",
+     "schema-or-spec"
+    ],
+    "could_be_markdown": "partly",
+    "why": "review-queue.yaml is the live queue/approved/log store the skill reads and writes as an auditable clinic record; structured state, not instructions."
+   },
+   {
+    "skill": "contracts",
+    "publisher": "Anthropic",
+    "nonmd_files": 2,
+    "purposes": [
+     "other",
+     "validation-qa"
+    ],
+    "could_be_markdown": "no",
+    "why": "sweep.mjs spawns one toolless `claude -p` extraction per contract concurrently, verifying every quote verbatim before insert; sandboxed fan-out markdown cannot enforce."
+   },
+   {
+    "skill": "nextflow-development",
+    "publisher": "Anthropic",
+    "nonmd_files": 15,
+    "purposes": [
+     "api-or-data-client",
+     "lookup-data-or-taxonomy",
+     "validation-qa",
+     "file-format-manipulation"
+    ],
+    "could_be_markdown": "no",
+    "why": "sra_geo_fetch.py queries NCBI E-utilities/ENA to download FASTQs; YAML configs map organisms to iGenomes and data to nf-core pipelines; samplesheet generator/validator."
+   },
+   {
+    "skill": "dcf-model",
+    "publisher": "Anthropic",
+    "nonmd_files": 2,
+    "purposes": [
+     "validation-qa"
+    ],
+    "could_be_markdown": "no",
+    "why": "validate_dcf.py loads the xlsx twice (formulas, cached values) to find #REF!/#DIV/0! and check terminal growth below WACC; oddly, SKILL.md never calls it."
+   },
+   {
+    "skill": "k12-lesson-plan-creation",
+    "publisher": "Anthropic",
+    "nonmd_files": 9,
+    "purposes": [
+     "file-format-manipulation",
+     "output-template",
+     "other"
+    ],
+    "could_be_markdown": "no",
+    "why": "render_all.sh turns one lesson.json into editable .docx plus HTML via python-docx and theme.css; example_lesson.json shows the schema; NOTICE carries Common Core licensing."
+   },
+   {
+    "skill": "produce",
+    "publisher": "OpenAI",
+    "nonmd_files": 62,
+    "purposes": [
+     "output-template",
+     "fonts-images-media",
+     "lookup-data-or-taxonomy",
+     "ui-packaging-metadata",
+     "other"
+    ],
+    "could_be_markdown": "no",
+    "why": "Ships local HTML/JS mood-board and explorer apps with server.mjs, 32 starter images/icons, Python builders instantiating them from JSON specs, plus openai.yaml UI metadata."
+   },
+   {
+    "skill": "earnings-deep-dive",
+    "publisher": "OpenAI",
+    "nonmd_files": 25,
+    "purposes": [
+     "file-format-manipulation",
+     "validation-qa",
+     "output-template",
+     "schema-or-spec",
+     "deterministic-calculation",
+     "ui-packaging-metadata"
+    ],
+    "could_be_markdown": "no",
+    "why": "apply_model_updates.py writes driver changes into Excel named ranges with a changelog; model_diff and verify_tearsheet QA outputs; 10 CSV templates fix normalized schemas."
+   },
+   {
+    "skill": "google-docs",
+    "publisher": "OpenAI",
+    "nonmd_files": 19,
+    "purposes": [
+     "api-or-data-client",
+     "validation-qa",
+     "deterministic-calculation",
+     "ui-packaging-metadata"
+    ],
+    "could_be_markdown": "no",
+    "why": "Host bridges persist connector reads to disk via SHA-256-pinned wrappers and a Perl receiver; URL canonicalizer and dropdown-plan validator; openai.yaml plus icons."
+   },
+   {
+    "skill": "eqtl-catalogue-skill",
+    "publisher": "OpenAI",
+    "nonmd_files": 3,
+    "purposes": [
+     "api-or-data-client",
+     "tests",
+     "ui-packaging-metadata"
+    ],
+    "could_be_markdown": "partly",
+    "why": "rest_request.py is the mandated EBI eQTL client that backfills default query params and surfaces HTTP errors; test file unit-tests it; openai.yaml is UI metadata."
+   },
+   {
+    "skill": "financials-normalizer",
+    "publisher": "OpenAI",
+    "nonmd_files": 6,
+    "purposes": [
+     "deterministic-calculation",
+     "lookup-data-or-taxonomy",
+     "validation-qa",
+     "ui-packaging-metadata"
+    ],
+    "could_be_markdown": "no",
+    "why": "Normalizer applies line_item_aliases.csv mapping, $000/$mm unit scaling and capex sign flips; validator enforces long-form schema columns; icon.svg and openai.yaml for UI."
+   },
+   {
+    "skill": "build-competitive-brief",
+    "publisher": "OpenAI",
+    "nonmd_files": 2,
+    "purposes": [
+     "schema-or-spec",
+     "ui-packaging-metadata"
+    ],
+    "could_be_markdown": "yes",
+    "why": "request-schema.yaml is a JSON-Schema-style input spec (mode enum, max 8 competitors) the model only reads; nothing executes it, so markdown works equally."
+   },
+   {
+    "skill": "narrator",
+    "publisher": "OpenAI",
+    "nonmd_files": 3,
+    "purposes": [
+     "deterministic-calculation",
+     "validation-qa",
+     "ui-packaging-metadata"
+    ],
+    "could_be_markdown": "no",
+    "why": "speech_metrics.sh runs ffmpeg silencedetect to measure true speech length versus padded file duration, gating TTS takes; the model cannot hear audio."
+   },
+   {
+    "skill": "figma-create-new-file",
+    "publisher": "OpenAI",
+    "nonmd_files": 6,
+    "purposes": [
+     "ui-packaging-metadata",
+     "other"
+    ],
+    "could_be_markdown": "partly",
+    "why": "Packaging only: openai.yaml declares the Figma MCP dependency and icons, plus maintainers.yml and LICENSE; skill logic is pure markdown, files serve host UI."
+   },
+   {
+    "skill": "imagegen",
+    "publisher": "OpenAI",
+    "nonmd_files": 5,
+    "purposes": [
+     "api-or-data-client",
+     "ui-packaging-metadata"
+    ],
+    "could_be_markdown": "no",
+    "why": "image_gen.py (926 lines) is the fallback OpenAI Images CLI with batching, concurrency, masks, downscaling; SKILL.md forbids one-off SDK runners; icons/openai.yaml for UI."
+   },
+   {
+    "skill": "mixpanelyst",
+    "publisher": "OpenAI",
+    "nonmd_files": 2,
+    "purposes": [
+     "api-or-data-client",
+     "schema-or-spec"
+    ],
+    "could_be_markdown": "no",
+    "why": "help.py introspects the installed mixpanel_headless library for live signatures and enums ('never guess parameter names'); auth_manager.py wraps account/project auth as JSON."
+   },
+   {
+    "skill": "boltz-protein-design",
+    "publisher": "OpenAI",
+    "nonmd_files": 8,
+    "purposes": [
+     "deterministic-calculation",
+     "file-format-manipulation",
+     "ui-packaging-metadata"
+    ],
+    "could_be_markdown": "no",
+    "why": "gemmi/numpy scripts parse CIF structures: all-atom radius crops, pLDDT disorder detection, Jaccard-clustered binding-site scans, binding_confidence summaries; geometry impossible by reading."
+   },
+   {
+    "skill": "google-slides",
+    "publisher": "OpenAI",
+    "nonmd_files": 15,
+    "purposes": [
+     "api-or-data-client",
+     "validation-qa",
+     "deterministic-calculation",
+     "tests",
+     "ui-packaging-metadata"
+    ],
+    "could_be_markdown": "no",
+    "why": "Exports deck to PDF, renders slides via pdftoppm; output-issues.mjs flags sub-8pt text and geometry drift; template parser extracts design system; includes .test.mjs."
+   },
+   {
+    "skill": "quickdesign",
+    "publisher": "Other vendors",
+    "nonmd_files": 1,
+    "purposes": [
+     "ui-packaging-metadata"
+    ],
+    "could_be_markdown": "yes",
+    "why": ".version holds '0.8.0', duplicating plugin.json; SKILL.md never references it; pure packaging metadata that frontmatter or plugin.json already carries."
+   },
+   {
+    "skill": "notion-research-documentation",
+    "publisher": "Other vendors",
+    "nonmd_files": 2,
+    "purposes": [
+     "tests"
+    ],
+    "could_be_markdown": "yes",
+    "why": "evaluations/*.json are prose rubrics (query, expected_behavior, success_criteria) for testing across Haiku/Sonnet/Opus; not loaded at runtime; markdown would serve equally."
+   },
+   {
+    "skill": "notion-meeting-intelligence",
+    "publisher": "Other vendors",
+    "nonmd_files": 2,
+    "purposes": [
+     "tests"
+    ],
+    "could_be_markdown": "yes",
+    "why": "Two evaluation JSONs (decision/status meeting prep) list expected behaviors and success criteria for author testing; never read at runtime; plain prose fits markdown."
+   },
+   {
+    "skill": "find-customer-social-proof",
+    "publisher": "Other vendors",
+    "nonmd_files": 1,
+    "purposes": [
+     "ui-packaging-metadata"
+    ],
+    "could_be_markdown": "yes",
+    "why": "metadata.yaml is catalog metadata (display_name, privacy_level, Zapier MCP/SDK roles) required by repo CONTRIBUTING; no runtime logic; frontmatter could hold it."
+   },
+   {
+    "skill": "notion-spec-to-implementation",
+    "publisher": "Other vendors",
+    "nonmd_files": 2,
+    "purposes": [
+     "tests"
+    ],
+    "could_be_markdown": "yes",
+    "why": "Evaluation JSONs script step-by-step expected tool calls (notion-search, notion-fetch, task creation) as test rubrics; developer QA only, equally expressible in markdown."
+   },
+   {
+    "skill": "tres-asc845-swap-reprice-skill",
+    "publisher": "Other vendors",
+    "nonmd_files": 2,
+    "purposes": [
+     "deterministic-calculation",
+     "other"
+    ],
+    "could_be_markdown": "no",
+    "why": "reprice_swaps.py implements ASC 845 equal-value repricing of swap inflow legs; orchestrator parses MCP JSON and emits setManualFiatValue mutations; exact accounting arithmetic."
+   },
+   {
+    "skill": "stock-analysis",
+    "publisher": "Community",
+    "nonmd_files": 7,
+    "purposes": [
+     "deterministic-calculation",
+     "validation-qa",
+     "lookup-data-or-taxonomy",
+     "tests"
+    ],
+    "could_be_markdown": "no",
+    "why": "ratios/valuation/score.py compute DuPont, reverse-DCF, sector scores from benchmarks.json; verify_data and lint_report gate sourcing. Its 54 markdown files alone exceed 20."
+   },
+   {
+    "skill": "clinical-reports",
+    "publisher": "Community",
+    "nonmd_files": 24,
+    "purposes": [
+     "validation-qa",
+     "output-template",
+     "schema-or-spec",
+     "deterministic-calculation"
+    ],
+    "could_be_markdown": "no",
+    "why": "Validators check CONSORT/SPIRIT/ICH E3 coverage, de-identification process, denominator/percentage consistency, provenance hashes; 15 JSON/CSV templates define required report manifests."
+   },
+   {
+    "skill": "iso-standards-readiness",
+    "publisher": "Community",
+    "nonmd_files": 19,
+    "purposes": [
+     "validation-qa",
+     "output-template",
+     "lookup-data-or-taxonomy",
+     "schema-or-spec"
+    ],
+    "could_be_markdown": "no",
+    "why": "Fail-closed checkers validate CAPA dates and effectiveness gates, traceability, supplier controls, QMSR transition against 9 JSON templates; _catalog.py holds per-standard scope vocabulary."
+   },
+   {
+    "skill": "citation-management",
+    "publisher": "Community",
+    "nonmd_files": 9,
+    "purposes": [
+     "api-or-data-client",
+     "file-format-manipulation",
+     "validation-qa",
+     "output-template"
+    ],
+    "could_be_markdown": "no",
+    "why": "Scripts query CrossRef, PubMed E-utilities, OpenAlex, Google Scholar; brace-aware BibTeX parser formats/dedupes; validate_citations checks DOIs; bibtex_template.bib shows entry types."
+   },
+   {
+    "skill": "pricing",
+    "publisher": "Community",
+    "nonmd_files": 1,
+    "purposes": [
+     "tests"
+    ],
+    "could_be_markdown": "yes",
+    "why": "evals/evals.json holds test prompts with expected outputs for author regression testing; never loaded at runtime; content is prose, equally expressible in markdown."
+   },
+   {
+    "skill": "product-strategist",
+    "publisher": "Community",
+    "nonmd_files": 2,
+    "purposes": [
+     "output-template",
+     "deterministic-calculation"
+    ],
+    "could_be_markdown": "partly",
+    "why": "okr_cascade_generator.py fills hardcoded OKR text templates and a simple alignment score; sample_growth_okrs.json is example output; the model could mostly write these itself."
+   },
+   {
+    "skill": "quality-documentation-manager",
+    "publisher": "Community",
+    "nonmd_files": 2,
+    "purposes": [
+     "validation-qa",
+     "other"
+    ],
+    "could_be_markdown": "no",
+    "why": "document_validator.py regex-checks document numbers, status lifecycle, dates, approvals and 21 CFR 11 controls; document_version_control.py is never referenced by SKILL.md."
+   }
+  ]
+ }
+}

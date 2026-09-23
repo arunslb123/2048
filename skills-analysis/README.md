@@ -4,6 +4,39 @@ A survey of **100 audited, production knowledge-work Agent Skills** (folders con
 
 Interactive report: `report/skill-folder-anatomy.html`
 
+## Checking a "max 20 files, all markdown" rule
+
+Every file inside the skill folder counts, including `references/` and any other subfolder. Tested on the census of 987 real knowledge-work skills; the audited 100-skill sample is shown as a check.
+
+| Rule | Census (987) | Sample (100) | Verdict |
+|---|---|---|---|
+| 20 files or fewer | **96%** (38 exceed) | 96% | Matches the field. 95% of skills have ≤18 files. |
+| Markdown only (ignoring OpenAI UI metadata and licenses) | **60%** (53% strict) | 66% (54% strict) | Stricter than the field |
+| Markdown only, among skills with more than one file | **24%** | 31% | Stricter than the field. Once a skill grows past SKILL.md, most add code or data. |
+| More than 20 **markdown** files | 4 skills | 0 | Markdown count alone almost never hits 20 |
+
+By publisher (census): ≤20 files: Anthropic 98%, OpenAI 95%, other vendors 99%, community 94%. Markdown-only: Anthropic 93%, OpenAI 40%, other vendors 69%, community 33%.
+
+**What breaks the markdown-only rule.** 400 of 987 skills ship non-markdown content. 78% of those include scripts or code (mostly Python) and 21% add only data (JSON/YAML/CSV schemas, lookup tables, templates). Binary assets appear in just 12 skills.
+
+An agent opened every non-markdown file in 36 skills spread across publishers (largest included) and asked whether markdown alone could do the same job:
+- **23 of 36: no.** The files recalculate models, validate output (e.g. Word XML against 39 OOXML schemas), edit Office/PDF files, call APIs, or measure things the model can't (audio length).
+- **6: partly.** YAML state stores, an HTML template.
+- **7: yes.** Evaluation rubrics and catalog metadata that nothing reads at run time.
+
+**Official guidance.** Each quote was verified word for word against the live source by a separate agent; see `guidance.json`.
+- Anthropic: no file-count limit; the only hard limit is 30 MB per skill. The Agent Skills overview says "A Skill can include dozens of reference files" and "No practical limit on bundled content". The authoring best practices recommend pre-made scripts ("More reliable than generated code … Prefer scripts for deterministic operations") and "Keep SKILL.md body under 500 lines".
+- The open spec (agentskills.io): "A skill directory may contain any files and directories beyond the required SKILL.md."
+- OpenAI: "Instruction-only is the default. … Prefer instructions over scripts unless you need deterministic behavior or external tooling." The plugins docs say "Use scripts/ when the workflow needs deterministic computation or file processing. … Do not add a script when instructions and existing tools can complete the task reliably." Hard caps: 500 files per skill (API) and 100 per skill (MCP import). The skill-creator bans README/CHANGELOG-style clutter.
+
+**A rule that matches the field.**
+1. Default to markdown (SKILL.md + `references/*.md`).
+2. Allow `scripts/` when a step must be exact (calculations, validation, Office/PDF editing, API calls), and require SKILL.md to call every script.
+3. Allow small data and templates (schemas, lookup tables, output templates).
+4. Put the size rule on SKILL.md (under 500 lines, references one level deep, a table of contents for reference files over 100 lines), not on the folder.
+5. Use 20 files as a review trigger, not a hard ban. Anthropic's own docx, pptx and xlsx skills are 53–61 files.
+6. Ban clutter (README, CHANGELOG, eval files shipped at run time), not file types.
+
 ## Answer
 
 **Markdown files per skill folder: mean 2.96, median 1** (90th percentile 8, max 16). The full census gives mean 3.21, median 1.
@@ -99,6 +132,7 @@ Census (987), which gives firmer per-publisher numbers:
 | `labels_*.json`, `overrides.json` | Classifier labels (ids map to `pool.json` / `pool_add.json`) |
 | `audit*.json`, `critic.json` | Audit verdicts and hand counts; the adversarial review |
 | `near_dups.json` | Near-duplicate pairs and which copy was kept |
+| `guidance.json` | Verified quotes from Anthropic and OpenAI docs, plus why 36 skills ship non-markdown files |
 | `*.py`, `report_template.html` | Pipeline: `inventory.py` → `dedup.py` → `sample_and_stats.py` → `finalize.py` → `build_report.py` |
 
 To reproduce: `./clone_repos.sh && python3 inventory.py && python3 dedup.py && python3 sample_and_stats.py && python3 finalize.py && python3 build_report.py`. The labels and audits are checked in, so no LLM calls are needed. Re-clones fetch each repo's current HEAD, so counts drift as the repos change.
