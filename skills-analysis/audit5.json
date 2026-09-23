@@ -1,0 +1,59 @@
+[
+ {
+  "id": "S1024",
+  "verdict": "keep",
+  "md": 1,
+  "script": 0,
+  "asset": 0,
+  "data_config": 0,
+  "license": 0,
+  "other": 0,
+  "total": 1,
+  "md_roles": "none",
+  "nonmd_summary": "none",
+  "skill_md_quality": "substantive"
+ },
+ {
+  "id": "S1408",
+  "verdict": "reject",
+  "reject_reason": "Pure orchestrator/router over 8 TRES sub-skills for platform entity onboarding/setup; says it contains no low-level logic of its own.",
+  "md": 1,
+  "script": 0,
+  "asset": 0,
+  "data_config": 0,
+  "license": 0,
+  "other": 0,
+  "total": 1,
+  "md_roles": "none",
+  "nonmd_summary": "none",
+  "skill_md_quality": "moderate"
+ },
+ {
+  "id": "S1434",
+  "verdict": "keep",
+  "md": 2,
+  "script": 0,
+  "asset": 0,
+  "data_config": 0,
+  "license": 0,
+  "other": 0,
+  "total": 2,
+  "md_roles": "Reference catalog of action-item parsing patterns, confidence scoring, anti-patterns, regex examples",
+  "nonmd_summary": "none",
+  "skill_md_quality": "substantive"
+ },
+ {
+  "id": "S1465",
+  "verdict": "keep",
+  "md": 1,
+  "script": 0,
+  "asset": 0,
+  "data_config": 0,
+  "license": 0,
+  "other": 0,
+  "total": 1,
+  "md_roles": "none",
+  "nonmd_summary": "none",
+  "skill_md_quality": "substantive"
+ }
+]

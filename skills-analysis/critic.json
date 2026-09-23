@@ -1,0 +1,225 @@
+{
+ "issues": [
+  {
+   "severity": "high",
+   "issue": "The pooled file-type distribution depends on three outlier skills. Any 'share of all files' pie or files-per-skill mean mostly reflects them.",
+   "evidence": "fraud-detection (104 files), produce (78) and docx (61) hold 243 of the sample's 633 files (38%). They also hold 75 of 117 scripts (64%), 43 of 43 assets (100%) and 97 of 116 data_config files (84%; 51 state-policy JSONs plus 39 .xsd). Without these three: md share goes from 47.7% to 71.0%, asset from 6.8% to 0.0%, data_config from 18.3% to 4.9%, and files mean from 6.46 to 4.11. The mean per-skill composition is md 79%, packaging 10%, scripts 6%, data 3%, assets 0.6%. For md files, the top 10 skills hold 118 of 302 (39%); the md mean without the top 5 is 2.51.",
+   "fix": "Headline with per-skill prevalence (% of skills with any X), medians and per-skill composition. If you show pooled file shares at all, show them with and without the top 3 and name those skills."
+  },
+  {
+   "severity": "high",
+   "issue": "Publisher quotas are far from population proportions, so pooled sample stats partly reflect the publisher mix. The overall md mean/median match looks coincidental.",
+   "evidence": "OpenAI is 35.7% of the sample but 15.3% of the eligible population. Community is 10.2% vs 38.9%, so inclusion probability is about 24% vs about 2.7% (roughly 9x). Pooled sample vs population: packaging 31.6% vs 13.5%; md==1 59.2% vs 53.4%; content-files median 1 vs 2; md share of content files 52.2% vs 63.8%; scripts 23.5% vs 28.9%; marketing domain 4.1% vs 13.1%, design 10.2% vs 5.0%. Reweighting the sample to population shares by publisher gives packaging 13.6%, md==1 50.5%, content-files median 2, scripts 25.0%.",
+   "fix": "Reweight by publisher (weight = population n / sample n) for every pooled number, or report per publisher only. Better: lead with the full census of 965 eligible skills (counts are scripted and recounts matched 128/128) and present the 98-skill sample as the hand-audited check."
+  },
+  {
+   "severity": "high",
+   "issue": "'Most skills are a single SKILL.md' is wrong as worded, and the median of 1 is on a knife edge.",
+   "evidence": "Folders that are literally a single file: 44.9% of the sample and 44.0% of the population (53.1% / 48.2% ignoring packaging and license). Share with exactly one md file: 59.2% sample, 53.4% population, 50.5% after reweighting. Dropping claude-for-legal alone (103 skills) moves the population to md==1 48.4%, median 2. Dropping knowledge-work-plugins does the same (48.5%, median 2). Giving each repo equal weight leaves md==1 at 50.5%. The sample mean of 3.08 has a bootstrap 95% CI of 2.43\u20133.82.",
+   "fix": "Word it as: 'about half of skills carry no markdown beyond SKILL.md; about 45% are literally one file; mean about 3 because of a long tail (p90 7\u20139, max 16 in the sample, 83 in the population).'"
+  },
+  {
+   "severity": "medium",
+   "issue": "The Anthropic SKILL.md-only share is largely a product of plugin layout (shared context sits at plugin level, outside the skill folder). The flagship anthropics/skills repo shows the opposite pattern.",
+   "evidence": "claude-for-legal is 103 of 369 Anthropic eligible skills and 13 of 40 in the sample; 93% are single-file. 90 of its 96 single-file skills tell the model to read a plugin- or user-level CLAUDE.md playbook (commercial-legal/CLAUDE.md is 509 lines). knowledge-work-plugins skills point to ../../CONNECTORS.md. financial-services-plugins is 84% single-file. anthropics/skills is only 9% single-file, with 55% shipping scripts (docx 61 files, pptx and xlsx each have 50 files under scripts/office). OpenAI keeps its UI metadata inside the skill folder, so folder-level comparisons tilt against Anthropic.",
+   "fix": "State that counts cover the skill folder only and that plugin-level CLAUDE.md, CONNECTORS.md and agents are excluded. Report anthropics/skills separately, and Anthropic excluding claude-for-legal (about 70% single-file)."
+  },
+  {
+   "severity": "medium",
+   "issue": "Knowledge-work and role labels are inconsistent within repos, which shifts OpenAI and Community script and md figures.",
+   "evidence": "In openai/plugins life-science-research, 39 of 50 skills share one template (md=1, files=3: SKILL.md + scripts/rest_request.py + agents/openai.yaml). 13 are labeled task/eligible (quickgo-skill and reactome-skill are in the sample), while 37 near-identical ones such as chembl-skill are labeled router and excluded. In K-Dense, scanpy, scvelo, scvi-tools, pydeseq2, qutip, fluidsim, molecular-dynamics and lab-hardware-cad (parametric CAD code) are labeled knowledge-work tasks, while anndata, matplotlib, seaborn, scikit-learn and biopython are labeled dev reference. K-Dense has 91 eligible skills (md mean 7.78, 76% with scripts). Dropping K-Dense changes the population md mean from 3.28 to 2.81 and md==1 from 53.4% to 58.2%. Adding the 104 knowledge-work 'router' skills raises OpenAI script prevalence from 36.5% to 44.6%.",
+   "fix": "Label template families as a unit: all life-science database skills in or all out. Re-label K-Dense computational-pipeline skills against one written rule. Report sensitivity with and without K-Dense."
+  },
+  {
+   "severity": "medium",
+   "issue": "Near-duplicates survive, because dedup only catches byte-identical SKILL.md files. Six sample rows are one side of a near-duplicate pair.",
+   "evidence": "The eligible set has 35 same-name pairs with more than 0.8 text similarity. Examples: K-Dense copies of Anthropic docx/pptx/xlsx/pdf (0.97\u20130.99, each bringing the office scripts and .xsd files); openai/plugins vs role-specific-plugins data-analytics and product-design (about 10 pairs at 0.96\u20130.99); openai/plugins notion vs openai/skills notion (0.84\u20130.88). Sample rows affected: S1486, S1485, S0736, S0428, S1243 (policy-monitor, 0.91 with the privacy-legal copy), S1293 (0.92 with alirezarezvani deep-research). Both competitive-brief copies, S0297 and S0327 (0.91), are in the sample.",
+   "fix": "Dedup on similarity \u22650.9 (keep the canonical source) before building the population and drawing the sample. Replace S0327 or S0297."
+  },
+  {
+   "severity": "medium",
+   "issue": "The replacement rule plus fragmented strata oversample Zapier's templated skills in 'Other vendors'. Two slots are still unfilled.",
+   "evidence": "Zapier is 4 of 13 Other-vendor rows (31%) vs 10 of 73 eligible (14%). Its category folders are treated as separate 'plugins' of 1\u20132 skills, giving inclusion probability 0.5\u20131.0, vs 0.16 for tres-finance. Every Zapier skill uses the same 5-md template (README, SETUP, SCHEMA-MAP, ONBOARDING-PROMPT, SKILL) plus metadata.yaml. They supply 20 of the 41 md files in that stratum, putting its md mean at 3.15 vs 2.73 in the population.",
+   "fix": "Stratify by repo, not by sub-folder, for vendor repos. Fill the 2 pending slots by the same random order within the stratum, not by lowest id."
+  },
+  {
+   "severity": "medium",
+   "issue": "The category buckets can mislead readers about 'assets', 'templates' and 'SKILL.md-only'.",
+   "evidence": "'asset' includes html/css: 11 of the 22 eligible skills with assets have only html/css code, and produce splits one web app into js (script) and html/css (asset). Of the sample's 116 data_config files, 39 are OOXML .xsd schemas from docx (234 .xsd in the eligible set), and docx scripts/templates/*.xml also count as data. Template files appear in 165 of 965 eligible skills (17%), but only 10 are binary. 12.6% of eligible skills have an assets/ folder, mostly holding .md (111) and .json (98). skill_md_only_pct counts LICENSE and openai.yaml as extra files.",
+   "fix": "Rename 'asset' to 'binary/media (images, fonts, office, pdf)' and move html/css to code. Split out 'schemas/fixtures'. Report templates by format. Use the content-only SKILL.md-only share for cross-publisher claims."
+  },
+  {
+   "severity": "medium",
+   "issue": "Per-publisher sample sizes are too small for per-publisher point claims. The OpenAI median differs from its population.",
+   "evidence": "Bootstrap 95% CIs: Anthropic single-file 67.5\u201392.5%; OpenAI md mean 2.83\u20135.63; Other vendors md mean 1.62\u20135.31; Community (n=10) single-file 0\u201350%; overall scripts 15.3\u201332.7%. OpenAI md median is 2 in the sample vs 1 in the population (md==1 42.9% vs 52.7%).",
+   "fix": "Use the population census for per-publisher figures, or show CIs."
+  },
+  {
+   "severity": "low",
+   "issue": "Some counted md files are not skill instructions.",
+   "evidence": "The sample has 11 such files in 9 skills: 8 README.md (4 Zapier, fraud-detection, produce helpers/, 2 Notion evaluations/), scripts/CLAUDE.md, BENCHMARK.md and skill-card.md. Removing them moves the md mean from 3.08 to 2.97 (population 3.28 to 3.23, 45 skills affected); the median is unchanged.",
+   "fix": "Add a footnote, or exclude README/CHANGELOG/CLAUDE.md/eval READMEs from 'md' and list them separately."
+  },
+  {
+   "severity": "low",
+   "issue": "Coverage gaps and eligibility filters applied unevenly, sample vs population.",
+   "evidence": "Official repos not included: anthropics/commerce-agents (16; has merchant-ops and customer-care skills), slackapi/slack-skills-plugin (8; slack-messaging, slack-search), anthropics/claude-tag-plugins (25), openai/community-plugins (22). The openai/plugins figma plugin (12) was dropped wholesale, including figma-use-slides and figma-generate-diagram, while the openai/skills figma-* skills were kept. Community is 4 hand-picked repos (alirezarezvani is 170 of 375); large knowledge-work repos such as openaccountants (781), lawve-ai legal (263) and deanpeters PM (77) are absent. The sample was audited (12% rejected, 6 of them outside googleworkspace), but the population only lost googleworkspace/cli wholesale.",
+   "fix": "List the included and excluded sources in the report. Call Community 'illustrative, not representative'. Mention that about 6% of the non-Google population would likely fail the same audit."
+  }
+ ],
+ "spot_checks": [
+  {
+   "skill": "S1426 healthcare/fraud-detection (largest)",
+   "csv_md": 8,
+   "your_md": 8,
+   "csv_total": 104,
+   "your_total": 104
+  },
+  {
+   "skill": "S0630 openai creative-production/produce",
+   "csv_md": 16,
+   "your_md": 16,
+   "csv_total": 78,
+   "your_total": 78
+  },
+  {
+   "skill": "S0428 anthropics/skills docx",
+   "csv_md": 1,
+   "your_md": 1,
+   "csv_total": 61,
+   "your_total": 61
+  },
+  {
+   "skill": "S0017 K-Dense citation-management",
+   "csv_md": 12,
+   "your_md": 12,
+   "csv_total": 21,
+   "your_total": 21
+  },
+  {
+   "skill": "S0763 openai public-equity comps-valuation",
+   "csv_md": 15,
+   "your_md": 15,
+   "csv_total": 20,
+   "your_total": 20
+  },
+  {
+   "skill": "S0736 openai notion-meeting-intelligence",
+   "csv_md": 13,
+   "your_md": 13,
+   "csv_total": 19,
+   "your_total": 19
+  },
+  {
+   "skill": "S0826 openai/skills speech",
+   "csv_md": 11,
+   "your_md": 11,
+   "csv_total": 16,
+   "your_total": 16
+  },
+  {
+   "skill": "S1480 makenotion notion-spec-to-implementation",
+   "csv_md": 13,
+   "your_md": 13,
+   "csv_total": 15,
+   "your_total": 15
+  },
+  {
+   "skill": "S0238 knowledge-work scientific-problem-selection",
+   "csv_md": 10,
+   "your_md": 10,
+   "csv_total": 11,
+   "your_total": 11
+  },
+  {
+   "skill": "S0395 small-business job-post-builder",
+   "csv_md": 9,
+   "your_md": 9,
+   "csv_total": 9,
+   "your_total": 9
+  },
+  {
+   "skill": "S1586 zapier find-customer-social-proof",
+   "csv_md": 5,
+   "your_md": 5,
+   "csv_total": 6,
+   "your_total": 6
+  },
+  {
+   "skill": "S1171 alirezarezvani product-strategist",
+   "csv_md": 4,
+   "your_md": 4,
+   "csv_total": 6,
+   "your_total": 6
+  },
+  {
+   "skill": "S0661 openai higgsfield narrator",
+   "csv_md": 1,
+   "your_md": 1,
+   "csv_total": 4,
+   "your_total": 4
+  },
+  {
+   "skill": "S0723 openai ngs-bulk-rnaseq-differential-expression",
+   "csv_md": 1,
+   "your_md": 1,
+   "csv_total": 2,
+   "your_total": 2
+  },
+  {
+   "skill": "S1485 openai role-specific report-to-pdf (nested)",
+   "csv_md": 1,
+   "your_md": 1,
+   "csv_total": 2,
+   "your_total": 2
+  },
+  {
+   "skill": "S0621 openai canva-brand-check",
+   "csv_md": 1,
+   "your_md": 1,
+   "csv_total": 1,
+   "your_total": 1
+  },
+  {
+   "skill": "S1253 claude-for-legal nda-review",
+   "csv_md": 1,
+   "your_md": 1,
+   "csv_total": 1,
+   "your_total": 1
+  },
+  {
+   "skill": "S1022 HubSpot log-call",
+   "csv_md": 1,
+   "your_md": 1,
+   "csv_total": 1,
+   "your_total": 1
+  }
+ ],
+ "claims_checked": [
+  {
+   "claim": "a. Average md files per knowledge-work skill folder is ~3 (mean) but the median is 1 \u2014 most skills are a single SKILL.md.",
+   "holds": false,
+   "detail": "The mean and median figures hold: sample 3.08 (95% CI 2.43\u20133.82), median 1; population 3.28, median 1. The 'most skills are a single SKILL.md' part does not. Only 44.9% of sample skills (44.0% of the population) are one file; ignoring packaging and license it is 53.1% / 48.2%. 59.2% of the sample has exactly one md file, but the population figure is 53.4% (50.5% after reweighting by publisher), so the median of 1 is fragile: dropping claude-for-legal flips the population median to 2 (48.4%), and so does dropping knowledge-work-plugins. The mean comes from a tail: the top 10 skills hold 39% of md files, and the mean without the top 5 is 2.51. Suggested wording: 'about half have no md beyond SKILL.md'."
+  },
+  {
+   "claim": "b. Anthropic's knowledge-work skills are overwhelmingly SKILL.md-only (~75-80%), while OpenAI's almost always ship extra files (at least agents/openai.yaml).",
+   "holds": true,
+   "detail": "Anthropic single-file: sample 80.0% (32/40), population 76.4% (282/369). OpenAI multi-file: 91.4% sample, 89.2% population; agents/openai.yaml packaging: 88.6% / 87.8%. Caveats: (1) On content alone, 31.4% of OpenAI sample skills (36.5% of population) are still SKILL.md-only, and the OpenAI population md median is 1. The content gap is roughly 77% vs 36%, not 80% vs 10%. (2) The Anthropic figure is driven by claude-for-legal (93% single-file; 90 of its 96 single-file skills rely on a plugin-level CLAUDE.md playbook) and financial-services (84%). The flagship anthropics/skills repo is only 9% single-file, with 55% shipping scripts."
+  },
+  {
+   "claim": "c. Scripts appear in roughly 1 in 4-5 knowledge-work skills; true binary/visual assets are rare (<5%) once OpenAI UI icons are excluded.",
+   "holds": true,
+   "detail": "Scripts: sample 23.5% (CI 15\u201333%), reweighted 25.0%, but the population is 28.9% (about 1 in 3.5). Better wording: 'about 1 in 4 (24\u201329%)'. Prevalence varies widely by publisher: Anthropic 5.4%, Other vendors 5.5%, OpenAI 36.5%, Community 53.6%. Assets: sample 2.0% (2 skills, one of them a single .html), population 2.3% (22 skills, 11 of which are html/css only), so true binary/visual assets are about 1.1\u20131.4%. Don't list 'templates' as rare: 17% of eligible skills ship template files, almost all as md/json/xml/tex (only 10 binary). 12.6% of skills have an assets/ folder, which mostly holds .md and .json."
+  },
+  {
+   "claim": "d. When skills do add files, markdown reference docs (references/ folder) are the most common addition.",
+   "holds": true,
+   "detail": "Of the 54 multi-file sample skills: extra md 40 (74%), a references/ or reference/ dir 34 (63%), packaging 31 (57%), scripts 23 (43%), data 19, assets 2. Of the 540 multi-file population skills: extra md 450 (83%), references dir 416 (77%), scripts 279 (52%), packaging 130 (24%). Exception: for OpenAI, packaging is the most common addition (31 of 35 sample skills). The Zapier extra md files are README/SETUP/SCHEMA-MAP, not a references/ folder."
+  },
+  {
+   "claim": "e. The sample is representative of the eligible population on md mean/median and SKILL.md-only share.",
+   "holds": true,
+   "detail": "This holds narrowly overall: md mean 3.08 vs 3.28, median 1 vs 1, single-file 44.9% vs 44.0%. By publisher: Anthropic 1.93/1/80.0 vs 1.79/1/76.4; OpenAI 4.17/2/8.6 vs 4.06/1/10.8 (median differs; md==1 42.9% vs 52.7%); Other vendors 3.15/1/53.8 vs 2.73/1/58.9 (Zapier oversampled); Community 3.8/3/20 vs 4.54/3/22.4 (n=10). The overall match is coincidental: OpenAI is 35.7% of the sample vs 15.3% of the population, and Community 10.2% vs 38.9%. Other metrics diverge: packaging 31.6% vs 13.5%, md==1 59.2% vs 53.4%, content-files median 1 vs 2, md share of content files 52.2% vs 63.8%, scripts 23.5% vs 28.9%, marketing domain 4.1% vs 13.1%. Don't claim the sample is representative beyond these three metrics."
+  }
+ ]
+}

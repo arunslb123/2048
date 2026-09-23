@@ -1,0 +1,615 @@
+<title>Skill Folder Anatomy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+:root {
+  --bg: #f4f5f7;
+  --surface: #ffffff;
+  --ink: #15181d;
+  --ink-2: #4f5663;
+  --muted: #767d8a;
+  --hair: #e1e4e9;
+  --grid: #eceef2;
+  --code-bg: #eef1f5;
+  --accent: #2a78d6;
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100;
+  --t-md: #2a78d6; --t-script: #b4531f; --t-data: #0f7f58; --t-pack: #8a8f99; --t-asset: #a46f00; --t-lic: #8a8f99;
+  --hover: rgba(42,120,214,.08);
+  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --cond: "IBM Plex Sans Condensed", "IBM Plex Sans", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #101216; --surface: #171a1f; --ink: #f0f2f5; --ink-2: #b4bac5; --muted: #8b929e;
+    --hair: #2a2f37; --grid: #22262d; --code-bg: #1d2128; --accent: #3987e5;
+    --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500;
+    --t-md: #6da7ec; --t-script: #f0915f; --t-data: #45c595; --t-pack: #8b929e; --t-asset: #e0b04a; --t-lic: #8b929e;
+    --hover: rgba(57,135,229,.14);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #101216; --surface: #171a1f; --ink: #f0f2f5; --ink-2: #b4bac5; --muted: #8b929e;
+  --hair: #2a2f37; --grid: #22262d; --code-bg: #1d2128; --accent: #3987e5;
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500;
+  --t-md: #6da7ec; --t-script: #f0915f; --t-data: #45c595; --t-pack: #8b929e; --t-asset: #e0b04a; --t-lic: #8b929e;
+  --hover: rgba(57,135,229,.14);
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 15px/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1040px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 72px; }
+h1, h2, h3 { font-family: var(--cond); font-weight: 600; letter-spacing: -.01em; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.08; }
+h2 { font-size: 24px; line-height: 1.2; }
+h3 { font-size: 17px; line-height: 1.3; }
+p { margin: 0; }
+a { color: var(--accent); text-underline-offset: 2px; }
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+.mono { font-family: var(--mono); }
+.eyebrow { font: 500 12px/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.lede { font-size: 18px; line-height: 1.55; color: var(--ink-2); max-width: 68ch; }
+.lede strong { color: var(--ink); font-weight: 600; }
+header { display: grid; gap: 14px; padding-bottom: 28px; border-bottom: 1px solid var(--hair); }
+section { padding-block: 40px 8px; display: grid; gap: 18px; }
+.sec-head { display: grid; gap: 6px; max-width: 72ch; }
+.sec-head p { color: var(--ink-2); }
+.panel { background: var(--surface); border: 1px solid var(--hair); border-radius: 10px; padding: 20px; }
+
+/* stat tiles */
+.tiles { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1px; background: var(--hair); border: 1px solid var(--hair); border-radius: 10px; overflow: hidden; margin-top: 8px; }
+.tile { background: var(--surface); padding: 16px 16px 14px; display: grid; gap: 4px; align-content: start; }
+.tile .label { font-size: 13px; color: var(--ink-2); }
+.tile .value { font: 600 30px/1.1 var(--sans); letter-spacing: -.01em; font-variant-numeric: tabular-nums; }
+.tile .sub { font-size: 12.5px; color: var(--muted); }
+@media (max-width: 820px) { .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } .tile.hero { grid-column: 1 / -1; } }
+
+/* charts */
+.chart { width: 100%; height: auto; display: block; overflow: visible; }
+.chart text { fill: var(--ink-2); font: 12px var(--sans); }
+.chart .val { fill: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+.chart .gridline { stroke: var(--grid); stroke-width: 1; }
+.chart .axis { stroke: var(--hair); stroke-width: 1; }
+.chart .bar { fill: var(--s1); transition: opacity .12s; }
+.chart .hit { fill: transparent; cursor: default; }
+.chart .hit:hover + .bar, .chart .hit:focus + .bar { opacity: .78; }
+.chart g.row:hover .bar, .chart g.row:focus .bar { opacity: .8; }
+.two { display: grid; grid-template-columns: 1.1fr 1fr; gap: 18px; align-items: start; }
+@media (max-width: 860px) { .two { grid-template-columns: 1fr; } }
+.note { font-size: 13px; color: var(--muted); }
+.callout { border-left: 2px solid var(--accent); padding: 2px 0 2px 14px; color: var(--ink-2); max-width: 70ch; }
+
+/* legend + toggle */
+.controls { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; justify-content: space-between; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 13px; color: var(--ink-2); }
+.legend span { display: inline-flex; align-items: center; gap: 7px; }
+.legend i { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+.seg { display: inline-flex; border: 1px solid var(--hair); border-radius: 8px; overflow: hidden; background: var(--surface); }
+.seg button { font: 500 13px var(--sans); color: var(--ink-2); background: none; border: 0; padding: 7px 12px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--surface); }
+
+/* tables */
+.tscroll { overflow-x: auto; border: 1px solid var(--hair); border-radius: 10px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+th, td { padding: 9px 12px; text-align: left; border-bottom: 1px solid var(--grid); white-space: nowrap; }
+th { font: 600 12px var(--sans); color: var(--ink-2); background: var(--surface); position: sticky; top: 0; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+tr:last-child td { border-bottom: 0; }
+tbody tr:hover td { background: var(--hover); }
+tr.total td { font-weight: 600; border-top: 1px solid var(--hair); }
+.sortable th { cursor: pointer; user-select: none; }
+.sortable th[aria-sort="ascending"]::after { content: " ↑"; }
+.sortable th[aria-sort="descending"]::after { content: " ↓"; }
+td .sub { color: var(--muted); font-size: 12px; }
+.chip { display: inline-block; font: 500 11.5px var(--mono); padding: 2px 7px; border-radius: 999px; border: 1px solid var(--hair); color: var(--ink-2); }
+.q-substantive { color: var(--t-data); border-color: currentColor; }
+.q-moderate { color: var(--ink-2); }
+.q-thin { color: var(--t-script); border-color: currentColor; }
+.zero { color: var(--muted); opacity: .6; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.filters button { font: 500 13px var(--sans); border: 1px solid var(--hair); background: var(--surface); color: var(--ink-2); border-radius: 999px; padding: 6px 12px; cursor: pointer; }
+.filters button[aria-pressed="true"] { border-color: var(--ink); color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+.tall { max-height: 620px; overflow: auto; }
+
+/* file trees */
+.trees { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+.tree { background: var(--surface); border: 1px solid var(--hair); border-radius: 10px; padding: 16px; display: grid; gap: 10px; align-content: start; }
+.tree .kind { font: 500 11.5px var(--mono); letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+.tree p { font-size: 13.5px; color: var(--ink-2); }
+.tree pre { margin: 0; background: var(--code-bg); border-radius: 6px; padding: 10px 12px; font: 12.5px/1.65 var(--mono); overflow-x: auto; }
+.tree pre span { display: block; white-space: pre-wrap; overflow-wrap: anywhere; padding-left: var(--ind, 0); text-indent: 0; }
+.k-dir { color: var(--ink); font-weight: 500; }
+.k-md { color: var(--t-md); } .k-script { color: var(--t-script); } .k-data { color: var(--t-data); }
+.k-pack, .k-lic, .k-more { color: var(--t-pack); } .k-asset { color: var(--t-asset); } .k-other { color: var(--ink-2); }
+.tree .src { font: 12px var(--mono); color: var(--muted); overflow-wrap: anywhere; }
+.keyrow { display: flex; flex-wrap: wrap; gap: 6px 16px; font: 12.5px var(--mono); }
+
+/* method */
+.method { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px 28px; }
+.method h3 { margin-bottom: 6px; }
+.method p, .method li { font-size: 14px; color: var(--ink-2); }
+.method ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; }
+
+/* tooltip */
+.tip { position: fixed; z-index: 10; pointer-events: none; background: var(--surface); color: var(--ink); border: 1px solid var(--hair); border-radius: 8px; padding: 8px 10px; font-size: 12.5px; box-shadow: 0 6px 20px rgba(0,0,0,.12); max-width: 260px; }
+.tip b { font-size: 15px; font-variant-numeric: tabular-nums; display: block; }
+.tip .l { color: var(--ink-2); }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Agent Skills · knowledge-work sample · repos cloned 23 Sep 2026</div>
+    <h1>What’s inside a real skill folder?</h1>
+    <p class="lede" id="lede"></p>
+    <div class="tiles" id="tiles" aria-label="Headline numbers"></div>
+  </header>
+
+  <section aria-labelledby="h-md">
+    <div class="sec-head">
+      <h2 id="h-md">How many markdown files per skill</h2>
+      <p id="md-sub"></p>
+    </div>
+    <div class="two">
+      <div class="panel"><svg class="chart" id="md-hist" role="img" aria-label="Histogram of markdown files per skill"></svg></div>
+      <div class="panel" style="display:grid;gap:12px">
+        <h3>Where the extra files live</h3>
+        <p class="note" style="font-size:14px;color:var(--ink-2)">When a skill has more than one .md file, the extras are almost always <strong>reference material loaded on demand</strong>, usually in <span class="mono">references/</span>. Share of the 100 skills using each subfolder (<span class="mono">agents/</span> holds OpenAI’s UI metadata, not instructions):</p>
+        <svg class="chart" id="subdirs" role="img" aria-label="Share of skills using each subfolder name"></svg>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-mix">
+    <div class="sec-head">
+      <h2 id="h-mix">What else ships in the folder</h2>
+      <p>Share of the sampled skills that contain at least one file of each type. OpenAI’s Codex packaging (<span class="mono">agents/openai.yaml</span> plus the icons it points to) is counted separately, because it is UI metadata rather than skill content. HTML/CSS count as code.</p>
+    </div>
+    <div class="two">
+      <div class="panel"><svg class="chart" id="contains" role="img" aria-label="Share of skills containing each file type"></svg></div>
+      <div class="panel" style="display:grid;gap:12px">
+        <h3>Average files per skill, by type</h3>
+        <div class="tscroll" style="border:0"><table id="means"></table></div>
+        <p class="note" id="means-note"></p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-pub">
+    <div class="sec-head">
+      <h2 id="h-pub">Who ships what</h2>
+      <p>Each skill is placed in exactly one shape. Anthropic’s and other vendors’ knowledge-work skills are mostly a single SKILL.md; OpenAI and the community repos bundle references and code far more often. Per-publisher samples are small (10–40), so switch to the full eligible census for firmer per-publisher numbers.</p>
+    </div>
+    <div class="panel" style="display:grid;gap:16px">
+      <div class="controls">
+        <div class="legend" id="shape-legend"></div>
+        <div class="seg" role="group" aria-label="Data set">
+          <button type="button" id="btn-sample" aria-pressed="true">Sample (100)</button>
+          <button type="button" id="btn-pop" aria-pressed="false">All eligible</button>
+        </div>
+      </div>
+      <svg class="chart" id="shapes" role="img" aria-label="Skill shapes by publisher"></svg>
+    </div>
+    <div class="tscroll"><table id="pubtable"></table></div>
+  </section>
+
+  <section aria-labelledby="h-rob">
+    <div class="sec-head">
+      <h2 id="h-rob">Does the answer survive a different cut?</h2>
+      <p>The sample over-weights OpenAI and under-weights community repos by design. These rows reweight it, then check the full census with the two biggest single repos removed. The typical skill stays at 1 markdown file, with a mean of about 3.</p>
+    </div>
+    <div class="tscroll"><table id="robust"></table></div>
+    <p class="note" id="robust-note"></p>
+  </section>
+
+  <section aria-labelledby="h-arch">
+    <div class="sec-head">
+      <h2 id="h-arch">The four shapes, as real folders</h2>
+      <p>Actual file trees from skills in the sample.</p>
+      <div class="keyrow"><span class="k-md">■ markdown</span><span class="k-script">■ script</span><span class="k-data">■ data/config</span><span class="k-asset">■ asset</span><span class="k-pack">■ packaging / license</span></div>
+    </div>
+    <div class="trees" id="trees"></div>
+  </section>
+
+  <section aria-labelledby="h-all">
+    <div class="sec-head">
+      <h2 id="h-all">All sampled skills</h2>
+      <p>Click a column to sort. “Pkg” is OpenAI UI packaging. SKILL.md depth is the audit agent’s rating after reading each file in full.</p>
+    </div>
+    <div class="filters" id="filters" role="group" aria-label="Filter by publisher"></div>
+    <div class="tscroll tall"><table class="sortable" id="skills"></table></div>
+  </section>
+
+  <section aria-labelledby="h-method">
+    <div class="sec-head"><h2 id="h-method">How this was measured</h2></div>
+    <div class="method">
+      <div>
+        <h3>Sources</h3>
+        <ul>
+          <li><strong>Anthropic:</strong> skills, knowledge-work-plugins, financial-services, claude-for-legal, claude-for-financial-advisors, healthcare, life-sciences, k12-teacher-skills</li>
+          <li><strong>OpenAI:</strong> skills, plugins, role-specific-plugins</li>
+          <li><strong>Other vendors:</strong> Intuit QuickBooks, HubSpot (2 repos), Zapier, Atlassian, Box, Notion, Tres Finance (via Anthropic’s community marketplace). Canva’s one active skill duplicates OpenAI’s copy.</li>
+          <li><strong>Community (illustrative, not representative):</strong> K-Dense scientific skills, coreyhaines31/marketingskills, phuryn/pm-skills, alirezarezvani/claude-skills</li>
+          <li><strong>Excluded:</strong> Google Workspace CLI (auto-generated stubs, all 6 audited picks rejected), microsoft/skills and huggingface/skills (developer-only), cookbooks and demo repos</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Filtering to real knowledge work</h3>
+        <p id="method-filter"></p>
+      </div>
+      <div>
+        <h3>Sampling and audit</h3>
+        <p id="method-sample"></p>
+      </div>
+      <div>
+        <h3>Counting rules</h3>
+        <ul>
+          <li>A skill is any folder containing SKILL.md. Files in a nested skill folder count toward that nested skill only.</li>
+          <li><strong>Markdown</strong> includes SKILL.md itself, so the minimum is 1.</li>
+          <li><strong>Scripts &amp; code</strong>: .py .js .ts .sh .sql .html .css and similar. <strong>Data/config</strong>: .json .yaml .csv .xml .xsd .txt. <strong>Binary assets</strong>: images, fonts, audio/video, Office/PDF files.</li>
+          <li>Means are pulled up by a few large folders (e.g. docx ships 39 OOXML .xsd schemas); medians are the better “typical” figure.</li>
+          <li>Only files inside the skill folder count. Plugin-level CLAUDE.md, CONNECTORS.md, commands and agents are excluded.</li>
+          <li id="readme-li"></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+<div class="tip" id="tip" hidden></div>
+
+<script>
+const D = {"n":100,"md_hist":{"1":61,"2":8,"3-5":14,"6-10":11,"11-20":6,"21+":0},"md_mean":2.96,"md_median":1.0,"md_p90":8,"md_max":16,"solo_pct":51.0,"contains":[{"k":"More markdown (beyond SKILL.md)","v":39.0},{"k":"OpenAI UI packaging (openai.yaml + icons)","v":32.0},{"k":"Scripts & code (incl. HTML/CSS)","v":27.0},{"k":"Data & config (JSON, YAML, CSV, XSD)","v":17.0},{"k":"License file","v":6.0},{"k":"Binary assets (images, fonts, Office/PDF)","v":1.0}],"share":{"md_total":47.2,"script":20.6,"asset":5.1,"data_config":18.2,"packaging":7.8,"license":1.0,"other":0.2},"means":{"md_total":2.96,"script":1.29,"asset":0.32,"data_config":1.14,"packaging":0.49,"license":0.06,"other":0.01},"shapes_sample":[{"label":"Anthropic","n":40,"solo":32,"md":6,"scripts":2,"data":0},{"label":"OpenAI","n":35,"solo":8,"md":6,"scripts":19,"data":2},{"label":"Other vendors","n":15,"solo":9,"md":1,"scripts":2,"data":3},{"label":"Community","n":10,"solo":2,"md":2,"scripts":4,"data":2},{"label":"All","n":100,"solo":51,"md":15,"scripts":27,"data":7}],"shapes_pop":[{"label":"Anthropic","n":368,"solo":284,"md":59,"scripts":20,"data":5},{"label":"OpenAI","n":176,"solo":51,"md":20,"scripts":88,"data":17},{"label":"Other vendors","n":72,"solo":42,"md":8,"scripts":5,"data":17},{"label":"Community","n":371,"solo":84,"md":39,"scripts":198,"data":50},{"label":"All","n":987,"solo":461,"md":126,"scripts":311,"data":89}],"pub_sample":[{"label":"Anthropic","n":40,"md_mean":1.93,"md_median":1.0,"md_p90":6,"solo_pct":80.0,"extra_md_pct":17.5,"script_pct":5.0,"data_pct":5.0,"asset_pct":0.0,"pack_pct":0.0,"content_mean":5.8,"content_median":1.0},{"label":"OpenAI","n":35,"md_mean":4.09,"md_median":2,"md_p90":11,"solo_pct":22.9,"extra_md_pct":57.1,"script_pct":54.3,"data_pct":22.9,"asset_pct":2.9,"pack_pct":91.4,"content_mean":6.89,"content_median":3},{"label":"Other vendors","n":15,"md_mean":2.4,"md_median":1,"md_p90":5,"solo_pct":60.0,"extra_md_pct":26.7,"script_pct":13.3,"data_pct":20.0,"asset_pct":0.0,"pack_pct":0.0,"content_mean":2.87,"content_median":1},{"label":"Community","n":10,"md_mean":4,"md_median":3.0,"md_p90":7,"solo_pct":20.0,"extra_md_pct":80.0,"script_pct":40.0,"data_pct":40.0,"asset_pct":0.0,"pack_pct":0.0,"content_mean":5.6,"content_median":4.0},{"label":"All","n":100,"md_mean":2.96,"md_median":1.0,"md_p90":8,"solo_pct":51.0,"extra_md_pct":39.0,"script_pct":27.0,"data_pct":17.0,"asset_pct":1.0,"pack_pct":32.0,"content_mean":5.72,"content_median":1.0}],"pub_pop":[{"label":"Anthropic","n":368,"md_mean":1.79,"md_median":1.0,"md_p90":5,"solo_pct":77.2,"extra_md_pct":20.4,"script_pct":5.4,"data_pct":4.1,"asset_pct":0.8,"pack_pct":0.0,"content_mean":2.95,"content_median":1.0},{"label":"OpenAI","n":176,"md_mean":3.51,"md_median":1.0,"md_p90":12,"solo_pct":29.0,"extra_md_pct":38.6,"script_pct":50.0,"data_pct":18.2,"asset_pct":4.5,"pack_pct":89.8,"content_mean":5.46,"content_median":2.0},{"label":"Other vendors","n":72,"md_mean":2.75,"md_median":1.0,"md_p90":5,"solo_pct":58.3,"extra_md_pct":36.1,"script_pct":6.9,"data_pct":23.6,"asset_pct":0.0,"pack_pct":0.0,"content_mean":3.15,"content_median":1.0},{"label":"Community","n":371,"md_mean":4.57,"md_median":4,"md_p90":8,"solo_pct":22.6,"extra_md_pct":74.7,"script_pct":53.4,"data_pct":25.3,"asset_pct":0.3,"pack_pct":0.0,"content_mean":6.85,"content_median":5},{"label":"All","n":987,"md_mean":3.21,"md_median":1,"md_p90":7,"solo_pct":46.7,"extra_md_pct":45.2,"script_pct":31.5,"data_pct":16.0,"asset_pct":1.2,"pack_pct":16.0,"content_mean":4.88,"content_median":2}],"all_skills":{"n":2253,"md_mean":4.61,"md_median":1},"eligible_n":987,"subdirs":{"agents":32.0,"references":29.0,"scripts":25.0,"assets":12.0,"reference":5.0,"evals":3.0,"examples":2.0,"evaluations":2.0,"workflows":1.0,"state-policy":1.0,"helpers":1.0,"specifications":1.0},"rows":[{"pub":"Anthropic","repo":"anthropics/claude-for-financial-advisors","plugin":"skills","name":"post-meeting","domain":"investing-banking-pe","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":89,"quality":"substantive","md_roles":"none","nonmd":"none","url":"https://github.com/anthropics/claude-for-financial-advisors/tree/HEAD/skills/post-meeting"},{"pub":"Anthropic","repo":"anthropics/claude-for-legal","plugin":"ai-governance-legal","name":"policy-monitor","domain":"legal-compliance","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":355,"quality":"substantive","md_roles":"none","nonmd":"none","url":"https://github.com/anthropics/claude-for-legal/tree/HEAD/ai-governance-legal/skills/policy-monitor"},{"pub":"Anthropic","repo":"anthropics/claude-for-legal","plugin":"commercial-legal","name":"nda-review","domain":"legal-compliance","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":313,"quality":"substantive","md_roles":"none","nonmd":"none","url":"https://github.com/anthropics/claude-for-legal/tree/HEAD/commercial-legal/skills/nda-review"},{"pub":"Anthropic","repo":"anthropics/claude-for-legal","plugin":"corporate-legal","name":"integration-management","domain":"legal-compliance","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":554,"quality":"substantive","md_roles":"none","nonmd":"none","url":"https://github.com/anthropics/claude-for-legal/tree/HEAD/corporate-legal/skills/integration-management"},{"pub":"Anthropic","repo":"anthropics/claude-for-legal","plugin":"employment-legal","name":"worker-classification","domain":"legal-compliance","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":400,"quality":"substantive","md_roles":"none","nonmd":"none","url":"https://github.com/anthropics/claude-for-legal/tree/HEAD/employment-legal/skills/worker-classification"},{"pub":"Anthropic","repo":"anthropics/claude-for-legal","plugin":"external_plugins","name":"cocounsel-legal:deep-research","domain":"legal-compliance","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":133,"quality":"moderate","md_roles":"none","nonmd":"none","url":"https://github.com/anthropics/claude-for-legal/tree/HEAD/external_plugins/cocounsel-legal/skills/deep-research"},{"pub":"Anthropic","repo":"anthropics/claude-for-legal","plugin":"ip-legal","name":"cease-desist","domain":"legal-compliance","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":502,"quality":"substantive","md_roles":"none","nonmd":"none","url":"https://github.com/anthropics/claude-for-legal/tree/HEAD/ip-legal/skills/cease-desist"},{"pub":"Anthropic","repo":"anthropics/claude-for-legal","plugin":"law-student","name":"irac-practice","domain":"legal-compliance","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":179,"quality":"substantive","md_roles":"none","nonmd":"none","url":"https://github.com/anthropics/claude-for-legal/tree/HEAD/law-student/skills/irac-practice"},{"pub":"Anthropic","repo":"anthropics/claude-for-legal","plugin":"legal-clinic","name":"research-start","domain":"legal-compliance","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":204,"quality":"substantive","md_roles":"none","nonmd":"none","url":"https://github.com/anthropics/claude-for-legal/tree/HEAD/legal-clinic/skills/research-start"},{"pub":"Anthropic","repo":"anthropics/claude-for-legal","plugin":"litigation-legal","name":"deposition-prep","domain":"legal-compliance","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":205,"quality":"substantive","md_roles":"none","nonmd":"none","url":"https://github.com/anthropics/claude-for-legal/tree/HEAD/litigation-legal/skills/deposition-prep"},{"pub":"Anthropic","repo":"anthropics/claude-for-legal","plugin":"litigation-legal","name":"subpoena-triage","domain":"legal-compliance","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":279,"quality":"substantive","md_roles":"none","nonmd":"none","url":"https://github.com/anthropics/claude-for-legal/tree/HEAD/litigation-legal/skills/subpoena-triage"},{"pub":"Anthropic","repo":"anthropics/claude-for-legal","plugin":"privacy-legal","name":"dpa-review","domain":"legal-compliance","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":246,"quality":"substantive","md_roles":"none","nonmd":"none","url":"https://github.com/anthropics/claude-for-legal/tree/HEAD/privacy-legal/skills/dpa-review"},{"pub":"Anthropic","repo":"anthropics/claude-for-legal","plugin":"product-legal","name":"feature-risk-assessment","domain":"legal-compliance","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":159,"quality":"substantive","md_roles":"none","nonmd":"none","url":"https://github.com/anthropics/claude-for-legal/tree/HEAD/product-legal/skills/feature-risk-assessment"},{"pub":"Anthropic","repo":"anthropics/claude-for-legal","plugin":"regulatory-legal","name":"policy-redraft","domain":"legal-compliance","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":200,"quality":"substantive","md_roles":"none","nonmd":"none","url":"https://github.com/anthropics/claude-for-legal/tree/HEAD/regulatory-legal/skills/policy-redraft"},{"pub":"Anthropic","repo":"anthropics/financial-services-plugins","plugin":"partner-built/lseg","name":"fx-carry-trade","domain":"investing-banking-pe","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":52,"quality":"moderate","md_roles":"none","nonmd":"none","url":"https://github.com/anthropics/financial-services-plugins/tree/HEAD/plugins/partner-built/lseg/skills/fx-carry-trade"},{"pub":"Anthropic","repo":"anthropics/financial-services-plugins","plugin":"vertical-plugins/equity-research","name":"sector-overview","domain":"investing-banking-pe","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":89,"quality":"moderate","md_roles":"none","nonmd":"none","url":"https://github.com/anthropics/financial-services-plugins/tree/HEAD/plugins/vertical-plugins/equity-research/skills/sector-overview"},{"pub":"Anthropic","repo":"anthropics/financial-services-plugins","plugin":"vertical-plugins/financial-analysis","name":"competitive-analysis","domain":"investing-banking-pe","md":3,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":3,"lines":280,"quality":"substantive","md_roles":"references/ frameworks (2x2 axis pairs by industry) and table/slide schemas","nonmd":"none","url":"https://github.com/anthropics/financial-services-plugins/tree/HEAD/plugins/vertical-plugins/financial-analysis/skills/competitive-analysis"},{"pub":"Anthropic","repo":"anthropics/financial-services-plugins","plugin":"vertical-plugins/fund-admin","name":"accrual-schedule","domain":"finance-accounting","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":38,"quality":"moderate","md_roles":"none","nonmd":"none","url":"https://github.com/anthropics/financial-services-plugins/tree/HEAD/plugins/vertical-plugins/fund-admin/skills/accrual-schedule"},{"pub":"Anthropic","repo":"anthropics/financial-services-plugins","plugin":"vertical-plugins/investment-banking","name":"merger-model","domain":"investing-banking-pe","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":112,"quality":"substantive","md_roles":"none","nonmd":"none","url":"https://github.com/anthropics/financial-services-plugins/tree/HEAD/plugins/vertical-plugins/investment-banking/skills/merger-model"},{"pub":"Anthropic","repo":"anthropics/financial-services-plugins","plugin":"vertical-plugins/private-equity","name":"portfolio-monitoring","domain":"investing-banking-pe","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":61,"quality":"moderate","md_roles":"none","nonmd":"none","url":"https://github.com/anthropics/financial-services-plugins/tree/HEAD/plugins/vertical-plugins/private-equity/skills/portfolio-monitoring"},{"pub":"Anthropic","repo":"anthropics/healthcare","plugin":"healthcare","name":"fraud-detection","domain":"legal-compliance","md":8,"script":43,"asset":0,"data":52,"pack":0,"lic":0,"total":104,"lines":154,"quality":"substantive","md_roles":"README; claims-loading, detector-proposal, reference-data guides; scripts dev notes; state-policy crawl checklists","nonmd":"Node detectors/pipeline/renderers, 2 workflow JS, claims SQL schema; 51 state Medicaid policy JSONs, package.json, architecture HTML, .gitignore","url":"https://github.com/anthropics/healthcare/tree/HEAD/plugins/healthcare/skills/fraud-detection"},{"pub":"Anthropic","repo":"anthropics/knowledge-work-plugins","plugin":"bio-research","name":"scientific-problem-selection","domain":"science-research","md":10,"script":0,"asset":0,"data":0,"pack":0,"lic":1,"total":11,"lines":270,"quality":"substantive","md_roles":"references/ 9 numbered sub-skill guides (intuition pumps, risk, decision tree, etc.)","nonmd":"Apache 2.0 LICENSE.txt","url":"https://github.com/anthropics/knowledge-work-plugins/tree/HEAD/bio-research/skills/scientific-problem-selection"},{"pub":"Anthropic","repo":"anthropics/knowledge-work-plugins","plugin":"customer-support","name":"draft-response","domain":"customer-support","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":419,"quality":"substantive","md_roles":"none","nonmd":"none","url":"https://github.com/anthropics/knowledge-work-plugins/tree/HEAD/customer-support/skills/draft-response"},{"pub":"Anthropic","repo":"anthropics/knowledge-work-plugins","plugin":"data","name":"write-query","domain":"data-analytics-bi","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":123,"quality":"moderate","md_roles":"none","nonmd":"none","url":"https://github.com/anthropics/knowledge-work-plugins/tree/HEAD/data/skills/write-query"},{"pub":"Anthropic","repo":"anthropics/knowledge-work-plugins","plugin":"design","name":"design-system","domain":"design-creative-media","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":191,"quality":"substantive","md_roles":"none","nonmd":"none","url":"https://github.com/anthropics/knowledge-work-plugins/tree/HEAD/design/skills/design-system"},{"pub":"Anthropic","repo":"anthropics/knowledge-work-plugins","plugin":"finance","name":"sox-testing","domain":"finance-accounting","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":219,"quality":"substantive","md_roles":"none","nonmd":"none","url":"https://github.com/anthropics/knowledge-work-plugins/tree/HEAD/finance/skills/sox-testing"},{"pub":"Anthropic","repo":"anthropics/knowledge-work-plugins","plugin":"human-resources","name":"org-planning","domain":"hr-people","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":29,"quality":"thin","md_roles":"none","nonmd":"none","url":"https://github.com/anthropics/knowledge-work-plugins/tree/HEAD/human-resources/skills/org-planning"},{"pub":"Anthropic","repo":"anthropics/knowledge-work-plugins","plugin":"legal","name":"legal-response","domain":"legal-compliance","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":458,"quality":"substantive","md_roles":"none","nonmd":"none","url":"https://github.com/anthropics/knowledge-work-plugins/tree/HEAD/legal/skills/legal-response"},{"pub":"Anthropic","repo":"anthropics/knowledge-work-plugins","plugin":"marketing","name":"competitive-brief","domain":"marketing-content","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":332,"quality":"substantive","md_roles":"none","nonmd":"none","url":"https://github.com/anthropics/knowledge-work-plugins/tree/HEAD/marketing/skills/competitive-brief"},{"pub":"Anthropic","repo":"anthropics/knowledge-work-plugins","plugin":"operations","name":"status-report","domain":"operations-admin","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":78,"quality":"moderate","md_roles":"none","nonmd":"none","url":"https://github.com/anthropics/knowledge-work-plugins/tree/HEAD/operations/skills/status-report"},{"pub":"Anthropic","repo":"anthropics/knowledge-work-plugins","plugin":"partner-built/common-room","name":"compose-outreach","domain":"sales-crm","md":2,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":2,"lines":136,"quality":"substantive","md_roles":"references/ outreach format rules and examples for email, call script, LinkedIn","nonmd":"none","url":"https://github.com/anthropics/knowledge-work-plugins/tree/HEAD/partner-built/common-room/skills/compose-outreach"},{"pub":"Anthropic","repo":"anthropics/knowledge-work-plugins","plugin":"product-management","name":"competitive-brief","domain":"product-management","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":303,"quality":"substantive","md_roles":"none","nonmd":"none","url":"https://github.com/anthropics/knowledge-work-plugins/tree/HEAD/product-management/skills/competitive-brief"},{"pub":"Anthropic","repo":"anthropics/knowledge-work-plugins","plugin":"sales","name":"customer-health","domain":"sales-crm","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":109,"quality":"substantive","md_roles":"none","nonmd":"none","url":"https://github.com/anthropics/knowledge-work-plugins/tree/HEAD/sales/skills/customer-health"},{"pub":"Anthropic","repo":"anthropics/knowledge-work-plugins","plugin":"sales","name":"handle-objection","domain":"sales-crm","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":94,"quality":"substantive","md_roles":"none","nonmd":"none","url":"https://github.com/anthropics/knowledge-work-plugins/tree/HEAD/sales/skills/handle-objection"},{"pub":"Anthropic","repo":"anthropics/knowledge-work-plugins","plugin":"sales","name":"pipeline-review","domain":"sales-crm","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":98,"quality":"substantive","md_roles":"none","nonmd":"none","url":"https://github.com/anthropics/knowledge-work-plugins/tree/HEAD/sales/skills/pipeline-review"},{"pub":"Anthropic","repo":"anthropics/knowledge-work-plugins","plugin":"sales","name":"stakeholder-map","domain":"sales-crm","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":108,"quality":"substantive","md_roles":"none","nonmd":"none","url":"https://github.com/anthropics/knowledge-work-plugins/tree/HEAD/sales/skills/stakeholder-map"},{"pub":"Anthropic","repo":"anthropics/knowledge-work-plugins","plugin":"small-business","name":"ap-processor","domain":"finance-accounting","md":6,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":6,"lines":159,"quality":"substantive","md_roles":"reference/ intake/extraction, coding rules, PO matching, payment run, gotchas","nonmd":"none","url":"https://github.com/anthropics/knowledge-work-plugins/tree/HEAD/small-business/skills/ap-processor"},{"pub":"Anthropic","repo":"anthropics/knowledge-work-plugins","plugin":"small-business","name":"job-post-builder","domain":"hr-people","md":9,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":9,"lines":205,"quality":"substantive","md_roles":"reference/ role intake, post/interview/offer templates, DocuSign routing, gotchas, worked example","nonmd":"none","url":"https://github.com/anthropics/knowledge-work-plugins/tree/HEAD/small-business/skills/job-post-builder"},{"pub":"Anthropic","repo":"anthropics/knowledge-work-plugins","plugin":"small-business","name":"proposal-builder","domain":"sales-crm","md":6,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":6,"lines":169,"quality":"substantive","md_roles":"reference/ discovery extraction, pricing method, proposal structure, output template, gotchas","nonmd":"none","url":"https://github.com/anthropics/knowledge-work-plugins/tree/HEAD/small-business/skills/proposal-builder"},{"pub":"Anthropic","repo":"anthropics/skills","plugin":"skills","name":"docx","domain":"docs-office-files","md":1,"script":15,"asset":0,"data":44,"pack":0,"lic":1,"total":61,"lines":92,"quality":"substantive","md_roles":"none","nonmd":"Python scripts for comments, merging runs, accepting changes, validation, soffice; OOXML XSD schemas; comment XML templates; license","url":"https://github.com/anthropics/skills/tree/HEAD/skills/docx"},{"pub":"OpenAI","repo":"openai/plugins","plugin":"adobe","name":"adobe-create-mockups","domain":"design-creative-media","md":1,"script":0,"asset":0,"data":0,"pack":3,"lic":0,"total":4,"lines":438,"quality":"substantive","md_roles":"none","nonmd":"agents/openai.yaml UI metadata; two SVG icons","url":"https://github.com/openai/plugins/tree/HEAD/plugins/adobe/skills/adobe-create-mockups"},{"pub":"OpenAI","repo":"openai/plugins","plugin":"boltz-api-cli","name":"boltz-protein-design","domain":"science-research","md":4,"script":6,"asset":0,"data":1,"pack":1,"lic":0,"total":12,"lines":107,"quality":"substantive","md_roles":"references/ on Boltz API payloads, results layout/metrics, target-exploration procedure","nonmd":"Python target-exploration helpers (crop, disorder, site scan, results analysis); requirements.txt; openai.yaml metadata","url":"https://github.com/openai/plugins/tree/HEAD/plugins/boltz-api-cli/skills/boltz-protein-design"},{"pub":"OpenAI","repo":"openai/plugins","plugin":"boltz-api-cli","name":"boltz-small-molecule-design","domain":"science-research","md":3,"script":0,"asset":0,"data":0,"pack":1,"lic":0,"total":4,"lines":79,"quality":"moderate","md_roles":"references/ on Boltz API payload shapes and results layout/metrics","nonmd":"agents/openai.yaml Codex interface metadata (display name, default prompt)","url":"https://github.com/openai/plugins/tree/HEAD/plugins/boltz-api-cli/skills/boltz-small-molecule-design"},{"pub":"OpenAI","repo":"openai/plugins","plugin":"build-web-data-visualization","name":"visualization-strategy-and-critique","domain":"data-analytics-bi","md":5,"script":0,"asset":0,"data":0,"pack":1,"lic":0,"total":6,"lines":207,"quality":"substantive","md_roles":"references/ on chart selection, critique lenses, decision framing, Tufte/Munzner/Cairo synthesis","nonmd":"agents/openai.yaml UI metadata","url":"https://github.com/openai/plugins/tree/HEAD/plugins/build-web-data-visualization/skills/visualization-strategy-and-critique"},{"pub":"OpenAI","repo":"openai/plugins","plugin":"canva","name":"canva-bulk-create","domain":"design-creative-media","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":125,"quality":"moderate","md_roles":"none","nonmd":"none","url":"https://github.com/openai/plugins/tree/HEAD/plugins/canva/skills/canva-bulk-create"},{"pub":"OpenAI","repo":"openai/plugins","plugin":"creative-production","name":"produce","domain":"design-creative-media","md":16,"script":28,"asset":32,"data":1,"pack":1,"lic":0,"total":78,"lines":50,"quality":"moderate","md_roles":"helpers README; references/ per creative mode (ads, logos, scenes...), contracts, board runtime, renderer","nonmd":"Python prompt-pack/explorer builders; JS/HTML/CSS moodboard, logo, style review apps with SVG/WebP/JPG starter images; JSON pack; yaml","url":"https://github.com/openai/plugins/tree/HEAD/plugins/creative-production/skills/produce"},{"pub":"OpenAI","repo":"openai/plugins","plugin":"data-analytics","name":"gather-business-context","domain":"data-analytics-bi","md":1,"script":0,"asset":0,"data":0,"pack":1,"lic":0,"total":2,"lines":68,"quality":"moderate","md_roles":"none","nonmd":"agents/openai.yaml UI metadata","url":"https://github.com/openai/plugins/tree/HEAD/plugins/data-analytics/skills/gather-business-context"},{"pub":"OpenAI","repo":"openai/plugins","plugin":"data-analytics","name":"kpi-reporting","domain":"data-analytics-bi","md":2,"script":0,"asset":0,"data":0,"pack":1,"lic":0,"total":3,"lines":143,"quality":"substantive","md_roles":"references/report-templates.md: KPI readout output templates (inline update, WBR, scorecard)","nonmd":"agents/openai.yaml UI metadata","url":"https://github.com/openai/plugins/tree/HEAD/plugins/data-analytics/skills/kpi-reporting"},{"pub":"OpenAI","repo":"openai/plugins","plugin":"data-analytics","name":"metric-diagnostics","domain":"data-analytics-bi","md":1,"script":0,"asset":0,"data":0,"pack":1,"lic":0,"total":2,"lines":134,"quality":"substantive","md_roles":"none","nonmd":"agents/openai.yaml UI metadata","url":"https://github.com/openai/plugins/tree/HEAD/plugins/data-analytics/skills/metric-diagnostics"},{"pub":"OpenAI","repo":"openai/plugins","plugin":"google-drive","name":"google-sheets","domain":"docs-office-files","md":10,"script":0,"asset":0,"data":0,"pack":3,"lic":0,"total":13,"lines":125,"quality":"moderate","md_roles":"references/ on edit workflow, formulas, charts, batch updates, import, read safety, visual quality, styles","nonmd":"Google Sheets SVG/PNG icons; agents/openai.yaml UI metadata","url":"https://github.com/openai/plugins/tree/HEAD/plugins/google-drive/skills/google-sheets"},{"pub":"OpenAI","repo":"openai/plugins","plugin":"higgsfield","name":"narrator","domain":"design-creative-media","md":1,"script":1,"asset":0,"data":0,"pack":2,"lic":0,"total":4,"lines":165,"quality":"substantive","md_roles":"none","nonmd":"speech_metrics.sh measures TTS speech length/pauses; SVG icon; openai.yaml metadata","url":"https://github.com/openai/plugins/tree/HEAD/plugins/higgsfield/skills/narrator"},{"pub":"OpenAI","repo":"openai/plugins","plugin":"life-science-research","name":"bgee-skill","domain":"science-research","md":1,"script":1,"asset":0,"data":0,"pack":1,"lic":0,"total":3,"lines":37,"quality":"thin","md_roles":"none","nonmd":"Python SPARQL client hardwired to Bgee endpoint and OpenAI agent interface yaml","url":"https://github.com/openai/plugins/tree/HEAD/plugins/life-science-research/skills/bgee-skill"},{"pub":"OpenAI","repo":"openai/plugins","plugin":"life-science-research","name":"encode-skill","domain":"science-research","md":1,"script":1,"asset":0,"data":0,"pack":1,"lic":0,"total":3,"lines":40,"quality":"moderate","md_roles":"none","nonmd":"Python ENCODE REST request client script and OpenAI agent interface yaml","url":"https://github.com/openai/plugins/tree/HEAD/plugins/life-science-research/skills/encode-skill"},{"pub":"OpenAI","repo":"openai/plugins","plugin":"life-science-research","name":"eqtl-catalogue-skill","domain":"science-research","md":1,"script":2,"asset":0,"data":0,"pack":1,"lic":0,"total":4,"lines":41,"quality":"moderate","md_roles":"none","nonmd":"Python eQTL Catalogue REST client, its unit tests, and OpenAI agent interface yaml","url":"https://github.com/openai/plugins/tree/HEAD/plugins/life-science-research/skills/eqtl-catalogue-skill"},{"pub":"OpenAI","repo":"openai/plugins","plugin":"life-science-research","name":"eva-skill","domain":"science-research","md":1,"script":1,"asset":0,"data":0,"pack":1,"lic":0,"total":3,"lines":38,"quality":"moderate","md_roles":"none","nonmd":"Python EVA REST request client script and OpenAI agent interface yaml","url":"https://github.com/openai/plugins/tree/HEAD/plugins/life-science-research/skills/eva-skill"},{"pub":"OpenAI","repo":"openai/plugins","plugin":"life-science-research","name":"gnomad-graphql-skill","domain":"science-research","md":1,"script":1,"asset":0,"data":0,"pack":1,"lic":0,"total":3,"lines":39,"quality":"moderate","md_roles":"none","nonmd":"Python gnomAD GraphQL client script and OpenAI agent interface yaml","url":"https://github.com/openai/plugins/tree/HEAD/plugins/life-science-research/skills/gnomad-graphql-skill"},{"pub":"OpenAI","repo":"openai/plugins","plugin":"life-science-research","name":"gwas-catalog-skill","domain":"science-research","md":1,"script":1,"asset":0,"data":0,"pack":1,"lic":0,"total":3,"lines":42,"quality":"moderate","md_roles":"none","nonmd":"Python GWAS Catalog REST request client script and OpenAI agent interface yaml","url":"https://github.com/openai/plugins/tree/HEAD/plugins/life-science-research/skills/gwas-catalog-skill"},{"pub":"OpenAI","repo":"openai/plugins","plugin":"mixpanel-headless","name":"dashboard-expert","domain":"data-analytics-bi","md":5,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":5,"lines":405,"quality":"substantive","md_roles":"references/ on Mixpanel dashboard API, bookmark pipeline, chart-type guide, 9 dashboard templates","nonmd":"none","url":"https://github.com/openai/plugins/tree/HEAD/plugins/mixpanel-headless/skills/dashboard-expert"},{"pub":"OpenAI","repo":"openai/plugins","plugin":"ngs-analysis","name":"ngs-bulk-rnaseq-differential-expression","domain":"science-research","md":1,"script":0,"asset":0,"data":0,"pack":1,"lic":0,"total":2,"lines":75,"quality":"substantive","md_roles":"none","nonmd":"agents/openai.yaml UI metadata only; DE runner scripts live at plugin level","url":"https://github.com/openai/plugins/tree/HEAD/plugins/ngs-analysis/skills/ngs-bulk-rnaseq-differential-expression"},{"pub":"OpenAI","repo":"openai/plugins","plugin":"ngs-analysis","name":"ngs-chip-cutrun-peaks-qc","domain":"science-research","md":1,"script":0,"asset":0,"data":0,"pack":1,"lic":0,"total":2,"lines":81,"quality":"substantive","md_roles":"none","nonmd":"agents/openai.yaml UI metadata only; pipeline runner scripts live at plugin level, outside skill dir","url":"https://github.com/openai/plugins/tree/HEAD/plugins/ngs-analysis/skills/ngs-chip-cutrun-peaks-qc"},{"pub":"OpenAI","repo":"openai/plugins","plugin":"notion","name":"notion-meeting-intelligence","domain":"productivity-communication","md":13,"script":0,"asset":0,"data":2,"pack":3,"lic":1,"total":19,"lines":66,"quality":"moderate","md_roles":"reference/ 6 meeting templates + selection guide; examples/ 4 meeting preps; evaluations README","nonmd":"Notion icons (svg/png), two eval scenario JSONs, agents/openai.yaml, LICENSE.txt","url":"https://github.com/openai/plugins/tree/HEAD/plugins/notion/skills/notion-meeting-intelligence"},{"pub":"OpenAI","repo":"openai/plugins","plugin":"nvidia","name":"aiq-research","domain":"other","md":3,"script":1,"asset":0,"data":1,"pack":2,"lic":0,"total":7,"lines":357,"quality":"moderate","md_roles":"BENCHMARK.md eval report; skill-card.md model-card style metadata/risks","nonmd":"aiq.py stdlib CLI for AI-Q backend jobs; evals.json; openai.yaml; sigstore signature file (skill.oms.sig)","url":"https://github.com/openai/plugins/tree/HEAD/plugins/nvidia/skills/aiq-research"},{"pub":"OpenAI","repo":"openai/plugins","plugin":"product-design","name":"audit","domain":"design-creative-media","md":2,"script":0,"asset":0,"data":0,"pack":1,"lic":0,"total":3,"lines":161,"quality":"substantive","md_roles":"references/design-audit-framework.md: UX and accessibility audit lenses/modes","nonmd":"agents/openai.yaml UI metadata","url":"https://github.com/openai/plugins/tree/HEAD/plugins/product-design/skills/audit"},{"pub":"OpenAI","repo":"openai/plugins","plugin":"public-equity-investing","name":"comps-valuation","domain":"investing-banking-pe","md":15,"script":3,"asset":0,"data":1,"pack":1,"lic":0,"total":20,"lines":80,"quality":"substantive","md_roles":"references/ peer selection, valuation read-through, staleness, templates; workbook/ spec, QA, memo template","nonmd":"3 Python scripts (create comps template, materialize screening comps, audit workbook); requirements.txt; openai.yaml","url":"https://github.com/openai/plugins/tree/HEAD/plugins/public-equity-investing/skills/comps-valuation"},{"pub":"OpenAI","repo":"openai/plugins","plugin":"public-equity-investing","name":"financials-normalizer","domain":"investing-banking-pe","md":6,"script":3,"asset":0,"data":1,"pack":2,"lic":0,"total":12,"lines":115,"quality":"substantive","md_roles":"references/ on source protocol, normalization schema, line-item taxonomy, QA rules, integration","nonmd":"3 Python scripts (build source index, normalize, validate financials); line-item alias CSV; icon svg; openai.yaml","url":"https://github.com/openai/plugins/tree/HEAD/plugins/public-equity-investing/skills/financials-normalizer"},{"pub":"OpenAI","repo":"openai/plugins","plugin":"public-equity-investing","name":"memo-builder","domain":"investing-banking-pe","md":7,"script":1,"asset":0,"data":0,"pack":1,"lic":0,"total":9,"lines":155,"quality":"substantive","md_roles":"references/ on memo modes, output contracts, quality workflow, sector overlays, source policy, dashboard pack","nonmd":"build_memo_package.py generating DOCX/HTML memo packages; agents/openai.yaml","url":"https://github.com/openai/plugins/tree/HEAD/plugins/public-equity-investing/skills/memo-builder"},{"pub":"OpenAI","repo":"openai/plugins","plugin":"public-equity-investing","name":"thesis-tracker","domain":"investing-banking-pe","md":9,"script":1,"asset":0,"data":2,"pack":2,"lic":0,"total":14,"lines":135,"quality":"substantive","md_roles":"references/ on workflow, thesis schema, intake, sector overlays, output templates, guardrails, dashboard pack","nonmd":"Tracker materializer Python script + requirements.txt; blank thesis-tracker starter CSV; icon svg; openai.yaml","url":"https://github.com/openai/plugins/tree/HEAD/plugins/public-equity-investing/skills/thesis-tracker"},{"pub":"OpenAI","repo":"openai/plugins","plugin":"stripe","name":"stripe-directory","domain":"operations-admin","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":77,"quality":"moderate","md_roles":"none","nonmd":"none","url":"https://github.com/openai/plugins/tree/HEAD/plugins/stripe/skills/stripe-directory"},{"pub":"OpenAI","repo":"openai/plugins","plugin":"zotero","name":"Zotero","domain":"science-research","md":2,"script":1,"asset":0,"data":0,"pack":2,"lic":0,"total":5,"lines":103,"quality":"moderate","md_roles":"references/local-api-routes.md: Zotero local API endpoint reference","nonmd":"zotero.py stdlib CLI helper (search, BibTeX export, cite insertion); icon png; openai.yaml","url":"https://github.com/openai/plugins/tree/HEAD/plugins/zotero/skills/zotero"},{"pub":"OpenAI","repo":"openai/role-specific-plugins","plugin":"data-analytics","name":"build-report","domain":"data-analytics-bi","md":4,"script":1,"asset":0,"data":0,"pack":1,"lic":0,"total":6,"lines":227,"quality":"substantive","md_roles":"Audience specs (executive, technical) and MCP app report delivery spec","nonmd":"Python script embedding precompiled Recharts runtime into self-contained HTML report; agent interface yaml","url":"https://github.com/openai/role-specific-plugins/tree/HEAD/plugins/data-analytics/skills/build-report"},{"pub":"OpenAI","repo":"openai/role-specific-plugins","plugin":"sales","name":"build-competitive-brief","domain":"sales-crm","md":3,"script":0,"asset":0,"data":1,"pack":1,"lic":0,"total":5,"lines":237,"quality":"substantive","md_roles":"references/ output contract (section order) and source-priority authority rules","nonmd":"agents/openai.yaml; references/request-schema.yaml structured input schema","url":"https://github.com/openai/role-specific-plugins/tree/HEAD/plugins/sales/skills/build-competitive-brief"},{"pub":"OpenAI","repo":"openai/role-specific-plugins","plugin":"sales","name":"sales-company-research","domain":"sales-crm","md":1,"script":0,"asset":0,"data":0,"pack":1,"lic":0,"total":2,"lines":83,"quality":"moderate","md_roles":"none","nonmd":"agents/openai.yaml UI metadata and invocation policy","url":"https://github.com/openai/role-specific-plugins/tree/HEAD/plugins/sales/skills/sales-company-research"},{"pub":"OpenAI","repo":"openai/skills","plugin":".curated","name":"speech","domain":"design-creative-media","md":11,"script":1,"asset":0,"data":0,"pack":3,"lic":1,"total":16,"lines":145,"quality":"moderate","md_roles":"10 references: CLI, audio API, prompting, voice directions, use-case templates, network troubleshooting","nonmd":"text_to_speech.py CLI for OpenAI Audio API; SVG/PNG icons; openai.yaml; LICENSE.txt","url":"https://github.com/openai/skills/tree/HEAD/skills/.curated/speech"},{"pub":"OpenAI","repo":"openai/skills","plugin":".curated","name":"transcribe","domain":"productivity-communication","md":2,"script":1,"asset":0,"data":0,"pack":3,"lic":1,"total":7,"lines":82,"quality":"moderate","md_roles":"references/api.md: transcription API formats, limits, known-speaker notes","nonmd":"transcribe_diarize.py CLI using OpenAI API; icons (svg/png); openai.yaml; LICENSE.txt","url":"https://github.com/openai/skills/tree/HEAD/skills/.curated/transcribe"},{"pub":"OpenAI","repo":"openai/skills","plugin":".system","name":"imagegen","domain":"design-creative-media","md":6,"script":1,"asset":0,"data":0,"pack":3,"lic":1,"total":11,"lines":280,"quality":"substantive","md_roles":"references/ prompting principles, sample prompts, CLI usage, image API params, network setup","nonmd":"image_gen.py fallback CLI (generate/edit/batch); icons (svg/png); openai.yaml; LICENSE.txt","url":"https://github.com/openai/skills/tree/HEAD/skills/.system/imagegen"},{"pub":"Other vendors","repo":"HubSpot/agent-cli-skills","plugin":"crm-data-quality","name":"crm-data-quality","domain":"sales-crm","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":101,"quality":"substantive","md_roles":"none","nonmd":"none","url":"https://github.com/HubSpot/agent-cli-skills/tree/HEAD/crm-data-quality"},{"pub":"Other vendors","repo":"HubSpot/agent-cli-skills","plugin":"sales-execution","name":"sales-execution","domain":"sales-crm","md":2,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":2,"lines":122,"quality":"substantive","md_roles":"HubSpot activity property names and enum values reference","nonmd":"none","url":"https://github.com/HubSpot/agent-cli-skills/tree/HEAD/sales-execution"},{"pub":"Other vendors","repo":"HubSpot/agent-cli-skills","plugin":"ticket-resolution","name":"ticket-resolution","domain":"customer-support","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":119,"quality":"substantive","md_roles":"none","nonmd":"none","url":"https://github.com/HubSpot/agent-cli-skills/tree/HEAD/ticket-resolution"},{"pub":"Other vendors","repo":"HubSpot/hubspot-mcp-plugins","plugin":"HubSpot-Sales","name":"log-call","domain":"sales-crm","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":170,"quality":"substantive","md_roles":"none","nonmd":"none","url":"https://github.com/HubSpot/hubspot-mcp-plugins/tree/HEAD/HubSpot-Sales/skills/log-call"},{"pub":"Other vendors","repo":"anthropics/claude-plugins-community","plugin":"tres-finance-plugin","name":"tres-asc845-swap-reprice-skill","domain":"finance-accounting","md":1,"script":2,"asset":0,"data":0,"pack":0,"lic":0,"total":3,"lines":223,"quality":"substantive","md_roles":"none","nonmd":"2 Python scripts: orchestrator and ASC 845 repricing engine that produce plan and mutation JSON","url":"https://github.com/anthropics/claude-plugins-community/tree/HEAD/tres-finance-plugin/skills/tres-asc845-swap-reprice-skill"},{"pub":"Other vendors","repo":"anthropics/claude-plugins-community","plugin":"tres-finance-plugin","name":"tres-cost-basis","domain":"finance-accounting","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":942,"quality":"substantive","md_roles":"none","nonmd":"none","url":"https://github.com/anthropics/claude-plugins-community/tree/HEAD/tres-finance-plugin/skills/tres-cost-basis"},{"pub":"Other vendors","repo":"anthropics/claude-plugins-community","plugin":"tres-finance-plugin","name":"tres-rollup-rules","domain":"finance-accounting","md":1,"script":1,"asset":0,"data":0,"pack":0,"lic":0,"total":2,"lines":510,"quality":"substantive","md_roles":"none","nonmd":"HTML/CSS template for rollup-rule proposal report with row patterns","url":"https://github.com/anthropics/claude-plugins-community/tree/HEAD/tres-finance-plugin/skills/tres-rollup-rules"},{"pub":"Other vendors","repo":"anthropics/claude-plugins-community","plugin":"tres-finance-plugin","name":"tres-wallets-upload","domain":"finance-accounting","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":464,"quality":"substantive","md_roles":"none","nonmd":"none","url":"https://github.com/anthropics/claude-plugins-community/tree/HEAD/tres-finance-plugin/skills/tres-wallets-upload"},{"pub":"Other vendors","repo":"atlassian/atlassian-mcp-server","plugin":"skills","name":"jira-sprint-dashboard","domain":"product-management","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":369,"quality":"substantive","md_roles":"none","nonmd":"none","url":"https://github.com/atlassian/atlassian-mcp-server/tree/HEAD/skills/jira-sprint-dashboard"},{"pub":"Other vendors","repo":"box/skills","plugin":"skills","name":"box-legal-workflows-contract","domain":"legal-compliance","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":72,"quality":"moderate","md_roles":"none","nonmd":"none","url":"https://github.com/box/skills/tree/HEAD/skills/box-legal-workflows-contract"},{"pub":"Other vendors","repo":"intuit/quickbooks-claude-plugin","plugin":"skills","name":"chase-overdue-invoices","domain":"finance-accounting","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":283,"quality":"substantive","md_roles":"none","nonmd":"none","url":"https://github.com/intuit/quickbooks-claude-plugin/tree/HEAD/skills/chase-overdue-invoices"},{"pub":"Other vendors","repo":"intuit/quickbooks-claude-plugin","plugin":"skills","name":"payroll-employee-onboarding","domain":"hr-people","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":228,"quality":"substantive","md_roles":"none","nonmd":"none","url":"https://github.com/intuit/quickbooks-claude-plugin/tree/HEAD/skills/payroll-employee-onboarding"},{"pub":"Other vendors","repo":"makenotion/claude-code-notion-plugin","plugin":"notion","name":"notion-spec-to-implementation","domain":"product-management","md":13,"script":0,"asset":0,"data":2,"pack":0,"lic":0,"total":15,"lines":218,"quality":"substantive","md_roles":"reference/ plan, task, progress templates and spec parsing; 3 worked examples; evals README","nonmd":"two JSON evaluation scenarios for spec-to-tasks behavior","url":"https://github.com/makenotion/claude-code-notion-plugin/tree/HEAD/skills/notion/spec-to-implementation"},{"pub":"Other vendors","repo":"zapier/gtm-cheat-codes","plugin":"customer-advocacy","name":"find-customer-social-proof","domain":"marketing-content","md":5,"script":0,"asset":0,"data":1,"pack":0,"lic":0,"total":6,"lines":48,"quality":"thin","md_roles":"README, Zapier MCP/SDK SETUP guide, SCHEMA-MAP field definitions, ONBOARDING-PROMPT","nonmd":"metadata.yaml catalog metadata (function, target user, MCP/SDK roles)","url":"https://github.com/zapier/gtm-cheat-codes/tree/HEAD/skills/customer-advocacy/find-customer-social-proof"},{"pub":"Other vendors","repo":"zapier/gtm-cheat-codes","plugin":"sales-revops","name":"customer-deck-builder","domain":"sales-crm","md":5,"script":0,"asset":0,"data":1,"pack":0,"lic":0,"total":6,"lines":163,"quality":"substantive","md_roles":"README overview, SETUP connection steps, SCHEMA-MAP field mapping, onboarding prompt","nonmd":"metadata.yaml describing GTM function, Zapier MCP/SDK roles and dependencies","url":"https://github.com/zapier/gtm-cheat-codes/tree/HEAD/skills/sales-revops/customer-deck-builder"},{"pub":"Community","repo":"K-Dense-AI/claude-scientific-skills","plugin":"skills","name":"citation-management","domain":"science-research","md":12,"script":8,"asset":0,"data":1,"pack":0,"lic":0,"total":21,"lines":347,"quality":"substantive","md_roles":"references/ on search strategies, metadata extraction, BibTeX formatting, validation; citation checklist","nonmd":"Python scripts for OpenAlex/PubMed/Scholar search, DOI-to-BibTeX, validation; BibTeX template file","url":"https://github.com/K-Dense-AI/claude-scientific-skills/tree/HEAD/skills/citation-management"},{"pub":"Community","repo":"K-Dense-AI/claude-scientific-skills","plugin":"skills","name":"generate-image","domain":"design-creative-media","md":2,"script":1,"asset":0,"data":0,"pack":0,"lic":0,"total":3,"lines":322,"quality":"substantive","md_roles":"references/models.md on OpenRouter image model choices","nonmd":"Python script calling OpenRouter Image API to generate/edit images","url":"https://github.com/K-Dense-AI/claude-scientific-skills/tree/HEAD/skills/generate-image"},{"pub":"Community","repo":"alirezarezvani/claude-skills","plugin":"c-level-advisor","name":"culture-architect","domain":"hr-people","md":3,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":3,"lines":168,"quality":"substantive","md_roles":"references/culture-playbook; templates/culture-code template","nonmd":"none","url":"https://github.com/alirezarezvani/claude-skills/tree/HEAD/c-level-advisor/skills/culture-architect"},{"pub":"Community","repo":"alirezarezvani/claude-skills","plugin":"marketing-skill","name":"popup-cro","domain":"marketing-content","md":2,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":2,"lines":230,"quality":"substantive","md_roles":"references/popup-cro-playbook with detailed popup tactics","nonmd":"none","url":"https://github.com/alirezarezvani/claude-skills/tree/HEAD/marketing-skill/skills/popup-cro"},{"pub":"Community","repo":"alirezarezvani/claude-skills","plugin":"product-team","name":"product-strategist","domain":"product-management","md":4,"script":1,"asset":0,"data":1,"pack":0,"lic":0,"total":6,"lines":228,"quality":"substantive","md_roles":"references/ on OKR framework and strategy types; OKR template in assets/","nonmd":"Python OKR cascade generator script; sample growth OKRs JSON example","url":"https://github.com/alirezarezvani/claude-skills/tree/HEAD/product-team/skills/product-strategist"},{"pub":"Community","repo":"alirezarezvani/claude-skills","plugin":"ra-qm-team","name":"quality-documentation-manager","domain":"legal-compliance","md":3,"script":2,"asset":0,"data":0,"pack":0,"lic":0,"total":5,"lines":442,"quality":"substantive","md_roles":"references/ on document control procedures and 21 CFR Part 11 compliance","nonmd":"Python document metadata validator and document version control scripts","url":"https://github.com/alirezarezvani/claude-skills/tree/HEAD/ra-qm-team/skills/quality-documentation-manager"},{"pub":"Community","repo":"coreyhaines31/marketingskills","plugin":"skills","name":"pricing","domain":"product-management","md":5,"script":0,"asset":0,"data":1,"pack":0,"lic":0,"total":6,"lines":296,"quality":"substantive","md_roles":"references/ on pricing models, tier structure, research methods, pricing page teardown","nonmd":"evals.json with test prompts and expected outputs","url":"https://github.com/coreyhaines31/marketingskills/tree/HEAD/skills/pricing"},{"pub":"Community","repo":"coreyhaines31/marketingskills","plugin":"skills","name":"public-relations","domain":"marketing-content","md":7,"script":0,"asset":0,"data":1,"pack":0,"lic":0,"total":8,"lines":143,"quality":"substantive","md_roles":"references/ on journalist pitching, media outlets, newsjacking, podcast prep, press platforms, story angles","nonmd":"evals/evals.json test prompts with expected outputs","url":"https://github.com/coreyhaines31/marketingskills/tree/HEAD/skills/public-relations"},{"pub":"Community","repo":"phuryn/pm-skills","plugin":"pm-execution","name":"job-stories","domain":"product-management","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":75,"quality":"moderate","md_roles":"none","nonmd":"none","url":"https://github.com/phuryn/pm-skills/tree/HEAD/pm-execution/skills/job-stories"},{"pub":"Community","repo":"phuryn/pm-skills","plugin":"pm-product-discovery","name":"summarize-interview","domain":"product-management","md":1,"script":0,"asset":0,"data":0,"pack":0,"lic":0,"total":1,"lines":54,"quality":"moderate","md_roles":"none","nonmd":"none","url":"https://github.com/phuryn/pm-skills/tree/HEAD/pm-product-discovery/skills/summarize-interview"}],"quality":{"substantive":70,"moderate":27,"thin":3},"robust":{"sample":{"n":100,"md_mean":2.96,"md_median":1.0,"one_md_pct":61.0,"single_file_pct":45.0,"content_single_pct":51.0,"script_pct":27.0,"asset_pct":1.0},"sample_reweighted_to_population":{"md_mean":3.125,"one_md_pct":51.3,"single_file_pct":42.7,"content_single_pct":45.8,"script_pct":27.6,"asset_pct":0.5,"data_pct":22.4,"extra_md_pct":48.7,"weights":{"Anthropic":0.932,"OpenAI":0.509,"Other vendors":0.486,"Community":3.759}},"population":{"n":987,"md_mean":3.21,"md_median":1,"one_md_pct":54.8,"single_file_pct":43.0,"content_single_pct":46.7,"script_pct":31.5,"asset_pct":1.2},"population_without_kdense":{"n":900,"md_mean":2.74,"md_median":1.0,"one_md_pct":59.8,"single_file_pct":46.9,"content_single_pct":51.0,"script_pct":27.3,"asset_pct":1.2},"population_without_claude_for_legal":{"n":884,"md_mean":3.46,"md_median":1.0,"one_md_pct":50.1,"single_file_pct":37.1,"content_single_pct":41.3,"script_pct":35.2,"asset_pct":1.4},"anthropic_population":{"n":368,"md_mean":1.79,"md_median":1.0,"one_md_pct":79.6,"single_file_pct":76.6,"content_single_pct":77.2,"script_pct":5.4,"asset_pct":0.8},"anthropic_without_legal":{"n":265,"md_mean":2.07,"md_median":1,"one_md_pct":73.6,"single_file_pct":70.2,"content_single_pct":70.9,"script_pct":7.5,"asset_pct":1.1},"anthropics_skills_repo":{"n":11,"md_mean":2.45,"md_median":1,"one_md_pct":72.7,"single_file_pct":9.1,"content_single_pct":18.2,"script_pct":54.5,"asset_pct":18.2},"openai_population":{"n":176,"md_mean":3.51,"md_median":1.0,"one_md_pct":61.4,"single_file_pct":9.1,"content_single_pct":29.0,"script_pct":50.0,"asset_pct":4.5},"pooled_share_sample":{"md_total":47.2,"script":20.6,"asset":5.1,"data_config":18.2,"packaging":7.8,"license":1.0,"other":0.2},"pooled_share_sample_without_3_largest":{"md_total":70.6,"script":11.2,"asset":0.0,"data_config":4.4,"packaging":12.5,"license":1.3,"other":0.0},"three_largest":[{"name":"fraud-detection","repo":"anthropics/healthcare","files":104},{"name":"produce","repo":"openai/plugins","files":78},{"name":"docx","repo":"anthropics/skills","files":61}],"files_in_3_largest_pct":38.8,"anthropic_single_file_refs_outside_folder_pct":56.3,"anthropic_single_file_n":284,"readme_like_md_in_sample":7,"near_dups_dropped":31},"audited":144,"audit_mismatch":0,"audit_rejected":13,"audited_non_google":138,"audit_rejected_non_google":7,"replacements":6,"archetypes":[{"title":"SKILL.md only","blurb":"The most common shape. One file carries the whole workflow: scope, checklist, escalation rules, output format.","name":"nda-review","repo":"anthropics/claude-for-legal","pub":"Anthropic","tree":[{"t":"SKILL.md","k":"md"}],"files":1,"url":"https://github.com/anthropics/claude-for-legal/tree/HEAD/commercial-legal/skills/nda-review"},{"title":"Markdown only","blurb":"SKILL.md routes to a reference/ folder of focused .md files that load on demand (progressive disclosure).","name":"proposal-builder","repo":"anthropics/knowledge-work-plugins","pub":"Anthropic","tree":[{"t":"SKILL.md","k":"md"},{"t":"reference/","k":"dir"},{"t":"  discovery_extraction.md","k":"md"},{"t":"  gotchas.md","k":"md"},{"t":"  output_template.md","k":"md"},{"t":"  pricing_method.md","k":"md"},{"t":"  proposal_structure.md","k":"md"}],"files":6,"url":"https://github.com/anthropics/knowledge-work-plugins/tree/HEAD/small-business/skills/proposal-builder"},{"title":"Markdown + data","blurb":"Reference docs plus a structured data file (JSON/YAML/CSV), with no executable code.","name":"customer-deck-builder","repo":"zapier/gtm-cheat-codes","pub":"Other vendors","tree":[{"t":"metadata.yaml","k":"data"},{"t":"ONBOARDING-PROMPT.md","k":"md"},{"t":"README.md","k":"md"},{"t":"SCHEMA-MAP.md","k":"md"},{"t":"SETUP.md","k":"md"},{"t":"SKILL.md","k":"md"}],"files":6,"url":"https://github.com/zapier/gtm-cheat-codes/tree/HEAD/skills/sales-revops/customer-deck-builder"},{"title":"Markdown + scripts","blurb":"References, validation scripts and a lookup CSV, plus Codex UI packaging (agents/openai.yaml, icon).","name":"financials-normalizer","repo":"openai/plugins","pub":"OpenAI","tree":[{"t":"SKILL.md","k":"md"},{"t":"agents/","k":"dir"},{"t":"  openai.yaml","k":"pack"},{"t":"assets/","k":"dir"},{"t":"  icon.svg","k":"pack"},{"t":"references/","k":"dir"},{"t":"  integration-guide.md","k":"md"},{"t":"  line-item-taxonomy.md","k":"md"},{"t":"  line_item_aliases.csv","k":"data"},{"t":"  normalization-schema.md","k":"md"},{"t":"  qa-rules.md","k":"md"},{"t":"  source-protocol.md","k":"md"},{"t":"scripts/","k":"dir"},{"t":"  build_source_index.py","k":"script"},{"t":"  normalize_extracted_financials.py","k":"script"},{"t":"  validate_normalized_financials.py","k":"script"}],"files":12,"url":"https://github.com/openai/plugins/tree/HEAD/plugins/public-equity-investing/skills/financials-normalizer"}]};
+const NS = "http://www.w3.org/2000/svg";
+const $ = (id) => document.getElementById(id);
+const fmt = (v, d = 0) => Number(v).toLocaleString(undefined, { minimumFractionDigits: d, maximumFractionDigits: d });
+const pct = (v) => `${Math.round(v)}%`;
+
+function el(tag, attrs = {}, parent, text) {
+  const n = document.createElementNS(NS, tag);
+  for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v);
+  if (text != null) n.textContent = text;
+  if (parent) parent.appendChild(n);
+  return n;
+}
+function h(tag, attrs = {}, parent, text) {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === "class") n.className = v; else n.setAttribute(k, v);
+  }
+  if (text != null) n.textContent = text;
+  if (parent) parent.appendChild(n);
+  return n;
+}
+
+/* tooltip */
+const tip = $("tip");
+function showTip(evt, value, label) {
+  tip.replaceChildren();
+  h("b", {}, tip, value);
+  h("span", { class: "l" }, tip, label);
+  tip.hidden = false;
+  let x, y;
+  if (evt.clientX != null && evt.type !== "focus") { x = evt.clientX; y = evt.clientY; }
+  else { const r = evt.target.getBoundingClientRect(); x = r.left + r.width / 2; y = r.top; }
+  const w = tip.offsetWidth, hgt = tip.offsetHeight;
+  tip.style.left = Math.min(window.innerWidth - w - 8, Math.max(8, x + 12)) + "px";
+  tip.style.top = Math.max(8, y - hgt - 12) + "px";
+}
+function hideTip() { tip.hidden = true; }
+function hover(node, value, label) {
+  node.setAttribute("tabindex", "0");
+  node.addEventListener("pointermove", (e) => showTip(e, value, label));
+  node.addEventListener("pointerleave", hideTip);
+  node.addEventListener("focus", (e) => showTip(e, value, label));
+  node.addEventListener("blur", hideTip);
+}
+
+/* rounded-end bar path: square at baseline, 4px radius at data end */
+function vbar(x, y, w, hgt, r = 4) {
+  r = Math.min(r, hgt, w / 2);
+  return `M${x},${y + hgt}V${y + r}Q${x},${y} ${x + r},${y}H${x + w - r}Q${x + w},${y} ${x + w},${y + r}V${y + hgt}Z`;
+}
+function hbar(x, y, w, hgt, r = 4) {
+  r = Math.min(r, w, hgt / 2);
+  return `M${x},${y}H${x + w - r}Q${x + w},${y} ${x + w},${y + r}V${y + hgt - r}Q${x + w},${y + hgt} ${x + w - r},${y + hgt}H${x}Z`;
+}
+
+/* ---------- header ---------- */
+(function header() {
+  const n = D.n, one = D.md_hist["1"], solo = D.shapes_sample.find((r) => r.label === "All").solo;
+  const scr = D.contains.find((c) => c.k.startsWith("Scripts")).v;
+  const ast = D.contains.find((c) => c.k.startsWith("Binary")).v;
+  const R = D.robust;
+  const lede = $("lede");
+  lede.replaceChildren();
+  const parts = [
+    ["Across ", false], [`${n} audited, production knowledge-work skills`, true],
+    [" from Anthropic, OpenAI and other publishers, a skill folder holds on average ", false],
+    [`${fmt(D.md_mean, 1)} markdown files`, true], [", but the median is ", false], [`${fmt(D.md_median)}`, true],
+    [`: roughly half the skills have no markdown beyond SKILL.md, and a long tail of reference-heavy skills (up to ${D.md_max} files) pulls the mean up. A quarter to a third of skills ship scripts or code; binary assets such as images, fonts or Office templates are close to nonexistent. The full census of ${fmt(R.population.n)} eligible skills gives the same picture (mean ${fmt(R.population.md_mean, 1)}, median ${fmt(R.population.md_median)}).`, false],
+  ];
+  for (const [t, b] of parts) { if (b) h("strong", {}, lede, t); else lede.appendChild(document.createTextNode(t)); }
+
+  const tiles = [
+    { cls: "hero", label: "Markdown files per skill", value: fmt(D.md_mean, 1), sub: `mean · median ${fmt(D.md_median)} · 90th pct ${D.md_p90} · max ${D.md_max}` },
+    { label: "Nothing but SKILL.md", value: pct(D.solo_pct), sub: `ignoring OpenAI UI metadata and licenses; ${pct(R.sample.single_file_pct)} are literally one file` },
+    { label: "Have extra .md files", value: pct(D.contains[0].v), sub: "mostly references/ docs" },
+    { label: "Include scripts or code", value: pct(scr), sub: "Python, JS, shell, SQL, HTML" },
+    { label: "Include binary assets", value: pct(ast), sub: "images, fonts, Office/PDF" },
+  ];
+  const root = $("tiles");
+  for (const t of tiles) {
+    const d = h("div", { class: "tile" + (t.cls ? " " + t.cls : "") }, root);
+    h("span", { class: "label" }, d, t.label);
+    h("span", { class: "value" }, d, t.value);
+    h("span", { class: "sub" }, d, t.sub);
+  }
+})();
+
+/* ---------- md histogram ---------- */
+(function mdHist() {
+  const svg = $("md-hist");
+  const bins = Object.entries(D.md_hist);
+  const W = 520, H = 280, m = { t: 26, r: 8, b: 44, l: 36 };
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  const iw = W - m.l - m.r, ih = H - m.t - m.b;
+  const max = Math.max(...bins.map((b) => b[1]));
+  const top = Math.ceil(max / 10) * 10;
+  for (let v = 0; v <= top; v += 10) {
+    const y = m.t + ih - (v / top) * ih;
+    el("line", { x1: m.l, x2: W - m.r, y1: y, y2: y, class: v === 0 ? "axis" : "gridline" }, svg);
+    el("text", { x: m.l - 8, y: y + 4, "text-anchor": "end" }, svg, v);
+  }
+  const band = iw / bins.length, bw = Math.min(56, band * 0.62);
+  bins.forEach(([k, v], i) => {
+    const x = m.l + band * i + (band - bw) / 2, bh = (v / top) * ih, y = m.t + ih - bh;
+    const g = el("g", { class: "row" }, svg);
+    el("rect", { x: m.l + band * i, y: m.t, width: band, height: ih, class: "hit" }, g);
+    if (v > 0) el("path", { d: vbar(x, y, bw, bh), class: "bar" }, g);
+    el("text", { x: x + bw / 2, y: y - 7, "text-anchor": "middle", class: "val" }, g, v);
+    el("text", { x: x + bw / 2, y: m.t + ih + 18, "text-anchor": "middle" }, g, k);
+    hover(g, `${v} skills`, k === "1" ? "just SKILL.md as markdown" : `${k} markdown files`);
+  });
+  el("text", { x: m.l + iw / 2, y: H - 6, "text-anchor": "middle" }, svg, "markdown files in the folder (incl. SKILL.md)");
+  el("text", { x: m.l, y: 12 }, svg, "skills");
+  $("md-sub").textContent = `Mean ${fmt(D.md_mean, 2)}, median ${fmt(D.md_median)}. The distribution is heavily skewed: ${D.md_hist["1"]} of ${D.n} skills have exactly one markdown file (SKILL.md itself), and the tail runs to ${D.md_max}.`;
+})();
+
+/* ---------- horizontal % bars ---------- */
+function hbars(svgId, items, opts = {}) {
+  const svg = $(svgId);
+  const W = opts.W || 520, rowH = opts.rowH || 34, labelW = opts.labelW || 230;
+  const m = { t: 6, r: 44, b: 6 };
+  const H = m.t + m.b + rowH * items.length;
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  const iw = W - labelW - m.r, max = opts.max || 100, bh = Math.min(20, rowH * 0.56);
+  el("line", { x1: labelW, x2: labelW, y1: m.t, y2: H - m.b, class: "axis" }, svg);
+  items.forEach((it, i) => {
+    const y = m.t + i * rowH, w = Math.max(0, (it.v / max) * iw);
+    const g = el("g", { class: "row" }, svg);
+    el("rect", { x: 0, y, width: W, height: rowH, class: "hit" }, g);
+    el("text", { x: labelW - 10, y: y + rowH / 2 + 4, "text-anchor": "end" }, g, it.k);
+    if (w > 0) el("path", { d: hbar(labelW, y + (rowH - bh) / 2, w, bh), class: "bar" }, g);
+    el("text", { x: labelW + w + 6, y: y + rowH / 2 + 4, class: "val" }, g, pct(it.v));
+    hover(g, pct(it.v), it.tip || it.k);
+  });
+}
+hbars("contains", D.contains.map((c) => ({ ...c, tip: `of sampled skills contain: ${c.k}` })), { labelW: 250 });
+(function subdirs() {
+  const items = Object.entries(D.subdirs).slice(0, 7).map(([k, v]) => ({ k: k + "/", v, tip: `of skills have a ${k}/ folder` }));
+  hbars("subdirs", items, { labelW: 130, rowH: 28, W: 460 });
+})();
+
+/* ---------- means table ---------- */
+(function means() {
+  const t = $("means");
+  const rows = [
+    ["Markdown (incl. SKILL.md)", "md_total"], ["Scripts & code", "script"], ["Data & config", "data_config"],
+    ["Binary assets", "asset"], ["OpenAI UI packaging", "packaging"], ["License", "license"], ["Other", "other"],
+  ];
+  const head = h("thead", {}, t), hr = h("tr", {}, head);
+  h("th", {}, hr, "File type"); h("th", { class: "num" }, hr, "Mean per skill"); h("th", { class: "num" }, hr, "Share of files"); h("th", { class: "num" }, hr, "…without 3 largest");
+  const body = h("tbody", {}, t);
+  for (const [label, k] of rows) {
+    const tr = h("tr", {}, body);
+    h("td", {}, tr, label);
+    h("td", { class: "num" }, tr, fmt(D.means[k], 2));
+    h("td", { class: "num" }, tr, pct(D.share[k]));
+    h("td", { class: "num" }, tr, pct(D.robust.pooled_share_sample_without_3_largest[k]));
+  }
+  const total = Object.values(D.means).reduce((a, b) => a + b, 0);
+  const tr = h("tr", { class: "total" }, body);
+  h("td", {}, tr, "All files"); h("td", { class: "num" }, tr, fmt(total, 2)); h("td", { class: "num" }, tr, "100%"); h("td", { class: "num" }, tr, "100%");
+  const big = D.robust.three_largest.map((b) => `${b.name} (${b.files})`).join(", ");
+  $("means-note").textContent = `Pooled shares are dominated by three folders: ${big} hold ${pct(D.robust.files_in_3_largest_pct)} of all sampled files. Without them, markdown is ${pct(D.robust.pooled_share_sample_without_3_largest.md_total)} of files. The per-skill percentages on the left are the more reliable measure.`;
+})();
+
+/* ---------- shapes by publisher (100% stacked) ---------- */
+const SHAPES = [
+  { k: "solo", label: "SKILL.md only", c: "var(--s1)" },
+  { k: "md", label: "+ more markdown", c: "var(--s2)" },
+  { k: "data", label: "+ data or assets, no code", c: "var(--s3)" },
+  { k: "scripts", label: "+ scripts or code", c: "var(--s4)" },
+];
+(function legend() {
+  const lg = $("shape-legend");
+  for (const s of SHAPES) { const sp = h("span", {}, lg); const i = h("i", {}, sp); i.style.background = s.c; sp.appendChild(document.createTextNode(s.label)); }
+})();
+function drawShapes(rows) {
+  const svg = $("shapes");
+  svg.replaceChildren();
+  const W = 980, rowH = 44, labelW = 150, m = { t: 4, r: 8, b: 4 };
+  const H = m.t + m.b + rowH * rows.length;
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  const iw = W - labelW - m.r, bh = 24, gap = 2;
+  rows.forEach((r, i) => {
+    const y = m.t + i * rowH + (rowH - bh) / 2;
+    const lab = el("text", { x: 0, y: y + bh / 2 + 4 }, svg, r.label);
+    if (r.label === "All") lab.setAttribute("font-weight", "600");
+    el("text", { x: labelW - 12, y: y + bh / 2 + 4, "text-anchor": "end", fill: "var(--muted)" }, svg, `n=${r.n}`);
+    let x = labelW;
+    const segs = SHAPES.filter((s) => r[s.k] > 0);
+    segs.forEach((s, j) => {
+      const share = r[s.k] / r.n, full = share * iw;
+      const w = Math.max(1, full - (j < segs.length - 1 ? gap : 0));
+      const g = el("g", {}, svg);
+      const isFirst = j === 0, isLast = j === segs.length - 1;
+      let d;
+      if (isFirst && isLast) d = `M${x},${y}H${x + w - 4}Q${x + w},${y} ${x + w},${y + 4}V${y + bh - 4}Q${x + w},${y + bh} ${x + w - 4},${y + bh}H${x}Z`;
+      else if (isLast) d = hbar(x, y, w, bh);
+      else d = `M${x},${y}H${x + w}V${y + bh}H${x}Z`;
+      el("path", { d, fill: s.c }, g);
+      el("rect", { x, y: y - 8, width: Math.max(w, 1), height: bh + 16, class: "hit" }, g);
+      const label = pct(share * 100);
+      if (w > 44) {
+        const lum = s.k === "data" || s.k === "scripts" ? "#111" : "#fff";
+        el("text", { x: x + 8, y: y + bh / 2 + 4, fill: lum, "font-weight": "600", style: `fill:${lum}` }, g, label);
+      }
+      hover(g, `${label} · ${r[s.k]} skills`, `${r.label}: ${s.label}`);
+      x += full;
+    });
+  });
+}
+function drawPubTable(rows) {
+  const t = $("pubtable");
+  t.replaceChildren();
+  const cols = [
+    ["Publisher", "label"], ["Skills", "n", 0], ["Mean .md", "md_mean", 2], ["Median .md", "md_median", 0],
+    ["90th pct .md", "md_p90", 0], ["SKILL.md only", "solo_pct", "%"], ["Extra .md", "extra_md_pct", "%"],
+    ["Scripts", "script_pct", "%"], ["Data/config", "data_pct", "%"], ["Assets", "asset_pct", "%"],
+    ["Packaging", "pack_pct", "%"], ["Mean content files", "content_mean", 1],
+  ];
+  const tr0 = h("tr", {}, h("thead", {}, t));
+  cols.forEach(([l, , d], i) => h("th", { class: i ? "num" : "" }, tr0, l));
+  const body = h("tbody", {}, t);
+  for (const r of rows) {
+    const tr = h("tr", { class: r.label === "All" ? "total" : "" }, body);
+    cols.forEach(([, k, d], i) => {
+      const v = r[k];
+      const txt = i === 0 ? (r.label === "All" ? "All publishers" : v) : d === "%" ? pct(v) : fmt(v, d);
+      h("td", { class: i ? "num" : "" }, tr, txt);
+    });
+  }
+}
+function setMode(pop) {
+  $("btn-sample").setAttribute("aria-pressed", String(!pop));
+  $("btn-pop").setAttribute("aria-pressed", String(pop));
+  drawShapes(pop ? D.shapes_pop : D.shapes_sample);
+  drawPubTable(pop ? D.pub_pop : D.pub_sample);
+  try { localStorage.setItem("sfa-mode", pop ? "pop" : "sample"); } catch (e) {}
+}
+$("btn-pop").textContent = `All eligible (${fmt(D.eligible_n)})`;
+$("btn-sample").textContent = `Sample (${D.n})`;
+$("btn-sample").addEventListener("click", () => setMode(false));
+$("btn-pop").addEventListener("click", () => setMode(true));
+let startPop = false;
+try { startPop = localStorage.getItem("sfa-mode") === "pop"; } catch (e) {}
+setMode(startPop);
+
+/* ---------- robustness ---------- */
+(function robust() {
+  const R = D.robust, t = $("robust");
+  const rows = [
+    ["This sample", R.sample, ""],
+    ["Sample, reweighted to census publisher mix", R.sample_reweighted_to_population, ""],
+    ["Full census of eligible skills", R.population, ""],
+    ["Census without K-Dense (community)", R.population_without_kdense, ""],
+    ["Census without claude-for-legal", R.population_without_claude_for_legal, ""],
+    ["Anthropic only (census)", R.anthropic_population, ""],
+    ["Anthropic, excluding legal (census)", R.anthropic_without_legal, ""],
+    ["anthropics/skills repo only", R.anthropics_skills_repo, ""],
+    ["OpenAI only (census)", R.openai_population, ""],
+  ];
+  const cols = [["Cut", null], ["Skills", "n", 0], ["Mean .md", "md_mean", 2], ["Median .md", "md_median", 0], ["Exactly 1 .md", "one_md_pct", "%"], ["Single file", "single_file_pct", "%"], ["Scripts/code", "script_pct", "%"], ["Binary assets", "asset_pct", "%"]];
+  const tr0 = h("tr", {}, h("thead", {}, t));
+  cols.forEach(([l], i) => h("th", { class: i ? "num" : "" }, tr0, l));
+  const body = h("tbody", {}, t);
+  for (const [label, r] of rows) {
+    const tr = h("tr", {}, body);
+    h("td", {}, tr, label);
+    cols.slice(1).forEach(([, k, d]) => {
+      const v = r[k];
+      h("td", { class: "num" }, tr, v == null ? "—" : d === "%" ? pct(v) : fmt(v, d));
+    });
+  }
+  $("robust-note").textContent = `The flagship anthropics/skills repo is the exception inside Anthropic: its document skills (docx, pptx, xlsx, pdf) ship dozens of Python helpers and OOXML schemas. Also, ${pct(R.anthropic_single_file_refs_outside_folder_pct)} of Anthropic’s single-file skills point to shared context kept outside the skill folder (a plugin-level CLAUDE.md, CONNECTORS.md or practice profile), so a thin folder does not mean thin context.`;
+})();
+
+/* ---------- archetype trees ---------- */
+(function trees() {
+  const root = $("trees");
+  for (const a of D.archetypes) {
+    const card = h("article", { class: "tree" }, root);
+    h("span", { class: "kind" }, card, a.title);
+    h("h3", {}, card, a.name);
+    h("p", {}, card, a.blurb);
+    const pre = h("pre", {}, card);
+    for (const line of a.tree) {
+      const depth = (line.t.match(/^ */)[0].length) / 2;
+      const sp = h("span", { class: "k-" + line.k }, pre, line.t.trimStart());
+      sp.style.setProperty("--ind", `${depth * 1.2}em`);
+    }
+    const src = h("a", { class: "src", href: a.url, target: "_blank", rel: "noopener" }, card, `${a.repo} · ${a.files} file${a.files === 1 ? "" : "s"}`);
+  }
+})();
+
+/* ---------- full table ---------- */
+(function skills() {
+  const t = $("skills");
+  const cols = [
+    { l: "Skill", k: "name" }, { l: "Publisher", k: "pub" }, { l: "Domain", k: "domain" },
+    { l: ".md", k: "md", n: 1 }, { l: "Scripts", k: "script", n: 1 }, { l: "Data", k: "data", n: 1 },
+    { l: "Assets", k: "asset", n: 1 }, { l: "Pkg", k: "pack", n: 1 }, { l: "Total", k: "total", n: 1 },
+    { l: "SKILL.md lines", k: "lines", n: 1 }, { l: "SKILL.md depth", k: "quality" }, { l: "What the extra files are", k: "nonmd" },
+  ];
+  const head = h("thead", {}, t), hr = h("tr", {}, head);
+  let sortK = null, dir = 1, filt = "All";
+  cols.forEach((c) => {
+    const th = h("th", { class: c.n ? "num" : "", tabindex: "0", scope: "col" }, hr, c.l);
+    const go = () => { dir = sortK === c.k ? -dir : (c.n ? -1 : 1); sortK = c.k; render(); };
+    th.addEventListener("click", go);
+    th.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } });
+    c.th = th;
+  });
+  const body = h("tbody", {}, t);
+  const pubs = ["All", "Anthropic", "OpenAI", "Other vendors", "Community"];
+  const fl = $("filters");
+  for (const p of pubs) {
+    const cnt = p === "All" ? D.rows.length : D.rows.filter((r) => r.pub === p).length;
+    const b = h("button", { type: "button", "aria-pressed": String(p === filt) }, fl, `${p} · ${cnt}`);
+    b.addEventListener("click", () => { filt = p; [...fl.children].forEach((x) => x.setAttribute("aria-pressed", String(x === b))); render(); });
+  }
+  function render() {
+    cols.forEach((c) => c.th.removeAttribute("aria-sort"));
+    let rows = D.rows.filter((r) => filt === "All" || r.pub === filt);
+    if (sortK) {
+      const c = cols.find((c) => c.k === sortK);
+      c.th.setAttribute("aria-sort", dir > 0 ? "ascending" : "descending");
+      rows = [...rows].sort((a, b) => (c.n ? a[sortK] - b[sortK] : String(a[sortK]).localeCompare(String(b[sortK]))) * dir);
+    }
+    body.replaceChildren();
+    for (const r of rows) {
+      const tr = h("tr", {}, body);
+      const td = h("td", {}, tr);
+      const a = h("a", { href: r.url, target: "_blank", rel: "noopener" }, td, r.name);
+      h("div", { class: "sub mono" }, td, `${r.repo}${r.plugin && r.plugin !== "skills" ? " · " + r.plugin : ""}`);
+      h("td", {}, tr, r.pub);
+      h("td", {}, tr, r.domain.replace(/-/g, " "));
+      for (const k of ["md", "script", "data", "asset", "pack", "total", "lines"]) {
+        h("td", { class: "num" + (r[k] === 0 ? " zero" : "") }, tr, fmt(r[k]));
+      }
+      const q = h("td", {}, tr); h("span", { class: "chip q-" + r.quality }, q, r.quality);
+      const d = h("td", {}, tr, r.nonmd === "none" ? "—" : r.nonmd);
+      d.style.whiteSpace = "normal"; d.style.minWidth = "260px"; d.style.fontSize = "12.5px"; d.style.color = "var(--ink-2)";
+    }
+  }
+  render();
+})();
+
+/* ---------- method text ---------- */
+$("readme-li").textContent = `${D.robust.readme_like_md_in_sample} of the sampled markdown files are READMEs or similar rather than skill instructions; removing them does not change the median.`;
+$("method-filter").textContent = `Every folder with a SKILL.md was inventoried (${fmt(D.all_skills.n)} unique skills after removing byte-identical copies). Developer-only repos and plugins were set aside, and ${D.robust.near_dups_dropped} near-duplicate copies (≥90% identical text, e.g. archived or community copies of official skills) were dropped in favour of the canonical source. LLM classifiers labelled each remaining skill as knowledge work or not, and as a task skill vs a router, API reference, setup helper, meta-skill or demo. That left ${fmt(D.eligible_n)} real knowledge-work task skills. The census was not hand-audited; in the audit, ${D.audit_rejected_non_google} of ${D.audited_non_google} non-Google picks (${pct(100 * D.audit_rejected_non_google / D.audited_non_google)}) were rejected, so expect a similar small share of borderline skills in census figures.`;
+$("method-sample").textContent = `Quotas: 40 Anthropic, 35 OpenAI, 15 other vendors, 10 community, chosen to centre the two labs; the robustness table reweights for this. Within each publisher, picks were proportional to plugin size (max 6 per plugin; vendor repos as one stratum), ordered by a hash of SKILL.md so the draw is deterministic. Audit agents read every sampled SKILL.md in full and recounted every file by hand; their counts matched the script on all ${D.audited} skills audited (${D.audit_mismatch} mismatches). ${D.replacements} picks were rejected (routers, a settings helper, a thin stub) and replaced from pre-drawn reserves by a fixed rule. An adversarial reviewer then re-checked 18 skills and the headline claims.`;
+</script>

@@ -1,0 +1,3689 @@
+{
+ "n": 100,
+ "sample": {
+  "n": 100,
+  "md_mean": 2.96,
+  "md_median": 1.0,
+  "md_p90": 8,
+  "md_max": 16,
+  "files_mean": 6.27,
+  "files_median": 2.0,
+  "skill_md_lines_median": 154.5,
+  "skill_md_words_median": 1317.5,
+  "skill_md_only_pct": 45.0,
+  "content_files_mean": 5.72,
+  "content_files_median": 1.0,
+  "skill_md_only_content_pct": 51.0,
+  "md_share_of_content_files_pct": 51.7,
+  "per_category": {
+   "md_total": {
+    "mean_per_skill": 2.96,
+    "pct_skills_with_any": 100.0,
+    "share_of_all_files_pct": 47.2
+   },
+   "script": {
+    "mean_per_skill": 1.29,
+    "pct_skills_with_any": 27.0,
+    "share_of_all_files_pct": 20.6
+   },
+   "asset": {
+    "mean_per_skill": 0.32,
+    "pct_skills_with_any": 1.0,
+    "share_of_all_files_pct": 5.1
+   },
+   "data_config": {
+    "mean_per_skill": 1.14,
+    "pct_skills_with_any": 17.0,
+    "share_of_all_files_pct": 18.2
+   },
+   "packaging": {
+    "mean_per_skill": 0.49,
+    "pct_skills_with_any": 32.0,
+    "share_of_all_files_pct": 7.8
+   },
+   "license": {
+    "mean_per_skill": 0.06,
+    "pct_skills_with_any": 6.0,
+    "share_of_all_files_pct": 1.0
+   },
+   "other": {
+    "mean_per_skill": 0.01,
+    "pct_skills_with_any": 1.0,
+    "share_of_all_files_pct": 0.2
+   }
+  },
+  "pct_with_reference_md_beyond_skill_md": 39.0,
+  "md_histogram": {
+   "1": 61,
+   "2": 8,
+   "3-5": 14,
+   "6-10": 11,
+   "11-20": 6,
+   "21+": 0
+  },
+  "files_histogram": {
+   "1": 45,
+   "2-3": 20,
+   "4-6": 16,
+   "7-10": 5,
+   "11-25": 11,
+   "26+": 3
+  },
+  "content_files_histogram": {
+   "1": 51,
+   "2-3": 20,
+   "4-6": 12,
+   "7-10": 7,
+   "11-25": 7,
+   "26+": 3
+  },
+  "composition_patterns": {
+   "SKILL.md": 51,
+   "md": 15,
+   "SKILL.md + script": 9,
+   "md + script + data_config": 8,
+   "md + script": 8,
+   "md + data_config": 7,
+   "SKILL.md + script + data_config": 1,
+   "md + script + asset + data_config": 1
+  },
+  "subdir_pct": {
+   "agents": 32.0,
+   "references": 29.0,
+   "scripts": 25.0,
+   "assets": 12.0,
+   "reference": 5.0,
+   "evals": 3.0,
+   "examples": 2.0,
+   "evaluations": 2.0,
+   "workflows": 1.0,
+   "state-policy": 1.0,
+   "helpers": 1.0,
+   "specifications": 1.0
+  },
+  "asset_kinds_total": {
+   "image": 48
+  },
+  "top_exts": {
+   ".md": 296,
+   ".py": 61,
+   ".json": 61,
+   ".js": 51,
+   ".xsd": 39,
+   ".yaml": 35,
+   ".svg": 18,
+   ".jpg": 15,
+   ".txt": 9,
+   ".webp": 9,
+   ".css": 7,
+   ".png": 6,
+   ".xml": 5,
+   ".html": 5,
+   ".mjs": 3,
+   ".csv": 2,
+   ".gitignore": 1,
+   ".sql": 1,
+   ".sh": 1,
+   ".sig": 1
+  }
+ },
+ "sample_by_publisher": {
+  "Anthropic": {
+   "n": 40,
+   "md_mean": 1.93,
+   "md_median": 1.0,
+   "md_p90": 6,
+   "md_max": 10,
+   "files_mean": 5.85,
+   "files_median": 1.0,
+   "skill_md_lines_median": 174.0,
+   "skill_md_words_median": 1522.5,
+   "skill_md_only_pct": 80.0,
+   "content_files_mean": 5.8,
+   "content_files_median": 1.0,
+   "skill_md_only_content_pct": 80.0,
+   "md_share_of_content_files_pct": 33.2,
+   "per_category": {
+    "md_total": {
+     "mean_per_skill": 1.93,
+     "pct_skills_with_any": 100.0,
+     "share_of_all_files_pct": 32.9
+    },
+    "script": {
+     "mean_per_skill": 1.45,
+     "pct_skills_with_any": 5.0,
+     "share_of_all_files_pct": 24.8
+    },
+    "asset": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "data_config": {
+     "mean_per_skill": 2.4,
+     "pct_skills_with_any": 5.0,
+     "share_of_all_files_pct": 41.0
+    },
+    "packaging": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "license": {
+     "mean_per_skill": 0.05,
+     "pct_skills_with_any": 5.0,
+     "share_of_all_files_pct": 0.9
+    },
+    "other": {
+     "mean_per_skill": 0.03,
+     "pct_skills_with_any": 2.5,
+     "share_of_all_files_pct": 0.4
+    }
+   },
+   "pct_with_reference_md_beyond_skill_md": 17.5,
+   "md_histogram": {
+    "1": 33,
+    "2": 1,
+    "3-5": 1,
+    "6-10": 5,
+    "11-20": 0,
+    "21+": 0
+   },
+   "files_histogram": {
+    "1": 32,
+    "2-3": 2,
+    "4-6": 2,
+    "7-10": 1,
+    "11-25": 1,
+    "26+": 2
+   },
+   "content_files_histogram": {
+    "1": 32,
+    "2-3": 2,
+    "4-6": 2,
+    "7-10": 2,
+    "11-25": 0,
+    "26+": 2
+   },
+   "composition_patterns": {
+    "SKILL.md": 32,
+    "md": 6,
+    "SKILL.md + script + data_config": 1,
+    "md + script + data_config": 1
+   },
+   "subdir_pct": {
+    "references": 7.5,
+    "reference": 7.5,
+    "scripts": 5.0,
+    "workflows": 2.5,
+    "state-policy": 2.5
+   },
+   "asset_kinds_total": {},
+   "top_exts": {
+    ".md": 77,
+    ".json": 52,
+    ".js": 41,
+    ".xsd": 39,
+    ".py": 15,
+    ".xml": 5,
+    ".txt": 2,
+    ".html": 1,
+    ".gitignore": 1,
+    ".sql": 1
+   }
+  },
+  "OpenAI": {
+   "n": 35,
+   "md_mean": 4.09,
+   "md_median": 2,
+   "md_p90": 11,
+   "md_max": 16,
+   "files_mean": 8.4,
+   "files_median": 4,
+   "skill_md_lines_median": 107,
+   "skill_md_words_median": 1127,
+   "skill_md_only_pct": 5.7,
+   "content_files_mean": 6.89,
+   "content_files_median": 3,
+   "skill_md_only_content_pct": 22.9,
+   "md_share_of_content_files_pct": 59.3,
+   "per_category": {
+    "md_total": {
+     "mean_per_skill": 4.09,
+     "pct_skills_with_any": 100.0,
+     "share_of_all_files_pct": 48.6
+    },
+    "script": {
+     "mean_per_skill": 1.6,
+     "pct_skills_with_any": 54.3,
+     "share_of_all_files_pct": 19.0
+    },
+    "asset": {
+     "mean_per_skill": 0.91,
+     "pct_skills_with_any": 2.9,
+     "share_of_all_files_pct": 10.9
+    },
+    "data_config": {
+     "mean_per_skill": 0.29,
+     "pct_skills_with_any": 22.9,
+     "share_of_all_files_pct": 3.4
+    },
+    "packaging": {
+     "mean_per_skill": 1.4,
+     "pct_skills_with_any": 91.4,
+     "share_of_all_files_pct": 16.7
+    },
+    "license": {
+     "mean_per_skill": 0.11,
+     "pct_skills_with_any": 11.4,
+     "share_of_all_files_pct": 1.4
+    },
+    "other": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    }
+   },
+   "pct_with_reference_md_beyond_skill_md": 57.1,
+   "md_histogram": {
+    "1": 15,
+    "2": 4,
+    "3-5": 7,
+    "6-10": 5,
+    "11-20": 4,
+    "21+": 0
+   },
+   "files_histogram": {
+    "1": 2,
+    "2-3": 12,
+    "4-6": 9,
+    "7-10": 3,
+    "11-25": 8,
+    "26+": 1
+   },
+   "content_files_histogram": {
+    "1": 8,
+    "2-3": 12,
+    "4-6": 5,
+    "7-10": 4,
+    "11-25": 5,
+    "26+": 1
+   },
+   "composition_patterns": {
+    "SKILL.md": 8,
+    "SKILL.md + script": 7,
+    "md": 6,
+    "md + script": 6,
+    "md + script + data_config": 5,
+    "md + data_config": 2,
+    "md + script + asset + data_config": 1
+   },
+   "subdir_pct": {
+    "agents": 91.4,
+    "scripts": 51.4,
+    "references": 48.6,
+    "assets": 28.6,
+    "helpers": 2.9,
+    "examples": 2.9,
+    "reference": 2.9,
+    "evaluations": 2.9,
+    "evals": 2.9,
+    "specifications": 2.9
+   },
+   "asset_kinds_total": {
+    "image": 48
+   },
+   "top_exts": {
+    ".md": 143,
+    ".yaml": 33,
+    ".py": 32,
+    ".svg": 18,
+    ".jpg": 15,
+    ".js": 10,
+    ".webp": 9,
+    ".txt": 7,
+    ".css": 7,
+    ".png": 6,
+    ".json": 4,
+    ".html": 3,
+    ".mjs": 3,
+    ".csv": 2,
+    ".sh": 1,
+    ".sig": 1
+   }
+  },
+  "Other vendors": {
+   "n": 15,
+   "md_mean": 2.4,
+   "md_median": 1,
+   "md_p90": 5,
+   "md_max": 13,
+   "files_mean": 2.87,
+   "files_median": 1,
+   "skill_md_lines_median": 218,
+   "skill_md_words_median": 1129,
+   "skill_md_only_pct": 60.0,
+   "content_files_mean": 2.87,
+   "content_files_median": 1,
+   "skill_md_only_content_pct": 60.0,
+   "md_share_of_content_files_pct": 83.7,
+   "per_category": {
+    "md_total": {
+     "mean_per_skill": 2.4,
+     "pct_skills_with_any": 100.0,
+     "share_of_all_files_pct": 83.7
+    },
+    "script": {
+     "mean_per_skill": 0.2,
+     "pct_skills_with_any": 13.3,
+     "share_of_all_files_pct": 7.0
+    },
+    "asset": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "data_config": {
+     "mean_per_skill": 0.27,
+     "pct_skills_with_any": 20.0,
+     "share_of_all_files_pct": 9.3
+    },
+    "packaging": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "license": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "other": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    }
+   },
+   "pct_with_reference_md_beyond_skill_md": 26.7,
+   "md_histogram": {
+    "1": 11,
+    "2": 1,
+    "3-5": 2,
+    "6-10": 0,
+    "11-20": 1,
+    "21+": 0
+   },
+   "files_histogram": {
+    "1": 9,
+    "2-3": 3,
+    "4-6": 2,
+    "7-10": 0,
+    "11-25": 1,
+    "26+": 0
+   },
+   "content_files_histogram": {
+    "1": 9,
+    "2-3": 3,
+    "4-6": 2,
+    "7-10": 0,
+    "11-25": 1,
+    "26+": 0
+   },
+   "composition_patterns": {
+    "SKILL.md": 9,
+    "md + data_config": 3,
+    "SKILL.md + script": 2,
+    "md": 1
+   },
+   "subdir_pct": {
+    "resources": 6.7,
+    "scripts": 6.7,
+    "references": 6.7,
+    "examples": 6.7,
+    "reference": 6.7,
+    "evaluations": 6.7
+   },
+   "asset_kinds_total": {},
+   "top_exts": {
+    ".md": 36,
+    ".py": 2,
+    ".json": 2,
+    ".yaml": 2,
+    ".html": 1
+   }
+  },
+  "Community": {
+   "n": 10,
+   "md_mean": 4,
+   "md_median": 3.0,
+   "md_p90": 7,
+   "md_max": 12,
+   "files_mean": 5.6,
+   "files_median": 4.0,
+   "skill_md_lines_median": 229.0,
+   "skill_md_words_median": 1330.5,
+   "skill_md_only_pct": 20.0,
+   "content_files_mean": 5.6,
+   "content_files_median": 4.0,
+   "skill_md_only_content_pct": 20.0,
+   "md_share_of_content_files_pct": 71.4,
+   "per_category": {
+    "md_total": {
+     "mean_per_skill": 4.0,
+     "pct_skills_with_any": 100.0,
+     "share_of_all_files_pct": 71.4
+    },
+    "script": {
+     "mean_per_skill": 1.2,
+     "pct_skills_with_any": 40.0,
+     "share_of_all_files_pct": 21.4
+    },
+    "asset": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "data_config": {
+     "mean_per_skill": 0.4,
+     "pct_skills_with_any": 40.0,
+     "share_of_all_files_pct": 7.1
+    },
+    "packaging": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "license": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "other": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    }
+   },
+   "pct_with_reference_md_beyond_skill_md": 80.0,
+   "md_histogram": {
+    "1": 2,
+    "2": 2,
+    "3-5": 4,
+    "6-10": 1,
+    "11-20": 1,
+    "21+": 0
+   },
+   "files_histogram": {
+    "1": 2,
+    "2-3": 3,
+    "4-6": 3,
+    "7-10": 1,
+    "11-25": 1,
+    "26+": 0
+   },
+   "content_files_histogram": {
+    "1": 2,
+    "2-3": 3,
+    "4-6": 3,
+    "7-10": 1,
+    "11-25": 1,
+    "26+": 0
+   },
+   "composition_patterns": {
+    "md + script + data_config": 2,
+    "md + script": 2,
+    "md + data_config": 2,
+    "md": 2,
+    "SKILL.md": 2
+   },
+   "subdir_pct": {
+    "references": 80.0,
+    "scripts": 40.0,
+    "assets": 20.0,
+    "evals": 20.0,
+    "templates": 10.0
+   },
+   "asset_kinds_total": {},
+   "top_exts": {
+    ".md": 40,
+    ".py": 12,
+    ".json": 3,
+    ".bib": 1
+   }
+  }
+ },
+ "sample_by_domain": {
+  "customer-support": {
+   "n": 2,
+   "md_mean": 1,
+   "md_median": 1.0,
+   "md_p90": 1,
+   "md_max": 1,
+   "files_mean": 1,
+   "files_median": 1.0,
+   "skill_md_lines_median": 269.0,
+   "skill_md_words_median": 1414.5,
+   "skill_md_only_pct": 100.0,
+   "content_files_mean": 1,
+   "content_files_median": 1.0,
+   "skill_md_only_content_pct": 100.0,
+   "md_share_of_content_files_pct": 100.0,
+   "per_category": {
+    "md_total": {
+     "mean_per_skill": 1.0,
+     "pct_skills_with_any": 100.0,
+     "share_of_all_files_pct": 100.0
+    },
+    "script": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "asset": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "data_config": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "packaging": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "license": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "other": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    }
+   },
+   "pct_with_reference_md_beyond_skill_md": 0.0,
+   "md_histogram": {
+    "1": 2,
+    "2": 0,
+    "3-5": 0,
+    "6-10": 0,
+    "11-20": 0,
+    "21+": 0
+   },
+   "files_histogram": {
+    "1": 2,
+    "2-3": 0,
+    "4-6": 0,
+    "7-10": 0,
+    "11-25": 0,
+    "26+": 0
+   },
+   "content_files_histogram": {
+    "1": 2,
+    "2-3": 0,
+    "4-6": 0,
+    "7-10": 0,
+    "11-25": 0,
+    "26+": 0
+   },
+   "composition_patterns": {
+    "SKILL.md": 2
+   },
+   "subdir_pct": {},
+   "asset_kinds_total": {},
+   "top_exts": {
+    ".md": 2
+   }
+  },
+  "data-analytics-bi": {
+   "n": 7,
+   "md_mean": 2.71,
+   "md_median": 2,
+   "md_p90": 5,
+   "md_max": 5,
+   "files_mean": 3.57,
+   "files_median": 3,
+   "skill_md_lines_median": 143,
+   "skill_md_words_median": 1818,
+   "skill_md_only_pct": 14.3,
+   "content_files_mean": 2.86,
+   "content_files_median": 2,
+   "skill_md_only_content_pct": 42.9,
+   "md_share_of_content_files_pct": 95.0,
+   "per_category": {
+    "md_total": {
+     "mean_per_skill": 2.71,
+     "pct_skills_with_any": 100.0,
+     "share_of_all_files_pct": 76.0
+    },
+    "script": {
+     "mean_per_skill": 0.14,
+     "pct_skills_with_any": 14.3,
+     "share_of_all_files_pct": 4.0
+    },
+    "asset": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "data_config": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "packaging": {
+     "mean_per_skill": 0.71,
+     "pct_skills_with_any": 71.4,
+     "share_of_all_files_pct": 20.0
+    },
+    "license": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "other": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    }
+   },
+   "pct_with_reference_md_beyond_skill_md": 57.1,
+   "md_histogram": {
+    "1": 3,
+    "2": 1,
+    "3-5": 3,
+    "6-10": 0,
+    "11-20": 0,
+    "21+": 0
+   },
+   "files_histogram": {
+    "1": 1,
+    "2-3": 3,
+    "4-6": 3,
+    "7-10": 0,
+    "11-25": 0,
+    "26+": 0
+   },
+   "content_files_histogram": {
+    "1": 3,
+    "2-3": 1,
+    "4-6": 3,
+    "7-10": 0,
+    "11-25": 0,
+    "26+": 0
+   },
+   "composition_patterns": {
+    "SKILL.md": 3,
+    "md": 3,
+    "md + script": 1
+   },
+   "subdir_pct": {
+    "agents": 71.4,
+    "references": 42.9,
+    "specifications": 14.3,
+    "scripts": 14.3
+   },
+   "asset_kinds_total": {},
+   "top_exts": {
+    ".md": 19,
+    ".yaml": 5,
+    ".py": 1
+   }
+  },
+  "design-creative-media": {
+   "n": 9,
+   "md_mean": 4.56,
+   "md_median": 2,
+   "md_p90": 16,
+   "md_max": 16,
+   "files_mean": 13.44,
+   "files_median": 4,
+   "skill_md_lines_median": 165,
+   "skill_md_words_median": 1371,
+   "skill_md_only_pct": 22.2,
+   "content_files_mean": 11.78,
+   "content_files_median": 2,
+   "skill_md_only_content_pct": 33.3,
+   "md_share_of_content_files_pct": 38.7,
+   "per_category": {
+    "md_total": {
+     "mean_per_skill": 4.56,
+     "pct_skills_with_any": 100.0,
+     "share_of_all_files_pct": 33.9
+    },
+    "script": {
+     "mean_per_skill": 3.56,
+     "pct_skills_with_any": 55.6,
+     "share_of_all_files_pct": 26.4
+    },
+    "asset": {
+     "mean_per_skill": 3.56,
+     "pct_skills_with_any": 11.1,
+     "share_of_all_files_pct": 26.4
+    },
+    "data_config": {
+     "mean_per_skill": 0.11,
+     "pct_skills_with_any": 11.1,
+     "share_of_all_files_pct": 0.8
+    },
+    "packaging": {
+     "mean_per_skill": 1.44,
+     "pct_skills_with_any": 66.7,
+     "share_of_all_files_pct": 10.7
+    },
+    "license": {
+     "mean_per_skill": 0.22,
+     "pct_skills_with_any": 22.2,
+     "share_of_all_files_pct": 1.7
+    },
+    "other": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    }
+   },
+   "pct_with_reference_md_beyond_skill_md": 55.6,
+   "md_histogram": {
+    "1": 4,
+    "2": 2,
+    "3-5": 0,
+    "6-10": 1,
+    "11-20": 2,
+    "21+": 0
+   },
+   "files_histogram": {
+    "1": 2,
+    "2-3": 2,
+    "4-6": 2,
+    "7-10": 0,
+    "11-25": 2,
+    "26+": 1
+   },
+   "content_files_histogram": {
+    "1": 3,
+    "2-3": 3,
+    "4-6": 0,
+    "7-10": 1,
+    "11-25": 1,
+    "26+": 1
+   },
+   "composition_patterns": {
+    "SKILL.md": 3,
+    "md + script": 3,
+    "md + script + asset + data_config": 1,
+    "SKILL.md + script": 1,
+    "md": 1
+   },
+   "subdir_pct": {
+    "agents": 66.7,
+    "references": 55.6,
+    "assets": 44.4,
+    "scripts": 44.4,
+    "helpers": 11.1
+   },
+   "asset_kinds_total": {
+    "image": 39
+   },
+   "top_exts": {
+    ".md": 41,
+    ".jpg": 15,
+    ".svg": 13,
+    ".js": 10,
+    ".webp": 9,
+    ".py": 8,
+    ".css": 7,
+    ".yaml": 6,
+    ".html": 3,
+    ".mjs": 3,
+    ".txt": 2,
+    ".png": 2,
+    ".json": 1,
+    ".sh": 1
+   }
+  },
+  "docs-office-files": {
+   "n": 2,
+   "md_mean": 5.5,
+   "md_median": 5.5,
+   "md_p90": 10,
+   "md_max": 10,
+   "files_mean": 37,
+   "files_median": 37.0,
+   "skill_md_lines_median": 108.5,
+   "skill_md_words_median": 1103.5,
+   "skill_md_only_pct": 0.0,
+   "content_files_mean": 35,
+   "content_files_median": 35.0,
+   "skill_md_only_content_pct": 0.0,
+   "md_share_of_content_files_pct": 15.7,
+   "per_category": {
+    "md_total": {
+     "mean_per_skill": 5.5,
+     "pct_skills_with_any": 100.0,
+     "share_of_all_files_pct": 14.9
+    },
+    "script": {
+     "mean_per_skill": 7.5,
+     "pct_skills_with_any": 50.0,
+     "share_of_all_files_pct": 20.3
+    },
+    "asset": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "data_config": {
+     "mean_per_skill": 22.0,
+     "pct_skills_with_any": 50.0,
+     "share_of_all_files_pct": 59.5
+    },
+    "packaging": {
+     "mean_per_skill": 1.5,
+     "pct_skills_with_any": 50.0,
+     "share_of_all_files_pct": 4.1
+    },
+    "license": {
+     "mean_per_skill": 0.5,
+     "pct_skills_with_any": 50.0,
+     "share_of_all_files_pct": 1.4
+    },
+    "other": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    }
+   },
+   "pct_with_reference_md_beyond_skill_md": 50.0,
+   "md_histogram": {
+    "1": 1,
+    "2": 0,
+    "3-5": 0,
+    "6-10": 1,
+    "11-20": 0,
+    "21+": 0
+   },
+   "files_histogram": {
+    "1": 0,
+    "2-3": 0,
+    "4-6": 0,
+    "7-10": 0,
+    "11-25": 1,
+    "26+": 1
+   },
+   "content_files_histogram": {
+    "1": 0,
+    "2-3": 0,
+    "4-6": 0,
+    "7-10": 1,
+    "11-25": 0,
+    "26+": 1
+   },
+   "composition_patterns": {
+    "SKILL.md + script + data_config": 1,
+    "md": 1
+   },
+   "subdir_pct": {
+    "scripts": 50.0,
+    "references": 50.0,
+    "agents": 50.0,
+    "assets": 50.0
+   },
+   "asset_kinds_total": {
+    "image": 2
+   },
+   "top_exts": {
+    ".xsd": 39,
+    ".py": 15,
+    ".md": 11,
+    ".xml": 5,
+    ".txt": 1,
+    ".yaml": 1,
+    ".png": 1,
+    ".svg": 1
+   }
+  },
+  "finance-accounting": {
+   "n": 8,
+   "md_mean": 1.62,
+   "md_median": 1.0,
+   "md_p90": 6,
+   "md_max": 6,
+   "files_mean": 2,
+   "files_median": 1.0,
+   "skill_md_lines_median": 253.0,
+   "skill_md_words_median": 2477.5,
+   "skill_md_only_pct": 62.5,
+   "content_files_mean": 2,
+   "content_files_median": 1.0,
+   "skill_md_only_content_pct": 62.5,
+   "md_share_of_content_files_pct": 81.2,
+   "per_category": {
+    "md_total": {
+     "mean_per_skill": 1.62,
+     "pct_skills_with_any": 100.0,
+     "share_of_all_files_pct": 81.2
+    },
+    "script": {
+     "mean_per_skill": 0.38,
+     "pct_skills_with_any": 25.0,
+     "share_of_all_files_pct": 18.8
+    },
+    "asset": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "data_config": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "packaging": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "license": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "other": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    }
+   },
+   "pct_with_reference_md_beyond_skill_md": 12.5,
+   "md_histogram": {
+    "1": 7,
+    "2": 0,
+    "3-5": 0,
+    "6-10": 1,
+    "11-20": 0,
+    "21+": 0
+   },
+   "files_histogram": {
+    "1": 5,
+    "2-3": 2,
+    "4-6": 1,
+    "7-10": 0,
+    "11-25": 0,
+    "26+": 0
+   },
+   "content_files_histogram": {
+    "1": 5,
+    "2-3": 2,
+    "4-6": 1,
+    "7-10": 0,
+    "11-25": 0,
+    "26+": 0
+   },
+   "composition_patterns": {
+    "SKILL.md": 5,
+    "SKILL.md + script": 2,
+    "md": 1
+   },
+   "subdir_pct": {
+    "reference": 12.5,
+    "scripts": 12.5,
+    "references": 12.5
+   },
+   "asset_kinds_total": {},
+   "top_exts": {
+    ".md": 13,
+    ".py": 2,
+    ".html": 1
+   }
+  },
+  "hr-people": {
+   "n": 4,
+   "md_mean": 3.5,
+   "md_median": 2.0,
+   "md_p90": 9,
+   "md_max": 9,
+   "files_mean": 3.5,
+   "files_median": 2.0,
+   "skill_md_lines_median": 186.5,
+   "skill_md_words_median": 1491.5,
+   "skill_md_only_pct": 50.0,
+   "content_files_mean": 3.5,
+   "content_files_median": 2.0,
+   "skill_md_only_content_pct": 50.0,
+   "md_share_of_content_files_pct": 100.0,
+   "per_category": {
+    "md_total": {
+     "mean_per_skill": 3.5,
+     "pct_skills_with_any": 100.0,
+     "share_of_all_files_pct": 100.0
+    },
+    "script": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "asset": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "data_config": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "packaging": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "license": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "other": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    }
+   },
+   "pct_with_reference_md_beyond_skill_md": 50.0,
+   "md_histogram": {
+    "1": 2,
+    "2": 0,
+    "3-5": 1,
+    "6-10": 1,
+    "11-20": 0,
+    "21+": 0
+   },
+   "files_histogram": {
+    "1": 2,
+    "2-3": 1,
+    "4-6": 0,
+    "7-10": 1,
+    "11-25": 0,
+    "26+": 0
+   },
+   "content_files_histogram": {
+    "1": 2,
+    "2-3": 1,
+    "4-6": 0,
+    "7-10": 1,
+    "11-25": 0,
+    "26+": 0
+   },
+   "composition_patterns": {
+    "SKILL.md": 2,
+    "md": 2
+   },
+   "subdir_pct": {
+    "reference": 25.0,
+    "references": 25.0,
+    "templates": 25.0
+   },
+   "asset_kinds_total": {},
+   "top_exts": {
+    ".md": 14
+   }
+  },
+  "investing-banking-pe": {
+   "n": 10,
+   "md_mean": 4.5,
+   "md_median": 2.0,
+   "md_p90": 9,
+   "md_max": 15,
+   "files_mean": 6.3,
+   "files_median": 2.0,
+   "skill_md_lines_median": 100.5,
+   "skill_md_words_median": 1098.5,
+   "skill_md_only_pct": 50.0,
+   "content_files_mean": 5.7,
+   "content_files_median": 2.0,
+   "skill_md_only_content_pct": 50.0,
+   "md_share_of_content_files_pct": 78.9,
+   "per_category": {
+    "md_total": {
+     "mean_per_skill": 4.5,
+     "pct_skills_with_any": 100.0,
+     "share_of_all_files_pct": 71.4
+    },
+    "script": {
+     "mean_per_skill": 0.8,
+     "pct_skills_with_any": 40.0,
+     "share_of_all_files_pct": 12.7
+    },
+    "asset": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "data_config": {
+     "mean_per_skill": 0.4,
+     "pct_skills_with_any": 30.0,
+     "share_of_all_files_pct": 6.3
+    },
+    "packaging": {
+     "mean_per_skill": 0.6,
+     "pct_skills_with_any": 40.0,
+     "share_of_all_files_pct": 9.5
+    },
+    "license": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "other": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    }
+   },
+   "pct_with_reference_md_beyond_skill_md": 50.0,
+   "md_histogram": {
+    "1": 5,
+    "2": 0,
+    "3-5": 1,
+    "6-10": 3,
+    "11-20": 1,
+    "21+": 0
+   },
+   "files_histogram": {
+    "1": 5,
+    "2-3": 1,
+    "4-6": 0,
+    "7-10": 1,
+    "11-25": 3,
+    "26+": 0
+   },
+   "content_files_histogram": {
+    "1": 5,
+    "2-3": 1,
+    "4-6": 0,
+    "7-10": 2,
+    "11-25": 2,
+    "26+": 0
+   },
+   "composition_patterns": {
+    "SKILL.md": 5,
+    "md + script + data_config": 3,
+    "md": 1,
+    "md + script": 1
+   },
+   "subdir_pct": {
+    "references": 50.0,
+    "agents": 40.0,
+    "scripts": 40.0,
+    "assets": 20.0
+   },
+   "asset_kinds_total": {
+    "image": 2
+   },
+   "top_exts": {
+    ".md": 45,
+    ".py": 8,
+    ".yaml": 4,
+    ".csv": 2,
+    ".svg": 2,
+    ".txt": 2
+   }
+  },
+  "legal-compliance": {
+   "n": 17,
+   "md_mean": 1.53,
+   "md_median": 1,
+   "md_p90": 3,
+   "md_max": 8,
+   "files_mean": 7.29,
+   "files_median": 1,
+   "skill_md_lines_median": 246,
+   "skill_md_words_median": 2266,
+   "skill_md_only_pct": 88.2,
+   "content_files_mean": 7.29,
+   "content_files_median": 1,
+   "skill_md_only_content_pct": 88.2,
+   "md_share_of_content_files_pct": 21.0,
+   "per_category": {
+    "md_total": {
+     "mean_per_skill": 1.53,
+     "pct_skills_with_any": 100.0,
+     "share_of_all_files_pct": 21.0
+    },
+    "script": {
+     "mean_per_skill": 2.65,
+     "pct_skills_with_any": 11.8,
+     "share_of_all_files_pct": 36.3
+    },
+    "asset": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "data_config": {
+     "mean_per_skill": 3.06,
+     "pct_skills_with_any": 5.9,
+     "share_of_all_files_pct": 41.9
+    },
+    "packaging": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "license": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "other": {
+     "mean_per_skill": 0.06,
+     "pct_skills_with_any": 5.9,
+     "share_of_all_files_pct": 0.8
+    }
+   },
+   "pct_with_reference_md_beyond_skill_md": 11.8,
+   "md_histogram": {
+    "1": 15,
+    "2": 0,
+    "3-5": 1,
+    "6-10": 1,
+    "11-20": 0,
+    "21+": 0
+   },
+   "files_histogram": {
+    "1": 15,
+    "2-3": 0,
+    "4-6": 1,
+    "7-10": 0,
+    "11-25": 0,
+    "26+": 1
+   },
+   "content_files_histogram": {
+    "1": 15,
+    "2-3": 0,
+    "4-6": 1,
+    "7-10": 0,
+    "11-25": 0,
+    "26+": 1
+   },
+   "composition_patterns": {
+    "SKILL.md": 15,
+    "md + script + data_config": 1,
+    "md + script": 1
+   },
+   "subdir_pct": {
+    "scripts": 11.8,
+    "workflows": 5.9,
+    "state-policy": 5.9,
+    "references": 5.9
+   },
+   "asset_kinds_total": {},
+   "top_exts": {
+    ".json": 52,
+    ".js": 41,
+    ".md": 26,
+    ".py": 2,
+    ".html": 1,
+    ".gitignore": 1,
+    ".sql": 1
+   }
+  },
+  "marketing-content": {
+   "n": 4,
+   "md_mean": 3.75,
+   "md_median": 3.5,
+   "md_p90": 7,
+   "md_max": 7,
+   "files_mean": 4.25,
+   "files_median": 4.0,
+   "skill_md_lines_median": 186.5,
+   "skill_md_words_median": 1234.5,
+   "skill_md_only_pct": 25.0,
+   "content_files_mean": 4.25,
+   "content_files_median": 4.0,
+   "skill_md_only_content_pct": 25.0,
+   "md_share_of_content_files_pct": 88.2,
+   "per_category": {
+    "md_total": {
+     "mean_per_skill": 3.75,
+     "pct_skills_with_any": 100.0,
+     "share_of_all_files_pct": 88.2
+    },
+    "script": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "asset": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "data_config": {
+     "mean_per_skill": 0.5,
+     "pct_skills_with_any": 50.0,
+     "share_of_all_files_pct": 11.8
+    },
+    "packaging": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "license": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "other": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    }
+   },
+   "pct_with_reference_md_beyond_skill_md": 75.0,
+   "md_histogram": {
+    "1": 1,
+    "2": 1,
+    "3-5": 1,
+    "6-10": 1,
+    "11-20": 0,
+    "21+": 0
+   },
+   "files_histogram": {
+    "1": 1,
+    "2-3": 1,
+    "4-6": 1,
+    "7-10": 1,
+    "11-25": 0,
+    "26+": 0
+   },
+   "content_files_histogram": {
+    "1": 1,
+    "2-3": 1,
+    "4-6": 1,
+    "7-10": 1,
+    "11-25": 0,
+    "26+": 0
+   },
+   "composition_patterns": {
+    "md + data_config": 2,
+    "SKILL.md": 1,
+    "md": 1
+   },
+   "subdir_pct": {
+    "references": 50.0,
+    "evals": 25.0
+   },
+   "asset_kinds_total": {},
+   "top_exts": {
+    ".md": 15,
+    ".yaml": 1,
+    ".json": 1
+   }
+  },
+  "operations-admin": {
+   "n": 2,
+   "md_mean": 1,
+   "md_median": 1.0,
+   "md_p90": 1,
+   "md_max": 1,
+   "files_mean": 1,
+   "files_median": 1.0,
+   "skill_md_lines_median": 77.5,
+   "skill_md_words_median": 576.5,
+   "skill_md_only_pct": 100.0,
+   "content_files_mean": 1,
+   "content_files_median": 1.0,
+   "skill_md_only_content_pct": 100.0,
+   "md_share_of_content_files_pct": 100.0,
+   "per_category": {
+    "md_total": {
+     "mean_per_skill": 1.0,
+     "pct_skills_with_any": 100.0,
+     "share_of_all_files_pct": 100.0
+    },
+    "script": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "asset": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "data_config": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "packaging": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "license": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "other": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    }
+   },
+   "pct_with_reference_md_beyond_skill_md": 0.0,
+   "md_histogram": {
+    "1": 2,
+    "2": 0,
+    "3-5": 0,
+    "6-10": 0,
+    "11-20": 0,
+    "21+": 0
+   },
+   "files_histogram": {
+    "1": 2,
+    "2-3": 0,
+    "4-6": 0,
+    "7-10": 0,
+    "11-25": 0,
+    "26+": 0
+   },
+   "content_files_histogram": {
+    "1": 2,
+    "2-3": 0,
+    "4-6": 0,
+    "7-10": 0,
+    "11-25": 0,
+    "26+": 0
+   },
+   "composition_patterns": {
+    "SKILL.md": 2
+   },
+   "subdir_pct": {},
+   "asset_kinds_total": {},
+   "top_exts": {
+    ".md": 2
+   }
+  },
+  "other": {
+   "n": 1,
+   "md_mean": 3,
+   "md_median": 3,
+   "md_p90": 3,
+   "md_max": 3,
+   "files_mean": 7,
+   "files_median": 7,
+   "skill_md_lines_median": 357,
+   "skill_md_words_median": 1881,
+   "skill_md_only_pct": 0.0,
+   "content_files_mean": 5,
+   "content_files_median": 5,
+   "skill_md_only_content_pct": 0.0,
+   "md_share_of_content_files_pct": 60.0,
+   "per_category": {
+    "md_total": {
+     "mean_per_skill": 3.0,
+     "pct_skills_with_any": 100.0,
+     "share_of_all_files_pct": 42.9
+    },
+    "script": {
+     "mean_per_skill": 1.0,
+     "pct_skills_with_any": 100.0,
+     "share_of_all_files_pct": 14.3
+    },
+    "asset": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "data_config": {
+     "mean_per_skill": 1.0,
+     "pct_skills_with_any": 100.0,
+     "share_of_all_files_pct": 14.3
+    },
+    "packaging": {
+     "mean_per_skill": 2.0,
+     "pct_skills_with_any": 100.0,
+     "share_of_all_files_pct": 28.6
+    },
+    "license": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "other": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    }
+   },
+   "pct_with_reference_md_beyond_skill_md": 100.0,
+   "md_histogram": {
+    "1": 0,
+    "2": 0,
+    "3-5": 1,
+    "6-10": 0,
+    "11-20": 0,
+    "21+": 0
+   },
+   "files_histogram": {
+    "1": 0,
+    "2-3": 0,
+    "4-6": 0,
+    "7-10": 1,
+    "11-25": 0,
+    "26+": 0
+   },
+   "content_files_histogram": {
+    "1": 0,
+    "2-3": 0,
+    "4-6": 1,
+    "7-10": 0,
+    "11-25": 0,
+    "26+": 0
+   },
+   "composition_patterns": {
+    "md + script + data_config": 1
+   },
+   "subdir_pct": {
+    "agents": 100.0,
+    "scripts": 100.0,
+    "evals": 100.0
+   },
+   "asset_kinds_total": {},
+   "top_exts": {
+    ".md": 3,
+    ".sig": 1,
+    ".yaml": 1,
+    ".py": 1,
+    ".json": 1
+   }
+  },
+  "product-management": {
+   "n": 7,
+   "md_mean": 3.71,
+   "md_median": 1,
+   "md_p90": 13,
+   "md_max": 13,
+   "files_mean": 4.43,
+   "files_median": 1,
+   "skill_md_lines_median": 228,
+   "skill_md_words_median": 1104,
+   "skill_md_only_pct": 57.1,
+   "content_files_mean": 4.43,
+   "content_files_median": 1,
+   "skill_md_only_content_pct": 57.1,
+   "md_share_of_content_files_pct": 83.9,
+   "per_category": {
+    "md_total": {
+     "mean_per_skill": 3.71,
+     "pct_skills_with_any": 100.0,
+     "share_of_all_files_pct": 83.9
+    },
+    "script": {
+     "mean_per_skill": 0.14,
+     "pct_skills_with_any": 14.3,
+     "share_of_all_files_pct": 3.2
+    },
+    "asset": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "data_config": {
+     "mean_per_skill": 0.57,
+     "pct_skills_with_any": 42.9,
+     "share_of_all_files_pct": 12.9
+    },
+    "packaging": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "license": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "other": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    }
+   },
+   "pct_with_reference_md_beyond_skill_md": 42.9,
+   "md_histogram": {
+    "1": 4,
+    "2": 0,
+    "3-5": 2,
+    "6-10": 0,
+    "11-20": 1,
+    "21+": 0
+   },
+   "files_histogram": {
+    "1": 4,
+    "2-3": 0,
+    "4-6": 2,
+    "7-10": 0,
+    "11-25": 1,
+    "26+": 0
+   },
+   "content_files_histogram": {
+    "1": 4,
+    "2-3": 0,
+    "4-6": 2,
+    "7-10": 0,
+    "11-25": 1,
+    "26+": 0
+   },
+   "composition_patterns": {
+    "SKILL.md": 4,
+    "md + data_config": 2,
+    "md + script + data_config": 1
+   },
+   "subdir_pct": {
+    "references": 28.6,
+    "examples": 14.3,
+    "reference": 14.3,
+    "evaluations": 14.3,
+    "evals": 14.3,
+    "assets": 14.3,
+    "scripts": 14.3
+   },
+   "asset_kinds_total": {},
+   "top_exts": {
+    ".md": 26,
+    ".json": 4,
+    ".py": 1
+   }
+  },
+  "productivity-communication": {
+   "n": 2,
+   "md_mean": 7.5,
+   "md_median": 7.5,
+   "md_p90": 13,
+   "md_max": 13,
+   "files_mean": 13,
+   "files_median": 13.0,
+   "skill_md_lines_median": 74.0,
+   "skill_md_words_median": 476.0,
+   "skill_md_only_pct": 0.0,
+   "content_files_mean": 9,
+   "content_files_median": 9.0,
+   "skill_md_only_content_pct": 0.0,
+   "md_share_of_content_files_pct": 83.3,
+   "per_category": {
+    "md_total": {
+     "mean_per_skill": 7.5,
+     "pct_skills_with_any": 100.0,
+     "share_of_all_files_pct": 57.7
+    },
+    "script": {
+     "mean_per_skill": 0.5,
+     "pct_skills_with_any": 50.0,
+     "share_of_all_files_pct": 3.8
+    },
+    "asset": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "data_config": {
+     "mean_per_skill": 1.0,
+     "pct_skills_with_any": 50.0,
+     "share_of_all_files_pct": 7.7
+    },
+    "packaging": {
+     "mean_per_skill": 3.0,
+     "pct_skills_with_any": 100.0,
+     "share_of_all_files_pct": 23.1
+    },
+    "license": {
+     "mean_per_skill": 1.0,
+     "pct_skills_with_any": 100.0,
+     "share_of_all_files_pct": 7.7
+    },
+    "other": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    }
+   },
+   "pct_with_reference_md_beyond_skill_md": 100.0,
+   "md_histogram": {
+    "1": 0,
+    "2": 1,
+    "3-5": 0,
+    "6-10": 0,
+    "11-20": 1,
+    "21+": 0
+   },
+   "files_histogram": {
+    "1": 0,
+    "2-3": 0,
+    "4-6": 0,
+    "7-10": 1,
+    "11-25": 1,
+    "26+": 0
+   },
+   "content_files_histogram": {
+    "1": 0,
+    "2-3": 1,
+    "4-6": 0,
+    "7-10": 0,
+    "11-25": 1,
+    "26+": 0
+   },
+   "composition_patterns": {
+    "md + data_config": 1,
+    "md + script": 1
+   },
+   "subdir_pct": {
+    "agents": 100.0,
+    "assets": 100.0,
+    "examples": 50.0,
+    "reference": 50.0,
+    "evaluations": 50.0,
+    "references": 50.0,
+    "scripts": 50.0
+   },
+   "asset_kinds_total": {
+    "image": 4
+   },
+   "top_exts": {
+    ".md": 15,
+    ".txt": 2,
+    ".yaml": 2,
+    ".svg": 2,
+    ".png": 2,
+    ".json": 2,
+    ".py": 1
+   }
+  },
+  "sales-crm": {
+   "n": 12,
+   "md_mean": 2.08,
+   "md_median": 1.0,
+   "md_p90": 5,
+   "md_max": 6,
+   "files_mean": 2.42,
+   "files_median": 1.5,
+   "skill_md_lines_median": 115.5,
+   "skill_md_words_median": 1173.5,
+   "skill_md_only_pct": 50.0,
+   "content_files_mean": 2.25,
+   "content_files_median": 1.0,
+   "skill_md_only_content_pct": 58.3,
+   "md_share_of_content_files_pct": 92.6,
+   "per_category": {
+    "md_total": {
+     "mean_per_skill": 2.08,
+     "pct_skills_with_any": 100.0,
+     "share_of_all_files_pct": 86.2
+    },
+    "script": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "asset": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "data_config": {
+     "mean_per_skill": 0.17,
+     "pct_skills_with_any": 16.7,
+     "share_of_all_files_pct": 6.9
+    },
+    "packaging": {
+     "mean_per_skill": 0.17,
+     "pct_skills_with_any": 16.7,
+     "share_of_all_files_pct": 6.9
+    },
+    "license": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "other": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    }
+   },
+   "pct_with_reference_md_beyond_skill_md": 41.7,
+   "md_histogram": {
+    "1": 7,
+    "2": 2,
+    "3-5": 2,
+    "6-10": 1,
+    "11-20": 0,
+    "21+": 0
+   },
+   "files_histogram": {
+    "1": 6,
+    "2-3": 3,
+    "4-6": 3,
+    "7-10": 0,
+    "11-25": 0,
+    "26+": 0
+   },
+   "content_files_histogram": {
+    "1": 7,
+    "2-3": 2,
+    "4-6": 3,
+    "7-10": 0,
+    "11-25": 0,
+    "26+": 0
+   },
+   "composition_patterns": {
+    "SKILL.md": 7,
+    "md": 3,
+    "md + data_config": 2
+   },
+   "subdir_pct": {
+    "references": 16.7,
+    "agents": 16.7,
+    "reference": 8.3,
+    "resources": 8.3
+   },
+   "asset_kinds_total": {},
+   "top_exts": {
+    ".md": 25,
+    ".yaml": 4
+   }
+  },
+  "science-research": {
+   "n": 13,
+   "md_mean": 3,
+   "md_median": 1,
+   "md_p90": 10,
+   "md_max": 12,
+   "files_mean": 5.85,
+   "files_median": 3,
+   "skill_md_lines_median": 75,
+   "skill_md_words_median": 436,
+   "skill_md_only_pct": 0.0,
+   "content_files_mean": 4.85,
+   "content_files_median": 2,
+   "skill_md_only_content_pct": 15.4,
+   "md_share_of_content_files_pct": 61.9,
+   "per_category": {
+    "md_total": {
+     "mean_per_skill": 3.0,
+     "pct_skills_with_any": 100.0,
+     "share_of_all_files_pct": 51.3
+    },
+    "script": {
+     "mean_per_skill": 1.69,
+     "pct_skills_with_any": 69.2,
+     "share_of_all_files_pct": 28.9
+    },
+    "asset": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "data_config": {
+     "mean_per_skill": 0.15,
+     "pct_skills_with_any": 15.4,
+     "share_of_all_files_pct": 2.6
+    },
+    "packaging": {
+     "mean_per_skill": 0.92,
+     "pct_skills_with_any": 84.6,
+     "share_of_all_files_pct": 15.8
+    },
+    "license": {
+     "mean_per_skill": 0.08,
+     "pct_skills_with_any": 7.7,
+     "share_of_all_files_pct": 1.3
+    },
+    "other": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    }
+   },
+   "pct_with_reference_md_beyond_skill_md": 38.5,
+   "md_histogram": {
+    "1": 8,
+    "2": 1,
+    "3-5": 2,
+    "6-10": 1,
+    "11-20": 1,
+    "21+": 0
+   },
+   "files_histogram": {
+    "1": 0,
+    "2-3": 7,
+    "4-6": 3,
+    "7-10": 0,
+    "11-25": 3,
+    "26+": 0
+   },
+   "content_files_histogram": {
+    "1": 2,
+    "2-3": 8,
+    "4-6": 0,
+    "7-10": 1,
+    "11-25": 2,
+    "26+": 0
+   },
+   "composition_patterns": {
+    "SKILL.md + script": 6,
+    "md": 2,
+    "md + script + data_config": 2,
+    "SKILL.md": 2,
+    "md + script": 1
+   },
+   "subdir_pct": {
+    "agents": 84.6,
+    "scripts": 69.2,
+    "references": 38.5,
+    "assets": 15.4
+   },
+   "asset_kinds_total": {
+    "image": 1
+   },
+   "top_exts": {
+    ".md": 39,
+    ".py": 22,
+    ".yaml": 11,
+    ".txt": 2,
+    ".png": 1,
+    ".bib": 1
+   }
+  }
+ },
+ "eligible_population": {
+  "n": 987,
+  "md_mean": 3.21,
+  "md_median": 1,
+  "md_p90": 7,
+  "md_max": 83,
+  "files_mean": 5.14,
+  "files_median": 2,
+  "skill_md_lines_median": 158,
+  "skill_md_words_median": 1301,
+  "skill_md_only_pct": 43.0,
+  "content_files_mean": 4.88,
+  "content_files_median": 2,
+  "skill_md_only_content_pct": 46.7,
+  "md_share_of_content_files_pct": 65.8,
+  "per_category": {
+   "md_total": {
+    "mean_per_skill": 3.21,
+    "pct_skills_with_any": 100.0,
+    "share_of_all_files_pct": 62.4
+   },
+   "script": {
+    "mean_per_skill": 1.04,
+    "pct_skills_with_any": 31.5,
+    "share_of_all_files_pct": 20.3
+   },
+   "asset": {
+    "mean_per_skill": 0.11,
+    "pct_skills_with_any": 1.2,
+    "share_of_all_files_pct": 2.0
+   },
+   "data_config": {
+    "mean_per_skill": 0.5,
+    "pct_skills_with_any": 16.0,
+    "share_of_all_files_pct": 9.8
+   },
+   "packaging": {
+    "mean_per_skill": 0.22,
+    "pct_skills_with_any": 16.0,
+    "share_of_all_files_pct": 4.3
+   },
+   "license": {
+    "mean_per_skill": 0.04,
+    "pct_skills_with_any": 4.1,
+    "share_of_all_files_pct": 0.8
+   },
+   "other": {
+    "mean_per_skill": 0.02,
+    "pct_skills_with_any": 1.1,
+    "share_of_all_files_pct": 0.3
+   }
+  },
+  "pct_with_reference_md_beyond_skill_md": 45.2,
+  "md_histogram": {
+   "1": 541,
+   "2": 79,
+   "3-5": 207,
+   "6-10": 107,
+   "11-20": 49,
+   "21+": 4
+  },
+  "files_histogram": {
+   "1": 424,
+   "2-3": 165,
+   "4-6": 179,
+   "7-10": 102,
+   "11-25": 95,
+   "26+": 22
+  },
+  "content_files_histogram": {
+   "1": 461,
+   "2-3": 162,
+   "4-6": 151,
+   "7-10": 106,
+   "11-25": 85,
+   "26+": 22
+  },
+  "composition_patterns": {
+   "SKILL.md": 461,
+   "md + script": 172,
+   "md": 127,
+   "md + data_config": 74,
+   "md + script + data_config": 64,
+   "SKILL.md + script": 62,
+   "SKILL.md + data_config": 9,
+   "SKILL.md + script + data_config": 6,
+   "md + script + asset + data_config": 4,
+   "md + script + asset": 3,
+   "md + asset": 2,
+   "SKILL.md + asset": 2,
+   "SKILL.md + asset + data_config": 1
+  },
+  "subdir_pct": {
+   "references": 37.9,
+   "scripts": 30.6,
+   "agents": 16.0,
+   "assets": 12.4,
+   "evals": 5.6,
+   "reference": 4.2,
+   "templates": 1.5,
+   "examples": 1.5,
+   "evaluations": 1.2,
+   "resources": 0.6,
+   "specifications": 0.3,
+   "tests": 0.2
+  },
+  "asset_kinds_total": {
+   "image": 97,
+   "font": 54,
+   "office_pdf": 9
+  },
+  "top_exts": {
+   ".md": 3170,
+   ".py": 897,
+   ".json": 251,
+   ".yaml": 184,
+   ".xsd": 117,
+   ".txt": 71,
+   ".js": 63,
+   ".ttf": 54,
+   ".svg": 49,
+   ".csv": 41,
+   ".mjs": 37,
+   ".png": 23,
+   ".tex": 16,
+   ".jpg": 15,
+   ".html": 12,
+   ".css": 9,
+   ".webp": 9,
+   ".sh": 7,
+   "LICENSE": 7,
+   ".pdf": 7
+  }
+ },
+ "eligible_by_publisher": {
+  "Anthropic": {
+   "n": 368,
+   "md_mean": 1.79,
+   "md_median": 1.0,
+   "md_p90": 5,
+   "md_max": 13,
+   "files_mean": 3.02,
+   "files_median": 1.0,
+   "skill_md_lines_median": 136.5,
+   "skill_md_words_median": 1336.0,
+   "skill_md_only_pct": 76.6,
+   "content_files_mean": 2.95,
+   "content_files_median": 1.0,
+   "skill_md_only_content_pct": 77.2,
+   "md_share_of_content_files_pct": 60.7,
+   "per_category": {
+    "md_total": {
+     "mean_per_skill": 1.79,
+     "pct_skills_with_any": 100.0,
+     "share_of_all_files_pct": 59.3
+    },
+    "script": {
+     "mean_per_skill": 0.39,
+     "pct_skills_with_any": 5.4,
+     "share_of_all_files_pct": 13.1
+    },
+    "asset": {
+     "mean_per_skill": 0.17,
+     "pct_skills_with_any": 0.8,
+     "share_of_all_files_pct": 5.5
+    },
+    "data_config": {
+     "mean_per_skill": 0.59,
+     "pct_skills_with_any": 4.1,
+     "share_of_all_files_pct": 19.4
+    },
+    "packaging": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "license": {
+     "mean_per_skill": 0.07,
+     "pct_skills_with_any": 6.2,
+     "share_of_all_files_pct": 2.3
+    },
+    "other": {
+     "mean_per_skill": 0.01,
+     "pct_skills_with_any": 0.8,
+     "share_of_all_files_pct": 0.4
+    }
+   },
+   "pct_with_reference_md_beyond_skill_md": 20.4,
+   "md_histogram": {
+    "1": 293,
+    "2": 21,
+    "3-5": 23,
+    "6-10": 29,
+    "11-20": 2,
+    "21+": 0
+   },
+   "files_histogram": {
+    "1": 282,
+    "2-3": 26,
+    "4-6": 35,
+    "7-10": 9,
+    "11-25": 11,
+    "26+": 5
+   },
+   "content_files_histogram": {
+    "1": 284,
+    "2-3": 25,
+    "4-6": 36,
+    "7-10": 10,
+    "11-25": 8,
+    "26+": 5
+   },
+   "composition_patterns": {
+    "SKILL.md": 284,
+    "md": 59,
+    "md + script": 7,
+    "md + script + data_config": 7,
+    "SKILL.md + script + data_config": 5,
+    "md + asset": 2,
+    "SKILL.md + data_config": 2,
+    "SKILL.md + script": 1,
+    "SKILL.md + asset + data_config": 1
+   },
+   "subdir_pct": {
+    "references": 9.5,
+    "reference": 7.9,
+    "scripts": 4.3,
+    "assets": 1.1,
+    "templates": 1.1,
+    "workflows": 0.5,
+    "canvas-fonts": 0.3,
+    "examples": 0.3,
+    "core": 0.3,
+    "themes": 0.3,
+    "state-policy": 0.3
+   },
+   "asset_kinds_total": {
+    "font": 54,
+    "office_pdf": 7
+   },
+   "top_exts": {
+    ".md": 659,
+    ".xsd": 117,
+    ".py": 90,
+    ".json": 58,
+    ".ttf": 54,
+    ".txt": 46,
+    ".js": 43,
+    "LICENSE": 7,
+    ".pdf": 7,
+    ".yaml": 6,
+    ".xml": 5,
+    ".html": 3,
+    ".gitignore": 3,
+    "NOTICE": 3,
+    ".ts": 2,
+    ".mjs": 2,
+    ".sh": 2,
+    ".css": 2,
+    ".npmrc": 1,
+    ".sql": 1
+   }
+  },
+  "OpenAI": {
+   "n": 176,
+   "md_mean": 3.51,
+   "md_median": 1.0,
+   "md_p90": 12,
+   "md_max": 19,
+   "files_mean": 6.8,
+   "files_median": 3.0,
+   "skill_md_lines_median": 80.5,
+   "skill_md_words_median": 708.5,
+   "skill_md_only_pct": 9.1,
+   "content_files_mean": 5.46,
+   "content_files_median": 2.0,
+   "skill_md_only_content_pct": 29.0,
+   "md_share_of_content_files_pct": 64.3,
+   "per_category": {
+    "md_total": {
+     "mean_per_skill": 3.51,
+     "pct_skills_with_any": 100.0,
+     "share_of_all_files_pct": 51.7
+    },
+    "script": {
+     "mean_per_skill": 1.37,
+     "pct_skills_with_any": 50.0,
+     "share_of_all_files_pct": 20.2
+    },
+    "asset": {
+     "mean_per_skill": 0.22,
+     "pct_skills_with_any": 4.5,
+     "share_of_all_files_pct": 3.3
+    },
+    "data_config": {
+     "mean_per_skill": 0.35,
+     "pct_skills_with_any": 18.2,
+     "share_of_all_files_pct": 5.1
+    },
+    "packaging": {
+     "mean_per_skill": 1.24,
+     "pct_skills_with_any": 89.8,
+     "share_of_all_files_pct": 18.2
+    },
+    "license": {
+     "mean_per_skill": 0.1,
+     "pct_skills_with_any": 9.7,
+     "share_of_all_files_pct": 1.4
+    },
+    "other": {
+     "mean_per_skill": 0.01,
+     "pct_skills_with_any": 1.1,
+     "share_of_all_files_pct": 0.2
+    }
+   },
+   "pct_with_reference_md_beyond_skill_md": 38.6,
+   "md_histogram": {
+    "1": 108,
+    "2": 13,
+    "3-5": 18,
+    "6-10": 17,
+    "11-20": 20,
+    "21+": 0
+   },
+   "files_histogram": {
+    "1": 16,
+    "2-3": 74,
+    "4-6": 41,
+    "7-10": 8,
+    "11-25": 32,
+    "26+": 5
+   },
+   "content_files_histogram": {
+    "1": 51,
+    "2-3": 72,
+    "4-6": 12,
+    "7-10": 11,
+    "11-25": 25,
+    "26+": 5
+   },
+   "composition_patterns": {
+    "SKILL.md + script": 53,
+    "SKILL.md": 51,
+    "md": 20,
+    "md + script": 15,
+    "md + data_config": 14,
+    "md + script + data_config": 13,
+    "md + script + asset + data_config": 3,
+    "md + script + asset": 3,
+    "SKILL.md + asset": 2,
+    "SKILL.md + script + data_config": 1,
+    "SKILL.md + data_config": 1
+   },
+   "subdir_pct": {
+    "agents": 89.8,
+    "scripts": 48.9,
+    "references": 33.0,
+    "assets": 23.3,
+    "examples": 4.5,
+    "reference": 4.5,
+    "evaluations": 4.5,
+    "specifications": 1.7,
+    "runtime": 1.1,
+    "host": 1.1,
+    "helpers": 0.6,
+    "tests": 0.6
+   },
+   "asset_kinds_total": {
+    "image": 93,
+    "office_pdf": 2
+   },
+   "top_exts": {
+    ".md": 618,
+    ".py": 172,
+    ".yaml": 167,
+    ".svg": 49,
+    ".mjs": 35,
+    ".txt": 25,
+    ".json": 25,
+    ".png": 20,
+    ".js": 19,
+    ".csv": 19,
+    ".jpg": 15,
+    ".webp": 9,
+    ".css": 7,
+    ".html": 4,
+    ".yml": 3,
+    ".pl": 2,
+    ".sh": 2,
+    ".xlsx": 2,
+    "build_banker_formula_workbook_runtime": 2,
+    ".sig": 1
+   }
+  },
+  "Other vendors": {
+   "n": 72,
+   "md_mean": 2.75,
+   "md_median": 1.0,
+   "md_p90": 5,
+   "md_max": 21,
+   "files_mean": 3.15,
+   "files_median": 1.0,
+   "skill_md_lines_median": 168.5,
+   "skill_md_words_median": 1116.5,
+   "skill_md_only_pct": 58.3,
+   "content_files_mean": 3.15,
+   "content_files_median": 1.0,
+   "skill_md_only_content_pct": 58.3,
+   "md_share_of_content_files_pct": 87.2,
+   "per_category": {
+    "md_total": {
+     "mean_per_skill": 2.75,
+     "pct_skills_with_any": 100.0,
+     "share_of_all_files_pct": 87.2
+    },
+    "script": {
+     "mean_per_skill": 0.08,
+     "pct_skills_with_any": 6.9,
+     "share_of_all_files_pct": 2.6
+    },
+    "asset": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "data_config": {
+     "mean_per_skill": 0.31,
+     "pct_skills_with_any": 23.6,
+     "share_of_all_files_pct": 9.7
+    },
+    "packaging": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "license": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "other": {
+     "mean_per_skill": 0.01,
+     "pct_skills_with_any": 1.4,
+     "share_of_all_files_pct": 0.4
+    }
+   },
+   "pct_with_reference_md_beyond_skill_md": 36.1,
+   "md_histogram": {
+    "1": 46,
+    "2": 8,
+    "3-5": 13,
+    "6-10": 0,
+    "11-20": 4,
+    "21+": 1
+   },
+   "files_histogram": {
+    "1": 42,
+    "2-3": 11,
+    "4-6": 14,
+    "7-10": 0,
+    "11-25": 5,
+    "26+": 0
+   },
+   "content_files_histogram": {
+    "1": 42,
+    "2-3": 11,
+    "4-6": 14,
+    "7-10": 0,
+    "11-25": 5,
+    "26+": 0
+   },
+   "composition_patterns": {
+    "SKILL.md": 42,
+    "md + data_config": 15,
+    "md": 9,
+    "SKILL.md + script": 3,
+    "SKILL.md + data_config": 1,
+    "md + script + data_config": 1,
+    "md + script": 1
+   },
+   "subdir_pct": {
+    "references": 9.7,
+    "resources": 8.3,
+    "examples": 5.6,
+    "reference": 5.6,
+    "evaluations": 5.6,
+    "scripts": 4.2,
+    "evals": 2.8,
+    "pipelines": 1.4,
+    "models": 1.4,
+    "tests": 1.4
+   },
+   "asset_kinds_total": {},
+   "top_exts": {
+    ".md": 198,
+    ".json": 12,
+    ".yaml": 10,
+    ".py": 5,
+    ".version": 1,
+    ".html": 1
+   }
+  },
+  "Community": {
+   "n": 371,
+   "md_mean": 4.57,
+   "md_median": 4,
+   "md_p90": 8,
+   "md_max": 83,
+   "files_mean": 6.85,
+   "files_median": 5,
+   "skill_md_lines_median": 218,
+   "skill_md_words_median": 1409,
+   "skill_md_only_pct": 22.6,
+   "content_files_mean": 6.85,
+   "content_files_median": 5,
+   "skill_md_only_content_pct": 22.6,
+   "md_share_of_content_files_pct": 66.7,
+   "per_category": {
+    "md_total": {
+     "mean_per_skill": 4.57,
+     "pct_skills_with_any": 100.0,
+     "share_of_all_files_pct": 66.7
+    },
+    "script": {
+     "mean_per_skill": 1.72,
+     "pct_skills_with_any": 53.4,
+     "share_of_all_files_pct": 25.1
+    },
+    "asset": {
+     "mean_per_skill": 0.01,
+     "pct_skills_with_any": 0.3,
+     "share_of_all_files_pct": 0.2
+    },
+    "data_config": {
+     "mean_per_skill": 0.53,
+     "pct_skills_with_any": 25.3,
+     "share_of_all_files_pct": 7.7
+    },
+    "packaging": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "license": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "other": {
+     "mean_per_skill": 0.02,
+     "pct_skills_with_any": 1.3,
+     "share_of_all_files_pct": 0.4
+    }
+   },
+   "pct_with_reference_md_beyond_skill_md": 74.7,
+   "md_histogram": {
+    "1": 94,
+    "2": 37,
+    "3-5": 153,
+    "6-10": 61,
+    "11-20": 23,
+    "21+": 3
+   },
+   "files_histogram": {
+    "1": 84,
+    "2-3": 54,
+    "4-6": 89,
+    "7-10": 85,
+    "11-25": 47,
+    "26+": 12
+   },
+   "content_files_histogram": {
+    "1": 84,
+    "2-3": 54,
+    "4-6": 89,
+    "7-10": 85,
+    "11-25": 47,
+    "26+": 12
+   },
+   "composition_patterns": {
+    "md + script": 149,
+    "SKILL.md": 84,
+    "md + data_config": 45,
+    "md + script + data_config": 43,
+    "md": 39,
+    "SKILL.md + script": 5,
+    "SKILL.md + data_config": 5,
+    "md + script + asset + data_config": 1
+   },
+   "subdir_pct": {
+    "references": 73.9,
+    "scripts": 53.1,
+    "assets": 20.8,
+    "evals": 14.0,
+    "templates": 3.0,
+    "examples": 0.5,
+    ".claude-plugin": 0.5,
+    "expected_outputs": 0.3
+   },
+   "asset_kinds_total": {
+    "image": 4
+   },
+   "top_exts": {
+    ".md": 1695,
+    ".py": 630,
+    ".json": 156,
+    ".csv": 22,
+    ".tex": 16,
+    ".html": 4,
+    ".sh": 3,
+    ".mplstyle": 3,
+    ".png": 3,
+    ".bst": 3,
+    ".gitignore": 2,
+    ".yml": 1,
+    ".bib": 1,
+    ".yaml": 1,
+    ".sty": 1,
+    ".gif": 1,
+    ".js": 1
+   }
+  }
+ },
+ "all_skills": {
+  "n": 2253,
+  "md_mean": 4.61,
+  "md_median": 1,
+  "md_p90": 9,
+  "md_max": 312,
+  "files_mean": 6.43,
+  "files_median": 3,
+  "skill_md_lines_median": 158,
+  "skill_md_words_median": 1061,
+  "skill_md_only_pct": 34.9,
+  "content_files_mean": 6.07,
+  "content_files_median": 2,
+  "skill_md_only_content_pct": 45.6,
+  "md_share_of_content_files_pct": 76.0,
+  "per_category": {
+   "md_total": {
+    "mean_per_skill": 4.61,
+    "pct_skills_with_any": 100.0,
+    "share_of_all_files_pct": 71.7
+   },
+   "script": {
+    "mean_per_skill": 0.93,
+    "pct_skills_with_any": 26.2,
+    "share_of_all_files_pct": 14.4
+   },
+   "asset": {
+    "mean_per_skill": 0.06,
+    "pct_skills_with_any": 1.0,
+    "share_of_all_files_pct": 0.9
+   },
+   "data_config": {
+    "mean_per_skill": 0.43,
+    "pct_skills_with_any": 11.7,
+    "share_of_all_files_pct": 6.7
+   },
+   "packaging": {
+    "mean_per_skill": 0.31,
+    "pct_skills_with_any": 25.2,
+    "share_of_all_files_pct": 4.9
+   },
+   "license": {
+    "mean_per_skill": 0.05,
+    "pct_skills_with_any": 4.4,
+    "share_of_all_files_pct": 0.7
+   },
+   "other": {
+    "mean_per_skill": 0.04,
+    "pct_skills_with_any": 1.7,
+    "share_of_all_files_pct": 0.6
+   }
+  },
+  "pct_with_reference_md_beyond_skill_md": 48.6,
+  "md_histogram": {
+   "1": 1158,
+   "2": 191,
+   "3-5": 462,
+   "6-10": 250,
+   "11-20": 134,
+   "21+": 58
+  },
+  "files_histogram": {
+   "1": 787,
+   "2-3": 520,
+   "4-6": 356,
+   "7-10": 262,
+   "11-25": 252,
+   "26+": 76
+  },
+  "content_files_histogram": {
+   "1": 1028,
+   "2-3": 344,
+   "4-6": 323,
+   "7-10": 249,
+   "11-25": 236,
+   "26+": 73
+  },
+  "composition_patterns": {
+   "SKILL.md": 1029,
+   "md": 509,
+   "md + script": 344,
+   "md + script + data_config": 121,
+   "md + data_config": 103,
+   "SKILL.md + script": 93,
+   "SKILL.md + script + data_config": 20,
+   "SKILL.md + data_config": 12,
+   "md + script + asset + data_config": 7,
+   "md + script + asset": 6,
+   "md + asset": 5,
+   "SKILL.md + asset": 3,
+   "SKILL.md + asset + data_config": 1
+  },
+  "subdir_pct": {
+   "references": 42.9,
+   "agents": 25.3,
+   "scripts": 24.4,
+   "assets": 9.9,
+   "examples": 4.3,
+   "troubleshooting": 3.5,
+   "concepts": 3.2,
+   "evals": 3.1,
+   "reference": 2.1,
+   "scenarios": 1.2,
+   "templates": 0.9,
+   "expected_outputs": 0.7
+  },
+  "asset_kinds_total": {
+   "image": 188,
+   "office_pdf": 9,
+   "font": 58
+  },
+  "top_exts": {
+   ".md": 10392,
+   ".py": 1735,
+   ".yaml": 665,
+   ".json": 492,
+   ".xsd": 234,
+   ".txt": 157,
+   ".mjs": 87,
+   ".js": 84,
+   ".sh": 82,
+   ".png": 82,
+   ".svg": 81,
+   ".ttf": 58,
+   ".csv": 42,
+   ".ps1": 32,
+   ".ts": 26,
+   ".gz": 19,
+   ".html": 17,
+   ".tex": 16,
+   ".jpg": 15,
+   ".yml": 12
+  }
+ },
+ "all_skills_by_publisher": {
+  "Anthropic": {
+   "n": 540,
+   "md_mean": 3.06,
+   "md_median": 1.0,
+   "md_p90": 7,
+   "md_max": 73,
+   "files_mean": 4.01,
+   "files_median": 1.0,
+   "skill_md_lines_median": 135.5,
+   "skill_md_words_median": 1268.5,
+   "skill_md_only_pct": 68.3,
+   "content_files_mean": 3.94,
+   "content_files_median": 1.0,
+   "skill_md_only_content_pct": 69.3,
+   "md_share_of_content_files_pct": 77.5,
+   "per_category": {
+    "md_total": {
+     "mean_per_skill": 3.06,
+     "pct_skills_with_any": 100.0,
+     "share_of_all_files_pct": 76.2
+    },
+    "script": {
+     "mean_per_skill": 0.35,
+     "pct_skills_with_any": 6.3,
+     "share_of_all_files_pct": 8.7
+    },
+    "asset": {
+     "mean_per_skill": 0.11,
+     "pct_skills_with_any": 0.6,
+     "share_of_all_files_pct": 2.8
+    },
+    "data_config": {
+     "mean_per_skill": 0.42,
+     "pct_skills_with_any": 3.9,
+     "share_of_all_files_pct": 10.4
+    },
+    "packaging": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "license": {
+     "mean_per_skill": 0.07,
+     "pct_skills_with_any": 6.1,
+     "share_of_all_files_pct": 1.7
+    },
+    "other": {
+     "mean_per_skill": 0.01,
+     "pct_skills_with_any": 0.7,
+     "share_of_all_files_pct": 0.2
+    }
+   },
+   "pct_with_reference_md_beyond_skill_md": 28.0,
+   "md_histogram": {
+    "1": 389,
+    "2": 25,
+    "3-5": 46,
+    "6-10": 45,
+    "11-20": 25,
+    "21+": 10
+   },
+   "files_histogram": {
+    "1": 369,
+    "2-3": 42,
+    "4-6": 55,
+    "7-10": 23,
+    "11-25": 41,
+    "26+": 10
+   },
+   "content_files_histogram": {
+    "1": 374,
+    "2-3": 38,
+    "4-6": 57,
+    "7-10": 22,
+    "11-25": 39,
+    "26+": 10
+   },
+   "composition_patterns": {
+    "SKILL.md": 374,
+    "md": 123,
+    "md + script": 15,
+    "md + script + data_config": 9,
+    "SKILL.md + script": 5,
+    "SKILL.md + script + data_config": 5,
+    "SKILL.md + data_config": 4,
+    "md + data_config": 2,
+    "md + asset": 2,
+    "SKILL.md + asset + data_config": 1
+   },
+   "subdir_pct": {
+    "references": 19.4,
+    "examples": 8.0,
+    "troubleshooting": 7.2,
+    "concepts": 6.9,
+    "reference": 6.3,
+    "scripts": 5.4,
+    "scenarios": 2.6,
+    "templates": 0.9,
+    "assets": 0.9,
+    "workflows": 0.4,
+    "jobs": 0.2,
+    "specs": 0.2
+   },
+   "asset_kinds_total": {
+    "office_pdf": 7,
+    "font": 54
+   },
+   "top_exts": {
+    ".md": 1650,
+    ".xsd": 117,
+    ".py": 114,
+    ".json": 63,
+    ".txt": 57,
+    ".ttf": 54,
+    ".js": 43,
+    ".sh": 16,
+    ".yaml": 9,
+    "LICENSE": 7,
+    ".pdf": 7,
+    ".html": 6,
+    ".xml": 6,
+    ".mjs": 4,
+    ".gitignore": 3,
+    "NOTICE": 3,
+    ".ts": 2,
+    ".css": 2,
+    ".npmrc": 1,
+    ".sql": 1
+   }
+  },
+  "OpenAI": {
+   "n": 607,
+   "md_mean": 6.26,
+   "md_median": 1,
+   "md_p90": 13,
+   "md_max": 312,
+   "files_mean": 8.86,
+   "files_median": 3,
+   "skill_md_lines_median": 128,
+   "skill_md_words_median": 930,
+   "skill_md_only_pct": 3.1,
+   "content_files_mean": 7.59,
+   "content_files_median": 2,
+   "skill_md_only_content_pct": 42.0,
+   "md_share_of_content_files_pct": 82.4,
+   "per_category": {
+    "md_total": {
+     "mean_per_skill": 6.26,
+     "pct_skills_with_any": 100.0,
+     "share_of_all_files_pct": 70.7
+    },
+    "script": {
+     "mean_per_skill": 0.82,
+     "pct_skills_with_any": 25.5,
+     "share_of_all_files_pct": 9.3
+    },
+    "asset": {
+     "mean_per_skill": 0.1,
+     "pct_skills_with_any": 2.8,
+     "share_of_all_files_pct": 1.1
+    },
+    "data_config": {
+     "mean_per_skill": 0.33,
+     "pct_skills_with_any": 10.4,
+     "share_of_all_files_pct": 3.8
+    },
+    "packaging": {
+     "mean_per_skill": 1.17,
+     "pct_skills_with_any": 93.2,
+     "share_of_all_files_pct": 13.2
+    },
+    "license": {
+     "mean_per_skill": 0.1,
+     "pct_skills_with_any": 9.4,
+     "share_of_all_files_pct": 1.1
+    },
+    "other": {
+     "mean_per_skill": 0.08,
+     "pct_skills_with_any": 3.0,
+     "share_of_all_files_pct": 0.9
+    }
+   },
+   "pct_with_reference_md_beyond_skill_md": 43.3,
+   "md_histogram": {
+    "1": 344,
+    "2": 46,
+    "3-5": 79,
+    "6-10": 58,
+    "11-20": 53,
+    "21+": 27
+   },
+   "files_histogram": {
+    "1": 19,
+    "2-3": 299,
+    "4-6": 118,
+    "7-10": 55,
+    "11-25": 87,
+    "26+": 29
+   },
+   "content_files_histogram": {
+    "1": 255,
+    "2-3": 127,
+    "4-6": 82,
+    "7-10": 44,
+    "11-25": 73,
+    "26+": 26
+   },
+   "composition_patterns": {
+    "SKILL.md": 256,
+    "md": 165,
+    "SKILL.md + script": 74,
+    "md + script": 38,
+    "md + data_config": 25,
+    "md + script + data_config": 21,
+    "SKILL.md + script + data_config": 10,
+    "md + script + asset + data_config": 6,
+    "md + script + asset": 6,
+    "SKILL.md + asset": 3,
+    "md + asset": 2,
+    "SKILL.md + data_config": 1
+   },
+   "subdir_pct": {
+    "agents": 93.2,
+    "references": 38.2,
+    "scripts": 23.4,
+    "assets": 14.8,
+    "examples": 7.1,
+    "troubleshooting": 6.3,
+    "concepts": 5.9,
+    "scenarios": 2.3,
+    "evals": 2.1,
+    "reference": 1.3,
+    "evaluations": 1.3,
+    "specifications": 0.7
+   },
+   "asset_kinds_total": {
+    "image": 182,
+    "office_pdf": 2
+   },
+   "top_exts": {
+    ".md": 3800,
+    ".yaml": 614,
+    ".py": 315,
+    ".json": 125,
+    ".svg": 81,
+    ".mjs": 78,
+    ".png": 77,
+    ".txt": 69,
+    ".js": 33,
+    ".sh": 31,
+    ".csv": 19,
+    ".gz": 18,
+    ".ts": 16,
+    ".jpg": 15,
+    ".sig": 12,
+    ".webp": 9,
+    ".tf": 8,
+    ".css": 7,
+    ".swift": 6,
+    ".yml": 6
+   }
+  },
+  "Other vendors": {
+   "n": 213,
+   "md_mean": 1.87,
+   "md_median": 1,
+   "md_p90": 5,
+   "md_max": 21,
+   "files_mean": 2.07,
+   "files_median": 1,
+   "skill_md_lines_median": 59,
+   "skill_md_words_median": 335,
+   "skill_md_only_pct": 78.9,
+   "content_files_mean": 2.07,
+   "content_files_median": 1,
+   "skill_md_only_content_pct": 78.9,
+   "md_share_of_content_files_pct": 90.5,
+   "per_category": {
+    "md_total": {
+     "mean_per_skill": 1.87,
+     "pct_skills_with_any": 100.0,
+     "share_of_all_files_pct": 90.5
+    },
+    "script": {
+     "mean_per_skill": 0.03,
+     "pct_skills_with_any": 2.8,
+     "share_of_all_files_pct": 1.6
+    },
+    "asset": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "data_config": {
+     "mean_per_skill": 0.16,
+     "pct_skills_with_any": 13.6,
+     "share_of_all_files_pct": 7.7
+    },
+    "packaging": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "license": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "other": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.5,
+     "share_of_all_files_pct": 0.2
+    }
+   },
+   "pct_with_reference_md_beyond_skill_md": 19.2,
+   "md_histogram": {
+    "1": 172,
+    "2": 10,
+    "3-5": 25,
+    "6-10": 0,
+    "11-20": 5,
+    "21+": 1
+   },
+   "files_histogram": {
+    "1": 168,
+    "2-3": 14,
+    "4-6": 25,
+    "7-10": 0,
+    "11-25": 6,
+    "26+": 0
+   },
+   "content_files_histogram": {
+    "1": 168,
+    "2-3": 14,
+    "4-6": 25,
+    "7-10": 0,
+    "11-25": 6,
+    "26+": 0
+   },
+   "composition_patterns": {
+    "SKILL.md": 168,
+    "md + data_config": 27,
+    "md": 11,
+    "SKILL.md + script": 3,
+    "md + script": 2,
+    "SKILL.md + data_config": 1,
+    "md + script + data_config": 1
+   },
+   "subdir_pct": {
+    "references": 4.7,
+    "resources": 3.3,
+    "examples": 1.9,
+    "reference": 1.9,
+    "evaluations": 1.9,
+    "scripts": 1.4,
+    "evals": 1.4,
+    "pipelines": 0.5,
+    "models": 0.5,
+    "tests": 0.5
+   },
+   "asset_kinds_total": {},
+   "top_exts": {
+    ".md": 399,
+    ".yaml": 21,
+    ".json": 13,
+    ".py": 5,
+    ".sh": 1,
+    ".version": 1,
+    ".html": 1
+   }
+  },
+  "Microsoft": {
+   "n": 200,
+   "md_mean": 7.01,
+   "md_median": 3.0,
+   "md_p90": 14,
+   "md_max": 164,
+   "files_mean": 7.93,
+   "files_median": 3.0,
+   "skill_md_lines_median": 276.5,
+   "skill_md_words_median": 885.0,
+   "skill_md_only_pct": 31.0,
+   "content_files_mean": 7.92,
+   "content_files_median": 3.0,
+   "skill_md_only_content_pct": 31.0,
+   "md_share_of_content_files_pct": 88.5,
+   "per_category": {
+    "md_total": {
+     "mean_per_skill": 7.01,
+     "pct_skills_with_any": 100.0,
+     "share_of_all_files_pct": 88.4
+    },
+    "script": {
+     "mean_per_skill": 0.66,
+     "pct_skills_with_any": 15.5,
+     "share_of_all_files_pct": 8.3
+    },
+    "asset": {
+     "mean_per_skill": 0.03,
+     "pct_skills_with_any": 0.5,
+     "share_of_all_files_pct": 0.4
+    },
+    "data_config": {
+     "mean_per_skill": 0.12,
+     "pct_skills_with_any": 3.5,
+     "share_of_all_files_pct": 1.6
+    },
+    "packaging": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "license": {
+     "mean_per_skill": 0.01,
+     "pct_skills_with_any": 0.5,
+     "share_of_all_files_pct": 0.1
+    },
+    "other": {
+     "mean_per_skill": 0.1,
+     "pct_skills_with_any": 2.5,
+     "share_of_all_files_pct": 1.3
+    }
+   },
+   "pct_with_reference_md_beyond_skill_md": 67.5,
+   "md_histogram": {
+    "1": 65,
+    "2": 32,
+    "3-5": 64,
+    "6-10": 11,
+    "11-20": 16,
+    "21+": 12
+   },
+   "files_histogram": {
+    "1": 62,
+    "2-3": 74,
+    "4-6": 23,
+    "7-10": 11,
+    "11-25": 16,
+    "26+": 14
+   },
+   "content_files_histogram": {
+    "1": 62,
+    "2-3": 74,
+    "4-6": 23,
+    "7-10": 11,
+    "11-25": 16,
+    "26+": 14
+   },
+   "composition_patterns": {
+    "md": 103,
+    "SKILL.md": 62,
+    "md + script": 24,
+    "md + script + data_config": 4,
+    "SKILL.md + script": 3,
+    "md + data_config": 3,
+    "md + asset": 1
+   },
+   "subdir_pct": {
+    "references": 66.0,
+    "scripts": 8.5,
+    "assets": 3.5,
+    "workflows": 2.0,
+    "examples": 1.0,
+    "troubleshooting": 1.0,
+    "cost-forecast": 0.5,
+    "cost-query": 0.5,
+    "cost-optimization": 0.5,
+    "phases": 0.5,
+    "templates": 0.5,
+    "knowledge-packs": 0.5
+   },
+   "asset_kinds_total": {
+    "image": 2,
+    "font": 4
+   },
+   "top_exts": {
+    ".md": 1402,
+    ".py": 66,
+    ".ps1": 30,
+    ".sh": 26,
+    ".yaml": 13,
+    ".ts": 8,
+    ".dockerfile": 6,
+    ".dockerignore": 6,
+    ".yml": 5,
+    ".ttf": 4,
+    ".bicep": 4,
+    ".json": 4,
+    ".txt": 3,
+    ".tf": 3,
+    ".png": 2,
+    ".tsx": 1,
+    ".gitignore": 1,
+    ".tpl": 1,
+    ".xml": 1
+   }
+  },
+  "Hugging Face": {
+   "n": 26,
+   "md_mean": 4.08,
+   "md_median": 2.0,
+   "md_p90": 11,
+   "md_max": 17,
+   "files_mean": 6.12,
+   "files_median": 4.0,
+   "skill_md_lines_median": 214.5,
+   "skill_md_words_median": 1238.0,
+   "skill_md_only_pct": 34.6,
+   "content_files_mean": 6.12,
+   "content_files_median": 4.0,
+   "skill_md_only_content_pct": 34.6,
+   "md_share_of_content_files_pct": 66.7,
+   "per_category": {
+    "md_total": {
+     "mean_per_skill": 4.08,
+     "pct_skills_with_any": 100.0,
+     "share_of_all_files_pct": 66.7
+    },
+    "script": {
+     "mean_per_skill": 1.88,
+     "pct_skills_with_any": 38.5,
+     "share_of_all_files_pct": 30.8
+    },
+    "asset": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "data_config": {
+     "mean_per_skill": 0.12,
+     "pct_skills_with_any": 7.7,
+     "share_of_all_files_pct": 1.9
+    },
+    "packaging": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "license": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.0,
+     "share_of_all_files_pct": 0.0
+    },
+    "other": {
+     "mean_per_skill": 0.04,
+     "pct_skills_with_any": 3.8,
+     "share_of_all_files_pct": 0.6
+    }
+   },
+   "pct_with_reference_md_beyond_skill_md": 53.8,
+   "md_histogram": {
+    "1": 12,
+    "2": 4,
+    "3-5": 3,
+    "6-10": 4,
+    "11-20": 3,
+    "21+": 0
+   },
+   "files_histogram": {
+    "1": 9,
+    "2-3": 2,
+    "4-6": 6,
+    "7-10": 5,
+    "11-25": 3,
+    "26+": 1
+   },
+   "content_files_histogram": {
+    "1": 9,
+    "2-3": 2,
+    "4-6": 6,
+    "7-10": 5,
+    "11-25": 3,
+    "26+": 1
+   },
+   "composition_patterns": {
+    "SKILL.md": 9,
+    "md + script": 7,
+    "md": 7,
+    "SKILL.md + script + data_config": 2,
+    "SKILL.md + script": 1
+   },
+   "subdir_pct": {
+    "references": 53.8,
+    "scripts": 34.6,
+    "examples": 7.7,
+    "templates": 3.8
+   },
+   "asset_kinds_total": {},
+   "top_exts": {
+    ".md": 106,
+    ".py": 43,
+    ".sh": 5,
+    ".json": 2,
+    ".txt": 1,
+    ".example": 1,
+    ".tsx": 1
+   }
+  },
+  "Community": {
+   "n": 667,
+   "md_mean": 4.55,
+   "md_median": 4,
+   "md_p90": 8,
+   "md_max": 83,
+   "files_mean": 7.14,
+   "files_median": 6,
+   "skill_md_lines_median": 210,
+   "skill_md_words_median": 1332,
+   "skill_md_only_pct": 24.0,
+   "content_files_mean": 7.13,
+   "content_files_median": 5,
+   "skill_md_only_content_pct": 24.0,
+   "md_share_of_content_files_pct": 63.8,
+   "per_category": {
+    "md_total": {
+     "mean_per_skill": 4.55,
+     "pct_skills_with_any": 100.0,
+     "share_of_all_files_pct": 63.7
+    },
+    "script": {
+     "mean_per_skill": 1.83,
+     "pct_skills_with_any": 53.2,
+     "share_of_all_files_pct": 25.6
+    },
+    "asset": {
+     "mean_per_skill": 0.01,
+     "pct_skills_with_any": 0.1,
+     "share_of_all_files_pct": 0.1
+    },
+    "data_config": {
+     "mean_per_skill": 0.72,
+     "pct_skills_with_any": 21.3,
+     "share_of_all_files_pct": 10.0
+    },
+    "packaging": {
+     "mean_per_skill": 0.0,
+     "pct_skills_with_any": 0.1,
+     "share_of_all_files_pct": 0.0
+    },
+    "license": {
+     "mean_per_skill": 0.01,
+     "pct_skills_with_any": 1.2,
+     "share_of_all_files_pct": 0.2
+    },
+    "other": {
+     "mean_per_skill": 0.03,
+     "pct_skills_with_any": 1.5,
+     "share_of_all_files_pct": 0.4
+    }
+   },
+   "pct_with_reference_md_beyond_skill_md": 73.6,
+   "md_histogram": {
+    "1": 176,
+    "2": 74,
+    "3-5": 245,
+    "6-10": 132,
+    "11-20": 32,
+    "21+": 8
+   },
+   "files_histogram": {
+    "1": 160,
+    "2-3": 89,
+    "4-6": 129,
+    "7-10": 168,
+    "11-25": 99,
+    "26+": 22
+   },
+   "content_files_histogram": {
+    "1": 160,
+    "2-3": 89,
+    "4-6": 130,
+    "7-10": 167,
+    "11-25": 99,
+    "26+": 22
+   },
+   "composition_patterns": {
+    "md + script": 258,
+    "SKILL.md": 160,
+    "md": 100,
+    "md + script + data_config": 86,
+    "md + data_config": 46,
+    "SKILL.md + script": 7,
+    "SKILL.md + data_config": 6,
+    "SKILL.md + script + data_config": 3,
+    "md + script + asset + data_config": 1
+   },
+   "subdir_pct": {
+    "references": 70.9,
+    "scripts": 52.5,
+    "assets": 18.0,
+    "evals": 7.8,
+    "expected_outputs": 2.4,
+    "templates": 1.9,
+    ".claude-plugin": 0.6,
+    "examples": 0.4,
+    "profiles": 0.4,
+    "chapters": 0.3,
+    "reference": 0.1,
+    "rules": 0.1
+   },
+   "asset_kinds_total": {
+    "image": 4
+   },
+   "top_exts": {
+    ".md": 3035,
+    ".py": 1192,
+    ".json": 285,
+    ".xsd": 117,
+    ".txt": 27,
+    ".csv": 23,
+    ".tex": 16,
+    ".yaml": 8,
+    ".js": 8,
+    ".xml": 5,
+    ".html": 5,
+    ".mjs": 5,
+    ".template": 5,
+    ".gitignore": 4,
+    ".sh": 3,
+    ".mplstyle": 3,
+    ".png": 3,
+    ".bst": 3,
+    "LICENSE": 2,
+    ".cs": 2
+   }
+  }
+ },
+ "replacements": [
+  {
+   "rejected": "S0377",
+   "rejected_name": "brand-style",
+   "repo": "anthropics/knowledge-work-plugins",
+   "reason": "other:plugin settings helper that stores brand/output preferences, not a work task",
+   "replacement": "S1293",
+   "replacement_name": "cocounsel-legal:deep-research",
+   "replacement_repo": "anthropics/claude-for-legal"
+  },
+  {
+   "rejected": "S1284",
+   "rejected_name": "investigation-query",
+   "repo": "anthropics/claude-for-legal",
+   "reason": "router-or-api-reference",
+   "replacement": "S1375",
+   "replacement_name": "feature-risk-assessment",
+   "replacement_repo": "anthropics/claude-for-legal"
+  },
+  {
+   "rejected": "S0646",
+   "rejected_name": "publish-artifact-to-sites",
+   "repo": "openai/plugins",
+   "reason": "other:deployment plumbing that publishes an artifact via other Sites skills, not a knowledge task",
+   "replacement": "S0639",
+   "replacement_name": "gather-business-context",
+   "replacement_repo": "openai/plugins"
+  },
+  {
+   "rejected": "S0652",
+   "rejected_name": "inspect-dropbox-file",
+   "repo": "openai/plugins",
+   "reason": "router-or-api-reference",
+   "replacement": "S0600",
+   "replacement_name": "boltz-small-molecule-design",
+   "replacement_repo": "openai/plugins"
+  },
+  {
+   "rejected": "S0800",
+   "rejected_name": "figma-create-new-file",
+   "repo": "openai/skills",
+   "reason": "stub-too-thin",
+   "replacement": "S0826",
+   "replacement_name": "speech",
+   "replacement_repo": "openai/skills"
+  },
+  {
+   "rejected": "S1408",
+   "rejected_name": "tres-onboarding",
+   "repo": "anthropics/claude-plugins-community",
+   "reason": "Pure orchestrator/router over 8 TRES sub-skills for platform entity onboarding/setup; says it contains no low-level logic of its own.",
+   "replacement": "S1415",
+   "replacement_name": "tres-rollup-rules",
+   "replacement_repo": "anthropics/claude-plugins-community"
+  }
+ ],
+ "quality": {
+  "substantive": 70,
+  "moderate": 27,
+  "thin": 3
+ },
+ "robust": {
+  "sample": {
+   "n": 100,
+   "md_mean": 2.96,
+   "md_median": 1.0,
+   "one_md_pct": 61.0,
+   "single_file_pct": 45.0,
+   "content_single_pct": 51.0,
+   "script_pct": 27.0,
+   "asset_pct": 1.0
+  },
+  "sample_reweighted_to_population": {
+   "md_mean": 3.125,
+   "one_md_pct": 51.3,
+   "single_file_pct": 42.7,
+   "content_single_pct": 45.8,
+   "script_pct": 27.6,
+   "asset_pct": 0.5,
+   "data_pct": 22.4,
+   "extra_md_pct": 48.7,
+   "weights": {
+    "Anthropic": 0.932,
+    "OpenAI": 0.509,
+    "Other vendors": 0.486,
+    "Community": 3.759
+   }
+  },
+  "population": {
+   "n": 987,
+   "md_mean": 3.21,
+   "md_median": 1,
+   "one_md_pct": 54.8,
+   "single_file_pct": 43.0,
+   "content_single_pct": 46.7,
+   "script_pct": 31.5,
+   "asset_pct": 1.2
+  },
+  "population_without_kdense": {
+   "n": 900,
+   "md_mean": 2.74,
+   "md_median": 1.0,
+   "one_md_pct": 59.8,
+   "single_file_pct": 46.9,
+   "content_single_pct": 51.0,
+   "script_pct": 27.3,
+   "asset_pct": 1.2
+  },
+  "population_without_claude_for_legal": {
+   "n": 884,
+   "md_mean": 3.46,
+   "md_median": 1.0,
+   "one_md_pct": 50.1,
+   "single_file_pct": 37.1,
+   "content_single_pct": 41.3,
+   "script_pct": 35.2,
+   "asset_pct": 1.4
+  },
+  "anthropic_population": {
+   "n": 368,
+   "md_mean": 1.79,
+   "md_median": 1.0,
+   "one_md_pct": 79.6,
+   "single_file_pct": 76.6,
+   "content_single_pct": 77.2,
+   "script_pct": 5.4,
+   "asset_pct": 0.8
+  },
+  "anthropic_without_legal": {
+   "n": 265,
+   "md_mean": 2.07,
+   "md_median": 1,
+   "one_md_pct": 73.6,
+   "single_file_pct": 70.2,
+   "content_single_pct": 70.9,
+   "script_pct": 7.5,
+   "asset_pct": 1.1
+  },
+  "anthropics_skills_repo": {
+   "n": 11,
+   "md_mean": 2.45,
+   "md_median": 1,
+   "one_md_pct": 72.7,
+   "single_file_pct": 9.1,
+   "content_single_pct": 18.2,
+   "script_pct": 54.5,
+   "asset_pct": 18.2
+  },
+  "openai_population": {
+   "n": 176,
+   "md_mean": 3.51,
+   "md_median": 1.0,
+   "one_md_pct": 61.4,
+   "single_file_pct": 9.1,
+   "content_single_pct": 29.0,
+   "script_pct": 50.0,
+   "asset_pct": 4.5
+  },
+  "pooled_share_sample": {
+   "md_total": 47.2,
+   "script": 20.6,
+   "asset": 5.1,
+   "data_config": 18.2,
+   "packaging": 7.8,
+   "license": 1.0,
+   "other": 0.2
+  },
+  "pooled_share_sample_without_3_largest": {
+   "md_total": 70.6,
+   "script": 11.2,
+   "asset": 0.0,
+   "data_config": 4.4,
+   "packaging": 12.5,
+   "license": 1.3,
+   "other": 0.0
+  },
+  "three_largest": [
+   {
+    "name": "fraud-detection",
+    "repo": "anthropics/healthcare",
+    "files": 104
+   },
+   {
+    "name": "produce",
+    "repo": "openai/plugins",
+    "files": 78
+   },
+   {
+    "name": "docx",
+    "repo": "anthropics/skills",
+    "files": 61
+   }
+  ],
+  "files_in_3_largest_pct": 38.8,
+  "anthropic_single_file_refs_outside_folder_pct": 56.3,
+  "anthropic_single_file_n": 284,
+  "readme_like_md_in_sample": 7,
+  "near_dups_dropped": 31
+ }
+}

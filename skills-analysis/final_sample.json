@@ -1,0 +1,4842 @@
+[
+ {
+  "repo": "anthropics/financial-services-plugins",
+  "path": "plugins/partner-built/lseg/skills/fx-carry-trade",
+  "name": "fx-carry-trade",
+  "description": "Evaluate FX carry trade opportunities by combining spot rates, forward points, interest rate differentials, volatility surface analysis, and historical price trends. Use when analyzing carry trades, comparing FX forward curves, assessing carry-to-vol ratios, or evaluating currency pair opportunities.",
+  "skill_md_sha": "2febf2bb3c46",
+  "skill_md_lines": 52,
+  "skill_md_words": 588,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 3772,
+  "plugin": "partner-built/lseg",
+  "id": "S0180",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S0180",
+   "knowledge_work": true,
+   "domain": "investing-banking-pe",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "moderate"
+  }
+ },
+ {
+  "repo": "anthropics/financial-services-plugins",
+  "path": "plugins/vertical-plugins/equity-research/skills/sector-overview",
+  "name": "sector-overview",
+  "description": "Create comprehensive industry and sector landscape reports covering market dynamics, competitive positioning, key players, and thematic trends. Use for client requests, sector initiations, thematic research pieces, or internal knowledge building. Triggers on \"sector overview\", \"industry report\", \"market landscape\", \"sector analysis\", \"industry deep dive\", or \"thematic research\".",
+  "skill_md_sha": "28728f581842",
+  "skill_md_lines": 89,
+  "skill_md_words": 496,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 3458,
+  "plugin": "vertical-plugins/equity-research",
+  "id": "S0194",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S0194",
+   "knowledge_work": true,
+   "domain": "investing-banking-pe",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "moderate"
+  }
+ },
+ {
+  "repo": "anthropics/financial-services-plugins",
+  "path": "plugins/vertical-plugins/financial-analysis/skills/competitive-analysis",
+  "name": "competitive-analysis",
+  "description": "Framework for building competitive landscape decks \u2014 market positioning, competitor deep-dives, comparative analysis, strategic synthesis. Use when the user asks for a competitive landscape, competitor analysis, peer comparison, market positioning assessment, strategic review, or investment memo deck. Also triggers on \"who are the competitors to X\", \"benchmark X against peers\", \"build a market map",
+  "skill_md_sha": "0d4087144926",
+  "skill_md_lines": 280,
+  "skill_md_words": 1877,
+  "files_total": 3,
+  "md_total": 3,
+  "counts": {
+   "skill_md": 1,
+   "md": 2,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 3
+  },
+  "subdirs": {
+   "(root)": 1,
+   "references": 2
+  },
+  "bytes": 13760,
+  "plugin": "vertical-plugins/financial-analysis",
+  "id": "S0199",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S0199",
+   "knowledge_work": true,
+   "domain": "investing-banking-pe",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "references/ frameworks (2x2 axis pairs by industry) and table/slide schemas",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "anthropics/financial-services-plugins",
+  "path": "plugins/vertical-plugins/fund-admin/skills/accrual-schedule",
+  "name": "accrual-schedule",
+  "description": "Build the period-end accrual schedule \u2014 for each accrual, compute the entry, cite the support, and draft the JE. Use during month-end close; the JE is a draft for controller approval, not a posting.",
+  "skill_md_sha": "467a2e3b027e",
+  "skill_md_lines": 38,
+  "skill_md_words": 273,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 1702,
+  "plugin": "vertical-plugins/fund-admin",
+  "id": "S0209",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S0209",
+   "knowledge_work": true,
+   "domain": "finance-accounting",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "moderate"
+  }
+ },
+ {
+  "repo": "anthropics/financial-services-plugins",
+  "path": "plugins/vertical-plugins/investment-banking/skills/merger-model",
+  "name": "merger-model",
+  "description": "Build accretion/dilution analysis for M&A transactions. Models pro forma EPS impact, synergy sensitivities, and purchase price allocation. Use when evaluating a potential acquisition, preparing merger consequences analysis for a pitch, or advising on deal terms. Triggers on \"merger model\", \"accretion dilution\", \"M&A model\", \"pro forma EPS\", \"merger consequences\", or \"deal impact analysis\".",
+  "skill_md_sha": "12ded9b7a565",
+  "skill_md_lines": 112,
+  "skill_md_words": 644,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 3564,
+  "plugin": "vertical-plugins/investment-banking",
+  "id": "S0219",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S0219",
+   "knowledge_work": true,
+   "domain": "investing-banking-pe",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "anthropics/financial-services-plugins",
+  "path": "plugins/vertical-plugins/private-equity/skills/portfolio-monitoring",
+  "name": "portfolio-monitoring",
+  "description": "Track and analyze portfolio company performance against plan. Ingests monthly/quarterly financial packages (Excel, PDF), extracts KPIs, flags variances to budget, and produces summary dashboards. Use when reviewing portfolio company financials, preparing board materials, or monitoring covenant compliance. Triggers on \"review portfolio company\", \"monthly financials\", \"how is [company] performing\", ",
+  "skill_md_sha": "08f046aa7c88",
+  "skill_md_lines": 61,
+  "skill_md_words": 352,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 2312,
+  "plugin": "vertical-plugins/private-equity",
+  "id": "S0232",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S0232",
+   "knowledge_work": true,
+   "domain": "investing-banking-pe",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "moderate"
+  }
+ },
+ {
+  "repo": "anthropics/knowledge-work-plugins",
+  "path": "bio-research/skills/scientific-problem-selection",
+  "name": "scientific-problem-selection",
+  "description": "This skill should be used when scientists need help with research problem selection, project ideation, troubleshooting stuck projects, or strategic scientific decisions. Use this skill when users ask to pitch a new research idea, work through a project problem, evaluate project risks, plan research strategy, navigate decision trees, or get help choosing what scientific problem to work on. Typical ",
+  "skill_md_sha": "3100387e550c",
+  "skill_md_lines": 270,
+  "skill_md_words": 1613,
+  "files_total": 11,
+  "md_total": 10,
+  "counts": {
+   "skill_md": 1,
+   "md": 9,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 1,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 10,
+   ".txt": 1
+  },
+  "subdirs": {
+   "(root)": 2,
+   "references": 9
+  },
+  "bytes": 115355,
+  "plugin": "bio-research",
+  "id": "S0238",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S0238",
+   "knowledge_work": true,
+   "domain": "science-research",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "references/ 9 numbered sub-skill guides (intuition pumps, risk, decision tree, etc.)",
+   "nonmd_summary": "Apache 2.0 LICENSE.txt",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "anthropics/knowledge-work-plugins",
+  "path": "customer-support/skills/draft-response",
+  "name": "draft-response",
+  "description": "Draft a professional customer-facing response tailored to the situation and relationship. Use when answering a product question, responding to an escalation or outage, delivering bad news like a delay or won't-fix, declining a feature request, or replying to a billing issue.",
+  "skill_md_sha": "34e8e3644e9c",
+  "skill_md_lines": 419,
+  "skill_md_words": 2258,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 14581,
+  "plugin": "customer-support",
+  "id": "S0244",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S0244",
+   "knowledge_work": true,
+   "domain": "customer-support",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "anthropics/knowledge-work-plugins",
+  "path": "data/skills/write-query",
+  "name": "write-query",
+  "description": "Write optimized SQL for your dialect with best practices. Use when translating a natural-language data need into SQL, building a multi-CTE query with joins and aggregations, optimizing a query against a large partitioned table, or getting dialect-specific syntax for Snowflake, BigQuery, Postgres, etc.",
+  "skill_md_sha": "1454847bc1b1",
+  "skill_md_lines": 123,
+  "skill_md_words": 721,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 4753,
+  "plugin": "data",
+  "id": "S0256",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S0256",
+   "knowledge_work": true,
+   "domain": "data-analytics-bi",
+   "role": "task",
+   "real": true,
+   "note": "SQL for business data analysts"
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "moderate"
+  }
+ },
+ {
+  "repo": "anthropics/knowledge-work-plugins",
+  "path": "design/skills/design-system",
+  "name": "design-system",
+  "description": "Audit, document, or extend your design system. Use when checking for naming inconsistencies or hardcoded values across components, writing documentation for a component's variants, states, and accessibility notes, or designing a new pattern that fits the existing system.",
+  "skill_md_sha": "18ae243772a6",
+  "skill_md_lines": 191,
+  "skill_md_words": 824,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 5600,
+  "plugin": "design",
+  "id": "S0260",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S0260",
+   "knowledge_work": true,
+   "domain": "design-creative-media",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "anthropics/knowledge-work-plugins",
+  "path": "finance/skills/sox-testing",
+  "name": "sox-testing",
+  "description": "Generate SOX sample selections, testing workpapers, and control assessments. Use when planning quarterly or annual SOX 404 testing, pulling a sample for a control (revenue, P2P, ITGC, close), building a testing workpaper template, or evaluating and classifying a control deficiency.",
+  "skill_md_sha": "0a556cb46614",
+  "skill_md_lines": 219,
+  "skill_md_words": 1237,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 9306,
+  "plugin": "finance",
+  "id": "S0275",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S0275",
+   "knowledge_work": true,
+   "domain": "finance-accounting",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "anthropics/knowledge-work-plugins",
+  "path": "human-resources/skills/org-planning",
+  "name": "org-planning",
+  "description": "Headcount planning, org design, and team structure optimization. Trigger with \"org planning\", \"headcount plan\", \"team structure\", \"reorg\", \"who should we hire next\", or when the user is thinking about team size, reporting structure, or organizational design.",
+  "skill_md_sha": "1716dd09cdef",
+  "skill_md_lines": 29,
+  "skill_md_words": 197,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 1227,
+  "plugin": "human-resources",
+  "id": "S0281",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S0281",
+   "knowledge_work": true,
+   "domain": "hr-people",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "thin"
+  }
+ },
+ {
+  "repo": "anthropics/knowledge-work-plugins",
+  "path": "legal/skills/legal-response",
+  "name": "legal-response",
+  "description": "Generate a response to a common legal inquiry using configured templates, with built-in escalation checks for situations that shouldn't use a templated reply. Use when responding to data subject requests, litigation hold notices, vendor legal questions, NDA requests from business teams, or subpoenas.",
+  "skill_md_sha": "6c34cf66d1a4",
+  "skill_md_lines": 458,
+  "skill_md_words": 2307,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 16174,
+  "plugin": "legal",
+  "id": "S0288",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S0288",
+   "knowledge_work": true,
+   "domain": "legal-compliance",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "anthropics/knowledge-work-plugins",
+  "path": "marketing/skills/competitive-brief",
+  "name": "competitive-brief",
+  "description": "Research competitors and generate a positioning and messaging comparison with content gaps, opportunities, and threats. Use when building sales battlecards, when finding positioning gaps and messaging angles competitors haven't claimed, or when a competitor makes a move and you need to assess the impact.",
+  "skill_md_sha": "05c291dbf042",
+  "skill_md_lines": 332,
+  "skill_md_words": 1999,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 13150,
+  "plugin": "marketing",
+  "id": "S0297",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S0297",
+   "knowledge_work": true,
+   "domain": "marketing-content",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "anthropics/knowledge-work-plugins",
+  "path": "operations/skills/status-report",
+  "name": "status-report",
+  "description": "Generate a status report with KPIs, risks, and action items. Use when writing a weekly or monthly update for leadership, summarizing project health with green/yellow/red status, surfacing risks and decisions that need stakeholder attention, or turning a pile of project tracker activity into a readable narrative.",
+  "skill_md_sha": "1087b7ec4402",
+  "skill_md_lines": 78,
+  "skill_md_words": 386,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 2571,
+  "plugin": "operations",
+  "id": "S0310",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S0310",
+   "knowledge_work": true,
+   "domain": "operations-admin",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "moderate"
+  }
+ },
+ {
+  "repo": "anthropics/knowledge-work-plugins",
+  "path": "partner-built/common-room/skills/compose-outreach",
+  "name": "compose-outreach",
+  "description": "Generate personalized outreach messages using Common Room signals. Triggers on 'draft outreach to [person]', 'write an email to [name]', 'compose a message for [contact]', or any outreach drafting request.",
+  "skill_md_sha": "2e2d1bdc44c8",
+  "skill_md_lines": 136,
+  "skill_md_words": 845,
+  "files_total": 2,
+  "md_total": 2,
+  "counts": {
+   "skill_md": 1,
+   "md": 1,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 2
+  },
+  "subdirs": {
+   "(root)": 1,
+   "references": 1
+  },
+  "bytes": 8246,
+  "plugin": "partner-built/common-room",
+  "id": "S0320",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S0320",
+   "knowledge_work": true,
+   "domain": "sales-crm",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "references/ outreach format rules and examples for email, call script, LinkedIn",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "anthropics/knowledge-work-plugins",
+  "path": "product-management/skills/competitive-brief",
+  "name": "competitive-brief",
+  "description": "Create a competitive analysis brief for one or more competitors or a feature area. Use when informing product strategy or feature prioritization, building sales battle cards, prepping board or investor materials, or deciding where to differentiate vs. achieve parity.",
+  "skill_md_sha": "0f07d67751dd",
+  "skill_md_lines": 303,
+  "skill_md_words": 2169,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 14774,
+  "plugin": "product-management",
+  "id": "S0327",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S0327",
+   "knowledge_work": true,
+   "domain": "product-management",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "anthropics/knowledge-work-plugins",
+  "path": "sales/skills/stakeholder-map",
+  "name": "stakeholder-map",
+  "description": "Map the people in a deal or account - roles, influence, sentiment, who's missing, and your best access path to the people you haven't reached. Use when the user asks \"who are the players at [account]\", \"who's my way in\", \"am I single-threaded on [deal]\", \"map the stakeholders\", or \"who else should I be talking to\".",
+  "skill_md_sha": "02bef4cf8fa3",
+  "skill_md_lines": 108,
+  "skill_md_words": 1383,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 8411,
+  "plugin": "sales",
+  "id": "S0370",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S0370",
+   "knowledge_work": true,
+   "domain": "sales-crm",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "anthropics/knowledge-work-plugins",
+  "path": "sales/skills/customer-health",
+  "name": "customer-health",
+  "description": "Health check on a customer account and QBR-ready prep - relationship strength, engagement trend, risk signals, value delivered, and the agenda that makes the review worth their time. Use when the user asks \"how healthy is [account]\", \"customer health check\", \"prep the [account] QBR\", \"business review prep\", or \"are we at risk with [customer]\".",
+  "skill_md_sha": "062419e57ed8",
+  "skill_md_lines": 109,
+  "skill_md_words": 1376,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 8353,
+  "plugin": "sales",
+  "id": "S0349",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S0349",
+   "knowledge_work": true,
+   "domain": "sales-crm",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "anthropics/knowledge-work-plugins",
+  "path": "sales/skills/pipeline-review",
+  "name": "pipeline-review",
+  "description": "Stage-by-stage pipeline health check - coverage, aging, conversion, and at-risk deals - from CRM opportunity data. Use when the user asks \"review my pipeline\", \"pipeline health\", \"where's my pipeline stuck\", \"weekly pipeline review\", \"which deals should I focus on this week\", \"any stale or stuck deals\", \"which deals have past close dates\", \"which deals are single-threaded\", or \"check my pipeline c",
+  "skill_md_sha": "0d42b8faaf90",
+  "skill_md_lines": 98,
+  "skill_md_words": 1218,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 7373,
+  "plugin": "sales",
+  "id": "S0364",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S0364",
+   "knowledge_work": true,
+   "domain": "sales-crm",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "anthropics/knowledge-work-plugins",
+  "path": "sales/skills/handle-objection",
+  "name": "handle-objection",
+  "description": "Work through a live objection or competitive threat - what's really being said, the response that has worked before, and the proof points to use, grounded in your own win/loss history and customer quotes. Use when the user says \"they said we're too expensive\", \"how do I respond to [objection]\", \"[competitor] is in the deal\", \"help me handle this pushback\", or pastes an objection from an email or c",
+  "skill_md_sha": "17d7fce20451",
+  "skill_md_lines": 94,
+  "skill_md_words": 1261,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 7702,
+  "plugin": "sales",
+  "id": "S0360",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S0360",
+   "knowledge_work": true,
+   "domain": "sales-crm",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "anthropics/knowledge-work-plugins",
+  "path": "small-business/skills/proposal-builder",
+  "name": "proposal-builder",
+  "description": "> Turns whatever came out of a discovery conversation \u2014 a call transcript, a voice memo, jobsite photos, an RFP document, a set of drawings, or scrappy notes \u2014 into a branded, costed proposal, estimate, or statement of work built on the owner's own templates and historical pricing. Routes it for signature and triggers the deposit invoice once it's accepted. Works entirely from uploaded files when ",
+  "skill_md_sha": "0bd7ef249a90",
+  "skill_md_lines": 169,
+  "skill_md_words": 2514,
+  "files_total": 6,
+  "md_total": 6,
+  "counts": {
+   "skill_md": 1,
+   "md": 5,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 6
+  },
+  "subdirs": {
+   "(root)": 1,
+   "reference": 5
+  },
+  "bytes": 40805,
+  "plugin": "small-business",
+  "id": "S0405",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S0405",
+   "knowledge_work": true,
+   "domain": "sales-crm",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "reference/ discovery extraction, pricing method, proposal structure, output template, gotchas",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "anthropics/knowledge-work-plugins",
+  "path": "small-business/skills/job-post-builder",
+  "name": "job-post-builder",
+  "description": "> Builds end-to-end hiring packets \u2014 job post, structured interview guide with scoring rubric, and offer letter template \u2014 from a hiring brief. Triggers on: \"help me hire\", \"we're hiring for\", \"write a job post\", \"job description\", \"JD\", \"open role\", \"create a job ad\", \"interview questions\", \"scoring rubric\", \"draft an offer letter\", \"send an offer\", \"make a hiring packet\", or any request to recru",
+  "skill_md_sha": "0e47c8a75582",
+  "skill_md_lines": 205,
+  "skill_md_words": 1645,
+  "files_total": 9,
+  "md_total": 9,
+  "counts": {
+   "skill_md": 1,
+   "md": 8,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 9
+  },
+  "subdirs": {
+   "(root)": 1,
+   "reference": 8
+  },
+  "bytes": 37331,
+  "plugin": "small-business",
+  "id": "S0395",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S0395",
+   "knowledge_work": true,
+   "domain": "hr-people",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "reference/ role intake, post/interview/offer templates, DocuSign routing, gotchas, worked example",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "anthropics/knowledge-work-plugins",
+  "path": "small-business/skills/ap-processor",
+  "name": "ap-processor",
+  "description": "> Works the bill pile end to end: reads bills and vendor statements out of the AP inbox or from uploaded PDFs and phone photos, pulls out vendor, amount, due date, and line detail, codes each one to the right account and job, matches it against the purchase order and the receiving ticket, then stages the entries and a proposed payment run in QuickBooks, Xero, or NetSuite for the owner to approve i",
+  "skill_md_sha": "0f70017e78b9",
+  "skill_md_lines": 159,
+  "skill_md_words": 2494,
+  "files_total": 6,
+  "md_total": 6,
+  "counts": {
+   "skill_md": 1,
+   "md": 5,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 6
+  },
+  "subdirs": {
+   "(root)": 1,
+   "reference": 5
+  },
+  "bytes": 33621,
+  "plugin": "small-business",
+  "id": "S0376",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S0376",
+   "knowledge_work": true,
+   "domain": "finance-accounting",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "reference/ intake/extraction, coding rules, PO matching, payment run, gotchas",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "anthropics/claude-for-legal",
+  "path": "external_plugins/cocounsel-legal/skills/deep-research",
+  "name": "cocounsel-legal:deep-research",
+  "description": "> Use this skill whenever a user specifically requests legal research or Westlaw Deep Research, asks for CoCounsel Legal or cocounsel legal support, or asks a question that requires explaining, analyzing, or synthesizing U.S. law.",
+  "skill_md_sha": "6b70703ce39c",
+  "skill_md_lines": 133,
+  "skill_md_words": 1106,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 7696,
+  "plugin": "external_plugins",
+  "id": "S1293",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1293",
+   "knowledge_work": true,
+   "domain": "legal-compliance",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "moderate"
+  }
+ },
+ {
+  "repo": "anthropics/skills",
+  "path": "skills/docx",
+  "name": "docx",
+  "description": "Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files) or Word templates (.dotx files). Triggers include: any mention of 'Word doc', 'word document', '.docx', '.dotx', or requests to produce professional documents with formatting like tables of contents, headings, page numbers, or letterheads. Also use when extracting or reorganizing content from .",
+  "skill_md_sha": "04e8e2d94e78",
+  "skill_md_lines": 92,
+  "skill_md_words": 975,
+  "files_total": 61,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 15,
+   "asset": 0,
+   "data_config": 44,
+   "license": 1,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1,
+   ".txt": 1,
+   ".py": 15,
+   ".xml": 5,
+   ".xsd": 39
+  },
+  "subdirs": {
+   "(root)": 2,
+   "scripts": 59
+  },
+  "bytes": 1128695,
+  "plugin": "skills",
+  "id": "S0428",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S0428",
+   "knowledge_work": true,
+   "domain": "docs-office-files",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "Python scripts for comments, merging runs, accepting changes, validation, soffice; OOXML XSD schemas; comment XML templates; license",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "anthropics/claude-for-financial-advisors",
+  "path": "skills/post-meeting",
+  "name": "post-meeting",
+  "description": "Turn a client meeting into next-best-action follow-up for a financial advisor \u2014 no drafting required. Given a meeting (via Zocks, Wealthbox, or a pasted transcript), finds the right household, drafts a CRM note plus the action items and opportunities it heard, shows them all in one batch for approval, then writes what's approved and offers to file the record in Drive. Triggers on \"log the meeting\"",
+  "skill_md_sha": "052c41f19288",
+  "skill_md_lines": 89,
+  "skill_md_words": 1461,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 8922,
+  "plugin": "skills",
+  "id": "S1235",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1235",
+   "knowledge_work": true,
+   "domain": "investing-banking-pe",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "anthropics/claude-for-legal",
+  "path": "ai-governance-legal/skills/policy-monitor",
+  "name": "policy-monitor",
+  "description": "> Keep the AI policy current with practice \u2014 weekly sweep of saved AIAs, triage results, and vendor reviews to find policy drift, or direct query for a proposed new AI practice. Use when user says \"policy sweep\", \"does our AI policy cover this\", \"we want to start doing X \u2014 does the policy need updating\", \"run the policy monitor\", or on a recurring schedule.",
+  "skill_md_sha": "1d6d846589bd",
+  "skill_md_lines": 355,
+  "skill_md_words": 2266,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 15081,
+  "plugin": "ai-governance-legal",
+  "id": "S1243",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1243",
+   "knowledge_work": true,
+   "domain": "legal-compliance",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "anthropics/claude-for-legal",
+  "path": "commercial-legal/skills/nda-review",
+  "name": "nda-review",
+  "description": "> Reference: fast triage of inbound NDAs into GREEN / YELLOW / RED so the team only spends lawyer time on the ones that need it. Built for sales and BD to self-serve before pinging legal. Loaded by /commercial-legal:review when an NDA is detected.",
+  "skill_md_sha": "0c3c2b6ce6cc",
+  "skill_md_lines": 313,
+  "skill_md_words": 2850,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 20288,
+  "plugin": "commercial-legal",
+  "id": "S1253",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1253",
+   "knowledge_work": true,
+   "domain": "legal-compliance",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "anthropics/claude-for-legal",
+  "path": "corporate-legal/skills/integration-management",
+  "name": "integration-management",
+  "description": "> Post-closing M&A integration tracker \u2014 phased workplan, consent tracking, contract assignment at scale, weekly status reports. Initializes from whatever deal artifacts are available (purchase agreement, deal summary, closing checklist) and connects to deal-context.md and closing-checklist.yaml from the M&A cold-start. Use when user says \"integration\", \"post-close\", \"post-closing\", \"consents outs",
+  "skill_md_sha": "0cba99874287",
+  "skill_md_lines": 554,
+  "skill_md_words": 3171,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 23384,
+  "plugin": "corporate-legal",
+  "id": "S1268",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1268",
+   "knowledge_work": true,
+   "domain": "legal-compliance",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "anthropics/claude-for-legal",
+  "path": "employment-legal/skills/worker-classification",
+  "name": "worker-classification",
+  "description": "> Classify a proposed worker engagement \u2014 employee, IC, temp, or vendor \u2014 by running the applicable jurisdiction tests and flagging misclassification gaps between the intended arrangement and what the facts actually support. Prospective use only. Use when someone says \"we want to bring on a contractor\", \"is this a vendor or a temp\", \"how should we classify this person\", or describes a proposed wor",
+  "skill_md_sha": "0f9cddfbed60",
+  "skill_md_lines": 400,
+  "skill_md_words": 3354,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 22235,
+  "plugin": "employment-legal",
+  "id": "S1292",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1292",
+   "knowledge_work": true,
+   "domain": "legal-compliance",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "anthropics/claude-for-legal",
+  "path": "product-legal/skills/feature-risk-assessment",
+  "name": "feature-risk-assessment",
+  "description": "> Deeper risk assessment for a single feature or product area when the launch review found something that needs more than a line item. Structured analysis: what could go wrong, how likely, how bad, what mitigates it. Use when user says \"deep dive on this risk\", \"risk assessment for [feature]\", \"what could go wrong with\", or when launch-review flags a novel issue.",
+  "skill_md_sha": "482a3ff369ae",
+  "skill_md_lines": 159,
+  "skill_md_words": 1393,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 8965,
+  "plugin": "product-legal",
+  "id": "S1375",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1375",
+   "knowledge_work": true,
+   "domain": "legal-compliance",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "anthropics/claude-for-legal",
+  "path": "ip-legal/skills/cease-desist",
+  "name": "cease-desist",
+  "description": "> Draft a cease-and-desist letter (send mode) or triage one you received (receive mode). Use when asserting your rights against an infringer with a demand letter calibrated to your enforcement posture, or when an incoming C&D needs triage into a structured options memo with a recommendation.",
+  "skill_md_sha": "0407d4bcf66d",
+  "skill_md_lines": 502,
+  "skill_md_words": 5551,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 38156,
+  "plugin": "ip-legal",
+  "id": "S1294",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1294",
+   "knowledge_work": true,
+   "domain": "legal-compliance",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "anthropics/claude-for-legal",
+  "path": "law-student/skills/irac-practice",
+  "name": "irac-practice",
+  "description": "> Grade an IRAC essay for structure, issue-spotting, rule accuracy, analysis depth, and organization. Does NOT rewrite the essay or show a model answer; tracks patterns across sessions. Use when the user says \"grade my IRAC\", \"check my essay\", or \"I wrote this, give me feedback\".",
+  "skill_md_sha": "051f3236f927",
+  "skill_md_lines": 179,
+  "skill_md_words": 1584,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 10437,
+  "plugin": "law-student",
+  "id": "S1313",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1313",
+   "knowledge_work": true,
+   "domain": "legal-compliance",
+   "role": "task",
+   "real": true,
+   "note": "law student study aid"
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "anthropics/claude-for-legal",
+  "path": "legal-clinic/skills/research-start",
+  "name": "research-start",
+  "description": "> Research roadmap for a legal issue \u2014 statutes to check, case law areas to investigate, regulatory frameworks, Westlaw search terms. Leads and frameworks, NOT authoritative citations; students verify and develop everything. Use when a student asks where to start researching, wants a research roadmap for an issue, or needs gaps identified in existing research.",
+  "skill_md_sha": "0ab969495e00",
+  "skill_md_lines": 204,
+  "skill_md_words": 1735,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 11471,
+  "plugin": "legal-clinic",
+  "id": "S1341",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1341",
+   "knowledge_work": true,
+   "domain": "legal-compliance",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "anthropics/claude-for-legal",
+  "path": "litigation-legal/skills/subpoena-triage",
+  "name": "subpoena-triage",
+  "description": "Triage a subpoena served on the company \u2014 classify it, analyze scope/burden/privilege, cross-check the portfolio, and produce an objections framework, compliance plan, and deadline calendar. Use when the user says \"we got a subpoena\", \"served with a subpoena\", or shares a subpoena, CID, or third-party document request to evaluate.",
+  "skill_md_sha": "35567c27b57a",
+  "skill_md_lines": 279,
+  "skill_md_words": 2557,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 18071,
+  "plugin": "litigation-legal",
+  "id": "S1363",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1363",
+   "knowledge_work": true,
+   "domain": "legal-compliance",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "anthropics/claude-for-legal",
+  "path": "litigation-legal/skills/deposition-prep",
+  "name": "deposition-prep",
+  "description": "Build a deposition outline for a witness \u2014 pull their documents from the eDiscovery platform, organize topics around the case theory, and surface impeachment material. Use when the user says \"depo prep for [witness]\", \"build a depo outline\", or \"prepare for [name]'s deposition\".",
+  "skill_md_sha": "467d4e985411",
+  "skill_md_lines": 205,
+  "skill_md_words": 2164,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 14119,
+  "plugin": "litigation-legal",
+  "id": "S1353",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1353",
+   "knowledge_work": true,
+   "domain": "legal-compliance",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "anthropics/claude-for-legal",
+  "path": "privacy-legal/skills/dpa-review",
+  "name": "dpa-review",
+  "description": "> Review a Data Processing Agreement against your DPA playbook \u2014 auto-detects whether you're processor or controller and applies the right half of the playbook. Use when the user says \"review this DPA\", \"check this data processing addendum\", \"customer sent their DPA\", \"is this DPA okay\", or attaches a DPA.",
+  "skill_md_sha": "342919128a80",
+  "skill_md_lines": 246,
+  "skill_md_words": 3146,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 21116,
+  "plugin": "privacy-legal",
+  "id": "S1366",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1366",
+   "knowledge_work": true,
+   "domain": "legal-compliance",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "anthropics/claude-for-legal",
+  "path": "regulatory-legal/skills/policy-redraft",
+  "name": "policy-redraft",
+  "description": "Produce a proposed marked-up policy redraft that closes a gap found by /regulatory-legal:gaps or /regulatory-legal:policy-diff. A first draft for internal review \u2014 not for direct application to approved policy documents. Use when the user says \"redraft the policy\", \"draft the policy fix\", \"mark up the policy\", or when gap-surfacer hands off a gap for drafting.",
+  "skill_md_sha": "1ad2e0e8d68d",
+  "skill_md_lines": 200,
+  "skill_md_words": 2232,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 14066,
+  "plugin": "regulatory-legal",
+  "id": "S1387",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1387",
+   "knowledge_work": true,
+   "domain": "legal-compliance",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "anthropics/healthcare",
+  "path": "plugins/healthcare/skills/fraud-detection",
+  "name": "fraud-detection",
+  "description": "Screen a Medicare/Medicaid claims corpus for fraud, waste, and abuse and produce ranked, fully-cited investigation referrals for an SIU / program-integrity team. Use when asked to run a fraud sweep, screen claims for FWA, find billing anomalies, or generate investigation referrals over a claims dataset.",
+  "skill_md_sha": "2136f50d206a",
+  "skill_md_lines": 154,
+  "skill_md_words": 1312,
+  "files_total": 104,
+  "md_total": 8,
+  "counts": {
+   "skill_md": 1,
+   "md": 7,
+   "script": 43,
+   "asset": 0,
+   "data_config": 52,
+   "license": 0,
+   "other": 1
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 8,
+   ".html": 1,
+   ".gitignore": 1,
+   ".json": 52,
+   ".sql": 1,
+   ".js": 41
+  },
+  "subdirs": {
+   "(root)": 9,
+   "workflows": 2,
+   "scripts": 40,
+   "state-policy": 53
+  },
+  "bytes": 597618,
+  "plugin": "healthcare",
+  "id": "S1426",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1426",
+   "knowledge_work": true,
+   "domain": "legal-compliance",
+   "role": "task",
+   "real": true,
+   "note": "healthcare claims fraud/program integrity"
+  },
+  "publisher": "Anthropic",
+  "audit": {
+   "md_roles": "README; claims-loading, detector-proposal, reference-data guides; scripts dev notes; state-policy crawl checklists",
+   "nonmd_summary": "Node detectors/pipeline/renderers, 2 workflow JS, claims SQL schema; 51 state Medicaid policy JSONs, package.json, architecture HTML, .gitignore",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "openai/plugins",
+  "path": "plugins/adobe/skills/adobe-create-mockups",
+  "name": "adobe-create-mockups",
+  "description": "> Use when a user wants to see their logo, design, or sketch on a product or scene mockup \u2014 mugs, t-shirts, business cards, hats, phone screens, posters, billboards, or similar. Triggers on \"create mockups\", \"show my logo on products\", or any logo upload with a request to visualize it on items. Access: \ud83d\udd10 Signed-In required | Gen AI: \u2705 Adobe Firefly via `image_generate` used for design creation, sk",
+  "skill_md_sha": "2ff30520bdf2",
+  "skill_md_lines": 438,
+  "skill_md_words": 3266,
+  "files_total": 4,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 2,
+   "data_config": 1,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {
+   "image": 2
+  },
+  "exts": {
+   ".md": 1,
+   ".yaml": 1,
+   ".svg": 2
+  },
+  "subdirs": {
+   "(root)": 1,
+   "agents": 1,
+   "assets": 2
+  },
+  "bytes": 22484,
+  "plugin": "adobe",
+  "id": "S0587",
+  "packaging": 3,
+  "packaging_by_cat": {
+   "data_config": 1,
+   "asset": 2
+  },
+  "label": {
+   "id": "S0587",
+   "knowledge_work": true,
+   "domain": "design-creative-media",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "OpenAI",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "agents/openai.yaml UI metadata; two SVG icons",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "openai/plugins",
+  "path": "plugins/boltz-api-cli/skills/boltz-protein-design",
+  "name": "boltz-protein-design",
+  "description": "Design new protein binders with Boltz. Use when generating protein, peptide, antibody, nanobody, or custom binder candidates for a target. Not for screening existing proteins or small molecules.",
+  "skill_md_sha": "4a35e1e3c2ed",
+  "skill_md_lines": 107,
+  "skill_md_words": 1998,
+  "files_total": 12,
+  "md_total": 4,
+  "counts": {
+   "skill_md": 1,
+   "md": 3,
+   "script": 6,
+   "asset": 0,
+   "data_config": 2,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 4,
+   ".yaml": 1,
+   ".py": 6,
+   ".txt": 1
+  },
+  "subdirs": {
+   "(root)": 1,
+   "references": 3,
+   "agents": 1,
+   "scripts": 7
+  },
+  "bytes": 64084,
+  "plugin": "boltz-api-cli",
+  "id": "S0597",
+  "packaging": 1,
+  "packaging_by_cat": {
+   "data_config": 1
+  },
+  "label": {
+   "id": "S0597",
+   "knowledge_work": true,
+   "domain": "science-research",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "OpenAI",
+  "audit": {
+   "md_roles": "references/ on Boltz API payloads, results layout/metrics, target-exploration procedure",
+   "nonmd_summary": "Python target-exploration helpers (crop, disorder, site scan, results analysis); requirements.txt; openai.yaml metadata",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "openai/plugins",
+  "path": "plugins/build-web-data-visualization/skills/visualization-strategy-and-critique",
+  "name": "visualization-strategy-and-critique",
+  "description": "Choose, lay out, critique, and explain data visualizations. Use when the user asks what visualization fits a dataset or goal, how a chart, dashboard, operational workspace, UML-like diagram, or software architecture diagram should be composed or interacted with, asks for visual page design, a layout mockup, generated large-screen and mobile concept images, or to be shown what a visualization could",
+  "skill_md_sha": "3fa8af08514f",
+  "skill_md_lines": 207,
+  "skill_md_words": 2626,
+  "files_total": 6,
+  "md_total": 5,
+  "counts": {
+   "skill_md": 1,
+   "md": 4,
+   "script": 0,
+   "asset": 0,
+   "data_config": 1,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 5,
+   ".yaml": 1
+  },
+  "subdirs": {
+   "(root)": 1,
+   "references": 4,
+   "agents": 1
+  },
+  "bytes": 26254,
+  "plugin": "build-web-data-visualization",
+  "id": "S0620",
+  "packaging": 1,
+  "packaging_by_cat": {
+   "data_config": 1
+  },
+  "label": {
+   "id": "S0620",
+   "knowledge_work": true,
+   "domain": "data-analytics-bi",
+   "role": "task",
+   "real": true,
+   "note": "Chart choice/critique; in dev plugin, borderline"
+  },
+  "publisher": "OpenAI",
+  "audit": {
+   "md_roles": "references/ on chart selection, critique lenses, decision framing, Tufte/Munzner/Cairo synthesis",
+   "nonmd_summary": "agents/openai.yaml UI metadata",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "openai/plugins",
+  "path": "plugins/canva/skills/canva-bulk-create",
+  "name": "canva-bulk-create",
+  "description": "Bulk-create Canva designs from tabular data using a brand template with autofill fields, producing one design per row. Use when users say \"bulk create designs from this CSV\", \"generate one design per row\", \"create a design for each product\", \"batch generate from a template\", or \"autofill a template from a spreadsheet\". Accepts any tabular data source \u2014 uploaded files, pasted tables, JSON, or URLs.",
+  "skill_md_sha": "45b7dd37d4ef",
+  "skill_md_lines": 125,
+  "skill_md_words": 890,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 5309,
+  "plugin": "canva",
+  "id": "S0623",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S0623",
+   "knowledge_work": true,
+   "domain": "design-creative-media",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "OpenAI",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "moderate"
+  }
+ },
+ {
+  "repo": "openai/plugins",
+  "path": "plugins/creative-production/skills/produce",
+  "name": "produce",
+  "description": "Use when the user wants to create, explore, adapt, refine, polish, or review visual creative such as campaigns, ads, social posts, product imagery, scenes, offers, logos, brand systems, styles, charts, decks, or related marketing and design assets.",
+  "skill_md_sha": "63e00bab69fa",
+  "skill_md_lines": 50,
+  "skill_md_words": 689,
+  "files_total": 78,
+  "md_total": 16,
+  "counts": {
+   "skill_md": 1,
+   "md": 15,
+   "script": 28,
+   "asset": 32,
+   "data_config": 2,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {
+   "image": 32
+  },
+  "exts": {
+   ".md": 16,
+   ".py": 5,
+   ".json": 1,
+   ".css": 7,
+   ".js": 10,
+   ".html": 3,
+   ".mjs": 3,
+   ".webp": 9,
+   ".svg": 8,
+   ".jpg": 15,
+   ".yaml": 1
+  },
+  "subdirs": {
+   "(root)": 1,
+   "helpers": 62,
+   "references": 14,
+   "agents": 1
+  },
+  "bytes": 2303496,
+  "plugin": "creative-production",
+  "id": "S0630",
+  "packaging": 1,
+  "packaging_by_cat": {
+   "data_config": 1
+  },
+  "label": {
+   "id": "S0630",
+   "knowledge_work": true,
+   "domain": "design-creative-media",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "OpenAI",
+  "audit": {
+   "md_roles": "helpers README; references/ per creative mode (ads, logos, scenes...), contracts, board runtime, renderer",
+   "nonmd_summary": "Python prompt-pack/explorer builders; JS/HTML/CSS moodboard, logo, style review apps with SVG/WebP/JPG starter images; JSON pack; yaml",
+   "skill_md_quality": "moderate"
+  }
+ },
+ {
+  "repo": "openai/plugins",
+  "path": "plugins/data-analytics/skills/metric-diagnostics",
+  "name": "metric-diagnostics",
+  "description": "Diagnose why a metric changed or differs from expectation. Use when the task is to identify likely drivers of a metric movement, anomaly, gap, or discrepancy.",
+  "skill_md_sha": "0f88a780b884",
+  "skill_md_lines": 134,
+  "skill_md_words": 1457,
+  "files_total": 2,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 1,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1,
+   ".yaml": 1
+  },
+  "subdirs": {
+   "(root)": 1,
+   "agents": 1
+  },
+  "bytes": 10434,
+  "plugin": "data-analytics",
+  "id": "S0644",
+  "packaging": 1,
+  "packaging_by_cat": {
+   "data_config": 1
+  },
+  "label": {
+   "id": "S0644",
+   "knowledge_work": true,
+   "domain": "data-analytics-bi",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "OpenAI",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "agents/openai.yaml UI metadata",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "openai/plugins",
+  "path": "plugins/data-analytics/skills/kpi-reporting",
+  "name": "kpi-reporting",
+  "description": "Prepare KPI readouts, scorecards, WBR/MBR/QBR updates, and executive summaries from quantitative business or product metrics; use when the task is to report status, compare against targets, explain validated drivers, and state operating implications.",
+  "skill_md_sha": "136d59d8a2d6",
+  "skill_md_lines": 143,
+  "skill_md_words": 1895,
+  "files_total": 3,
+  "md_total": 2,
+  "counts": {
+   "skill_md": 1,
+   "md": 1,
+   "script": 0,
+   "asset": 0,
+   "data_config": 1,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 2,
+   ".yaml": 1
+  },
+  "subdirs": {
+   "(root)": 1,
+   "references": 1,
+   "agents": 1
+  },
+  "bytes": 15571,
+  "plugin": "data-analytics",
+  "id": "S0642",
+  "packaging": 1,
+  "packaging_by_cat": {
+   "data_config": 1
+  },
+  "label": {
+   "id": "S0642",
+   "knowledge_work": true,
+   "domain": "data-analytics-bi",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "OpenAI",
+  "audit": {
+   "md_roles": "references/report-templates.md: KPI readout output templates (inline update, WBR, scorecard)",
+   "nonmd_summary": "agents/openai.yaml UI metadata",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "openai/plugins",
+  "path": "plugins/data-analytics/skills/gather-business-context",
+  "name": "gather-business-context",
+  "description": "Gather business context from connected or provided sources so downstream analysis starts with the right framing. Use when an analytical question depends on missing context, such as what a metric means, what changed recently, or which sources should be checked. If the same prompt asks for diagnosis, recommendation, or a deliverable, gather context first and continue to the focused skill.",
+  "skill_md_sha": "1fb86df9a566",
+  "skill_md_lines": 68,
+  "skill_md_words": 1127,
+  "files_total": 2,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 1,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1,
+   ".yaml": 1
+  },
+  "subdirs": {
+   "(root)": 1,
+   "agents": 1
+  },
+  "bytes": 7731,
+  "plugin": "data-analytics",
+  "id": "S0639",
+  "packaging": 1,
+  "packaging_by_cat": {
+   "data_config": 1
+  },
+  "label": {
+   "id": "S0639",
+   "knowledge_work": true,
+   "domain": "data-analytics-bi",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "OpenAI",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "agents/openai.yaml UI metadata",
+   "skill_md_quality": "moderate"
+  }
+ },
+ {
+  "repo": "openai/plugins",
+  "path": "plugins/boltz-api-cli/skills/boltz-small-molecule-design",
+  "name": "boltz-small-molecule-design",
+  "description": "Design new small-molecule binders with Boltz. Use when generating novel ligands or hits for a target without a fixed compound library. Not for screening existing molecules or one-off docking.",
+  "skill_md_sha": "6da7b6d4124d",
+  "skill_md_lines": 79,
+  "skill_md_words": 1145,
+  "files_total": 4,
+  "md_total": 3,
+  "counts": {
+   "skill_md": 1,
+   "md": 2,
+   "script": 0,
+   "asset": 0,
+   "data_config": 1,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 3,
+   ".yaml": 1
+  },
+  "subdirs": {
+   "(root)": 1,
+   "references": 2,
+   "agents": 1
+  },
+  "bytes": 18544,
+  "plugin": "boltz-api-cli",
+  "id": "S0600",
+  "packaging": 1,
+  "packaging_by_cat": {
+   "data_config": 1
+  },
+  "label": {
+   "id": "S0600",
+   "knowledge_work": true,
+   "domain": "science-research",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "OpenAI",
+  "audit": {
+   "md_roles": "references/ on Boltz API payload shapes and results layout/metrics",
+   "nonmd_summary": "agents/openai.yaml Codex interface metadata (display name, default prompt)",
+   "skill_md_quality": "moderate"
+  }
+ },
+ {
+  "repo": "openai/plugins",
+  "path": "plugins/google-drive/skills/google-sheets",
+  "name": "google-sheets",
+  "description": "Analyze and edit connected Google Sheets with range precision. Use when the user wants to create Google Sheets, find a spreadsheet, inspect tabs or ranges, search rows, plan formulas, create or repair charts, clean or restructure tables, write concise summaries, or make explicit cell-range updates.",
+  "skill_md_sha": "1129746effc9",
+  "skill_md_lines": 125,
+  "skill_md_words": 1232,
+  "files_total": 13,
+  "md_total": 10,
+  "counts": {
+   "skill_md": 1,
+   "md": 9,
+   "script": 0,
+   "asset": 2,
+   "data_config": 1,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {
+   "image": 2
+  },
+  "exts": {
+   ".md": 10,
+   ".yaml": 1,
+   ".png": 1,
+   ".svg": 1
+  },
+  "subdirs": {
+   "(root)": 1,
+   "references": 9,
+   "agents": 1,
+   "assets": 2
+  },
+  "bytes": 138308,
+  "plugin": "google-drive",
+  "id": "S0658",
+  "packaging": 3,
+  "packaging_by_cat": {
+   "data_config": 1,
+   "asset": 2
+  },
+  "label": {
+   "id": "S0658",
+   "knowledge_work": true,
+   "domain": "docs-office-files",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "OpenAI",
+  "audit": {
+   "md_roles": "references/ on edit workflow, formulas, charts, batch updates, import, read safety, visual quality, styles",
+   "nonmd_summary": "Google Sheets SVG/PNG icons; agents/openai.yaml UI metadata",
+   "skill_md_quality": "moderate"
+  }
+ },
+ {
+  "repo": "openai/plugins",
+  "path": "plugins/higgsfield/skills/narrator",
+  "name": "narrator",
+  "description": "| Activate when the user explicitly names the narrator skill or requests production-ready narration in either case: (1) numbered takes fitted to fixed video windows, or (2) one continuous long-form story read in a locked voice that must be measured and retried for timbre or internal pauses. Collect missing text, voice_id, or voice_type after activation; their absence is not a reason to skip this w",
+  "skill_md_sha": "1f356aed2bf4",
+  "skill_md_lines": 165,
+  "skill_md_words": 1371,
+  "files_total": 4,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 1,
+   "asset": 1,
+   "data_config": 1,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {
+   "image": 1
+  },
+  "exts": {
+   ".md": 1,
+   ".yaml": 1,
+   ".svg": 1,
+   ".sh": 1
+  },
+  "subdirs": {
+   "(root)": 1,
+   "agents": 1,
+   "assets": 1,
+   "scripts": 1
+  },
+  "bytes": 14863,
+  "plugin": "higgsfield",
+  "id": "S0661",
+  "packaging": 2,
+  "packaging_by_cat": {
+   "data_config": 1,
+   "asset": 1
+  },
+  "label": {
+   "id": "S0661",
+   "knowledge_work": true,
+   "domain": "design-creative-media",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "OpenAI",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "speech_metrics.sh measures TTS speech length/pauses; SVG icon; openai.yaml metadata",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "openai/plugins",
+  "path": "plugins/life-science-research/skills/eqtl-catalogue-skill",
+  "name": "eqtl-catalogue-skill",
+  "description": "Submit compact eQTL Catalogue API requests for association retrieval and documented metadata endpoints. Use when a user wants concise public eQTL Catalogue summaries",
+  "skill_md_sha": "09a9baec2cf7",
+  "skill_md_lines": 41,
+  "skill_md_words": 296,
+  "files_total": 4,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 2,
+   "asset": 0,
+   "data_config": 1,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1,
+   ".yaml": 1,
+   ".py": 2
+  },
+  "subdirs": {
+   "(root)": 1,
+   "agents": 1,
+   "scripts": 2
+  },
+  "bytes": 19655,
+  "plugin": "life-science-research",
+  "id": "S0680",
+  "packaging": 1,
+  "packaging_by_cat": {
+   "data_config": 1
+  },
+  "label": {
+   "id": "S0680",
+   "knowledge_work": true,
+   "domain": "science-research",
+   "role": "task",
+   "real": true,
+   "note": "Database API lookup wrapper for researchers"
+  },
+  "publisher": "OpenAI",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "Python eQTL Catalogue REST client, its unit tests, and OpenAI agent interface yaml",
+   "skill_md_quality": "moderate"
+  }
+ },
+ {
+  "repo": "openai/plugins",
+  "path": "plugins/life-science-research/skills/encode-skill",
+  "name": "encode-skill",
+  "description": "Submit compact ENCODE REST API requests for object lookups, portal-style search, and metadata retrieval. Use when a user wants concise ENCODE summaries",
+  "skill_md_sha": "0f39f1e625dc",
+  "skill_md_lines": 40,
+  "skill_md_words": 248,
+  "files_total": 3,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 1,
+   "asset": 0,
+   "data_config": 1,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1,
+   ".yaml": 1,
+   ".py": 1
+  },
+  "subdirs": {
+   "(root)": 1,
+   "agents": 1,
+   "scripts": 1
+  },
+  "bytes": 13248,
+  "plugin": "life-science-research",
+  "id": "S0677",
+  "packaging": 1,
+  "packaging_by_cat": {
+   "data_config": 1
+  },
+  "label": {
+   "id": "S0677",
+   "knowledge_work": true,
+   "domain": "science-research",
+   "role": "task",
+   "real": true,
+   "note": "Database API lookup wrapper for researchers"
+  },
+  "publisher": "OpenAI",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "Python ENCODE REST request client script and OpenAI agent interface yaml",
+   "skill_md_quality": "moderate"
+  }
+ },
+ {
+  "repo": "openai/plugins",
+  "path": "plugins/life-science-research/skills/eva-skill",
+  "name": "eva-skill",
+  "description": "Submit compact EVA REST requests for species metadata and archived variant lookups. Use when a user wants concise European Variation Archive summaries",
+  "skill_md_sha": "11542f2c9cbf",
+  "skill_md_lines": 38,
+  "skill_md_words": 219,
+  "files_total": 3,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 1,
+   "asset": 0,
+   "data_config": 1,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1,
+   ".yaml": 1,
+   ".py": 1
+  },
+  "subdirs": {
+   "(root)": 1,
+   "agents": 1,
+   "scripts": 1
+  },
+  "bytes": 12816,
+  "plugin": "life-science-research",
+  "id": "S0681",
+  "packaging": 1,
+  "packaging_by_cat": {
+   "data_config": 1
+  },
+  "label": {
+   "id": "S0681",
+   "knowledge_work": true,
+   "domain": "science-research",
+   "role": "task",
+   "real": true,
+   "note": "Database API lookup wrapper for researchers"
+  },
+  "publisher": "OpenAI",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "Python EVA REST request client script and OpenAI agent interface yaml",
+   "skill_md_quality": "moderate"
+  }
+ },
+ {
+  "repo": "openai/plugins",
+  "path": "plugins/life-science-research/skills/bgee-skill",
+  "name": "bgee-skill",
+  "description": "Submit compact Bgee SPARQL requests for healthy wild-type expression metadata and ontology-aware lookup patterns. Use when a user wants concise Bgee summaries; save raw results only on request.",
+  "skill_md_sha": "1d62721ef658",
+  "skill_md_lines": 37,
+  "skill_md_words": 234,
+  "files_total": 3,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 1,
+   "asset": 0,
+   "data_config": 1,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1,
+   ".yaml": 1,
+   ".py": 1
+  },
+  "subdirs": {
+   "(root)": 1,
+   "agents": 1,
+   "scripts": 1
+  },
+  "bytes": 9394,
+  "plugin": "life-science-research",
+  "id": "S0664",
+  "packaging": 1,
+  "packaging_by_cat": {
+   "data_config": 1
+  },
+  "label": {
+   "id": "S0664",
+   "knowledge_work": true,
+   "domain": "science-research",
+   "role": "task",
+   "real": true,
+   "note": "Database API lookup wrapper for researchers"
+  },
+  "publisher": "OpenAI",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "Python SPARQL client hardwired to Bgee endpoint and OpenAI agent interface yaml",
+   "skill_md_quality": "thin"
+  }
+ },
+ {
+  "repo": "openai/plugins",
+  "path": "plugins/life-science-research/skills/gwas-catalog-skill",
+  "name": "gwas-catalog-skill",
+  "description": "Submit compact GWAS Catalog REST API v2 requests for studies, associations, SNPs, EFO traits, genes, publications, loci, and metadata. Use when a user wants concise GWAS Catalog summaries",
+  "skill_md_sha": "2bed51b32568",
+  "skill_md_lines": 42,
+  "skill_md_words": 264,
+  "files_total": 3,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 1,
+   "asset": 0,
+   "data_config": 1,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1,
+   ".yaml": 1,
+   ".py": 1
+  },
+  "subdirs": {
+   "(root)": 1,
+   "agents": 1,
+   "scripts": 1
+  },
+  "bytes": 13408,
+  "plugin": "life-science-research",
+  "id": "S0686",
+  "packaging": 1,
+  "packaging_by_cat": {
+   "data_config": 1
+  },
+  "label": {
+   "id": "S0686",
+   "knowledge_work": true,
+   "domain": "science-research",
+   "role": "task",
+   "real": true,
+   "note": "Database API lookup wrapper for researchers"
+  },
+  "publisher": "OpenAI",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "Python GWAS Catalog REST request client script and OpenAI agent interface yaml",
+   "skill_md_quality": "moderate"
+  }
+ },
+ {
+  "repo": "openai/plugins",
+  "path": "plugins/life-science-research/skills/gnomad-graphql-skill",
+  "name": "gnomad-graphql-skill",
+  "description": "Submit compact gnomAD GraphQL requests for frequency, gene constraint, and variant context queries. Use when a user wants concise gnomAD summaries",
+  "skill_md_sha": "30fff8cef794",
+  "skill_md_lines": 39,
+  "skill_md_words": 284,
+  "files_total": 3,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 1,
+   "asset": 0,
+   "data_config": 1,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1,
+   ".yaml": 1,
+   ".py": 1
+  },
+  "subdirs": {
+   "(root)": 1,
+   "agents": 1,
+   "scripts": 1
+  },
+  "bytes": 7832,
+  "plugin": "life-science-research",
+  "id": "S0684",
+  "packaging": 1,
+  "packaging_by_cat": {
+   "data_config": 1
+  },
+  "label": {
+   "id": "S0684",
+   "knowledge_work": true,
+   "domain": "science-research",
+   "role": "task",
+   "real": true,
+   "note": "Database API lookup wrapper for researchers"
+  },
+  "publisher": "OpenAI",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "Python gnomAD GraphQL client script and OpenAI agent interface yaml",
+   "skill_md_quality": "moderate"
+  }
+ },
+ {
+  "repo": "openai/plugins",
+  "path": "plugins/mixpanel-headless/skills/dashboard-expert",
+  "name": "dashboard-expert",
+  "description": ">- Full CRUD and analysis for Mixpanel dashboards. Use when the user asks to build, create, analyze, read, understand, explain, modify, update, enhance, or manage dashboards, or asks about dashboard layout, text cards, or report arrangement. Covers dashboard analysis (read + understand existing), creation (new builds), modification (update existing), and explanation (data-driven annotation).",
+  "skill_md_sha": "11390886dc32",
+  "skill_md_lines": 405,
+  "skill_md_words": 1818,
+  "files_total": 5,
+  "md_total": 5,
+  "counts": {
+   "skill_md": 1,
+   "md": 4,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 5
+  },
+  "subdirs": {
+   "(root)": 1,
+   "references": 4
+  },
+  "bytes": 106486,
+  "plugin": "mixpanel-headless",
+  "id": "S0713",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S0713",
+   "knowledge_work": true,
+   "domain": "data-analytics-bi",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "OpenAI",
+  "audit": {
+   "md_roles": "references/ on Mixpanel dashboard API, bookmark pipeline, chart-type guide, 9 dashboard templates",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "openai/plugins",
+  "path": "plugins/ngs-analysis/skills/ngs-chip-cutrun-peaks-qc",
+  "name": "ngs-chip-cutrun-peaks-qc",
+  "description": "Run or plan ChIP-seq, CUT&RUN, or CUT&Tag QC, control handling, spike-in, peak calling, broad-vs-narrow target selection, replicate, bigWig, and differential binding workflows.",
+  "skill_md_sha": "2c8daf589bb3",
+  "skill_md_lines": 81,
+  "skill_md_words": 436,
+  "files_total": 2,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 1,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1,
+   ".yaml": 1
+  },
+  "subdirs": {
+   "(root)": 1,
+   "agents": 1
+  },
+  "bytes": 4048,
+  "plugin": "ngs-analysis",
+  "id": "S0724",
+  "packaging": 1,
+  "packaging_by_cat": {
+   "data_config": 1
+  },
+  "label": {
+   "id": "S0724",
+   "knowledge_work": true,
+   "domain": "science-research",
+   "role": "task",
+   "real": true,
+   "note": "bioinformatics pipeline for scientist"
+  },
+  "publisher": "OpenAI",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "agents/openai.yaml UI metadata only; pipeline runner scripts live at plugin level, outside skill dir",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "openai/plugins",
+  "path": "plugins/ngs-analysis/skills/ngs-bulk-rnaseq-differential-expression",
+  "name": "ngs-bulk-rnaseq-differential-expression",
+  "description": "Run or plan bulk RNA-seq differential-expression analysis from count matrices with replicate, design formula, contrast, batch, normalization, QC plot, and result-table checks.",
+  "skill_md_sha": "3265dc09e30b",
+  "skill_md_lines": 75,
+  "skill_md_words": 457,
+  "files_total": 2,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 1,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1,
+   ".yaml": 1
+  },
+  "subdirs": {
+   "(root)": 1,
+   "agents": 1
+  },
+  "bytes": 3808,
+  "plugin": "ngs-analysis",
+  "id": "S0723",
+  "packaging": 1,
+  "packaging_by_cat": {
+   "data_config": 1
+  },
+  "label": {
+   "id": "S0723",
+   "knowledge_work": true,
+   "domain": "science-research",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "OpenAI",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "agents/openai.yaml UI metadata only; DE runner scripts live at plugin level",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "openai/plugins",
+  "path": "plugins/notion/skills/notion-meeting-intelligence",
+  "name": "notion-meeting-intelligence",
+  "description": "Prepare meeting materials with Notion context and supplemental research; use when gathering context, drafting agendas/pre-reads, and tailoring materials to attendees.",
+  "skill_md_sha": "696770ccae12",
+  "skill_md_lines": 66,
+  "skill_md_words": 582,
+  "files_total": 19,
+  "md_total": 13,
+  "counts": {
+   "skill_md": 1,
+   "md": 12,
+   "script": 0,
+   "asset": 2,
+   "data_config": 3,
+   "license": 1,
+   "other": 0
+  },
+  "asset_kinds": {
+   "image": 2
+  },
+  "exts": {
+   ".md": 13,
+   ".txt": 1,
+   ".yaml": 1,
+   ".svg": 1,
+   ".png": 1,
+   ".json": 2
+  },
+  "subdirs": {
+   "(root)": 2,
+   "agents": 1,
+   "assets": 2,
+   "examples": 4,
+   "reference": 7,
+   "evaluations": 3
+  },
+  "bytes": 57583,
+  "plugin": "notion",
+  "id": "S0736",
+  "packaging": 3,
+  "packaging_by_cat": {
+   "data_config": 1,
+   "asset": 2
+  },
+  "label": {
+   "id": "S0736",
+   "knowledge_work": true,
+   "domain": "productivity-communication",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "OpenAI",
+  "audit": {
+   "md_roles": "reference/ 6 meeting templates + selection guide; examples/ 4 meeting preps; evaluations README",
+   "nonmd_summary": "Notion icons (svg/png), two eval scenario JSONs, agents/openai.yaml, LICENSE.txt",
+   "skill_md_quality": "moderate"
+  }
+ },
+ {
+  "repo": "openai/plugins",
+  "path": "plugins/nvidia/skills/aiq-research",
+  "name": "aiq-research",
+  "description": "| Use when asked to run deep research or AI-Q research through a reachable NVIDIA AI-Q Blueprint backend.",
+  "skill_md_sha": "fa9710908d84",
+  "skill_md_lines": 357,
+  "skill_md_words": 1881,
+  "files_total": 7,
+  "md_total": 3,
+  "counts": {
+   "skill_md": 1,
+   "md": 2,
+   "script": 1,
+   "asset": 0,
+   "data_config": 2,
+   "license": 0,
+   "other": 1
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".sig": 1,
+   ".md": 3,
+   ".yaml": 1,
+   ".py": 1,
+   ".json": 1
+  },
+  "subdirs": {
+   "(root)": 4,
+   "agents": 1,
+   "scripts": 1,
+   "evals": 1
+  },
+  "bytes": 46234,
+  "plugin": "nvidia",
+  "id": "S0740",
+  "packaging": 2,
+  "packaging_by_cat": {
+   "other": 1,
+   "data_config": 1
+  },
+  "label": {
+   "id": "S0740",
+   "knowledge_work": true,
+   "domain": "other",
+   "role": "task",
+   "real": true,
+   "note": "deep research via self-hosted NVIDIA backend"
+  },
+  "publisher": "OpenAI",
+  "audit": {
+   "md_roles": "BENCHMARK.md eval report; skill-card.md model-card style metadata/risks",
+   "nonmd_summary": "aiq.py stdlib CLI for AI-Q backend jobs; evals.json; openai.yaml; sigstore signature file (skill.oms.sig)",
+   "skill_md_quality": "moderate"
+  }
+ },
+ {
+  "repo": "openai/plugins",
+  "path": "plugins/product-design/skills/audit",
+  "name": "audit",
+  "description": "Audit or critique a product flow, journey, workflow, funnel, onboarding path, checkout path, settings path, screen, or multi-step product experience by capturing screenshots first, then reporting UX, design, and accessibility findings inline from that evidence. Use Figma only when the user explicitly asks for a board. Use when the user asks to audit, review, critique, inspect, assess, analyze, eva",
+  "skill_md_sha": "0051f248f0c7",
+  "skill_md_lines": 161,
+  "skill_md_words": 1376,
+  "files_total": 3,
+  "md_total": 2,
+  "counts": {
+   "skill_md": 1,
+   "md": 1,
+   "script": 0,
+   "asset": 0,
+   "data_config": 1,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 2,
+   ".yaml": 1
+  },
+  "subdirs": {
+   "(root)": 1,
+   "references": 1,
+   "agents": 1
+  },
+  "bytes": 10803,
+  "plugin": "product-design",
+  "id": "S0751",
+  "packaging": 1,
+  "packaging_by_cat": {
+   "data_config": 1
+  },
+  "label": {
+   "id": "S0751",
+   "knowledge_work": true,
+   "domain": "design-creative-media",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "OpenAI",
+  "audit": {
+   "md_roles": "references/design-audit-framework.md: UX and accessibility audit lenses/modes",
+   "nonmd_summary": "agents/openai.yaml UI metadata",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "openai/plugins",
+  "path": "plugins/public-equity-investing/skills/financials-normalizer",
+  "name": "financials-normalizer",
+  "description": "Use when normalizing public-company financials from source materials. Do not use for private data rooms or non-financial cleanup.",
+  "skill_md_sha": "1553927bd0ea",
+  "skill_md_lines": 115,
+  "skill_md_words": 1245,
+  "files_total": 12,
+  "md_total": 6,
+  "counts": {
+   "skill_md": 1,
+   "md": 5,
+   "script": 3,
+   "asset": 1,
+   "data_config": 2,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {
+   "image": 1
+  },
+  "exts": {
+   ".md": 6,
+   ".csv": 1,
+   ".yaml": 1,
+   ".svg": 1,
+   ".py": 3
+  },
+  "subdirs": {
+   "(root)": 1,
+   "references": 6,
+   "agents": 1,
+   "assets": 1,
+   "scripts": 3
+  },
+  "bytes": 76140,
+  "plugin": "public-equity-investing",
+  "id": "S0771",
+  "packaging": 2,
+  "packaging_by_cat": {
+   "data_config": 1,
+   "asset": 1
+  },
+  "label": {
+   "id": "S0771",
+   "knowledge_work": true,
+   "domain": "investing-banking-pe",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "OpenAI",
+  "audit": {
+   "md_roles": "references/ on source protocol, normalization schema, line-item taxonomy, QA rules, integration",
+   "nonmd_summary": "3 Python scripts (build source index, normalize, validate financials); line-item alias CSV; icon svg; openai.yaml",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "openai/plugins",
+  "path": "plugins/public-equity-investing/skills/thesis-tracker",
+  "name": "thesis-tracker",
+  "description": "Use when building or updating Public Equity Investing thesis trackers. Do not use for generic news summaries, trade pitches, or first-pass memos.",
+  "skill_md_sha": "19b8bd7bfa94",
+  "skill_md_lines": 135,
+  "skill_md_words": 1826,
+  "files_total": 14,
+  "md_total": 9,
+  "counts": {
+   "skill_md": 1,
+   "md": 8,
+   "script": 1,
+   "asset": 1,
+   "data_config": 3,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {
+   "image": 1
+  },
+  "exts": {
+   ".md": 9,
+   ".yaml": 1,
+   ".csv": 1,
+   ".svg": 1,
+   ".txt": 1,
+   ".py": 1
+  },
+  "subdirs": {
+   "(root)": 1,
+   "references": 8,
+   "agents": 1,
+   "assets": 2,
+   "scripts": 2
+  },
+  "bytes": 71546,
+  "plugin": "public-equity-investing",
+  "id": "S0781",
+  "packaging": 2,
+  "packaging_by_cat": {
+   "data_config": 1,
+   "asset": 1
+  },
+  "label": {
+   "id": "S0781",
+   "knowledge_work": true,
+   "domain": "investing-banking-pe",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "OpenAI",
+  "audit": {
+   "md_roles": "references/ on workflow, thesis schema, intake, sector overlays, output templates, guardrails, dashboard pack",
+   "nonmd_summary": "Tracker materializer Python script + requirements.txt; blank thesis-tracker starter CSV; icon svg; openai.yaml",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "openai/plugins",
+  "path": "plugins/public-equity-investing/skills/comps-valuation",
+  "name": "comps-valuation",
+  "description": "Produce Public Equity Investing comparable-company valuation in report or workbook mode. Use for peer selection, multiple analysis, valuation read-throughs, implied prices, comps dashboards, Excel or Sheets comps, refreshable peer tables, model updates, and comps workbook QA. Do not use for DCF-only, credit-security, or generic market commentary requests.",
+  "skill_md_sha": "1e105de068ba",
+  "skill_md_lines": 80,
+  "skill_md_words": 952,
+  "files_total": 20,
+  "md_total": 15,
+  "counts": {
+   "skill_md": 1,
+   "md": 14,
+   "script": 3,
+   "asset": 0,
+   "data_config": 2,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 15,
+   ".yaml": 1,
+   ".txt": 1,
+   ".py": 3
+  },
+  "subdirs": {
+   "(root)": 1,
+   "references": 14,
+   "agents": 1,
+   "scripts": 4
+  },
+  "bytes": 152958,
+  "plugin": "public-equity-investing",
+  "id": "S0763",
+  "packaging": 1,
+  "packaging_by_cat": {
+   "data_config": 1
+  },
+  "label": {
+   "id": "S0763",
+   "knowledge_work": true,
+   "domain": "investing-banking-pe",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "OpenAI",
+  "audit": {
+   "md_roles": "references/ peer selection, valuation read-through, staleness, templates; workbook/ spec, QA, memo template",
+   "nonmd_summary": "3 Python scripts (create comps template, materialize screening comps, audit workbook); requirements.txt; openai.yaml",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "openai/plugins",
+  "path": "plugins/public-equity-investing/skills/memo-builder",
+  "name": "memo-builder",
+  "description": "Use when drafting or reviewing formal public-equity investment memos. Do not use for live trade construction or credit-first memos; use long-short-pitch or Credit Markets as appropriate.",
+  "skill_md_sha": "1e750ccf5a38",
+  "skill_md_lines": 155,
+  "skill_md_words": 1589,
+  "files_total": 9,
+  "md_total": 7,
+  "counts": {
+   "skill_md": 1,
+   "md": 6,
+   "script": 1,
+   "asset": 0,
+   "data_config": 1,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 7,
+   ".yaml": 1,
+   ".py": 1
+  },
+  "subdirs": {
+   "(root)": 1,
+   "references": 6,
+   "agents": 1,
+   "scripts": 1
+  },
+  "bytes": 44560,
+  "plugin": "public-equity-investing",
+  "id": "S0776",
+  "packaging": 1,
+  "packaging_by_cat": {
+   "data_config": 1
+  },
+  "label": {
+   "id": "S0776",
+   "knowledge_work": true,
+   "domain": "investing-banking-pe",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "OpenAI",
+  "audit": {
+   "md_roles": "references/ on memo modes, output contracts, quality workflow, sector overlays, source policy, dashboard pack",
+   "nonmd_summary": "build_memo_package.py generating DOCX/HTML memo packages; agents/openai.yaml",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "openai/plugins",
+  "path": "plugins/stripe/skills/stripe-directory",
+  "name": "stripe-directory",
+  "description": ">- Use when the user wants to find businesses, software, service providers, or partners for a specific industry, workflow, pain point, capability, or job to be done. Also use when the agent needs to programmatically purchase or consume a service. Use Stripe Directory to build a short relevant shortlist, even if the user does not mention Stripe Directory explicitly.",
+  "skill_md_sha": "f77956c86ea9",
+  "skill_md_lines": 77,
+  "skill_md_words": 767,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 5483,
+  "plugin": "stripe",
+  "id": "S0787",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S0787",
+   "knowledge_work": true,
+   "domain": "operations-admin",
+   "role": "task",
+   "real": true,
+   "note": "vendor/partner discovery shortlist"
+  },
+  "publisher": "OpenAI",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "moderate"
+  }
+ },
+ {
+  "repo": "openai/plugins",
+  "path": "plugins/zotero/skills/zotero",
+  "name": "Zotero",
+  "description": "Use Zotero Desktop from Codex to enable/probe the local API, search a local Zotero library, list items/collections/tags, export BibTeX, insert citation keys into LaTeX or Markdown drafts, read indexed full text when requested, and import BibTeX/RIS records into Zotero through the connector server. Use when the user mentions Zotero, citations, references.bib, BibTeX export, local Zotero API, localh",
+  "skill_md_sha": "50290f074e6d",
+  "skill_md_lines": 103,
+  "skill_md_words": 575,
+  "files_total": 5,
+  "md_total": 2,
+  "counts": {
+   "skill_md": 1,
+   "md": 1,
+   "script": 1,
+   "asset": 1,
+   "data_config": 1,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {
+   "image": 1
+  },
+  "exts": {
+   ".md": 2,
+   ".yaml": 1,
+   ".png": 1,
+   ".py": 1
+  },
+  "subdirs": {
+   "(root)": 1,
+   "references": 1,
+   "agents": 1,
+   "assets": 1,
+   "scripts": 1
+  },
+  "bytes": 46844,
+  "plugin": "zotero",
+  "id": "S0791",
+  "packaging": 2,
+  "packaging_by_cat": {
+   "data_config": 1,
+   "asset": 1
+  },
+  "label": {
+   "id": "S0791",
+   "knowledge_work": true,
+   "domain": "science-research",
+   "role": "task",
+   "real": true,
+   "note": "reference/citation management"
+  },
+  "publisher": "OpenAI",
+  "audit": {
+   "md_roles": "references/local-api-routes.md: Zotero local API endpoint reference",
+   "nonmd_summary": "zotero.py stdlib CLI helper (search, BibTeX export, cite insertion); icon png; openai.yaml",
+   "skill_md_quality": "moderate"
+  }
+ },
+ {
+  "repo": "openai/skills",
+  "path": "skills/.curated/speech",
+  "name": "speech",
+  "description": "Use when the user asks for text-to-speech narration or voiceover, accessibility reads, audio prompts, or batch speech generation via the OpenAI Audio API; run the bundled CLI (`scripts/text_to_speech.py`) with built-in voices and require `OPENAI_API_KEY` for live calls. Custom voice creation is out of scope.",
+  "skill_md_sha": "6af13eab32d6",
+  "skill_md_lines": 145,
+  "skill_md_words": 1006,
+  "files_total": 16,
+  "md_total": 11,
+  "counts": {
+   "skill_md": 1,
+   "md": 10,
+   "script": 1,
+   "asset": 2,
+   "data_config": 1,
+   "license": 1,
+   "other": 0
+  },
+  "asset_kinds": {
+   "image": 2
+  },
+  "exts": {
+   ".md": 11,
+   ".txt": 1,
+   ".yaml": 1,
+   ".svg": 1,
+   ".png": 1,
+   ".py": 1
+  },
+  "subdirs": {
+   "(root)": 2,
+   "references": 10,
+   "agents": 1,
+   "assets": 2,
+   "scripts": 1
+  },
+  "bytes": 48773,
+  "plugin": ".curated",
+  "id": "S0826",
+  "packaging": 3,
+  "packaging_by_cat": {
+   "data_config": 1,
+   "asset": 2
+  },
+  "label": {
+   "id": "S0826",
+   "knowledge_work": true,
+   "domain": "design-creative-media",
+   "role": "task",
+   "real": true,
+   "note": "TTS voiceover generation via API CLI"
+  },
+  "publisher": "OpenAI",
+  "audit": {
+   "md_roles": "10 references: CLI, audio API, prompting, voice directions, use-case templates, network troubleshooting",
+   "nonmd_summary": "text_to_speech.py CLI for OpenAI Audio API; SVG/PNG icons; openai.yaml; LICENSE.txt",
+   "skill_md_quality": "moderate"
+  }
+ },
+ {
+  "repo": "openai/skills",
+  "path": "skills/.curated/transcribe",
+  "name": "transcribe",
+  "description": "Transcribe audio files to text with optional diarization and known-speaker hints. Use when a user asks to transcribe speech from audio/video, extract text from recordings, or label speakers in interviews or meetings.",
+  "skill_md_sha": "49435609da64",
+  "skill_md_lines": 82,
+  "skill_md_words": 370,
+  "files_total": 7,
+  "md_total": 2,
+  "counts": {
+   "skill_md": 1,
+   "md": 1,
+   "script": 1,
+   "asset": 2,
+   "data_config": 1,
+   "license": 1,
+   "other": 0
+  },
+  "asset_kinds": {
+   "image": 2
+  },
+  "exts": {
+   ".md": 2,
+   ".txt": 1,
+   ".yaml": 1,
+   ".png": 1,
+   ".svg": 1,
+   ".py": 1
+  },
+  "subdirs": {
+   "(root)": 2,
+   "references": 1,
+   "agents": 1,
+   "assets": 2,
+   "scripts": 1
+  },
+  "bytes": 25203,
+  "plugin": ".curated",
+  "id": "S0827",
+  "packaging": 3,
+  "packaging_by_cat": {
+   "data_config": 1,
+   "asset": 2
+  },
+  "label": {
+   "id": "S0827",
+   "knowledge_work": true,
+   "domain": "productivity-communication",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "OpenAI",
+  "audit": {
+   "md_roles": "references/api.md: transcription API formats, limits, known-speaker notes",
+   "nonmd_summary": "transcribe_diarize.py CLI using OpenAI API; icons (svg/png); openai.yaml; LICENSE.txt",
+   "skill_md_quality": "moderate"
+  }
+ },
+ {
+  "repo": "openai/skills",
+  "path": "skills/.system/imagegen",
+  "name": "imagegen",
+  "description": "Generate or edit raster images when the task benefits from AI-created bitmap visuals such as photos, illustrations, textures, sprites, mockups, or transparent-background cutouts. Use when Codex should create a brand-new image, transform an existing image, or derive visual variants from references, and the output should be a bitmap asset rather than repo-native code or vector. Do not use when the t",
+  "skill_md_sha": "3b7e2012d617",
+  "skill_md_lines": 280,
+  "skill_md_words": 2340,
+  "files_total": 11,
+  "md_total": 6,
+  "counts": {
+   "skill_md": 1,
+   "md": 5,
+   "script": 1,
+   "asset": 2,
+   "data_config": 1,
+   "license": 1,
+   "other": 0
+  },
+  "asset_kinds": {
+   "image": 2
+  },
+  "exts": {
+   ".md": 6,
+   ".txt": 1,
+   ".yaml": 1,
+   ".svg": 1,
+   ".png": 1,
+   ".py": 1
+  },
+  "subdirs": {
+   "(root)": 2,
+   "references": 5,
+   "agents": 1,
+   "assets": 2,
+   "scripts": 1
+  },
+  "bytes": 95982,
+  "plugin": ".system",
+  "id": "S0831",
+  "packaging": 3,
+  "packaging_by_cat": {
+   "data_config": 1,
+   "asset": 2
+  },
+  "label": {
+   "id": "S0831",
+   "knowledge_work": true,
+   "domain": "design-creative-media",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "OpenAI",
+  "audit": {
+   "md_roles": "references/ prompting principles, sample prompts, CLI usage, image API params, network setup",
+   "nonmd_summary": "image_gen.py fallback CLI (generate/edit/batch); icons (svg/png); openai.yaml; LICENSE.txt",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "openai/role-specific-plugins",
+  "path": "plugins/data-analytics/skills/build-report",
+  "name": "build-report",
+  "description": "Build polished analytical reports for executive, product, business, or technical audiences. Use when the task needs a durable answer-first narrative with evidence-backed findings, visuals or tables, caveats, and source context.",
+  "skill_md_sha": "7058aa89bfa9",
+  "skill_md_lines": 227,
+  "skill_md_words": 4915,
+  "files_total": 6,
+  "md_total": 4,
+  "counts": {
+   "skill_md": 1,
+   "md": 3,
+   "script": 1,
+   "asset": 0,
+   "data_config": 1,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 4,
+   ".yaml": 1,
+   ".py": 1
+  },
+  "subdirs": {
+   "(root)": 1,
+   "specifications": 3,
+   "agents": 1,
+   "scripts": 1
+  },
+  "bytes": 68830,
+  "plugin": "data-analytics",
+  "id": "S1482",
+  "packaging": 1,
+  "packaging_by_cat": {
+   "data_config": 1
+  },
+  "label": {
+   "id": "S1482",
+   "knowledge_work": true,
+   "domain": "data-analytics-bi",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "OpenAI",
+  "audit": {
+   "md_roles": "Audience specs (executive, technical) and MCP app report delivery spec",
+   "nonmd_summary": "Python script embedding precompiled Recharts runtime into self-contained HTML report; agent interface yaml",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "openai/role-specific-plugins",
+  "path": "plugins/sales/skills/sales-company-research",
+  "name": "sales-company-research",
+  "description": "Research companies, partners, and referral channels to shape draft outreach approaches, messages, or partner motions; exclude descriptive company profiling, list enrichment, and internal source finding.",
+  "skill_md_sha": "0778cbedb7ee",
+  "skill_md_lines": 83,
+  "skill_md_words": 632,
+  "files_total": 2,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 1,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1,
+   ".yaml": 1
+  },
+  "subdirs": {
+   "(root)": 1,
+   "agents": 1
+  },
+  "bytes": 4753,
+  "plugin": "sales",
+  "id": "S1512",
+  "packaging": 1,
+  "packaging_by_cat": {
+   "data_config": 1
+  },
+  "label": {
+   "id": "S1512",
+   "knowledge_work": true,
+   "domain": "sales-crm",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "OpenAI",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "agents/openai.yaml UI metadata and invocation policy",
+   "skill_md_quality": "moderate"
+  }
+ },
+ {
+  "repo": "openai/role-specific-plugins",
+  "path": "plugins/sales/skills/build-competitive-brief",
+  "name": "build-competitive-brief",
+  "description": "Use when the user wants a competitor or vendor comparison, market-landscape analysis, battlecard, objection package, positioning brief, or account-specific competitive view. Produce an evidence-backed comparison, guidance, and brief, using supplied materials, connected research, and public evidence when appropriate.",
+  "skill_md_sha": "15ce5e5ceca9",
+  "skill_md_lines": 237,
+  "skill_md_words": 2469,
+  "files_total": 5,
+  "md_total": 3,
+  "counts": {
+   "skill_md": 1,
+   "md": 2,
+   "script": 0,
+   "asset": 0,
+   "data_config": 2,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 3,
+   ".yaml": 2
+  },
+  "subdirs": {
+   "(root)": 1,
+   "references": 3,
+   "agents": 1
+  },
+  "bytes": 19824,
+  "plugin": "sales",
+  "id": "S1499",
+  "packaging": 1,
+  "packaging_by_cat": {
+   "data_config": 1
+  },
+  "label": {
+   "id": "S1499",
+   "knowledge_work": true,
+   "domain": "sales-crm",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "OpenAI",
+  "audit": {
+   "md_roles": "references/ output contract (section order) and source-priority authority rules",
+   "nonmd_summary": "agents/openai.yaml; references/request-schema.yaml structured input schema",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "HubSpot/agent-cli-skills",
+  "path": "crm-data-quality",
+  "name": "crm-data-quality",
+  "description": "Find incomplete records, normalize field values in bulk, dedupe with `hubspot objects merge`, and audit custom properties. Builds on `bulk-operations` for JSONL piping and dry-run/digest/confirm.",
+  "skill_md_sha": "04023a77a427",
+  "skill_md_lines": 101,
+  "skill_md_words": 600,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 4561,
+  "plugin": "crm-data-quality",
+  "id": "S1003",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1003",
+   "knowledge_work": true,
+   "domain": "sales-crm",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Other vendors",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "HubSpot/agent-cli-skills",
+  "path": "ticket-resolution",
+  "name": "ticket-resolution",
+  "description": "Create, triage, advance, and close HubSpot support tickets \u2014 pipeline discovery, contact/company association, priority queues, bulk stage moves, resolution close-out.",
+  "skill_md_sha": "3a5853903a27",
+  "skill_md_lines": 119,
+  "skill_md_words": 571,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 4895,
+  "plugin": "ticket-resolution",
+  "id": "S1013",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1013",
+   "knowledge_work": true,
+   "domain": "customer-support",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Other vendors",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "HubSpot/agent-cli-skills",
+  "path": "sales-execution",
+  "name": "sales-execution",
+  "description": "Log sales activities \u2014 calls, notes, meetings, tasks \u2014 against contacts and deals, with the mandatory create-then-associate step that makes them visible in the CRM.",
+  "skill_md_sha": "54ff50905185",
+  "skill_md_lines": 122,
+  "skill_md_words": 708,
+  "files_total": 2,
+  "md_total": 2,
+  "counts": {
+   "skill_md": 1,
+   "md": 1,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 2
+  },
+  "subdirs": {
+   "(root)": 1,
+   "resources": 1
+  },
+  "bytes": 7651,
+  "plugin": "sales-execution",
+  "id": "S1010",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1010",
+   "knowledge_work": true,
+   "domain": "sales-crm",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Other vendors",
+  "audit": {
+   "md_roles": "HubSpot activity property names and enum values reference",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "HubSpot/hubspot-mcp-plugins",
+  "path": "HubSpot-Sales/skills/log-call",
+  "name": "log-call",
+  "description": "> Logs a call, meeting, or conversation against a HubSpot contact. Writes a note, updates deal stage, next step, close date, and priority, updates contact lead status and lifecycle stage, and creates a follow-up task. ALWAYS use this skill when the user reports on a completed interaction \u2014 \"just got off the phone with X\", \"had a call with X\", \"just spoke to X\", \"log a call with X\", \"post-call note",
+  "skill_md_sha": "331a59aaedba",
+  "skill_md_lines": 170,
+  "skill_md_words": 1129,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 7268,
+  "plugin": "HubSpot-Sales",
+  "id": "S1022",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1022",
+   "knowledge_work": true,
+   "domain": "sales-crm",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Other vendors",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "anthropics/claude-plugins-community",
+  "path": "tres-finance-plugin/skills/tres-wallets-upload",
+  "name": "tres-wallets-upload",
+  "description": "> Upload and onboard multiple on-chain wallets or exchange accounts into Tres Finance. Use this skill whenever the user wants to add wallets, onboard wallets, import wallets, upload wallet addresses, ingest wallets, or connect exchanges into Tres \u2014 whether from a file (CSV/Excel) or by typing them manually. This skill guides Claude through the full flow: wallet type selection \u2192 input collection \u2192 ",
+  "skill_md_sha": "0d4be53cffc7",
+  "skill_md_lines": 464,
+  "skill_md_words": 2461,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 16770,
+  "plugin": "tres-finance-plugin",
+  "id": "S1419",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1419",
+   "knowledge_work": true,
+   "domain": "finance-accounting",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Other vendors",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "anthropics/claude-plugins-community",
+  "path": "tres-finance-plugin/skills/tres-cost-basis",
+  "name": "tres-cost-basis",
+  "description": "> Manage cost basis calculation in TRES Finance: check status, view/change strategy (FIFO, LIFO, AVG, MAX_GAINS, MAX_LOSSES, FIFO_IMPAIRMENT), trigger recalculation, review financial issues, manage reevaluations/impairments, set bulk fiat prices, configure spec-ID lot disposal rules, view per-asset cost basis results, and export cost basis reports. Trigger this skill whenever the user asks about c",
+  "skill_md_sha": "1255076ac1d1",
+  "skill_md_lines": 942,
+  "skill_md_words": 3630,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 27652,
+  "plugin": "tres-finance-plugin",
+  "id": "S1400",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1400",
+   "knowledge_work": true,
+   "domain": "finance-accounting",
+   "role": "task",
+   "real": true,
+   "note": "crypto accounting platform"
+  },
+  "publisher": "Other vendors",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "anthropics/claude-plugins-community",
+  "path": "tres-finance-plugin/skills/tres-asc845-swap-reprice-skill",
+  "name": "tres-asc845-swap-reprice-skill",
+  "description": "> Reprice swap transaction legs under ASC 845 (Nonmonetary Transactions) to ensure clearing accounts net to zero. Use this skill whenever the user wants to: reprice swaps, fix clearing account residuals, apply equal-value exchange to swap legs, run setBatchUseCounterpartyFiatValue, zero out a clearing account, apply ASC 845, fix swap pricing mismatches, ensure no gain/loss on swaps, or close a mon",
+  "skill_md_sha": "214f4bd5b53e",
+  "skill_md_lines": 223,
+  "skill_md_words": 1249,
+  "files_total": 3,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 2,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1,
+   ".py": 2
+  },
+  "subdirs": {
+   "(root)": 1,
+   "scripts": 2
+  },
+  "bytes": 34623,
+  "plugin": "tres-finance-plugin",
+  "id": "S1398",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1398",
+   "knowledge_work": true,
+   "domain": "finance-accounting",
+   "role": "task",
+   "real": true,
+   "note": "crypto accounting platform"
+  },
+  "publisher": "Other vendors",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "2 Python scripts: orchestrator and ASC 845 repricing engine that produce plan and mutation JSON",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "anthropics/claude-plugins-community",
+  "path": "tres-finance-plugin/skills/tres-rollup-rules",
+  "name": "tres-rollup-rules",
+  "description": "> Analyze an organization's sub-transaction patterns in TRES Finance, identify groups of repetitive transactions, and propose data-driven rollup rules that consolidate them into one aggregated entry per interval (daily or monthly) for cleaner ERP integration. Also lists and deletes rollup rules. Trigger this skill whenever the user asks about rollup rules, transaction aggregation, consolidating tr",
+  "skill_md_sha": "288d8c6b7d5e",
+  "skill_md_lines": 510,
+  "skill_md_words": 3462,
+  "files_total": 2,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 1,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1,
+   ".html": 1
+  },
+  "subdirs": {
+   "(root)": 1,
+   "references": 1
+  },
+  "bytes": 33435,
+  "plugin": "tres-finance-plugin",
+  "id": "S1415",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1415",
+   "knowledge_work": true,
+   "domain": "finance-accounting",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Other vendors",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "HTML/CSS template for rollup-rule proposal report with row patterns",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "atlassian/atlassian-mcp-server",
+  "path": "skills/jira-sprint-dashboard",
+  "name": "jira-sprint-dashboard",
+  "description": ">- Create a visual Jira sprint dashboard from Jira project, space, sprint, board, filter, JQL, work item keys, or Jira URL data. Use when the user asks for a Jira sprint dashboard, standup dashboard, sprint review, delivery review, engineering manager dashboard, WIP review, planning view, closeout view, or a visual snapshot of Jira work that is more useful than a flat report. Use the richest dashb",
+  "skill_md_sha": "1461f8a20868",
+  "skill_md_lines": 369,
+  "skill_md_words": 2472,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 16236,
+  "plugin": "skills",
+  "id": "S1436",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1436",
+   "knowledge_work": true,
+   "domain": "product-management",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Other vendors",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "box/skills",
+  "path": "skills/box-legal-workflows-contract",
+  "name": "box-legal-workflows-contract",
+  "description": "Automate contract review and monitoring with Box MCP \u2014 find new or expiring contracts, compare them against firm templates to flag material variances, write structured contract metadata back to Box for searchability, and produce variance reports with citations. Use this skill when the user mentions contract review or monitoring, NDA or MSA review, contract expiration or renewals, contract metadata",
+  "skill_md_sha": "16b38786be4e",
+  "skill_md_lines": 72,
+  "skill_md_words": 744,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 6671,
+  "plugin": "skills",
+  "id": "S1448",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1448",
+   "knowledge_work": true,
+   "domain": "legal-compliance",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Other vendors",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "moderate"
+  }
+ },
+ {
+  "repo": "intuit/quickbooks-claude-plugin",
+  "path": "skills/payroll-employee-onboarding",
+  "name": "payroll-employee-onboarding",
+  "description": "Onboard a new hire into QuickBooks Payroll from user-provided details or onboarding source files such as offer letters and employee rosters. Use when the user wants to add a new payroll employee, onboard a new employee so they can be paid, deduplicate a new hire before creation, assign an existing payroll work location, set initial contract/base pay during onboarding, or review payroll-readiness g",
+  "skill_md_sha": "4aeef94d97d7",
+  "skill_md_lines": 228,
+  "skill_md_words": 3534,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 24794,
+  "plugin": "skills",
+  "id": "S1467",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1467",
+   "knowledge_work": true,
+   "domain": "hr-people",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Other vendors",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "intuit/quickbooks-claude-plugin",
+  "path": "skills/chase-overdue-invoices",
+  "name": "chase-overdue-invoices",
+  "description": "Send payment reminders for invoices with tone matched to aging. ALWAYS use this skill when the user asks to \"send a reminder\", \"send reminder to invoice\", \"remind about invoice\", \"send a reminder to invoice 1234\", \"remind them about 4574\", \"send a firmer reminder for invoice 1042\", \"who owes me money\", \"show me overdue invoices\", \"chase down overdue invoices\", \"follow up on unpaid invoices\", or \"n",
+  "skill_md_sha": "6a8cb2a02342",
+  "skill_md_lines": 283,
+  "skill_md_words": 3715,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 24111,
+  "plugin": "skills",
+  "id": "S1463",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1463",
+   "knowledge_work": true,
+   "domain": "finance-accounting",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Other vendors",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "makenotion/claude-code-notion-plugin",
+  "path": "skills/notion/spec-to-implementation",
+  "name": "notion-spec-to-implementation",
+  "description": "Turns product or tech specs into concrete Notion tasks that Claude code can implement. Breaks down spec pages into detailed implementation plans with clear tasks, acceptance criteria, and progress tracking to guide development from requirements to completion.",
+  "skill_md_sha": "0d65d3cf9922",
+  "skill_md_lines": 218,
+  "skill_md_words": 1104,
+  "files_total": 15,
+  "md_total": 13,
+  "counts": {
+   "skill_md": 1,
+   "md": 12,
+   "script": 0,
+   "asset": 0,
+   "data_config": 2,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 13,
+   ".json": 2
+  },
+  "subdirs": {
+   "(root)": 1,
+   "examples": 3,
+   "reference": 8,
+   "evaluations": 3
+  },
+  "bytes": 65373,
+  "plugin": "notion",
+  "id": "S1480",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1480",
+   "knowledge_work": true,
+   "domain": "product-management",
+   "role": "task",
+   "real": true,
+   "note": "spec breakdown into tracked tasks"
+  },
+  "publisher": "Other vendors",
+  "audit": {
+   "md_roles": "reference/ plan, task, progress templates and spec parsing; 3 worked examples; evals README",
+   "nonmd_summary": "two JSON evaluation scenarios for spec-to-tasks behavior",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "zapier/gtm-cheat-codes",
+  "path": "skills/customer-advocacy/find-customer-social-proof",
+  "name": "find-customer-social-proof",
+  "description": "Find approved customer proof for campaigns, pages, decks, emails, and sales conversations. Use when a team needs relevant case studies, quotes, stats, slides, logos, or peer examples.",
+  "skill_md_sha": "0bfdd08762aa",
+  "skill_md_lines": 48,
+  "skill_md_words": 285,
+  "files_total": 6,
+  "md_total": 5,
+  "counts": {
+   "skill_md": 1,
+   "md": 4,
+   "script": 0,
+   "asset": 0,
+   "data_config": 1,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 5,
+   ".yaml": 1
+  },
+  "subdirs": {
+   "(root)": 6
+  },
+  "bytes": 6001,
+  "plugin": "customer-advocacy",
+  "id": "S1586",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1586",
+   "knowledge_work": true,
+   "domain": "marketing-content",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Other vendors",
+  "audit": {
+   "md_roles": "README, Zapier MCP/SDK SETUP guide, SCHEMA-MAP field definitions, ONBOARDING-PROMPT",
+   "nonmd_summary": "metadata.yaml catalog metadata (function, target user, MCP/SDK roles)",
+   "skill_md_quality": "thin"
+  }
+ },
+ {
+  "repo": "zapier/gtm-cheat-codes",
+  "path": "skills/sales-revops/customer-deck-builder",
+  "name": "customer-deck-builder",
+  "description": "Build tailored customer-facing sales or customer success decks from approved account context and generate the presentation with Gamma through Zapier MCP.",
+  "skill_md_sha": "6103f4f2a90c",
+  "skill_md_lines": 163,
+  "skill_md_words": 714,
+  "files_total": 6,
+  "md_total": 5,
+  "counts": {
+   "skill_md": 1,
+   "md": 4,
+   "script": 0,
+   "asset": 0,
+   "data_config": 1,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 5,
+   ".yaml": 1
+  },
+  "subdirs": {
+   "(root)": 6
+  },
+  "bytes": 9937,
+  "plugin": "sales-revops",
+  "id": "S1601",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1601",
+   "knowledge_work": true,
+   "domain": "sales-crm",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Other vendors",
+  "audit": {
+   "md_roles": "README overview, SETUP connection steps, SCHEMA-MAP field mapping, onboarding prompt",
+   "nonmd_summary": "metadata.yaml describing GTM function, Zapier MCP/SDK roles and dependencies",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "K-Dense-AI/claude-scientific-skills",
+  "path": "skills/citation-management",
+  "name": "citation-management",
+  "description": "Comprehensive citation management for academic research. Search OpenAlex, PubMed, and Google Scholar for papers, extract accurate metadata, validate citations, and generate properly formatted BibTeX entries. This skill should be used when you need to find papers, verify citation information, convert DOIs to BibTeX, or ensure reference accuracy in scientific writing.",
+  "skill_md_sha": "0002ac1e87e2",
+  "skill_md_lines": 347,
+  "skill_md_words": 1881,
+  "files_total": 21,
+  "md_total": 12,
+  "counts": {
+   "skill_md": 1,
+   "md": 11,
+   "script": 8,
+   "asset": 0,
+   "data_config": 1,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 12,
+   ".bib": 1,
+   ".py": 8
+  },
+  "subdirs": {
+   "(root)": 1,
+   "references": 10,
+   "assets": 2,
+   "scripts": 8
+  },
+  "bytes": 278612,
+  "plugin": "skills",
+  "id": "S0017",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S0017",
+   "knowledge_work": true,
+   "domain": "science-research",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Community",
+  "audit": {
+   "md_roles": "references/ on search strategies, metadata extraction, BibTeX formatting, validation; citation checklist",
+   "nonmd_summary": "Python scripts for OpenAlex/PubMed/Scholar search, DOI-to-BibTeX, validation; BibTeX template file",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "K-Dense-AI/claude-scientific-skills",
+  "path": "skills/generate-image",
+  "name": "generate-image",
+  "description": "Generate or edit images with AI models through the OpenRouter Image API (Gemini, Seedream, Recraft, GPT-Image, Riverflow). Use for photos, illustrations, artwork, concept art, visual assets, logos, and image editing or compositing from reference images. For flowcharts, circuits, pathways, and other technical diagrams, use the scientific-schematics skill instead.",
+  "skill_md_sha": "00162ea7e23e",
+  "skill_md_lines": 322,
+  "skill_md_words": 2162,
+  "files_total": 3,
+  "md_total": 2,
+  "counts": {
+   "skill_md": 1,
+   "md": 1,
+   "script": 1,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 2,
+   ".py": 1
+  },
+  "subdirs": {
+   "(root)": 1,
+   "references": 1,
+   "scripts": 1
+  },
+  "bytes": 56622,
+  "plugin": "skills",
+  "id": "S0042",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S0042",
+   "knowledge_work": true,
+   "domain": "design-creative-media",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Community",
+  "audit": {
+   "md_roles": "references/models.md on OpenRouter image model choices",
+   "nonmd_summary": "Python script calling OpenRouter Image API to generate/edit images",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "coreyhaines31/marketingskills",
+  "path": "skills/pricing",
+  "name": "pricing",
+  "description": "When the user wants help with pricing decisions, packaging, or monetization strategy. Also use when the user mentions 'pricing,' 'pricing tiers,' 'freemium,' 'free trial,' 'packaging,' 'price increase,' 'value metric,' 'Van Westendorp,' 'willingness to pay,' 'monetization,' 'how much should I charge,' 'my pricing is wrong,' 'pricing page,' 'annual vs monthly,' 'per seat pricing,' 'should I offer a",
+  "skill_md_sha": "01ae19f16cd6",
+  "skill_md_lines": 296,
+  "skill_md_words": 2002,
+  "files_total": 6,
+  "md_total": 5,
+  "counts": {
+   "skill_md": 1,
+   "md": 4,
+   "script": 0,
+   "asset": 0,
+   "data_config": 1,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 5,
+   ".json": 1
+  },
+  "subdirs": {
+   "(root)": 1,
+   "references": 4,
+   "evals": 1
+  },
+  "bytes": 47196,
+  "plugin": "skills",
+  "id": "S0476",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S0476",
+   "knowledge_work": true,
+   "domain": "product-management",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Community",
+  "audit": {
+   "md_roles": "references/ on pricing models, tier structure, research methods, pricing page teardown",
+   "nonmd_summary": "evals.json with test prompts and expected outputs",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "coreyhaines31/marketingskills",
+  "path": "skills/public-relations",
+  "name": "public-relations",
+  "description": "When the user wants help with public relations, earned media, press coverage, journalist outreach, or media strategy (not pull requests). Also use when the user mentions 'PR,' 'public relations,' 'press,' 'press release,' 'press coverage,' 'media outreach,' 'pitch a journalist,' 'get featured,' 'media list,' 'media kit,' 'press kit,' 'newsjacking,' 'news hijack,' 'HARO,' 'Qwoted,' 'Featured,' 'Hel",
+  "skill_md_sha": "0f46fa39b6fc",
+  "skill_md_lines": 143,
+  "skill_md_words": 1323,
+  "files_total": 8,
+  "md_total": 7,
+  "counts": {
+   "skill_md": 1,
+   "md": 6,
+   "script": 0,
+   "asset": 0,
+   "data_config": 1,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 7,
+   ".json": 1
+  },
+  "subdirs": {
+   "(root)": 1,
+   "references": 6,
+   "evals": 1
+  },
+  "bytes": 58580,
+  "plugin": "skills",
+  "id": "S0480",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S0480",
+   "knowledge_work": true,
+   "domain": "marketing-content",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Community",
+  "audit": {
+   "md_roles": "references/ on journalist pitching, media outlets, newsjacking, podcast prep, press platforms, story angles",
+   "nonmd_summary": "evals/evals.json test prompts with expected outputs",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "alirezarezvani/claude-skills",
+  "path": "c-level-advisor/skills/culture-architect",
+  "name": "culture-architect",
+  "description": "Build, measure, and evolve company culture as operational behavior \u2014 not wall posters. Covers mission/vision/values workshops, values-to-behaviors translation, culture code creation, culture health assessment, and cultural rituals by stage. Use when building company values, assessing culture health, designing cultural rituals, creating culture codes, handling culture clashes, or when user mentions",
+  "skill_md_sha": "0459d3a2b364",
+  "skill_md_lines": 168,
+  "skill_md_words": 1338,
+  "files_total": 3,
+  "md_total": 3,
+  "counts": {
+   "skill_md": 1,
+   "md": 2,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 3
+  },
+  "subdirs": {
+   "(root)": 1,
+   "references": 1,
+   "templates": 1
+  },
+  "bytes": 25901,
+  "plugin": "c-level-advisor",
+  "id": "S1067",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1067",
+   "knowledge_work": true,
+   "domain": "hr-people",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Community",
+  "audit": {
+   "md_roles": "references/culture-playbook; templates/culture-code template",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "alirezarezvani/claude-skills",
+  "path": "marketing-skill/skills/popup-cro",
+  "name": "popup-cro",
+  "description": "When the user wants to create or optimize popups, modals, overlays, slide-ins, or banners for conversion purposes. Also use when the user mentions \"exit intent,\" \"popup conversions,\" \"modal optimization,\" \"lead capture popup,\" \"email popup,\" \"announcement banner,\" or \"overlay.\" For forms outside of popups, see form-cro. For general page conversion optimization, see page-cro.",
+  "skill_md_sha": "0039d131ee3c",
+  "skill_md_lines": 230,
+  "skill_md_words": 1146,
+  "files_total": 2,
+  "md_total": 2,
+  "counts": {
+   "skill_md": 1,
+   "md": 1,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 2
+  },
+  "subdirs": {
+   "(root)": 1,
+   "references": 1
+  },
+  "bytes": 13924,
+  "plugin": "marketing-skill",
+  "id": "S1137",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1137",
+   "knowledge_work": true,
+   "domain": "marketing-content",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Community",
+  "audit": {
+   "md_roles": "references/popup-cro-playbook with detailed popup tactics",
+   "nonmd_summary": "none",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "alirezarezvani/claude-skills",
+  "path": "product-team/skills/product-strategist",
+  "name": "product-strategist",
+  "description": "Strategic product leadership toolkit for Head of Product covering OKR cascade generation, quarterly planning, competitive landscape analysis, product vision documents, and team scaling proposals. Use when creating quarterly OKR documents, defining product goals or KPIs, building product roadmaps, running competitive analysis, drafting team structure or hiring plans, aligning product strategy acros",
+  "skill_md_sha": "057791636212",
+  "skill_md_lines": 228,
+  "skill_md_words": 970,
+  "files_total": 6,
+  "md_total": 4,
+  "counts": {
+   "skill_md": 1,
+   "md": 3,
+   "script": 1,
+   "asset": 0,
+   "data_config": 1,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 4,
+   ".json": 1,
+   ".py": 1
+  },
+  "subdirs": {
+   "(root)": 1,
+   "references": 3,
+   "assets": 1,
+   "scripts": 1
+  },
+  "bytes": 66317,
+  "plugin": "product-team",
+  "id": "S1171",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1171",
+   "knowledge_work": true,
+   "domain": "product-management",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Community",
+  "audit": {
+   "md_roles": "references/ on OKR framework and strategy types; OKR template in assets/",
+   "nonmd_summary": "Python OKR cascade generator script; sample growth OKRs JSON example",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "alirezarezvani/claude-skills",
+  "path": "ra-qm-team/skills/quality-documentation-manager",
+  "name": "quality-documentation-manager",
+  "description": "Document control system management for medical device QMS. Covers document numbering, version control, change management, and 21 CFR Part 11 compliance. Use when working on document control procedures, change control workflows, document numbering, version management, electronic signature compliance, or regulatory documentation review.",
+  "skill_md_sha": "069c2271f560",
+  "skill_md_lines": 442,
+  "skill_md_words": 2275,
+  "files_total": 5,
+  "md_total": 3,
+  "counts": {
+   "skill_md": 1,
+   "md": 2,
+   "script": 2,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 3,
+   ".py": 2
+  },
+  "subdirs": {
+   "(root)": 1,
+   "references": 2,
+   "scripts": 2
+  },
+  "bytes": 81805,
+  "plugin": "ra-qm-team",
+  "id": "S1208",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1208",
+   "knowledge_work": true,
+   "domain": "legal-compliance",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Community",
+  "audit": {
+   "md_roles": "references/ on document control procedures and 21 CFR Part 11 compliance",
+   "nonmd_summary": "Python document metadata validator and document version control scripts",
+   "skill_md_quality": "substantive"
+  }
+ },
+ {
+  "repo": "phuryn/pm-skills",
+  "path": "pm-execution/skills/job-stories",
+  "name": "job-stories",
+  "description": "Create job stories using the 'When [situation], I want to [motivation], so I can [outcome]' format with detailed acceptance criteria. Use when writing job stories, creating JTBD-style backlog items, or expressing user situations and motivations.",
+  "skill_md_sha": "0aea4dd61688",
+  "skill_md_lines": 75,
+  "skill_md_words": 424,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 2969,
+  "plugin": "pm-execution",
+  "id": "S1524",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1524",
+   "knowledge_work": true,
+   "domain": "product-management",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Community",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "moderate"
+  }
+ },
+ {
+  "repo": "phuryn/pm-skills",
+  "path": "pm-product-discovery/skills/summarize-interview",
+  "name": "summarize-interview",
+  "description": "Summarize a customer interview transcript into a structured template with JTBD, satisfaction signals, and action items. Use when processing interview recordings or transcripts, synthesizing discovery interviews, or creating interview summaries.",
+  "skill_md_sha": "0f95bdf256e4",
+  "skill_md_lines": 54,
+  "skill_md_words": 266,
+  "files_total": 1,
+  "md_total": 1,
+  "counts": {
+   "skill_md": 1,
+   "md": 0,
+   "script": 0,
+   "asset": 0,
+   "data_config": 0,
+   "license": 0,
+   "other": 0
+  },
+  "asset_kinds": {},
+  "exts": {
+   ".md": 1
+  },
+  "subdirs": {
+   "(root)": 1
+  },
+  "bytes": 2036,
+  "plugin": "pm-product-discovery",
+  "id": "S1567",
+  "packaging": 0,
+  "packaging_by_cat": {},
+  "label": {
+   "id": "S1567",
+   "knowledge_work": true,
+   "domain": "product-management",
+   "role": "task",
+   "real": true
+  },
+  "publisher": "Community",
+  "audit": {
+   "md_roles": "none",
+   "nonmd_summary": "none",
+   "skill_md_quality": "moderate"
+  }
+ }
+]
